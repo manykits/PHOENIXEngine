@@ -1,0 +1,33 @@
+// PX2StringHelp.pkg
+
+	class StringHelp
+	{
+		// VALUE
+	
+	public:
+		StringHelp();
+		~StringHelp();
+		
+		static std::string StandardiseFilename(const std::string &path);
+		static std::string StandardisePath (const std::string &path);
+		static void SplitFilename (const std::string &fullName,
+			std::string &outPath, std::string &outBaseFileName);
+		static void SplitBaseFilename (const std::string &baseFileName,
+			std::string &outBaseName, std::string &outExtention);
+		static void SplitFullFilename (const std::string &fullName,
+			std::string &outPath, std::string &outBaseName, 
+			std::string &outExtention);
+
+		static std::string PathToWindowStyle (const std::string &fromPath);
+
+		static std::string IntToString (int val);
+		static int StringToInt (const std::string &val);
+		static std::string FloatToString (float val, int numPoint=1);
+		static float StringToFloat(const std::string &val);
+		static void StringToXYZ(const std::string &val, float &x, float &y, float &z);
+		
+		static std::string FormatColor(int r, int g, int b);
+		
+		static std::string StrToHex(const std::string &str);
+		static int HexToInt(const std::string &str);
+	};

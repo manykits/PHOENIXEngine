@@ -1,0 +1,19 @@
+// PX2Shine.pkg
+
+	class Shine : public Object
+	{
+	public:
+		Shine ();
+		virtual ~Shine ();
+
+		Float4 Emissive;  //< default: (0,0,0,1)
+		Float4 Ambient;   //< default: (1,1,1,1)
+
+		/// 透明度被放在Diffuse的alpha通道中
+		Float4 Diffuse;   //< default: (0,0,0,1)
+
+		/// 材质的镜面反射参数被放在mSpecular的alpha通道中
+		Float4 Specular;  //< default: (0,0,0,0)
+
+		void ReCalTemp ();
+	};

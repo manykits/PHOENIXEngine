@@ -1,0 +1,18 @@
+// PX2Texture2D.pkg
+
+	class Texture2D : public Texture
+	{
+		//Texture2D (Format tformat, int dimension0, int dimension1,
+		//	int numLevels, Buffer::Usage usage = Buffer::BU_TEXTURE);
+
+		virtual ~Texture2D ();
+
+		inline int GetWidth () const;
+		inline int GetHeight () const;
+
+		bool CanGenMinmaps () const;
+		void GenerateMipmaps ();
+		bool HasMipmaps () const;
+
+		// char* GetData (int level) const;
+	};

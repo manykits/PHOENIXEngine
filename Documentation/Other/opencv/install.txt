@@ -1,0 +1,2 @@
+unzip opencv_cache.zip
+put folder .cache in opencv-3.4.0

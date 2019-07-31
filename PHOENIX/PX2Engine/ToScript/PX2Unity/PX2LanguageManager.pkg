@@ -1,0 +1,13 @@
+// PX2LanguageManager.pkg
+
+	class LanguageManager
+	{
+	public:
+		LanguageManager();
+		virtual ~LanguageManager();
+
+		LanguagePackage *GetPackageEngine();
+		LanguagePackage *GetPackageEditor();
+		LanguagePackage *GetPackageApp();
+		LanguagePackage *GetPackageApp1();
+	};

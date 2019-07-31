@@ -1,0 +1,117 @@
+#zip
+
+CFG ?= Debug
+
+CC := /usr/bin/gcc
+
+CFLAGS := -c -D__LINUX__
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+LIBPATH := ../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := \
+    -I . \
+	-I ./minzip/ \
+    -I ../.
+	
+INCDIR := ../../../PX2SDK/Include
+	
+ZIPINC := $(wildcard *.h)
+ZIPINC := $(notdir $(INC))
+MINZIPINC := $(wildcard ./minzip/*.h)
+MINZIPINC := $(notdir $(MINZIPINC))
+INC := $(ZIPINC) $(MINZIPINC)
+
+SRC := $(wildcard *.c)
+SRC := $(notdir $(SRC))
+MZSRC := $(wildcard ./minzip/*.c)
+MZSRC :=  $(notdir $(MZSRC))
+
+OBJDIR := ../../$(CFG)
+
+ZIPOBJ := $(SRC:%.c=$(OBJDIR)/%.o)
+ZIPMZOBJ := $(OBJDIR)/ioapi.o
+ZIPMZOBJ1 := $(OBJDIR)/unzip.o
+
+OBJ := $(ZIPOBJ) $(ZIPMZOBJ) $(ZIPMZOBJ1)
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+	
+$(OBJDIR)/adler32.o : adler32.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/compress.o : compress.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/crc32.o : crc32.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/deflate.o : deflate.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/gzclose.o : gzclose.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/gzlib.o : gzlib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/gzread.o : gzread.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/gzwrite.o : gzwrite.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/infback.o : infback.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/inffast.o : inffast.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/inflate.o : inflate.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/inftrees.o : inftrees.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/trees.o : trees.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/uncompr.o : uncompr.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/zutil.o : zutil.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@		
+	
+$(OBJDIR)/ioapi.o : ./minzip/ioapi.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/unzip.o : ./minzip/unzip.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

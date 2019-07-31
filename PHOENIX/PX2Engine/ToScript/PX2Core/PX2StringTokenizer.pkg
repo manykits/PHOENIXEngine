@@ -1,0 +1,17 @@
+// PX2StringTokenizer.pkg
+
+	class StringTokenizer
+	{
+	public:
+		enum Options
+		{
+			TOK_IGNORE_EMPTY = 1,
+			TOK_TRIM         = 2
+		};
+
+		StringTokenizer(const std::string& str, const std::string& separators, int options = 0);
+		~StringTokenizer();
+
+		std::string GetAt(int index) const;
+		int Count();
+	};

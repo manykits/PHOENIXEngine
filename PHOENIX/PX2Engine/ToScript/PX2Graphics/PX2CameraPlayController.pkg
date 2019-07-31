@@ -1,0 +1,25 @@
+// PX2CameraPlayController.pkg
+
+	class CameraPlayController : public Controller
+	{
+		CameraPlayController();
+		virtual ~CameraPlayController();
+
+		void SetCameraNode(CameraNode *camNode);
+		CameraNode *GetCameraNode();
+
+		void SetCameraDistance(float dist);
+		
+		void SetCameraDist(float min, float max);
+		void GetCameraDist(float &min, float &max);
+
+		AVector GetCurDir();
+		
+		void SetTouchSizeNode(SizeNode *frame);
+		SizeNode *GetTouchSizeNode();
+
+		virtual void OnEvent(Event *ent);
+
+		void UpdateCameraRot();
+		void UpdateCameraPos();
+	};

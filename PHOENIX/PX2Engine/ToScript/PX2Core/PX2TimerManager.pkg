@@ -1,0 +1,13 @@
+// PX2TimerManager.pkg
+
+	class TimerManager
+	{
+	public:
+		TimerManager ();
+		virtual ~TimerManager ();
+
+		void RemoveTimer(const std::string &name);
+		void RemoveTimer (int timerID);
+		void ClearTimers ();
+
+	};

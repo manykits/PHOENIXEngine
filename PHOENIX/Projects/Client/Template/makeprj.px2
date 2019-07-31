@@ -1,0 +1,73 @@
+#makeprj.px2
+
+CFG ?= Debug
+
+CC := /usr/bin/g++
+
+CFLAGS += -c -std=c++11 -D__LINUX__
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+USESO := PX2Engine
+DSTSO := Voxel
+ifeq (ARM,$(findstring ARM,$(CFG)))
+USESO := PX2EngineArm
+DSTSO := ARMVoxel
+endif
+
+LIBPATH := ../../../PX2SDK/Library/$(CFG)
+
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,-l$(USESO) -o
+LIB := ./$(CFG)/lib$(DSTSO).so
+
+INCPATH := ./ \
+	-I ./SkillSys/ \
+	-I ./AISys/ \
+	-I ./AISys/StateMachine/ \
+	-I ./ToScript/ \
+	-I ../../Common/ \
+	-I ../../Common/Voxel/ \
+	-I ../../Common/Voxel/Proto/ \
+	-I ../../../PX2Engine/Unity/ \
+	-I ../../../PX2Engine/Unity/Lua/ \
+	-I ../../../PX2Engine/Unity/ToLua/ \
+    -I ../../../PX2SDK/Include
+INCDIR := ../../../PX2SDK/Include
+INC := $(wildcard *.hpp) $(wildcard *.inl)
+INC := $(notdir $(INC))
+SRC := $(wildcard *.cpp)
+SRC := $(notdir $(SRC))
+OBJDIR := ./$(CFG)
+OBJ := $(SRC:%.cpp=$(OBJDIR)/%.o) \
+
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+
+$(OBJDIR)/%.o : %.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/VoxelAccount.pb.o : ../../Common/Voxel/Proto/VoxelAccount.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/VoxelGame.pb.o : ../../Common/Voxel/Proto/VoxelGame.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/V_Def.o : ../../Common/Voxel/V_Def.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/V_DefManager.o : ../../Common/Voxel/V_DefManager.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/V_MapData.o : ../../Common/Voxel/V_MapData.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

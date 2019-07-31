@@ -1,0 +1,30 @@
+// PX2PickRecord.pkg
+
+	class PickRecord
+	{
+	public:
+		PickRecord ();
+		~PickRecord ();
+
+		// 相交的物体
+		Movable *Intersected;
+
+		// 射线P + t*D中的线性元素量。T是其中t的表示。
+		float T;
+
+		// 被射线相交的三角形
+		int Triangle;
+
+		// 质心坐标系点选择。所有坐标都在区间[0,1]内，
+		// 并且Bary[0] + Bary[1] + Bary[2] = 1。
+		float Bary[3];
+
+		// 世界坐标系下的位置
+		APoint WorldPos;
+
+		// 本地坐标系下的法线
+		AVector LocalNormal;
+
+		// 是否是有效的
+		bool IsValied;
+	};

@@ -1,0 +1,33 @@
+// PX2Server.pkg
+
+	class Server : public Object
+	{
+	public:
+		enum ServerType
+		{
+			ST_IOCP,
+			ST_POLL,
+			ST_MAX_TYPE
+		};
+		Server(ServerType serverType, int port, int numMaxConnects, 
+			int numMaxMsgHandlers);
+		virtual ~Server();
+		
+		static Server *New(ServerType serverType, int port, int numMaxConnects, 
+			int numMaxMsgHandlers);
+			
+		ServerType GetServerType() const;
+		std::string GetAddress();
+
+		bool Start();
+		void Shutdown();
+
+		const std::vector<int> &GetThreadIDs() const;
+
+		void LogStatus();
+
+		ClientContext *GetClientContext(int clientID);
+		int GetNumConnects();
+		
+		static std::string GetIP(const std::string &address);
+	};

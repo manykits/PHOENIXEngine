@@ -1,0 +1,13 @@
+// PX2Base64.pkg
+	
+	class Base64
+	{
+	public:
+		Base64();
+		~Base64();
+
+		static std::string Encode(const char *str, int bytes);
+		static std::string Encode(const std::string &s);
+		static std::string Decode(const std::string &encoded_string, int &outLength);
+		static std::string Decode(const char *str, int length, int &outLength);
+	};

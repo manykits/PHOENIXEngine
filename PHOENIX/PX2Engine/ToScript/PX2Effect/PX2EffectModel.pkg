@@ -1,0 +1,41 @@
+// PX2EffectModel.pkg
+
+	class EffectModel : public Effectable
+	{
+	public:
+		EffectModel ();
+		virtual ~EffectModel ();
+
+		virtual void Reset ();
+
+		enum ModelType
+		{
+			MT_SPHERE,
+			MT_CYLINDEROPEN,
+			MT_MODEL,
+			MT_MAX_TYPE
+		};
+		void SetModelType (ModelType modelType);
+		ModelType GetModelType () const;
+
+		void SetRadiusSample (int radiusSample);
+		int GetRadiusSample () const;
+
+		void SetZSample (int zSample);
+		int GetZSample () const;
+
+		enum HeightAlphaType
+		{
+			HAT_NORMAL,
+			HAT_H2L_APPEAR,
+			HAT_H2L_DISAPPEAR,
+			HAT_H2L_APPEAR_DISAPPEAR,
+			HAT_H2L_DISAPPEAR_APPEAR,
+			HAT_MAX_TYPE
+		};
+		void SetHeightAlphaType (HeightAlphaType type);
+		HeightAlphaType GetHeightAlphaType () const;
+
+		void SetModelFilename (const std::string &filename);
+		const std::string &GetModelFilename () const;
+	};

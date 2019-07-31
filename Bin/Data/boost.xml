@@ -1,0 +1,11 @@
+<boost name="boost">
+	<app>
+		<config>
+			<var width="480" height="852"/>
+		</config>
+		<play>
+			<var playlogicmode="logic" isshowinfo="true" isdatawrite="false"/>
+		</play>
+	</app>
+</boost>
+

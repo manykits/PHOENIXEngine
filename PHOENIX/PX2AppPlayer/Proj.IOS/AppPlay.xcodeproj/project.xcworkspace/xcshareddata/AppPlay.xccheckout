@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CCF3F9BD-1306-43D8-B8F4-133BCFA3046F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AppPlay</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9ABAA7F6-FB39-4C9B-A0FD-812B17DE8778</key>
+		<string>https://github.com/PX3D/Phoenix3D.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Phoenix3D/PX2AppPlayer/Proj.IOS/AppPlay/AppPlay.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9ABAA7F6-FB39-4C9B-A0FD-812B17DE8778</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/PX3D/Phoenix3D.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9ABAA7F6-FB39-4C9B-A0FD-812B17DE8778</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9ABAA7F6-FB39-4C9B-A0FD-812B17DE8778</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Phoenix3D</string>
+		</dict>
+	</array>
+</dict>
+</plist>

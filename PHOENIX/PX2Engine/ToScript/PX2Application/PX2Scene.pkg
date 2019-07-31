@@ -1,0 +1,23 @@
+// PX2Scene.pkg
+
+	class Scene : public Node
+	{
+		Scene();
+		virtual ~Scene();
+		
+		static Scene *New();
+		static Scene *New(const std::string &name);
+
+		EnvirParamController *GetEnvirParamController();
+		AmbientRegionController *GetAmbientRegionController();
+
+		void SetTerrain(Terrain *terrain);
+		Terrain *GetTerrain();
+
+		std::vector<CameraPtr> &GetCameras();
+
+		void SetMainCameraNode(CameraNode *camNode);
+		CameraNode *GetMainCameraNode();
+
+		void AdjustCameraFrustum(const Sizef &canvasSize);
+	};

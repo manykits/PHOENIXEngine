@@ -1,0 +1,148 @@
+#lua
+
+CFG ?= Debug
+
+CC := /usr/bin/gcc
+
+CFLAGS := -c -D__LINUX__ -DLUA_USE_LINUX
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+LIBPATH := ../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := \
+    -I . \
+	
+INCDIR := ../../../PX2SDK/Include
+	
+FTINC := $(wildcard *.h)
+FTINC := $(notdir $(INC))
+INC := $(FTINC)
+
+SRC := $(wildcard *.c)
+SRC := $(notdir $(SRC))
+
+OBJDIR := ../../$(CFG)
+
+FTOBJ := $(SRC:%.c=$(OBJDIR)/%.o)
+
+OBJ := $(FTOBJ)
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+
+$(OBJDIR)/lapi.o : lapi.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lauxlib.o : lauxlib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/lbaselib.o : lbaselib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/lcode.o : lcode.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/ldblib.o : ldblib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ldebug.o : ldebug.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ldo.o : ldo.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ldump.o : ldump.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/lfunc.o : lfunc.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lgc.o : lgc.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/linit.o : linit.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/liolib.o : liolib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/llex.o : llex.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lmathlib.o : lmathlib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lmem.o : lmem.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/loadlib.o : loadlib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lobject.o : lobject.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lopcodes.o : lopcodes.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/loslib.o : loslib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lparser.o : lparser.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lstate.o : lstate.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lstring.o : lstring.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lstrlib.o : lstrlib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ltable.o : ltable.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ltablib.o : ltablib.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ltm.o : ltm.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lundump.o : lundump.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lvm.o : lvm.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/lzio.o : lzio.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/print.o : print.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+	
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

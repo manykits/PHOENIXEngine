@@ -1,0 +1,89 @@
+vs_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile vs_3_0
+// source file: std_lightnormal_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile vs_3_0
+//program v_std_lightnormal
+//semantic v_std_lightnormal.PVWMatrix
+//semantic v_std_lightnormal.WMatrix
+//semantic v_std_lightnormal.CameraWorldPosition
+//semantic v_std_lightnormal.FogParam
+//semantic SampleBase
+//semantic SampleNormal
+//var float3 modelPosition : $vin.POSITION0 : ATTR0 : 0 : 1
+//var float3 modelNormal : $vin.NORMAL0 : ATTR1 : 1 : 1
+//var float2 modelTCoord0 : $vin.TEXCOORD0 : ATTR2 : 2 : 1
+//var float3 modelTCoord1 : $vin.TEXCOORD1 : ATTR3 : 3 : 1
+//var float3 modelTCoord2 : $vin.TEXCOORD2 : ATTR4 : 4 : 1
+//var float4 clipPosition : $vout.POSITION : ATTR0 : 5 : 1
+//var float2 vertexTCoord0 : $vout.TEXCOORD0 : ATTR1 : 6 : 1
+//var float2 vertexTCoord1 : $vout.TEXCOORD1 : ATTR2 : 7 : 1
+//var float3 vertexTCoord2 : $vout.TEXCOORD2 : ATTR3 : 8 : 1
+//var float3 vertexTCoord3 : $vout.TEXCOORD3 : ATTR4 : 9 : 1
+//var float3 vertexTCoord4 : $vout.TEXCOORD4 : ATTR5 : 10 : 1
+//var float4 vertexTCoord5 : $vout.TEXCOORD5 : ATTR6 : 11 : 1
+//var float4x4 PVWMatrix :  : c[0], 4 : 12 : 1
+//var float4x4 WMatrix :  : c[4], 4 : 13 : 1
+//var float4 CameraWorldPosition :  : c[8] : 14 : 1
+//var float4 FogParam :  : c[9] : 15 : 1
+//var sampler2D SampleBase :  :  : -1 : 0
+//var sampler2D SampleNormal :  :  : -1 : 0
+//const c[10] = 1
+dcl_position o0
+dcl_texcoord0 o1
+dcl_texcoord2 o3
+dcl_texcoord3 o4
+dcl_texcoord4 o5
+dcl_texcoord5 o6
+dcl_texcoord1 o2
+def c10, 1.00000000, 0, 0, 0
+dcl_position0 v0
+dcl_texcoord0 v2
+dcl_normal0 v1
+dcl_texcoord1 v3
+dcl_texcoord2 v4
+mov r1.xyz, v0
+mov r1.w, c10.x
+dp4 r2.w, r1, c6
+dp4 r0.x, r1, c4
+dp4 r0.y, r1, c5
+mov r0.z, r2.w
+dp4 r0.w, r1, c7
+add r2.xyz, r0, -c8
+mov o6, r0
+dp3 r2.x, r2, r2
+rsq r0.x, r2.x
+add r0.y, c9.w, -c9.z
+rcp r0.x, r0.x
+dp4 o0.w, r1, c3
+dp4 o0.z, r1, c2
+dp4 o0.y, r1, c1
+dp4 o0.x, r1, c0
+dp3 r0.z, v3, c6
+dp3 r1.x, v4, c4
+rcp r0.y, r0.y
+add r0.x, -r0, c9.w
+mul_sat o2.y, r0.x, r0
+dp3 r0.x, v3, c4
+dp3 r0.y, v3, c5
+dp3 r0.w, r0, r0
+rsq r1.w, r0.w
+mul o3.xyz, r1.w, r0
+dp3 r0.x, v1, c4
+dp3 r0.y, v1, c5
+dp3 r0.z, v1, c6
+dp3 r1.w, r0, r0
+dp3 r1.z, v4, c6
+dp3 r1.y, v4, c5
+dp3 r0.w, r1, r1
+rsq r0.w, r0.w
+mul o4.xyz, r0.w, r1
+rsq r0.w, r1.w
+mul o5.xyz, r0.w, r0
+add r1.x, c9.y, -c9
+rcp r0.y, r1.x
+add r0.x, r2.w, -c9
+mul_sat o2.x, r0, r0.y
+mov o1.xy, v2

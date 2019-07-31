@@ -1,0 +1,38 @@
+// PX2UISlider.pkg
+
+	class UISlider : public UIFrame
+	{
+		UISlider();
+		virtual ~UISlider();
+		
+		static UISlider *New();
+		static UISlider *New(const std::string &name);
+
+		enum DirectionType
+		{
+			DT_HORIZONTAL,
+			DT_VERTICALITY,
+			GT_MAX_TYPE
+		};
+		void SetDirectionType(DirectionType dt);
+		DirectionType GetDirectionType();
+
+		UIFPicBox *GetFPicBoxBack();
+		UIButton *GetButSlider();
+
+		void SetSliderLength(float length);
+		float GetSliderLength() const;
+
+		void SetPercent(float percent, bool doCall=true);
+		float GetPercent() const;
+
+		void SetContentFrame(UIFrame *contentFrame);
+		UIFrame *GetContentFrame();
+
+		bool IsDraging() const;
+		
+		UIFText *CreateAddText(const std::string &text = "",
+			const Float3& color = Float3::WHITE);
+		UIFText *GetFText();
+		UIText *GetText();
+	};

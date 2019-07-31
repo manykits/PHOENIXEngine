@@ -1,0 +1,15 @@
+// PX2HardCamera.pkg
+
+	class HardCamera
+	{
+	public:
+		HardCamera();
+		virtual ~HardCamera();
+
+		// 0 back, 1front
+		void OpenCamera(int type);
+		bool IsCameraOpened() const;
+		void CloseCamera();
+		void OnSetCameraFrame(int width, int height, const char *data, 
+			int size);
+	};

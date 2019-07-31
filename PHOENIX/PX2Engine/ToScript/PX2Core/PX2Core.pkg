@@ -1,0 +1,15 @@
+// PX2Core.pkg
+
+$pfile "PX2Core/PX2Rtti.pkg"
+$pfile "PX2Core/PX2Object.pkg"
+$pfile "PX2Core/PX2Time.pkg"
+$pfile "PX2Core/PX2Log.pkg"
+$pfile "PX2Core/PX2XMLData.pkg"
+$pfile "PX2Core/PX2XMLNode.pkg"
+$pfile "PX2Core/PX2JSONData.pkg"
+$pfile "PX2Core/PX2JSONValue.pkg"
+$pfile "PX2Core/PX2StringHelp.pkg"
+$pfile "PX2Core/PX2FunObject.pkg"
+$pfile "PX2Core/PX2StringTokenizer.pkg"
+$pfile "PX2Core/PX2System.pkg"
+$pfile "PX2Core/PX2TimerManager.pkg"

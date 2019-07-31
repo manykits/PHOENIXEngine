@@ -1,0 +1,18 @@
+// PX2VoxelSetBlockGet.hpp.pkg
+	
+	class SetBlockGet
+	{
+	public:
+		SetBlockGet();
+		~SetBlockGet();
+
+		bool IsValied;
+
+		int TitleX;
+		int TitleY;
+		int TitleZ;
+		int BlockX;
+		int BlockY;
+		int BlockZ;
+		int MtlType;
+	};

@@ -1,0 +1,76 @@
+ps_2_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_2_0
+// source file: sky_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_2_0
+//program p_sky
+//semantic p_sky.LightWorldDVector_Dir
+//semantic p_sky.CameraWorldDVector
+//semantic p_sky.SkyParam
+//semantic SampleDay
+//semantic SampleSunset
+//semantic SampleNight
+//var float3 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+//var float4 LightWorldDVector_Dir :  : c[0] : 2 : 1
+//var float4 CameraWorldDVector :  : c[1] : 3 : 1
+//var float4 SkyParam :  : c[2] : 4 : 1
+//var sampler2D SampleDay :  : texunit 0 : -1 : 1
+//var sampler2D SampleSunset :  : texunit 1 : -1 : 1
+//var sampler2D SampleNight :  : texunit 2 : -1 : 1
+//const c[3] = 0 1 4 0.5
+//const c[4] = 9.9999997e-005 0.25
+dcl_2d s0
+dcl_2d s1
+dcl_2d s2
+def c3, 0.00000000, 1.00000000, 4.00000000, 0.50000000
+def c4, 0.00010000, 0.25000000, 0, 0
+dcl t0.xyz
+mov r0.z, c0
+max r0.x, c4, -r0.z
+rcp r1.x, r0.x
+dp3 r0.x, t0, t0
+rsq r0.x, r0.x
+mul r1.x, r1, c2
+mul r0.z, r0.x, t0
+min r1.x, r1, c3.y
+add r0.x, r1, c4.y
+max r1.x, r0.z, c3
+pow r3, r1.x, r0.x
+mov r1.xy, -c0
+mov r1.z, c3.x
+dp3 r0.x, r1, r1
+rsq r0.x, r0.x
+mul r0.xyz, r0.x, r1
+mov r4.x, c0
+mov r4.z, c3.x
+mov r4.y, c1
+dp3 r2.x, r4, r4
+rsq r2.x, r2.x
+mul r2.xyz, r2.x, r4
+dp3 r1.x, r0, r2
+mov r0.x, r3
+mov r3.z, c0
+add r3.x, c3.y, r3.z
+pow r4, r3.x, c2.y
+add r0.y, -r0.x, c3
+add r1.x, r1, c3.y
+mad r0.x, -r1, c3.w, c3.y
+min r4.x, r4, c3.y
+mov r4.z, c0
+texld r1, r0, s2
+texld r2, r0, s0
+texld r0, r0, s1
+add r3, r0, -r2
+mad r2, r4.x, r3, r2
+add r3, r1, -r0
+mov_pp r1.z, c0
+mul r4.x, c3.z, r4.z
+min r4.x, r4, c3.y
+mad r3, r4.x, r3, r0
+cmp r1.x, r1.z, c3, c3.y
+abs_pp r0.x, r1
+cmp r0, -r0.x, r3, r2
+mov oC0, r0

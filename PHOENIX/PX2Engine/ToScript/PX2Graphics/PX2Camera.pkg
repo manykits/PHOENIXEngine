@@ -1,0 +1,192 @@
+// PX2Camera.pkg
+
+	/// 相机类
+	class Camera : public Object
+	{
+	public:
+		/**
+		* 缺省相机，field-of-view为90，aspect ratio为1，near value为1，far		
+		* value为10000。
+		*/
+		Camera (bool isPerspective);
+		virtual ~Camera ();
+		
+		void SetCameraNode(CameraNode *camNode);
+		CameraNode *GetCameraNode();
+
+		// 相机总是在世界坐标系
+		//   default position  P = (0, 0,  0; 1)
+		//   default direction D = (0, 0, -1; 0)
+		//   default up        U = (0, 1,  0; 0)
+		//   default right     R = (1, 0,  0; 0)
+		void SetFrame (const APoint& position, const AVector& dVector,
+			const AVector& uVector, const AVector& rVector);
+
+		void SetPosition (const APoint& position);
+
+		void SetAxes (const AVector& dVector, const AVector& uVector,
+			const AVector& rVector);
+
+		inline APoint GetPosition () const;
+		inline AVector GetDVector () const;
+		inline AVector GetUVector () const;
+		inline AVector GetRVector () const;
+
+		/// 获得相机矩阵
+		/**
+		* 如果D = (d0,d1,d2)，U = (u0,u1,u2)，R = (r0,r1,r2)相机矩阵是
+		*	+-                     -+
+		*	| r0  r1  r2  -Dot(R,P) |
+		*	| u0  u1  u2  -Dot(U,P) |
+		*	| d0  d1  d2  -Dot(D,P) |
+		*	|  0   0   0          1 |
+		*	+-                     -+
+		* 矩阵左乘向量，viewMat*vector4
+		*/
+		inline const HMatrix& GetViewMatrix () const;
+
+		/// 截头体匹配信息
+		/**
+		* 截头体参数是[rmin,rmax], [umin,umax]，和[dmin,dmax]。区间[rmin,rmax]
+		* 是在R方向上进行的测量，记录了left和right信息；[umin,umax]是在U方向上
+		* 进行的测量,记录了bottom和top信息；[dmin,dmax]是在D方向上进行的测量，
+		* 记录了near和far信息。截头体信息被存放在一个数组里，按照下面的信息进行
+		* 匹配。
+		*/
+		enum ViewFrustum
+		{
+			VF_DMIN     = 0,  //< near
+			VF_DMAX     = 1,  //< far
+			VF_UMIN     = 2,  //< bottom
+			VF_UMAX     = 3,  //< top
+			VF_RMIN     = 4,  //< left
+			VF_RMAX     = 5,  //< right
+			VF_QUANTITY = 6
+		};
+
+		void SetPerspective (bool per);
+		inline bool IsPerspective () const;
+
+		/// 设置截头体
+		void SetFrustum (float dMin, float dMax, float uMin, float uMax,
+			float rMin, float rMax);
+
+		/// 设置对称的截头体
+		/**
+		* 设置一个对称的截头体(umin = -umax，rmin = -rmax)使用一个上下方向的角
+		* 度fUpFovDegrees和fAspectRatio(width/height)。fUpFovDegrees的范围必须
+		* 在区间(0,180)中。
+		*/
+		void SetFrustum (float upFovDegrees, float aspectRatio, float dMin,
+			float dMax);
+
+		/// 获得相机截头体
+		void GetFrustum (float& dMin, float& dMax, float& uMin, float& uMax,
+			float& rMin, float& rMax) const;
+
+		/// 获得截头体信息
+		/**
+		* 函数返回真是，获得的参数才有效。
+		*/
+		bool GetFrustum (float& upFovDegrees, float& aspectRatio, float& dMin,
+			float& dMax) const;
+
+		// 获得单独的相机街头参数
+		inline float GetDMin () const;
+		inline float GetDMax () const;
+		inline float GetUMin () const;
+		inline float GetUMax () const;
+		inline float GetRMin () const;
+		inline float GetRMax () const;
+
+		// 相机透视矩阵类型
+		/**
+		* 在Direct3D中，深度矩阵的深度被匹配到[0,1]，OpenGL中，深度矩阵的深度被
+		* 匹配到[-1,1]。
+		*/
+		enum DepthType
+		{
+			PM_DEPTH_ZERO_TO_ONE,       // [0,1]
+			PM_DEPTH_MINUS_ONE_TO_ONE,  // [-1,1]
+			PM_DEPTH_QUANTITY
+		};
+
+		inline DepthType GetDepthType () const;
+
+		/// 获得相机的透视矩阵
+		/**
+		* 透视矩阵依赖于msDepthType和mIsPerspective。矩阵右乘向量projMat*vector4。
+		* 截头体的值为：N (near), F (far), B (bottom), T (top), L (left), 和
+		* R (right)。各个透视矩阵的形式如下：
+		*	perspective, depth [0,1]
+		*	+-                                               -+
+		*	| 2*N/(R-L)  0           -(R+L)/(R-L)  0          |
+		*	| 0          2*N/(T-B)   -(T+B)/(T-B)  0          |
+		*	| 0          0           F/(F-N)       -N*F/(F-N) |
+		*	| 0          0           1             0          |
+		*	+-                                               -+
+		*
+		*	perspective, depth [-1,1]
+		*	+-                                                 -+
+		*	| 2*N/(R-L)  0           -(R+L)/(R-L)  0            |
+		*	| 0          2*N/(T-B)   -(T+B)/(T-B)  0            |
+		*	| 0          0           (F+N)/(F-N)   -2*F*N/(F-N) |
+		*	| 0          0           1             0			|
+		*	+-                                                 -+
+		*
+		*	orthographic, depth [0,1]
+		*	+-                                       -+
+		*	| 2/(R-L)  0  0              -(R+L)/(R-L) |
+		*	| 0        2/(T-B)  0        -(T+B)/(T-B) |
+		*	| 0        0        1/(F-N)  -N/(F-N)  0  |
+		*	| 0        0        0        1            |
+		*	+-                                       -+
+		*
+		*	orthographic, depth [-1,1]
+		*	+-                                       -+
+		*	| 2/(R-L)  0        0        -(R+L)/(R-L) |
+		*	| 0        2/(T-B)  0        -(T+B)/(T-B) |
+		*	| 0        0        2/(F-N)  -(F+N)/(F-N) |
+		*	| 0        0        0        1            |
+		*	+-                                       -+
+		*/
+		inline const HMatrix& GetProjectionMatrix () const;
+
+		// 获得projection-view矩阵
+		/**
+		* 为了避免重复计算，我们将projection-view存储在这个类里。
+		*/
+		inline const HMatrix& GetProjectionViewMatrix () const;
+
+		/// 设置preview matrix
+		/**
+		* 这个矩阵在model-to-world之后，view matrix之前，被设置。这个矩阵被用来
+		* 做对象反射，缺省值是一个单位矩阵。
+		*/
+		void SetPreViewMatrix (const HMatrix& preViewMatrix);
+		inline const HMatrix& GetPreViewMatrix () const;
+		inline bool PreViewIsIdentity () const;
+
+		/// 设置postprojection matrix
+		/**
+		* 这个矩阵用来做screen-space变换，例如rendered image的变换。缺省值是一
+		* 个单位矩阵。
+		*/
+		void SetPostProjectionMatrix (const HMatrix& postProjMatrix);
+		inline const HMatrix& GetPostProjectionMatrix () const;
+		inline bool PostProjectionIsIdentity () const;
+		
+		// Render
+	public:
+		void SetClearColor(const Float4 &color);
+		const Float4 &GetClearColor() const;
+
+		void SetClearDepth(float depth);
+		float GetClearDepth() const;
+
+		void SetClearStencil(unsigned int stencil);
+		unsigned int GetClearStencil() const;
+
+		void SetClearFlag(bool color, bool depth, bool stencil);
+		void GetClearFlag(bool &color, bool &depth, bool &stencil);
+	};

@@ -1,0 +1,20 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := UI
+
+FILE_LIST := $(wildcard $(LOCAL_PATH)/*cpp)
+LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
+
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/..
+
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/.. \
+$(PX2_ROOT)/PX2Engine/Unity/AppPlay/ \
+$(PX2_ROOT)/PX2SDK/Include/
+
+LOCAL_CFLAGS := -D__ANDROID__ 
+#-DPX2_USE_VLC
+LOCAL_CPPFLAGS := -frtti -std=c++11 -fexceptions -LUAPLUS_EXCEPTIONS
+
+include $(BUILD_STATIC_LIBRARY)

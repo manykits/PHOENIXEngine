@@ -1,0 +1,21 @@
+// PX2VoxelBlock.pkg
+
+	class VoxelBlock
+	{
+	public:
+		VoxelBlock();
+		~VoxelBlock();
+
+		int IndexX;
+		int IndexY;
+		int IndexZ;
+
+		int MtlType;
+
+		VoxelBlock *Left;
+		VoxelBlock *Right;
+		VoxelBlock *Front;
+		VoxelBlock *Back;
+		VoxelBlock *Bottom;
+		VoxelBlock *Top;
+	};

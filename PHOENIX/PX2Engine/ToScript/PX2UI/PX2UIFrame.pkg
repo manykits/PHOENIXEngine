@@ -1,0 +1,44 @@
+// PX2UIFrame.pkg
+
+	class UIFrame : public SizeNode
+	{
+	public:
+		UIFrame();
+		virtual ~UIFrame();
+		
+		static UIFrame *New();
+		static UIFrame *New(const std::string &name);
+		
+		virtual void AutoMakeSizeFixable(float scale=1.0f);
+
+		UIPicBox *CreateAddBackgroundPicBox(bool setWhite=true, 
+			const Float3&color=Float3::WHITE);
+		UIPicBox *GetBackgroundPicBox();
+		void DestoryBackgroundPicBox();
+
+		void SetActivateColor(const Float3 &color);
+		const Float3 &GetActivateColor() const;
+		void SetActivateAlpha(float alpha);
+		float GetActivateAlpha() const;
+		void SetActivateBrightness(float brightness);
+		float GetActivateBrightness() const;
+		
+		// calls
+	public:
+		void SetScriptHandler(const std::string &scriptHandler);
+		const std::string &GetScriptHandler() const;
+
+		// mask
+	public:
+		UIPicBox *CreateAddMask();
+		void SetMaskVal(int maskVal);
+		int GetMaskVal() const;
+		UIPicBox *GetMask();
+		void DestoryMask();
+		
+		// GridAlign
+	public:
+		UIFrameGridAlignControl *CreateAddGridAlignCtrl(bool doResetPlay = true);
+		void DestoryGridAlignCtrl();
+		UIFrameGridAlignControl *GetGridAlignCtrl();
+	};

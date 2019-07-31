@@ -1,0 +1,13 @@
+// PX2Mouse.pkg
+
+	enum MouseButtonID
+	{
+		MBID_LEFT = 0,
+		MBID_RIGHT,
+		MBID_MIDDLE,
+		MBID_Button3,
+		MBID_Button4,	
+		MBID_Button5, 
+		MBID_Button6,	
+		MBID_Button7
+	};

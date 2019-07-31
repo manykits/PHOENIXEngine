@@ -1,0 +1,5 @@
+
+Assert failed at e:\codes\phoenix3ds\phoenix3d_tx\trunk\phoenix3d\tools\fxcompiler\fxcompiler.cpp(208):
+Failed to load ¤úK.
+Assert failed at e:\codes\phoenix3ds\phoenix3d_tx\trunk\phoenix3d\tools\fxcompiler\fxcompiler.cpp(208):
+Failed to load äø.

@@ -1,0 +1,18 @@
+// PX2UIAuiFrame.pkg
+
+	class UIAuiFrame : public UIFrame
+	{
+		UIAuiFrame();
+		virtual ~UIAuiFrame();
+		
+		static UIAuiFrame *New();
+		static UIAuiFrame *New(const std::string &name);
+
+		void SetSplitterSize(float size);
+
+		UISplitterFramePtr SpLeft;
+		UISplitterFramePtr SpRight;
+		UISplitterFramePtr SpBottom;
+		UISplitterFramePtr SpTop;
+		UIAuiBlockFramePtr AuiBlockDefault;
+	};

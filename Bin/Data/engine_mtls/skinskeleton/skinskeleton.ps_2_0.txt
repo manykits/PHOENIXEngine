@@ -1,0 +1,43 @@
+ps_2_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_2_0
+// source file: skinskeleton_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_2_0
+//program p_skinskeleton
+//semantic p_skinskeleton.UVOffset
+//semantic p_skinskeleton.FogColorHeight
+//semantic p_skinskeleton.FogColorDist
+//semantic SampleBase
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+//var float2 vertexTCoord1 : $vin.TEXCOORD1 : TEX1 : 1 : 1
+//var float4 vertexTCoord2 : $vin.TEXCOORD2 : TEX2 : 2 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 3 : 1
+//var float4 UVOffset :  : c[0] : 4 : 1
+//var float4 FogColorHeight :  : c[1] : 5 : 1
+//var float4 FogColorDist :  : c[2] : 6 : 1
+//var sampler2D SampleBase :  : texunit 0 : -1 : 1
+//var <none>4 $kill_0000 : $vout.$kill : $kill : -1 : 0
+//const c[3] = 1 -0.25 0
+dcl_2d s0
+def c3, 1.00000000, -0.25000000, 0.00000000, 0
+dcl t0.xy
+dcl t2
+dcl t1.xy
+mov r0.x, t0
+add r0.y, -t0, c3.x
+add r0.xy, r0, c0
+texld r2, r0, s0
+add r0.x, r2.w, c3.y
+mul r2, r2, t2
+cmp r0.x, r0, c3.z, c3
+mov_pp r3, -r0.x
+add r2.xyz, r2, -c1
+mad r2.xyz, t1.x, r2, c1
+add r2.xyz, r2, -c2
+abs_pp r0.x, r0
+mad r2.xyz, t1.y, r2, c2
+cmp r0, -r0.x, r2, r1
+mov oC0, r0
+texkill r3.xyzw

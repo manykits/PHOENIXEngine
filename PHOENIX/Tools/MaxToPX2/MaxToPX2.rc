@@ -1,0 +1,135 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_MAXTOPX2_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 240
+        VERTGUIDE, 37
+        VERTGUIDE, 156
+        VERTGUIDE, 166
+        BOTTOMMARGIN, 191
+        HORZGUIDE, 9
+        HORZGUIDE, 23
+        HORZGUIDE, 35
+        HORZGUIDE, 46
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAXTOPX2_DIALOG DIALOGEX 0, 0, 241, 196
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+CAPTION "Phoenix2 Autodesk 3dMax Exporter"
+FONT 8, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,166,173,64,14
+    DEFPUSHBUTTON   "OK",IDOK,98,173,64,14
+    CONTROL         "Objects",IDC_CHECK_OBJECTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,9,41,10
+    CONTROL         "Meshes",IDC_CHECK_MESHES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,21,40,10
+    CONTROL         "Normals",IDC_CHECK_NORMALS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,29,46,41,10
+    CONTROL         "VertexColors",IDC_CHECK_VERTEXCOLORS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,29,34,57,10
+    CONTROL         "TextureCoords",IDC_CHECK_TEXTURECOORDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,29,69,64,10
+    COMBOBOX        IDC_COMMBO_NUMTCS,81,80,29,42,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "NumCoords",IDC_STATIC_NUMTC,42,82,38,8
+    CONTROL         "Lights",IDC_CHECK_LIGHTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,94,35,10
+    CONTROL         "Modifiers",IDC_CHECK_MODIFIERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,9,45,10
+    CONTROL         "Skins",IDC_CHECK_SKINS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,140,21,32,10
+    CONTROL         "StartFrame",IDC_RADIO_CURRENTFRAME,"Button",BS_AUTORADIOBUTTON,132,45,61,10
+    CONTROL         "KeyFrames",IDC_RADIO_KEYFRAMES,"Button",BS_AUTORADIOBUTTON,132,55,51,10
+    CONTROL         "AllFrames",IDC_RADIO_ALLFRAMES,"Button",BS_AUTORADIOBUTTON,132,65,47,10
+    CONTROL         "LocalTime",IDC_CHECK_USELOCALTIME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,77,47,10
+    LTEXT           "StartFrame",IDC_STATIC,132,91,37,8
+    LTEXT           "EndFrame",IDC_STATIC,132,106,33,8
+    CONTROL         "自定义1",IDC_EDIT_STARTFRAME,"CustEdit",WS_TABSTOP,173,90,34,11
+    CONTROL         "自定义1",IDC_EDIT_ENDFRAME,"CustEdit",WS_TABSTOP,173,105,34,11
+    CONTROL         "自定义1",IDC_SPINNER_STARTFRAME,"SpinnerControl",WS_TABSTOP,209,90,12,11
+    CONTROL         "自定义1",IDC_SPINNER_ENDFRAME,"SpinnerControl",WS_TABSTOP,209,105,12,11
+    GROUPBOX        "",IDC_STATIC,6,0,109,108
+    GROUPBOX        "",IDC_STATIC,124,0,110,35
+    GROUPBOX        "",IDC_STATIC,124,35,109,95
+    LTEXT           "Version:1.00",IDC_STATIC,7,179,42,8
+    EDITTEXT        IDC_EDIT_SRCROOTDIR,48,133,159,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_SRC,212,133,18,14
+    LTEXT           "BinArtDir",IDC_STATIC,8,136,28,8
+    EDITTEXT        IDC_EDIT_DSTROOTDIR,47,152,160,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_DST,212,152,18,14
+    LTEXT           "BinDir",IDC_STATIC,8,155,20,8
+    CONTROL         "Trangent&Binormal",IDC_CHECK_TANGENTBINORMAL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,29,57,71,10
+    GROUPBOX        "",IDC_STATIC,6,107,109,23
+    COMBOBOX        IDC_COMMBO_MTLTYPE,45,114,65,39,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Material",IDC_STATIC,15,116,26,8
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

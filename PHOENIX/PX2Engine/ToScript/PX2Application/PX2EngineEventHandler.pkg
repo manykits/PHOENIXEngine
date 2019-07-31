@@ -1,0 +1,8 @@
+// PX2EngineEventHandler.pkg
+
+	class EngineEventHandler
+	{
+	public:
+		void AddEventCall(const std::string &className,
+			const std::string &eventName, const std::string &callFun);
+	};

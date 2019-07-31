@@ -1,0 +1,27 @@
+// PX2Renderable.pkg
+
+	class Renderable : public Movable
+	{
+	public:
+		virtual ~Renderable();
+		
+		enum PrimitiveType
+		{
+			PT_NONE,
+			PT_POLYPOINT,
+			PT_POLYSEGMENTS_DISJOINT,
+			PT_POLYSEGMENTS_CONTIGUOUS,
+			PT_TRIANGLES,
+			PT_TRIMESH,
+			PT_TRISTRIP,
+			PT_TRIFAN,
+			PT_MAX_QUANTITY
+		};
+
+		PrimitiveType GetPrimitiveType () const;
+		
+		MaterialInstance* GetMaterialInstance () const;
+		
+		void SetFakeTransparent(bool fakeTrasparent);
+		bool IsFakeTransparent() const;
+	};

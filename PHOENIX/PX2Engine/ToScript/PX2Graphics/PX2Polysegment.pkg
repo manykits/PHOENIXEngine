@@ -1,0 +1,22 @@
+// PX2Polysegment.pkg
+	
+	class Polysegment : public Renderable
+	{
+		Polysegment (VertexFormat* vformat, VertexBuffer* vbuffer,
+			bool contiguous);
+
+		virtual ~Polysegment ();
+
+		/**
+		* 如果是连接线段几何图形，0 <= numSegments <= numVertices-1；如果为线段
+		* 集，0 <= numSegments <= numVertices/2。
+		*/
+		int GetMaxNumSegments () const;
+		void SetNumSegments (int numSegments);
+		inline int GetNumSegments () const;
+
+		/**
+		* 如果线段是连接的，返回true。否则返回false。
+		*/
+		inline bool GetContiguous () const;
+	};

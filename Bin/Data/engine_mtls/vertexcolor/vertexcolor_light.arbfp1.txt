@@ -1,0 +1,24 @@
+!!ARBfp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbfp1
+# source file: vertexcolor_light_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbfp1
+#program p_vertexcolor_light
+#semantic p_vertexcolor_light.FogColorHeight
+#semantic p_vertexcolor_light.FogColorDist
+#var float4 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+#var float2 vertexTCoord1 : $vin.TEXCOORD1 : TEX1 : 1 : 1
+#var float4 pixelColor : $vout.COLOR : COL : 2 : 1
+#var float4 FogColorHeight :  : c[0] : 3 : 1
+#var float4 FogColorDist :  : c[1] : 4 : 1
+PARAM c[2] = { program.local[0..1] };
+TEMP R0;
+ADD R0.xyz, fragment.texcoord[0], -c[0];
+MAD R0.xyz, fragment.texcoord[1].x, R0, c[0];
+ADD R0.xyz, R0, -c[1];
+MAD result.color.xyz, fragment.texcoord[1].y, R0, c[1];
+MOV result.color.w, fragment.texcoord[0];
+END
+# 5 instructions, 1 R-regs

@@ -1,0 +1,29 @@
+!!ARBfp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbfp1
+# source file: std_shadowmapdepth_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbfp1
+#program p_std_shadowmapdepth
+#semantic SampleBase
+#var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+#var float2 vertexTCoord1 : $vin.TEXCOORD1 : TEX1 : 1 : 1
+#var float4 pixelColor : $vout.COLOR : COL : 2 : 1
+#var sampler2D SampleBase :  : texunit 0 : -1 : 1
+#var <none>4 $kill_0000 : $vout.$kill : $kill : -1 : 0
+#const c[0] = 1 0 0.25
+PARAM c[1] = { { 1, 0, 0.25 } };
+TEMP R0;
+TEMP R1;
+MOV R1.x, fragment.texcoord[0];
+ADD R1.y, -fragment.texcoord[0], c[0].x;
+TEX R1.w, R1, texture[0], 2D;
+SLT R1.x, R1.w, c[0].z;
+ABS R1.y, R1.x;
+CMP R1.y, -R1, c[0], c[0].x;
+CMP result.color.xyz, -R1.y, fragment.texcoord[1].x, R0;
+CMP result.color.w, -R1.y, c[0].x, R0;
+KIL -R1.x;
+END
+# 9 instructions, 2 R-regs

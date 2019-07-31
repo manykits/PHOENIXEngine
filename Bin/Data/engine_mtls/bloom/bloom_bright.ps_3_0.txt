@@ -1,0 +1,28 @@
+ps_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_3_0
+// source file: bloom_bright_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_3_0
+//program p_bloom_bright
+//semantic p_bloom_bright.BrightParam
+//semantic SamplerBase
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : ATTR0 : 0 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+//var float4 BrightParam :  : c[0] : 2 : 1
+//var sampler2D SamplerBase :  : texunit 0 : -1 : 1
+//const c[1] = 1 0
+dcl_2d s0
+def c1, 1.00000000, 0.00000000, 0, 0
+dcl_texcoord0 v0.xy
+add r0.y, -v0, c1.x
+mov r0.x, v0
+texld r0, r0, s0
+dp3 r1.x, r0, r0
+rsq r1.x, r1.x
+mul r1.xyz, r1.x, r0
+mad r0.xyz, -r1, c0.x, r0
+max r0, r0, c1.y
+mul oC0.xyz, r0, r0
+mov oC0.w, r0

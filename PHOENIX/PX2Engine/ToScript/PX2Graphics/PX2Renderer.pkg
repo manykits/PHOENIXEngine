@@ -1,0 +1,12 @@
+// PX2Renderer.pkg
+
+	class Renderer
+	{
+		//============================================================================
+		// 与平台无关的接口
+	public:
+		// 获得构造函数的输入参数
+		inline int GetWidth () const;
+		inline int GetHeight () const;
+		inline int GetNumMultisamples () const;
+	};

@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLDebug|Win32">
+      <Configuration>OpenGLDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLDebug|x64">
+      <Configuration>OpenGLDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLRelease|Win32">
+      <Configuration>OpenGLRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLRelease|x64">
+      <Configuration>OpenGLRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1927ABF2-3006-48F7-A4A8-E389EA9744F4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Slam2D</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Slam2DD</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Slam2D64D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Slam2DOpenGLD</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Slam2DOpenGLD</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Slam2D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Slam2D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Slam2DOpenGL</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Slam2DOpenGL</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;HOKUYOAIST_STATIC;FLEXIPORT_STATIC;SLAM2D_DLL_EXPORT;PX2_ENGINE_DLL_IMPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\eigen;..\..\..\ThirdPartiesLibs\opencv-3.4.0\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/core/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/imgproc/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/highgui/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\photo\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\imgcodecs\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\objdetect\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\video\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\videoio\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\build;..\..\..\PX2SDK\Include;.\ToLua;.\ToScript;..\..\..\PX2Engine\Unity\;..\..\..\PX2Engine\Unity\Lua;..\..\..\PX2Engine\Unity\ToLua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\ThirdPartiesLibs\opencv-3.4.0\build\lib\Debug;..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineD.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\..\Bin\PluginsCommon\Slam2D\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;HOKUYOAIST_STATIC;FLEXIPORT_STATIC;SLAM2D_DLL_EXPORT;PX2_ENGINE_DLL_IMPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\eigen;..\..\ThirdPartiesLibs\opencv-3.4.0\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules/core/include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules/imgproc/include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules/highgui/include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\photo\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\imgcodecs\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\objdetect\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\video\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\videoio\include;..\..\ThirdPartiesLibs\opencv-3.4.0\build;..\..\PX2SDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\ThirdPartiesLibs\opencv-3.4.0\build\lib\Debug;..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2Engine64D.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\Slam2D\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;FLEXIPORT_STATIC;SLAM2D_DLL_EXPORT;PX2_ENGINE_DLL_IMPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\eigen;..\..\..\ThirdPartiesLibs\opencv-3.4.0\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/core/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/imgproc/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/highgui/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\photo\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\imgcodecs\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\objdetect\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\video\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\videoio\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\build;..\..\..\PX2SDK\Include;.\ToLua;.\ToScript;..\..\..\PX2Engine\Unity\;..\..\..\PX2Engine\Unity\Lua;..\..\..\PX2Engine\Unity\ToLua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\ThirdPartiesLibs\opencv-3.4.0\build\lib\Debug;..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGLD.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\..\Bin\PluginsCommon\Slam2D\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;HOKUYOAIST_STATIC;FLEXIPORT_STATIC;SLAM2D_DLL_EXPORT;PX2_ENGINE_DLL_IMPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\eigen;..\..\ThirdPartiesLibs\opencv-3.4.0\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules/core/include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules/imgproc/include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules/highgui/include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\photo\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\imgcodecs\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\objdetect\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\video\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\videoio\include;..\..\ThirdPartiesLibs\opencv-3.4.0\build;..\..\PX2SDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\ThirdPartiesLibs\opencv-3.4.0\build\lib\Debug;..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGLD.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\Slam2D\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;HOKUYOAIST_STATIC;FLEXIPORT_STATIC;SLAM2D_DLL_EXPORT;PX2_ENGINE_DLL_IMPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\eigen;..\..\..\ThirdPartiesLibs\opencv-3.4.0\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/core/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/imgproc/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/highgui/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\photo\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\imgcodecs\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\objdetect\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\video\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\videoio\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\build;..\..\..\PX2SDK\Include;.\ToLua;.\ToScript;..\..\..\PX2Engine\Unity\;..\..\..\PX2Engine\Unity\Lua;..\..\..\PX2Engine\Unity\ToLua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\ThirdPartiesLibs\opencv-3.4.0\build\lib\Debug;..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2Engine.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\..\Bin\PluginsCommon\Slam2D\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;HOKUYOAIST_STATIC;FLEXIPORT_STATIC;SLAM2D_DLL_EXPORT;PX2_ENGINE_DLL_IMPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\eigen;..\..\ThirdPartiesLibs\opencv-2.4.13\build\include;..\..\ThirdPartiesLibs\opencv-2.4.13\build\include\opencv;..\..\PX2SDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\opencv-3.4.0\build\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2Engine.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\Slam2D\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;HOKUYOAIST_STATIC;FLEXIPORT_STATIC;SLAM2D_DLL_EXPORT;PX2_ENGINE_DLL_IMPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\eigen;..\..\..\ThirdPartiesLibs\opencv-3.4.0\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/core/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/imgproc/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules/highgui/include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\photo\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\imgcodecs\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\objdetect\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\video\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\modules\videoio\include;..\..\..\ThirdPartiesLibs\opencv-3.4.0\build;..\..\..\PX2SDK\Include;.\ToLua;.\ToScript;..\..\..\PX2Engine\Unity\;..\..\..\PX2Engine\Unity\Lua;..\..\..\PX2Engine\Unity\ToLua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\ThirdPartiesLibs\opencv-3.4.0\build\lib\Debug;..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGL.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\..\Bin\PluginsCommon\Slam2D\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;HOKUYOAIST_STATIC;FLEXIPORT_STATIC;SLAM2D_DLL_EXPORT;PX2_ENGINE_DLL_IMPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\eigen;..\..\ThirdPartiesLibs\opencv-3.4.0\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules/core/include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules/imgproc/include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules/highgui/include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\photo\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\imgcodecs\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\objdetect\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\video\include;..\..\ThirdPartiesLibs\opencv-3.4.0\modules\videoio\include;..\..\ThirdPartiesLibs\opencv-3.4.0\build;..\..\PX2SDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\opencv-3.4.0\build\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGL.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\Slam2D\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="buffer.cpp" />
+    <ClCompile Include="HectorMapping.cpp" />
+    <ClCompile Include="PX2RobotExt.cpp" />
+    <ClCompile Include="PX2RobotExtData.cpp" />
+    <ClCompile Include="PX2Slam2DManager.cpp" />
+    <ClCompile Include="SampleToLua.cpp" />
+    <ClCompile Include="Slam2DPlugin.cpp" />
+    <ClCompile Include="Slam2DPluginDll.cpp" />
+    <ClCompile Include="timeout.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="buffer.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="DataPointContainer.h" />
+    <ClInclude Include="eigen\src\Cholesky\LDLT.h" />
+    <ClInclude Include="eigen\src\Cholesky\LLT.h" />
+    <ClInclude Include="eigen\src\Cholesky\LLT_LAPACKE.h" />
+    <ClInclude Include="eigen\src\CholmodSupport\CholmodSupport.h" />
+    <ClInclude Include="eigen\src\Core\Array.h" />
+    <ClInclude Include="eigen\src\Core\ArrayBase.h" />
+    <ClInclude Include="eigen\src\Core\ArrayWrapper.h" />
+    <ClInclude Include="eigen\src\Core\Assign.h" />
+    <ClInclude Include="eigen\src\Core\AssignEvaluator.h" />
+    <ClInclude Include="eigen\src\Core\Assign_MKL.h" />
+    <ClInclude Include="eigen\src\Core\BandMatrix.h" />
+    <ClInclude Include="eigen\src\Core\Block.h" />
+    <ClInclude Include="eigen\src\Core\BooleanRedux.h" />
+    <ClInclude Include="eigen\src\Core\CommaInitializer.h" />
+    <ClInclude Include="eigen\src\Core\ConditionEstimator.h" />
+    <ClInclude Include="eigen\src\Core\CoreEvaluators.h" />
+    <ClInclude Include="eigen\src\Core\CoreIterators.h" />
+    <ClInclude Include="eigen\src\Core\CwiseBinaryOp.h" />
+    <ClInclude Include="eigen\src\Core\CwiseNullaryOp.h" />
+    <ClInclude Include="eigen\src\Core\CwiseTernaryOp.h" />
+    <ClInclude Include="eigen\src\Core\CwiseUnaryOp.h" />
+    <ClInclude Include="eigen\src\Core\CwiseUnaryView.h" />
+    <ClInclude Include="eigen\src\Core\DenseBase.h" />
+    <ClInclude Include="eigen\src\Core\DenseCoeffsBase.h" />
+    <ClInclude Include="eigen\src\Core\DenseStorage.h" />
+    <ClInclude Include="eigen\src\Core\Diagonal.h" />
+    <ClInclude Include="eigen\src\Core\DiagonalMatrix.h" />
+    <ClInclude Include="eigen\src\Core\DiagonalProduct.h" />
+    <ClInclude Include="eigen\src\Core\Dot.h" />
+    <ClInclude Include="eigen\src\Core\EigenBase.h" />
+    <ClInclude Include="eigen\src\Core\ForceAlignedAccess.h" />
+    <ClInclude Include="eigen\src\Core\functors\AssignmentFunctors.h" />
+    <ClInclude Include="eigen\src\Core\functors\BinaryFunctors.h" />
+    <ClInclude Include="eigen\src\Core\functors\NullaryFunctors.h" />
+    <ClInclude Include="eigen\src\Core\functors\StlFunctors.h" />
+    <ClInclude Include="eigen\src\Core\functors\TernaryFunctors.h" />
+    <ClInclude Include="eigen\src\Core\functors\UnaryFunctors.h" />
+    <ClInclude Include="eigen\src\Core\Fuzzy.h" />
+    <ClInclude Include="eigen\src\Core\GeneralProduct.h" />
+    <ClInclude Include="eigen\src\Core\GenericPacketMath.h" />
+    <ClInclude Include="eigen\src\Core\GlobalFunctions.h" />
+    <ClInclude Include="eigen\src\Core\Inverse.h" />
+    <ClInclude Include="eigen\src\Core\IO.h" />
+    <ClInclude Include="eigen\src\Core\Map.h" />
+    <ClInclude Include="eigen\src\Core\MapBase.h" />
+    <ClInclude Include="eigen\src\Core\MathFunctions.h" />
+    <ClInclude Include="eigen\src\Core\MathFunctionsImpl.h" />
+    <ClInclude Include="eigen\src\Core\Matrix.h" />
+    <ClInclude Include="eigen\src\Core\MatrixBase.h" />
+    <ClInclude Include="eigen\src\Core\NestByValue.h" />
+    <ClInclude Include="eigen\src\Core\NoAlias.h" />
+    <ClInclude Include="eigen\src\Core\NumTraits.h" />
+    <ClInclude Include="eigen\src\Core\PermutationMatrix.h" />
+    <ClInclude Include="eigen\src\Core\PlainObjectBase.h" />
+    <ClInclude Include="eigen\src\Core\Product.h" />
+    <ClInclude Include="eigen\src\Core\ProductEvaluators.h" />
+    <ClInclude Include="eigen\src\Core\products\GeneralBlockPanelKernel.h" />
+    <ClInclude Include="eigen\src\Core\products\GeneralMatrixMatrix.h" />
+    <ClInclude Include="eigen\src\Core\products\GeneralMatrixMatrixTriangular.h" />
+    <ClInclude Include="eigen\src\Core\products\GeneralMatrixMatrixTriangular_BLAS.h" />
+    <ClInclude Include="eigen\src\Core\products\GeneralMatrixMatrix_BLAS.h" />
+    <ClInclude Include="eigen\src\Core\products\GeneralMatrixVector.h" />
+    <ClInclude Include="eigen\src\Core\products\GeneralMatrixVector_BLAS.h" />
+    <ClInclude Include="eigen\src\Core\products\Parallelizer.h" />
+    <ClInclude Include="eigen\src\Core\products\SelfadjointMatrixMatrix.h" />
+    <ClInclude Include="eigen\src\Core\products\SelfadjointMatrixMatrix_BLAS.h" />
+    <ClInclude Include="eigen\src\Core\products\SelfadjointMatrixVector.h" />
+    <ClInclude Include="eigen\src\Core\products\SelfadjointMatrixVector_BLAS.h" />
+    <ClInclude Include="eigen\src\Core\products\SelfadjointProduct.h" />
+    <ClInclude Include="eigen\src\Core\products\SelfadjointRank2Update.h" />
+    <ClInclude Include="eigen\src\Core\products\TriangularMatrixMatrix.h" />
+    <ClInclude Include="eigen\src\Core\products\TriangularMatrixMatrix_BLAS.h" />
+    <ClInclude Include="eigen\src\Core\products\TriangularMatrixVector.h" />
+    <ClInclude Include="eigen\src\Core\products\TriangularMatrixVector_BLAS.h" />
+    <ClInclude Include="eigen\src\Core\products\TriangularSolverMatrix.h" />
+    <ClInclude Include="eigen\src\Core\products\TriangularSolverMatrix_BLAS.h" />
+    <ClInclude Include="eigen\src\Core\products\TriangularSolverVector.h" />
+    <ClInclude Include="eigen\src\Core\Random.h" />
+    <ClInclude Include="eigen\src\Core\Redux.h" />
+    <ClInclude Include="eigen\src\Core\Ref.h" />
+    <ClInclude Include="eigen\src\Core\Replicate.h" />
+    <ClInclude Include="eigen\src\Core\ReturnByValue.h" />
+    <ClInclude Include="eigen\src\Core\Reverse.h" />
+    <ClInclude Include="eigen\src\Core\Select.h" />
+    <ClInclude Include="eigen\src\Core\SelfAdjointView.h" />
+    <ClInclude Include="eigen\src\Core\SelfCwiseBinaryOp.h" />
+    <ClInclude Include="eigen\src\Core\Solve.h" />
+    <ClInclude Include="eigen\src\Core\SolverBase.h" />
+    <ClInclude Include="eigen\src\Core\SolveTriangular.h" />
+    <ClInclude Include="eigen\src\Core\StableNorm.h" />
+    <ClInclude Include="eigen\src\Core\Stride.h" />
+    <ClInclude Include="eigen\src\Core\Swap.h" />
+    <ClInclude Include="eigen\src\Core\Transpose.h" />
+    <ClInclude Include="eigen\src\Core\Transpositions.h" />
+    <ClInclude Include="eigen\src\Core\TriangularMatrix.h" />
+    <ClInclude Include="eigen\src\Core\util\BlasUtil.h" />
+    <ClInclude Include="eigen\src\Core\util\Constants.h" />
+    <ClInclude Include="eigen\src\Core\util\DisableStupidWarnings.h" />
+    <ClInclude Include="eigen\src\Core\util\ForwardDeclarations.h" />
+    <ClInclude Include="eigen\src\Core\util\Macros.h" />
+    <ClInclude Include="eigen\src\Core\util\Memory.h" />
+    <ClInclude Include="eigen\src\Core\util\Meta.h" />
+    <ClInclude Include="eigen\src\Core\util\MKL_support.h" />
+    <ClInclude Include="eigen\src\Core\util\NonMPL2.h" />
+    <ClInclude Include="eigen\src\Core\util\ReenableStupidWarnings.h" />
+    <ClInclude Include="eigen\src\Core\util\StaticAssert.h" />
+    <ClInclude Include="eigen\src\Core\util\XprHelper.h" />
+    <ClInclude Include="eigen\src\Core\VectorBlock.h" />
+    <ClInclude Include="eigen\src\Core\VectorwiseOp.h" />
+    <ClInclude Include="eigen\src\Core\Visitor.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\ComplexEigenSolver.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\ComplexSchur.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\ComplexSchur_LAPACKE.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\EigenSolver.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\GeneralizedEigenSolver.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\GeneralizedSelfAdjointEigenSolver.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\HessenbergDecomposition.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\MatrixBaseEigenvalues.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\RealQZ.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\RealSchur.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\RealSchur_LAPACKE.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\SelfAdjointEigenSolver.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\SelfAdjointEigenSolver_LAPACKE.h" />
+    <ClInclude Include="eigen\src\Eigenvalues\Tridiagonalization.h" />
+    <ClInclude Include="eigen\src\Geometry\AlignedBox.h" />
+    <ClInclude Include="eigen\src\Geometry\AngleAxis.h" />
+    <ClInclude Include="eigen\src\Geometry\EulerAngles.h" />
+    <ClInclude Include="eigen\src\Geometry\Homogeneous.h" />
+    <ClInclude Include="eigen\src\Geometry\Hyperplane.h" />
+    <ClInclude Include="eigen\src\Geometry\OrthoMethods.h" />
+    <ClInclude Include="eigen\src\Geometry\ParametrizedLine.h" />
+    <ClInclude Include="eigen\src\Geometry\Quaternion.h" />
+    <ClInclude Include="eigen\src\Geometry\Rotation2D.h" />
+    <ClInclude Include="eigen\src\Geometry\RotationBase.h" />
+    <ClInclude Include="eigen\src\Geometry\Scaling.h" />
+    <ClInclude Include="eigen\src\Geometry\Transform.h" />
+    <ClInclude Include="eigen\src\Geometry\Translation.h" />
+    <ClInclude Include="eigen\src\Geometry\Umeyama.h" />
+    <ClInclude Include="eigen\src\Householder\BlockHouseholder.h" />
+    <ClInclude Include="eigen\src\Householder\Householder.h" />
+    <ClInclude Include="eigen\src\Householder\HouseholderSequence.h" />
+    <ClInclude Include="eigen\src\IterativeLinearSolvers\BasicPreconditioners.h" />
+    <ClInclude Include="eigen\src\IterativeLinearSolvers\BiCGSTAB.h" />
+    <ClInclude Include="eigen\src\IterativeLinearSolvers\ConjugateGradient.h" />
+    <ClInclude Include="eigen\src\IterativeLinearSolvers\IncompleteCholesky.h" />
+    <ClInclude Include="eigen\src\IterativeLinearSolvers\IncompleteLUT.h" />
+    <ClInclude Include="eigen\src\IterativeLinearSolvers\IterativeSolverBase.h" />
+    <ClInclude Include="eigen\src\IterativeLinearSolvers\LeastSquareConjugateGradient.h" />
+    <ClInclude Include="eigen\src\IterativeLinearSolvers\SolveWithGuess.h" />
+    <ClInclude Include="eigen\src\Jacobi\Jacobi.h" />
+    <ClInclude Include="eigen\src\LU\Determinant.h" />
+    <ClInclude Include="eigen\src\LU\FullPivLU.h" />
+    <ClInclude Include="eigen\src\LU\InverseImpl.h" />
+    <ClInclude Include="eigen\src\LU\PartialPivLU.h" />
+    <ClInclude Include="eigen\src\LU\PartialPivLU_LAPACKE.h" />
+    <ClInclude Include="eigen\src\MetisSupport\MetisSupport.h" />
+    <ClInclude Include="eigen\src\misc\blas.h" />
+    <ClInclude Include="eigen\src\misc\Image.h" />
+    <ClInclude Include="eigen\src\misc\Kernel.h" />
+    <ClInclude Include="eigen\src\misc\lapack.h" />
+    <ClInclude Include="eigen\src\misc\lapacke.h" />
+    <ClInclude Include="eigen\src\misc\lapacke_mangling.h" />
+    <ClInclude Include="eigen\src\misc\RealSvd2x2.h" />
+    <ClInclude Include="eigen\src\OrderingMethods\Amd.h" />
+    <ClInclude Include="eigen\src\OrderingMethods\Eigen_Colamd.h" />
+    <ClInclude Include="eigen\src\OrderingMethods\Ordering.h" />
+    <ClInclude Include="eigen\src\PardisoSupport\PardisoSupport.h" />
+    <ClInclude Include="eigen\src\PaStiXSupport\PaStiXSupport.h" />
+    <ClInclude Include="eigen\src\plugins\ArrayCwiseBinaryOps.h" />
+    <ClInclude Include="eigen\src\plugins\ArrayCwiseUnaryOps.h" />
+    <ClInclude Include="eigen\src\plugins\BlockMethods.h" />
+    <ClInclude Include="eigen\src\plugins\CommonCwiseBinaryOps.h" />
+    <ClInclude Include="eigen\src\plugins\CommonCwiseUnaryOps.h" />
+    <ClInclude Include="eigen\src\plugins\MatrixCwiseBinaryOps.h" />
+    <ClInclude Include="eigen\src\plugins\MatrixCwiseUnaryOps.h" />
+    <ClInclude Include="eigen\src\QR\ColPivHouseholderQR.h" />
+    <ClInclude Include="eigen\src\QR\ColPivHouseholderQR_LAPACKE.h" />
+    <ClInclude Include="eigen\src\QR\CompleteOrthogonalDecomposition.h" />
+    <ClInclude Include="eigen\src\QR\FullPivHouseholderQR.h" />
+    <ClInclude Include="eigen\src\QR\HouseholderQR.h" />
+    <ClInclude Include="eigen\src\QR\HouseholderQR_LAPACKE.h" />
+    <ClInclude Include="eigen\src\SparseCholesky\SimplicialCholesky.h" />
+    <ClInclude Include="eigen\src\SparseCholesky\SimplicialCholesky_impl.h" />
+    <ClInclude Include="eigen\src\SparseCore\AmbiVector.h" />
+    <ClInclude Include="eigen\src\SparseCore\CompressedStorage.h" />
+    <ClInclude Include="eigen\src\SparseCore\ConservativeSparseSparseProduct.h" />
+    <ClInclude Include="eigen\src\SparseCore\MappedSparseMatrix.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseAssign.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseBlock.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseColEtree.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseCompressedBase.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseCwiseBinaryOp.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseCwiseUnaryOp.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseDenseProduct.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseDiagonalProduct.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseDot.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseFuzzy.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseMap.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseMatrix.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseMatrixBase.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparsePermutation.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseProduct.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseRedux.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseRef.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseSelfAdjointView.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseSolverBase.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseSparseProductWithPruning.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseTranspose.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseTriangularView.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseUtil.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseVector.h" />
+    <ClInclude Include="eigen\src\SparseCore\SparseView.h" />
+    <ClInclude Include="eigen\src\SparseCore\TriangularSolver.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLUImpl.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_column_bmod.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_column_dfs.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_copy_to_ucol.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_gemm_kernel.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_heap_relax_snode.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_kernel_bmod.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_Memory.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_panel_bmod.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_panel_dfs.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_pivotL.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_pruneL.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_relax_snode.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_Structs.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_SupernodalMatrix.h" />
+    <ClInclude Include="eigen\src\SparseLU\SparseLU_Utils.h" />
+    <ClInclude Include="eigen\src\SparseQR\SparseQR.h" />
+    <ClInclude Include="eigen\src\SPQRSupport\SuiteSparseQRSupport.h" />
+    <ClInclude Include="eigen\src\StlSupport\details.h" />
+    <ClInclude Include="eigen\src\StlSupport\StdDeque.h" />
+    <ClInclude Include="eigen\src\StlSupport\StdList.h" />
+    <ClInclude Include="eigen\src\StlSupport\StdVector.h" />
+    <ClInclude Include="eigen\src\SuperLUSupport\SuperLUSupport.h" />
+    <ClInclude Include="eigen\src\SVD\BDCSVD.h" />
+    <ClInclude Include="eigen\src\SVD\JacobiSVD.h" />
+    <ClInclude Include="eigen\src\SVD\JacobiSVD_LAPACKE.h" />
+    <ClInclude Include="eigen\src\SVD\SVDBase.h" />
+    <ClInclude Include="eigen\src\SVD\UpperBidiagonalization.h" />
+    <ClInclude Include="eigen\src\UmfPackSupport\UmfPackSupport.h" />
+    <ClInclude Include="GridMap.h" />
+    <ClInclude Include="GridMapBase.h" />
+    <ClInclude Include="GridMapCacheArray.h" />
+    <ClInclude Include="GridMapLogOdds.h" />
+    <ClInclude Include="GridMapReflectanceCount.h" />
+    <ClInclude Include="GridMapSimpleCount.h" />
+    <ClInclude Include="HectorMapMutex.h" />
+    <ClInclude Include="HectorMapping.h" />
+    <ClInclude Include="HectorSlamProcessor.h" />
+    <ClInclude Include="MapDimensionProperties.h" />
+    <ClInclude Include="MapLockerInterface.h" />
+    <ClInclude Include="MapProcContainer.h" />
+    <ClInclude Include="MapRepMultiMap.h" />
+    <ClInclude Include="MapRepresentationInterface.h" />
+    <ClInclude Include="MapRepSingleMap.h" />
+    <ClInclude Include="OccGridMapBase.h" />
+    <ClInclude Include="OccGridMapUtil.h" />
+    <ClInclude Include="OccGridMapUtilConfig.h" />
+    <ClInclude Include="PX2RobotExt.hpp" />
+    <ClInclude Include="PX2RobotExtData.hpp" />
+    <ClInclude Include="PX2Slam2DManager.hpp" />
+    <ClInclude Include="SampleToLua.hpp" />
+    <ClInclude Include="ScanMatcher.h" />
+    <ClInclude Include="Slam2DPlugin.hpp" />
+    <ClInclude Include="Slam2DPlugin_Pre.hpp" />
+    <ClInclude Include="timeout.h" />
+    <ClInclude Include="UtilFunctions.h" />
+    <ClInclude Include="utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="eigen\Cholesky" />
+    <None Include="eigen\CholmodSupport" />
+    <None Include="eigen\Core" />
+    <None Include="eigen\Dense" />
+    <None Include="eigen\Eigenvalues" />
+    <None Include="eigen\Geometry" />
+    <None Include="eigen\Householder" />
+    <None Include="eigen\IterativeLinearSolvers" />
+    <None Include="eigen\Jacobi" />
+    <None Include="eigen\LU" />
+    <None Include="eigen\MetisSupport" />
+    <None Include="eigen\OrderingMethods" />
+    <None Include="eigen\PardisoSupport" />
+    <None Include="eigen\PaStiXSupport" />
+    <None Include="eigen\QR" />
+    <None Include="eigen\QtAlignedMalloc" />
+    <None Include="eigen\Sparse" />
+    <None Include="eigen\SparseCholesky" />
+    <None Include="eigen\SparseCore" />
+    <None Include="eigen\SparseLU" />
+    <None Include="eigen\SparseQR" />
+    <None Include="eigen\SPQRSupport" />
+    <None Include="eigen\StdDeque" />
+    <None Include="eigen\StdList" />
+    <None Include="eigen\StdVector" />
+    <None Include="eigen\SuperLUSupport" />
+    <None Include="eigen\SVD" />
+    <None Include="eigen\UmfPackSupport" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

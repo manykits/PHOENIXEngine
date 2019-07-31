@@ -1,0 +1,32 @@
+// PX2UIItem.pkg
+
+	class UIRound : public UIFrame
+	{
+		UIRound();
+		virtual ~UIRound();
+		
+		static UIRound *New();
+		static UIRound *New(const std::string &name);
+
+		UIFPicBox *GetBack();
+		UIButton *GetButton();
+
+		void SetDragable(bool dragable);
+		bool IsDragable() const;
+
+		const Vector2f &GetDraggingDir() const;
+		AVector GetDraggingDirAvector() const;
+		float GetDraggingPercent() const;
+		float GetDraggingPercentPiece(int num) const;
+		const Vector2f &GetDraggedDir() const;
+		AVector GetDraggedDirAvector() const;
+		float GetDraggedPercent() const;
+		
+		int GetDragingDirSimple() const;
+		int GetDragingLeftMoveType() const;
+		float GetDragingLeftMoveSpeed() const;
+		int GetDragingRightMoveType() const;
+		float GetDragingRightMoveSpeed() const;
+
+		const APoint &GetCurPickWorldPos() const;
+	};

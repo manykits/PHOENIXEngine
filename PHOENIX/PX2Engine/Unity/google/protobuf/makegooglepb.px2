@@ -1,0 +1,349 @@
+#GoogleProtoBuf
+
+CFG ?= Debug
+
+CC := /usr/bin/g++
+
+CFLAGS += -c -D__LINUX__ -DHAVE_PTHREAD
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+LIBPATH := ../../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := \
+    -I ./ \
+	-I ../../../../PX2Engine/Unity/ \
+	
+INCDIR := ./
+	
+FTINC := $(wildcard *.h)
+FTINC := $(notdir $(INC))
+INC := $(FTINC)
+
+SRC := $(wildcard *.cc)
+SRC := $(notdir $(SRC))
+
+OBJDIR := ../../../$(CFG)
+
+OBJ := $(OBJDIR)/any.o \
+	$(OBJDIR)/any.pb.o \
+	$(OBJDIR)/arena.o \
+	$(OBJDIR)/arenastring.o \
+	$(OBJDIR)/descriptor.o \
+	$(OBJDIR)/descriptor.pb.o \
+	$(OBJDIR)/descriptor_database.o \
+	$(OBJDIR)/duration.pb.o \
+	$(OBJDIR)/dynamic_message.o \
+	$(OBJDIR)/empty.pb.o \
+	$(OBJDIR)/extension_set.o \
+	$(OBJDIR)/extension_set_heavy.o \
+	$(OBJDIR)/field_mask.pb.o \
+	$(OBJDIR)/generated_message_reflection.o \
+	$(OBJDIR)/generated_message_util.o \
+	$(OBJDIR)/map_field.o \
+	$(OBJDIR)/message.o \
+	$(OBJDIR)/message_lite.o \
+	$(OBJDIR)/reflection_ops.o \
+	$(OBJDIR)/repeated_field.o \
+	$(OBJDIR)/service.o \
+	$(OBJDIR)/source_context.pb.o \
+	$(OBJDIR)/struct.pb.o \
+	$(OBJDIR)/text_format.o \
+	$(OBJDIR)/timestamp.pb.o \
+	$(OBJDIR)/type.pb.o \
+	$(OBJDIR)/unknown_field_set.o \
+	$(OBJDIR)/wire_format.o \
+	$(OBJDIR)/wire_format_lite.o \
+	$(OBJDIR)/wrappers.pb.o \
+	$(OBJDIR)/coded_stream.o \
+	$(OBJDIR)/gzip_stream.o \
+	$(OBJDIR)/printer.o \
+	$(OBJDIR)/strtod.o \
+	$(OBJDIR)/tokenizer.o \
+	$(OBJDIR)/zero_copy_stream.o \
+	$(OBJDIR)/zero_copy_stream_impl.o \
+	$(OBJDIR)/zero_copy_stream_impl_lite.o \
+	$(OBJDIR)/atomicops_internals_x86_gcc.o \
+	$(OBJDIR)/atomicops_internals_x86_msvc.o \
+	$(OBJDIR)/bytestream.o \
+	$(OBJDIR)/common.o \
+	$(OBJDIR)/int128.o \
+	$(OBJDIR)/mathlimits.o \
+	$(OBJDIR)/once.o \
+	$(OBJDIR)/status.o \
+	$(OBJDIR)/statusor.o \
+	$(OBJDIR)/stringpiece.o \
+	$(OBJDIR)/stringprintf.o \
+	$(OBJDIR)/structurally_valid.o \
+	$(OBJDIR)/strutil.o \
+	$(OBJDIR)/substitute.o \
+	$(OBJDIR)/time.o \
+	$(OBJDIR)/datapiece.o \
+	$(OBJDIR)/default_value_objectwriter.o \
+	$(OBJDIR)/error_listener.o \
+	$(OBJDIR)/field_mask_utility.o \
+	$(OBJDIR)/json_escaping.o \
+	$(OBJDIR)/json_objectwriter.o \
+	$(OBJDIR)/json_stream_parser.o \
+	$(OBJDIR)/object_writer.o \
+	$(OBJDIR)/proto_writer.o \
+	$(OBJDIR)/protostream_objectsource.o \
+	$(OBJDIR)/protostream_objectwriter.o \
+	$(OBJDIR)/type_info.o \
+	$(OBJDIR)/type_info_test_helper.o \
+	$(OBJDIR)/utility.o \
+	$(OBJDIR)/field_comparator.o \
+	$(OBJDIR)/field_mask_util.o \
+	$(OBJDIR)/json_util.o \
+	$(OBJDIR)/message_differencer.o \
+	$(OBJDIR)/time_util.o \
+	$(OBJDIR)/type_resolver_util.o \
+
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+	
+$(OBJDIR)/any.o : any.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/any.pb.o : any.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/arena.o : arena.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/arenastring.o : arenastring.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/descriptor.o : descriptor.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/descriptor.pb.o : descriptor.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/descriptor_database.o : descriptor_database.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/duration.pb.o : duration.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/dynamic_message.o : dynamic_message.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/empty.pb.o : empty.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/extension_set.o : extension_set.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/extension_set_heavy.o : extension_set_heavy.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/field_mask.pb.o : field_mask.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/generated_message_reflection.o : generated_message_reflection.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/generated_message_util.o : generated_message_util.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/map_field.o : map_field.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/message.o : message.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/message_lite.o : message_lite.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/reflection_ops.o : reflection_ops.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/repeated_field.o : repeated_field.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/service.o : service.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/source_context.pb.o : source_context.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/struct.pb.o : struct.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/text_format.o : text_format.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/timestamp.pb.o : timestamp.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/type.pb.o : type.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/unknown_field_set.o : unknown_field_set.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/wire_format.o : wire_format.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/wire_format_lite.o : wire_format_lite.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/wrappers.pb.o : wrappers.pb.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/coded_stream.o : io/coded_stream.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/gzip_stream.o : io/gzip_stream.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/printer.o : io/printer.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/strtod.o : io/strtod.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/tokenizer.o : io/tokenizer.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/zero_copy_stream.o : io/zero_copy_stream.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/zero_copy_stream_impl.o : io/zero_copy_stream_impl.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/zero_copy_stream_impl_lite.o : io/zero_copy_stream_impl_lite.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/atomicops_internals_x86_gcc.o : stubs/atomicops_internals_x86_gcc.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/atomicops_internals_x86_msvc.o : stubs/atomicops_internals_x86_msvc.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/bytestream.o : stubs/bytestream.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/common.o : stubs/common.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/int128.o : stubs/int128.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/mathlimits.o : stubs/mathlimits.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/once.o : stubs/once.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/status.o : stubs/status.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/statusor.o : stubs/statusor.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/stringpiece.o : stubs/stringpiece.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/stringprintf.o : stubs/stringprintf.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/structurally_valid.o : stubs/structurally_valid.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/strutil.o : stubs/strutil.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/substitute.o : stubs/substitute.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/time.o : stubs/time.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/datapiece.o : util/internal/datapiece.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/default_value_objectwriter.o : util/internal/default_value_objectwriter.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/error_listener.o : util/internal/error_listener.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/field_mask_utility.o : util/internal/field_mask_utility.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/json_escaping.o : util/internal/json_escaping.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/json_objectwriter.o : util/internal/json_objectwriter.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/json_stream_parser.o : util/internal/json_stream_parser.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/object_writer.o : util/internal/object_writer.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/proto_writer.o : util/internal/proto_writer.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/protostream_objectsource.o : util/internal/protostream_objectsource.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/protostream_objectwriter.o : util/internal/protostream_objectwriter.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/type_info.o : util/internal/type_info.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/type_info_test_helper.o : util/internal/type_info_test_helper.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/utility.o : util/internal/utility.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/field_comparator.o : util/field_comparator.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/field_mask_util.o : util/field_mask_util.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/json_util.o : util/json_util.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/message_differencer.o : util/message_differencer.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/time_util.o : util/time_util.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/type_resolver_util.o : util/type_resolver_util.cc
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

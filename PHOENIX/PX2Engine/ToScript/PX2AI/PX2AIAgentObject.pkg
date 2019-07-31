@@ -1,0 +1,17 @@
+// PX2AIAgentObject.pkg
+
+	class AIAgentObject : public AIAgentBase
+	{
+	public:
+		AIAgentObject(Node *node);
+		virtual ~AIAgentObject();
+
+		void InitializeInfinitePlane(const AVector &normal, float originOffset);
+		void InitializeMesh(Movable *mov);
+		virtual bool Update(double applicationTime, double elapsedTime);
+
+		void SetOrientation(const HQuaternion& quaternion);
+		HQuaternion GetOrientation() const;
+
+		float GetRigidBodyRadius() const;
+	};

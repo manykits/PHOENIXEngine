@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Plugin">
+      <UniqueIdentifier>{708c3510-335e-43d5-8d7c-69a8d7d277b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ToScript">
+      <UniqueIdentifier>{64fc3aec-e58c-4ea7-a1e3-e09fe15c5279}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ProjectDll.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectPlugin.cpp">
+      <Filter>Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectToLua.cpp">
+      <Filter>ToScript</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ProjectPlugin.hpp">
+      <Filter>Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectPre.hpp" />
+    <ClInclude Include="ProjectToLua.hpp">
+      <Filter>ToScript</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

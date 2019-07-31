@@ -1,0 +1,18 @@
+// PX2InterpCurveController.pkg
+	
+	class InterpCurveController : public Controller
+	{
+		InterpCurveController ();
+		virtual ~InterpCurveController ();
+
+		// attach detach
+		void SetAttachUpdateInit (bool doUpdate);
+		bool IsAttachUpdateInit () const;
+
+		void SetDetachResetInit (bool doReset);
+		bool IsDetachResetInit () const;
+
+		// other options
+		void SetRelatively (bool r);
+		bool IsRelatively () const;
+	};

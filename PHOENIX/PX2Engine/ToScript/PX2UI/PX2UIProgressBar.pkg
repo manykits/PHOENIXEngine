@@ -1,0 +1,37 @@
+// PX2UIProgressBar.pkg
+
+	class UIProgressBar : public UIFrame
+	{
+	public:
+		UIProgressBar();
+		virtual ~UIProgressBar();
+		
+		static UIProgressBar *New();
+		static UIProgressBar *New(const std::string &name);
+
+		void SetBackPicBox(UIFPicBox *picBox);
+		void SetProgressPicBox(UIFPicBox *picBox);
+		void SetOverPicBox(UIFPicBox *picBox);
+		UIFPicBox *GetBackPicBox();
+		UIFPicBox *GetProgressPicBox();
+		UIFPicBox *GetOverPicBox();
+		UIFText *CreateAddProgressText();
+		UIFText *GetProgressText();		
+		void SetProgressTextNumMax(int max);
+		int GetProgressTextNumMax() const;
+
+		virtual void AutoMakeSizeFixable();
+
+		virtual void OnPivotChanged();
+		virtual void OnSizeChanged();
+
+		// 0-1.0f
+		void SetProgress(float progress, bool callLogic = true);
+		float GetProgress() const;
+
+		void SetProgressAnimInit(float progress);
+		void SetProgressAnim(float progress);
+
+		void SetProgressAnimSpeed(float speed);
+		float GetProgressAnimSpeed();
+	};

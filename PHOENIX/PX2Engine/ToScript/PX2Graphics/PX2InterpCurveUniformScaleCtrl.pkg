@@ -1,0 +1,10 @@
+// PX2InterpCurveUniformScaleCtrl.pkg
+	
+	class InterpCurveUniformScaleController : public InterpCurveFloatController
+	{
+		InterpCurveUniformScaleController ();
+		virtual ~InterpCurveUniformScaleController ();
+		
+		static InterpCurveUniformScaleController *New();
+		static InterpCurveUniformScaleController *New(const std::string &name);
+	};

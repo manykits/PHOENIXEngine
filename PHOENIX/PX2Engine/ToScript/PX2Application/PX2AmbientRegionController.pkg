@@ -1,0 +1,43 @@
+// PX2AmbientRegionController.hpp
+
+	class AmbientRegionController : public TriggerController
+	{
+	public:
+		AmbientRegionController();
+		virtual ~AmbientRegionController();
+
+		// Default Dir Light
+	public:
+		void SetLightCameraLookPostion(const APoint &pos);
+		void SetLightCameraLookDistance(float dist);
+		void SetLightCameraExtent(float extent);
+
+		void SetHorAngle(float angle);
+		float GetHorAngle() const;
+		void SetVerAngle(float angle);
+		float GetVerAngle() const;
+
+		void SetAmbientColor(const Float3 &color);
+		const Float3 &GetAmbientColor() const;
+
+		void SetDiffuseColor(const Float3 &color);
+		const Float3 &GetDiffuseColor() const;
+
+		void SetSpecularColor(const Float3 &color);
+		const Float3 &GetSpecularColor() const;
+		void SetSpecularPow(float pow);
+		float GetSpecularPow() const;
+
+		void SetIntensity(float intensity);
+		float GetIntensity() const;
+
+		void SetFogColorHeight(const Float3 &color);
+		const Float3 &GetFogColorHeight() const;
+		void SetFogParamHeight(const Float2 &param);
+		const Float2 &GetFogParamHeight() const;
+
+		void SetFogColorDistance(const Float3 &dist);
+		const Float3 &GetFogColorDistance() const;
+		void SetFogParamDistance(const Float2 &param);
+		const Float2 &GetFogParamDistance() const;
+	};

@@ -1,0 +1,12 @@
+// PX2UIFText.pkg
+
+	class UIFText : public UIFrame
+	{
+		UIFText();
+		virtual ~UIFText();
+		
+		static UIFText *New();
+		static UIFText *New(const std::string &name);
+
+		UIText *GetText();
+	};

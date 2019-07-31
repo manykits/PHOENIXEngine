@@ -1,0 +1,34 @@
+// PX2Rect.pkg
+
+	class Rectf
+	{
+		// VALUE
+		
+		//TOLUA_TEMPLATE_BIND(T, float, double, int)
+	
+		float Left;
+		float Bottom;
+		float Right;
+		float Top;
+		
+		Rectf ();
+		Rectf (const float &left, const float &bottom, const float &right, const float &top);
+		Rectf (const Rectf &rct);
+		~Rectf ();
+
+		float Width () const;
+		float Height () const;
+
+		void Clear ();				
+		void Set(const float &left, const float &bottom, const float &right, const float &top);
+		void Swap (Rectf &rect);
+		bool IsEmpty () const;
+		bool IsInSide (const Rectf &rect) const;
+		bool IsIntersect(const Rectf &rect) const;
+		bool IsInsize (float x, float y) const;
+		
+		Rectf operator- (const Rectf &rect);
+		Rectf operator+ (const Rectf &rect);
+
+		bool operator== (const Rectf &rect) const;
+	};

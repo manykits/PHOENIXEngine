@@ -1,0 +1,15 @@
+// PX2ToLua.pkg
+
+$#include "PX2ToLua.hpp"
+$pfile "PX2Core/PX2Core.pkg"
+$pfile "PX2Mathematics/PX2Mathematics.pkg"
+$pfile "PX2Graphics/PX2Graphics.pkg"
+$pfile "PX2Unity/PX2Unity.pkg"
+$pfile "PX2Net/PX2Net.pkg"
+$pfile "PX2Effect/PX2Effect.pkg"
+$pfile "PX2Terrain/PX2Terrains.pkg"
+$pfile "PX2UI/PX2UIs.pkg"
+$pfile "PX2AI/PX2AIs.pkg"
+$pfile "PX2Logic/PX2Logic.pkg"
+$pfile "PX2Voxel/PX2Voxel.pkg"
+$pfile "PX2Application/PX2Applications.pkg"

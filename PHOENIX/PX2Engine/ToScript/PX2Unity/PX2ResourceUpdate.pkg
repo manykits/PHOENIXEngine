@@ -1,0 +1,16 @@
+// PX2ResourceUpdate.pkg
+
+	class ResourceVersion
+	{
+	public:
+		ResourceVersion ();
+		explicit ResourceVersion (const std::string &version);
+		ResourceVersion (const ResourceVersion &sv);
+		~ResourceVersion ();
+
+		int GetMain () const;
+		int GetLib () const;
+		int GetRes () const;
+
+		std::string GetAsString () const;
+	};

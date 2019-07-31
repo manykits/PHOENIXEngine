@@ -1,0 +1,8 @@
+// PX2RawProject.pkg
+
+	class RawTerrain : public Terrain
+	{
+	public:
+		RawTerrain ();
+		virtual ~RawTerrain ();
+	};

@@ -1,0 +1,69 @@
+// PX2Canvas.hpp
+
+	class GraphicsRoot
+	{
+	public:
+		void SetInEditor (bool isInEditor);
+		bool IsInEditor () const;
+		
+		void SetUIShareDraw(bool shareDraw);
+		bool IsUIShareDraw() const;
+		
+		void SendGeneralEvent(const std::string &eventDataStr0, float timeDelay=0.0f);
+		void SendGeneralEvent(const std::string &eventDataStr0, 
+			const std::string &eventDataStr1, float timeDelay = 0.0f);
+
+		//window
+	public:
+		bool AddRenderWindow(const std::string &name, RenderWindow *rw);
+		bool IsHasRenderWindow(const std::string &name);
+		bool RemoveRenderWindow(const std::string &name);
+		RenderWindow *GetRenderWindow(const std::string &name);
+		RenderWindow *GetMainWindow();
+		
+		// Play
+	public:
+		enum PlayType
+		{
+			PT_NONE,
+			PT_PLAY,
+			PT_MAX_TYPE
+		};
+		PlayType GetPlayType() const;
+		
+		// VertexFormat
+	public:
+		enum VertexFormatType
+		{
+			VFT_P,
+			VFT_PC,
+			VFT_PT1,
+			VFT_PT2,
+			VFT_PCT1,
+			VFT_PCT2,
+			VFT_PN,
+			VFT_PNT1,
+			VFT_PNT2,
+			VFT_PCN,
+			VFT_PCNT1,
+			VFT_PCNT2,
+			VFT_PNT1TB,
+			VFT_MAX_TYPE
+		};
+		VertexFormat *GetVertexFormat(VertexFormatType type);
+		
+		// HelpMesh
+	public:
+		TriMesh *GetXYPlane();
+		TriMesh *GetXZPlane();
+		TriMesh *GetYZPlane();
+		
+		// Info
+	public:
+		void LogInfo(const std::string &infoStr);
+
+		// Untity
+	public:
+		void PlayScale(Controlledable *contrable);
+		void PlayNormal(Controlledable *contrable);
+	};

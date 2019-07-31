@@ -1,0 +1,17 @@
+// PX2GPIO.pkg
+
+	class GPIO
+	{
+	public:
+		GPIO();
+		~GPIO();
+
+		static bool Export(int gpio);
+		static bool Unexport(int gpio);
+
+		//< "in, out"
+		static bool SetDriection(int gpio, const std::string &dir);
+		static bool SetValue(int gpio, int val);
+
+		static bool GetValue(int gpio, int &val);
+	};

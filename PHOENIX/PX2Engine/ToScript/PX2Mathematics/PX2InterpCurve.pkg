@@ -1,0 +1,12 @@
+// PX2InterpCurve.pkg
+
+	enum InterpCurveMode
+	{
+		ICM_LINEAR,
+		ICM_CONSTANT,
+		ICM_CURVE_AUTO,
+		ICM_CURVE_AUTOCLAMPED,
+		ICM_CURVE_USER,
+		ICM_CURVE_BREAK,
+		ICM_MAX_MODE
+	};

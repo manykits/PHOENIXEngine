@@ -1,0 +1,28 @@
+// PX2JSONValue.pkg
+
+	class JSONValue
+	{
+		// VALUE
+		
+	public:
+		JSONValue();
+		JSONValue(const JSONValue &rhs);
+		~JSONValue();
+
+		bool IsNull();
+		int ToInt();
+		float ToFloat();
+		bool ToBool();
+		std::string ToString();
+		bool ToIntVal(int &value);
+		bool ToFloatVal(float &value);
+		bool ToBoolVal(bool &value);
+		bool ToStringVal(std::string &value);
+
+		bool IsArray();
+		int GetArraySize();
+		JSONValue GetArrayElement(int i);
+
+		bool IsHasMember(const std::string &name);
+		JSONValue GetMember(const std::string &name);
+	};

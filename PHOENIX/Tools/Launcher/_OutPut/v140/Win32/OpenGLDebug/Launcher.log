@@ -1,0 +1,19 @@
+﻿  PX2L_App.cpp
+f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(12): note: 参见“PX2::Exception”的声明
+  PX2L_Frame.cpp
+f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(12): note: 参见“PX2::Exception”的声明
+  PX2L_RenderView.cpp
+f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(12): note: 参见“PX2::Exception”的声明
+  正在生成代码
+  371 of 1436 functions (25.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    7 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  Launcher.vcxproj -> F:\GitHub\PHOENIXEngine\PHOENIX\..\Bin\LauncherOpenGLD.exe
+  Launcher.vcxproj -> F:\GitHub\PHOENIXEngine\PHOENIX\..\Bin\LauncherOpenGLD.pdb (Full PDB)

@@ -1,0 +1,27 @@
+vs_1_1
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile vs_1_1 -profileopts dcls
+// source file: bloom_bright_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile vs_1_1
+//program v_bloom_bright
+//semantic v_bloom_bright.PVWMatrix
+//semantic SamplerBase
+//var float3 modelPosition : $vin.POSITION0 : ATTR0 : 0 : 1
+//var float2 modelTCoord0 : $vin.TEXCOORD0 : ATTR1 : 1 : 1
+//var float4 clipPosition : $vout.POSITION : HPOS : 2 : 1
+//var float2 vertexTCoord0 : $vout.TEXCOORD0 : TEX0 : 3 : 1
+//var float4x4 PVWMatrix :  : c[0], 4 : 4 : 1
+//var sampler2D SamplerBase :  :  : -1 : 0
+//const c[4] = 1
+def c4, 1.00000000, 0, 0, 0
+dcl_position0 v0
+dcl_texcoord0 v1
+mov r0.w, c4.x
+mov r0.xyz, v0
+dp4 oPos.w, r0, c3
+dp4 oPos.z, r0, c2
+dp4 oPos.y, r0, c1
+dp4 oPos.x, r0, c0
+mov oT0.xy, v1

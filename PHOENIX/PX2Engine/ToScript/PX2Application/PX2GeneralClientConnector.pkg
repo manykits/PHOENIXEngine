@@ -1,0 +1,24 @@
+// PX2GeneralClientConnector.pkg
+
+	class GeneralClientConnector : public ClientConnector
+	{
+	public:
+		GeneralClientConnector();
+		virtual ~GeneralClientConnector();
+		
+		bool IsConnected() const;
+	
+		void SendString(const std::string &str);
+
+		bool IsHasOnConnectCallback(const std::string &callback) const;
+		void AddOnConnectCallback(const std::string &callback);
+		void RemoveOnConnectCallback(const std::string &callback);
+
+		bool IsHasOnDisConnectCallback(const std::string &callback) const;
+		void AddOnDisconnectCallback(const std::string &callback);
+		void RemoveOnDisconnectCallback(const std::string &callback);
+
+		bool IsHasOnRecvCallback(const std::string &callback) const;
+		void AddOnRecvCallback(const std::string &callback);
+		void RemoveOnRecvCallback(const std::string &callback);
+	};

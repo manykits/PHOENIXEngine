@@ -1,0 +1,16 @@
+// PX2UISkill.pkg
+
+	class UISkills : public UIFrame
+	{
+	public:
+		UISkills();
+		virtual ~UISkills();
+		
+		static UISkills *New();
+		static UISkills *New(const std::string &name);
+
+		void RefreshSkills(SkillChara *skillChara);
+		void ClearSkills();
+		
+		void CreateSampleSkills();
+	};

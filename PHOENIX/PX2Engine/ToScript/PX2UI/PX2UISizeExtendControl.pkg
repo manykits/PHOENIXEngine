@@ -1,0 +1,27 @@
+// PX2UISizeExtendControl.pkg
+
+	class UISizeExtendControl : public Controller
+	{
+	public:
+		UISizeExtendControl();
+		virtual ~UISizeExtendControl();
+		
+		static UISizeExtendControl *New();
+		static UISizeExtendControl *New(const std::string &name);
+
+		void SetWidthOverHeightPercent(float percent);
+		float GetWidthOverHeightPercent() const;
+
+		void SetOriginHeight(float height);
+		float GetOriginHeight() const;
+
+		enum Mode
+		{
+			M_SIZEEXTEND,
+			M_SIZEEXTEND_ONLY_ON_BIGGER,
+			M_SIZEEXTEND_OVER,
+			M_MAX_TYPE
+		};
+		void SetMode(Mode m);
+		Mode GetMode() const;
+	};

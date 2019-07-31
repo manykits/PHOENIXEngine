@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="PX2LP_Pre.hpp" />
+    <ClInclude Include="PX2LP_Plugin.hpp">
+      <Filter>PluginExport</Filter>
+    </ClInclude>
+    <ClInclude Include="PX2LP_Manager.hpp">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="PX2LP_HandlerFactory.hpp">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="PX2LP_ProjectItem.hpp">
+      <Filter>Manager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PX2LP_Dll.cpp">
+      <Filter>PluginExport</Filter>
+    </ClCompile>
+    <ClCompile Include="PX2LP_Plugin.cpp">
+      <Filter>PluginExport</Filter>
+    </ClCompile>
+    <ClCompile Include="PX2LP_Manager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="PX2LP_HandlerFactory.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="PX2LP_ProjectItem.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="PluginExport">
+      <UniqueIdentifier>{9511fa95-6a65-46eb-ab0d-878fb30350b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{68821e0a-5abc-4aca-a0b3-7581d3de0323}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

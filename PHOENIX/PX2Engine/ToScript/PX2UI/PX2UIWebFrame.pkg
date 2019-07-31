@@ -1,0 +1,36 @@
+// PX2UIWebFrame.pkg
+
+	class UIWebFrame : public UIFrame
+	{
+		UIWebFrame();
+		virtual ~UIWebFrame();
+		
+		static UIWebFrame *New();
+		static UIWebFrame *New(const std::string &name);
+
+		void ShowNativeView(bool show);
+		bool IsShowNativeView() const;
+
+		void SetUpdateToTex(bool updateToTex);
+		bool IsUpdateToTex() const;
+		
+		void SetAcceptKeyboardInput(bool acpt);
+		bool IsAcceptKeyboardInput() const;
+
+		void LoadHTMLString(const std::string &str, const std::string & baseURL);
+		void LoadURL(const std::string &url);
+		void LoadFile(const std::string &fileName);
+
+		void StopLoading();
+		void Reload();
+
+		bool CanGoBack();
+		bool CanGoForward();
+		void GoBack();
+		void GoForward();
+
+		void CreateJSGlobalVaiable(const std::string &name, const std::string &val);
+		std::string EvaluateJS(const std::string &js);
+		
+		void SetScalesPageToFit(const bool scalesPageToFit);
+	};

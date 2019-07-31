@@ -1,0 +1,71 @@
+#luaplus
+
+CFG ?= Debug
+
+CC := /usr/bin/gcc
+
+CFLAGS := -c -D__LINUX__ -DLUAPLUS_EXCEPTIONS
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+LIBPATH := ../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := \
+	-I ../Lua/ \
+    -I . \
+	
+INCDIR := ../../../PX2SDK/Include
+	
+INC := $(wildcard *.h)
+INC := $(notdir $(INC))
+
+SRC := $(wildcard *.cpp)
+SRC := $(notdir $(SRC))
+
+SRC1 := $(wildcard *.c)
+SRC1 := $(notdir $(SRC1))
+
+OBJDIR := ../../$(CFG)
+
+FTOBJ := $(SRC:%.cpp=$(OBJDIR)/%.o)
+FTOBJ1 := $(SRC1:%.c=$(OBJDIR)/%.o)
+
+OBJ := $(FTOBJ) $(FTOBJ1)
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+	
+$(OBJDIR)/LuaPlus.o : LuaPlus.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/LuaState_DumpObject.o : LuaState_DumpObject.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/LuaPlusAddons.o : LuaPlusAddons.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

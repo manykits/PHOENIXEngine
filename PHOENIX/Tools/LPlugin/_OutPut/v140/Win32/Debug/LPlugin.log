@@ -1,0 +1,31 @@
+﻿  PX2LP_Manager.cpp
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(104): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(108): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(12): note: 参见“PX2::Exception”的声明
+f:\github\phoenixengine\phoenix\px2sdk\include\px2dir.hpp(26): warning C4100: “dirname”: 未引用的形参
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(64): warning C4456: “name”的声明隐藏了上一个本地声明
+  f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(44): note: 参见“name”的声明
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(108): warning C4189: “i”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(118): warning C4189: “i”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(418): warning C4456: “ret”的声明隐藏了上一个本地声明
+  f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(412): note: 参见“ret”的声明
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(477): warning C4456: “ret”的声明隐藏了上一个本地声明
+  f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(472): note: 参见“ret”的声明
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(520): warning C4456: “name”的声明隐藏了上一个本地声明
+  f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(508): note: 参见“name”的声明
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(1063): warning C4189: “textEditor”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(1371): warning C4189: “projItem”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(1725): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(1851): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(1865): warning C4456: “picBox”的声明隐藏了上一个本地声明
+  f:\github\phoenixengine\phoenix\tools\lplugin\px2lp_manager.cpp(1833): note: 参见“picBox”的声明
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  PX2LP_Plugin.cpp
+    正在创建库 _OutPut\v140\Win32\Debug\LPluginD.lib 和对象 _OutPut\v140\Win32\Debug\LPluginD.exp
+  LPlugin.vcxproj -> F:\GitHub\PHOENIXEngine\PHOENIX\Tools\LPlugin\_OutPut\v140\Win32\Debug\LPluginD.dll
+  LPlugin.vcxproj -> _OutPut\v140\Win32\Debug\LPluginD.pdb (Full PDB)
+  F:\GitHub\PHOENIXEngine\PHOENIX\Tools\LPlugin\_OutPut\v140\Win32\Debug\LPluginD.dll
+  复制了 1 个文件

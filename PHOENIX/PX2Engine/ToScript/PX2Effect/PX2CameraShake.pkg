@@ -1,0 +1,26 @@
+// PX2CameraShake.pkg
+
+	class CameraShake : public Effectable
+	{
+	public:
+		CameraShake ();
+		virtual ~CameraShake ();
+
+		virtual void Play ();
+		virtual void Pause ();
+
+		void SetUseX (bool use);
+		bool IsUseX () const;
+		void SetUseY (bool use);
+		bool IsUseY () const;
+		void SetUseZ (bool use);
+		bool IsUseZ () const;
+
+		void SetMaxDistance (float dist);
+		float GetMaxDistance () const;
+
+		void SetEmitStrength (float strength);
+		float GetEmitStrength () const;
+
+		int GetShakeChannel () const;
+	};

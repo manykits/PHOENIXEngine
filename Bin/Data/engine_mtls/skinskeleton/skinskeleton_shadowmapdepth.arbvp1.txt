@@ -1,0 +1,197 @@
+!!ARBvp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbvp1
+# source file: skinskeleton_shadowmapdepth_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbvp1
+#program v_skinskeleton_shadowmapdepth
+#semantic v_skinskeleton_shadowmapdepth.PVWMatrix
+#semantic v_skinskeleton_shadowmapdepth.BoneTM
+#semantic SampleBase
+#var float3 modelPosition : $vin.POSITION : POSITION : 0 : 1
+#var float2 modelTCoord0 : $vin.TEXCOORD0 : TEXCOORD0 : 1 : 1
+#var float4 modelTCoord1 : $vin.TEXCOORD1 : TEXCOORD1 : 2 : 1
+#var float4 modelTCoord2 : $vin.TEXCOORD2 : TEXCOORD2 : 3 : 1
+#var float4 clipPosition : $vout.POSITION : HPOS : 4 : 1
+#var float2 vertexTCoord0 : $vout.TEXCOORD0 : TEX0 : 5 : 1
+#var float2 vertexTCoord1 : $vout.TEXCOORD1 : TEX1 : 6 : 1
+#var float4x4 PVWMatrix :  : c[1], 4 : 7 : 1
+#var float4 BoneTM[0] :  : c[5] : 8 : 1
+#var float4 BoneTM[1] :  : c[6] : 8 : 1
+#var float4 BoneTM[2] :  : c[7] : 8 : 1
+#var float4 BoneTM[3] :  : c[8] : 8 : 1
+#var float4 BoneTM[4] :  : c[9] : 8 : 1
+#var float4 BoneTM[5] :  : c[10] : 8 : 1
+#var float4 BoneTM[6] :  : c[11] : 8 : 1
+#var float4 BoneTM[7] :  : c[12] : 8 : 1
+#var float4 BoneTM[8] :  : c[13] : 8 : 1
+#var float4 BoneTM[9] :  : c[14] : 8 : 1
+#var float4 BoneTM[10] :  : c[15] : 8 : 1
+#var float4 BoneTM[11] :  : c[16] : 8 : 1
+#var float4 BoneTM[12] :  : c[17] : 8 : 1
+#var float4 BoneTM[13] :  : c[18] : 8 : 1
+#var float4 BoneTM[14] :  : c[19] : 8 : 1
+#var float4 BoneTM[15] :  : c[20] : 8 : 1
+#var float4 BoneTM[16] :  : c[21] : 8 : 1
+#var float4 BoneTM[17] :  : c[22] : 8 : 1
+#var float4 BoneTM[18] :  : c[23] : 8 : 1
+#var float4 BoneTM[19] :  : c[24] : 8 : 1
+#var float4 BoneTM[20] :  : c[25] : 8 : 1
+#var float4 BoneTM[21] :  : c[26] : 8 : 1
+#var float4 BoneTM[22] :  : c[27] : 8 : 1
+#var float4 BoneTM[23] :  : c[28] : 8 : 1
+#var float4 BoneTM[24] :  : c[29] : 8 : 1
+#var float4 BoneTM[25] :  : c[30] : 8 : 1
+#var float4 BoneTM[26] :  : c[31] : 8 : 1
+#var float4 BoneTM[27] :  : c[32] : 8 : 1
+#var float4 BoneTM[28] :  : c[33] : 8 : 1
+#var float4 BoneTM[29] :  : c[34] : 8 : 1
+#var float4 BoneTM[30] :  : c[35] : 8 : 1
+#var float4 BoneTM[31] :  : c[36] : 8 : 1
+#var float4 BoneTM[32] :  : c[37] : 8 : 1
+#var float4 BoneTM[33] :  : c[38] : 8 : 1
+#var float4 BoneTM[34] :  : c[39] : 8 : 1
+#var float4 BoneTM[35] :  : c[40] : 8 : 1
+#var float4 BoneTM[36] :  : c[41] : 8 : 1
+#var float4 BoneTM[37] :  : c[42] : 8 : 1
+#var float4 BoneTM[38] :  : c[43] : 8 : 1
+#var float4 BoneTM[39] :  : c[44] : 8 : 1
+#var float4 BoneTM[40] :  : c[45] : 8 : 1
+#var float4 BoneTM[41] :  : c[46] : 8 : 1
+#var float4 BoneTM[42] :  : c[47] : 8 : 1
+#var float4 BoneTM[43] :  : c[48] : 8 : 1
+#var float4 BoneTM[44] :  : c[49] : 8 : 1
+#var float4 BoneTM[45] :  : c[50] : 8 : 1
+#var float4 BoneTM[46] :  : c[51] : 8 : 1
+#var float4 BoneTM[47] :  : c[52] : 8 : 1
+#var float4 BoneTM[48] :  : c[53] : 8 : 1
+#var float4 BoneTM[49] :  : c[54] : 8 : 1
+#var float4 BoneTM[50] :  : c[55] : 8 : 1
+#var float4 BoneTM[51] :  : c[56] : 8 : 1
+#var float4 BoneTM[52] :  : c[57] : 8 : 1
+#var float4 BoneTM[53] :  : c[58] : 8 : 1
+#var float4 BoneTM[54] :  : c[59] : 8 : 1
+#var float4 BoneTM[55] :  : c[60] : 8 : 1
+#var float4 BoneTM[56] :  : c[61] : 8 : 1
+#var float4 BoneTM[57] :  : c[62] : 8 : 1
+#var float4 BoneTM[58] :  : c[63] : 8 : 1
+#var float4 BoneTM[59] :  : c[64] : 8 : 1
+#var float4 BoneTM[60] :  : c[65] : 8 : 1
+#var float4 BoneTM[61] :  : c[66] : 8 : 1
+#var float4 BoneTM[62] :  : c[67] : 8 : 1
+#var float4 BoneTM[63] :  : c[68] : 8 : 1
+#var float4 BoneTM[64] :  : c[69] : 8 : 1
+#var float4 BoneTM[65] :  : c[70] : 8 : 1
+#var float4 BoneTM[66] :  : c[71] : 8 : 1
+#var float4 BoneTM[67] :  : c[72] : 8 : 1
+#var float4 BoneTM[68] :  : c[73] : 8 : 1
+#var float4 BoneTM[69] :  : c[74] : 8 : 1
+#var float4 BoneTM[70] :  : c[75] : 8 : 1
+#var float4 BoneTM[71] :  : c[76] : 8 : 1
+#var float4 BoneTM[72] :  : c[77] : 8 : 1
+#var float4 BoneTM[73] :  : c[78] : 8 : 1
+#var float4 BoneTM[74] :  : c[79] : 8 : 1
+#var float4 BoneTM[75] :  : c[80] : 8 : 1
+#var float4 BoneTM[76] :  : c[81] : 8 : 1
+#var float4 BoneTM[77] :  : c[82] : 8 : 1
+#var float4 BoneTM[78] :  : c[83] : 8 : 1
+#var float4 BoneTM[79] :  : c[84] : 8 : 1
+#var float4 BoneTM[80] :  : c[85] : 8 : 1
+#var float4 BoneTM[81] :  : c[86] : 8 : 1
+#var float4 BoneTM[82] :  : c[87] : 8 : 1
+#var float4 BoneTM[83] :  : c[88] : 8 : 1
+#var float4 BoneTM[84] :  : c[89] : 8 : 1
+#var float4 BoneTM[85] :  : c[90] : 8 : 1
+#var float4 BoneTM[86] :  : c[91] : 8 : 1
+#var float4 BoneTM[87] :  : c[92] : 8 : 1
+#var float4 BoneTM[88] :  : c[93] : 8 : 1
+#var float4 BoneTM[89] :  : c[94] : 8 : 1
+#var float4 BoneTM[90] :  : c[95] : 8 : 1
+#var float4 BoneTM[91] :  : c[96] : 8 : 1
+#var float4 BoneTM[92] :  : c[97] : 8 : 1
+#var float4 BoneTM[93] :  : c[98] : 8 : 1
+#var float4 BoneTM[94] :  : c[99] : 8 : 1
+#var float4 BoneTM[95] :  : c[100] : 8 : 1
+#var float4 BoneTM[96] :  : c[101] : 8 : 1
+#var float4 BoneTM[97] :  : c[102] : 8 : 1
+#var float4 BoneTM[98] :  : c[103] : 8 : 1
+#var float4 BoneTM[99] :  : c[104] : 8 : 1
+#var float4 BoneTM[100] :  : c[105] : 8 : 1
+#var float4 BoneTM[101] :  : c[106] : 8 : 1
+#var float4 BoneTM[102] :  : c[107] : 8 : 1
+#var float4 BoneTM[103] :  : c[108] : 8 : 1
+#var float4 BoneTM[104] :  : c[109] : 8 : 1
+#var float4 BoneTM[105] :  : c[110] : 8 : 1
+#var float4 BoneTM[106] :  : c[111] : 8 : 1
+#var float4 BoneTM[107] :  : c[112] : 8 : 1
+#var sampler2D SampleBase :  :  : -1 : 0
+#const c[0] = 3 0 1
+PARAM c[113] = { { 3, 0, 1 },
+		program.local[1..112] };
+TEMP R0;
+TEMP R1;
+TEMP R2;
+ADDRESS A0;
+MUL R0.x, vertex.texcoord[1].y, c[0];
+ABS R0.y, R0.x;
+FLR R0.y, R0;
+MOV R1.xyz, vertex.position;
+MOV R1.w, c[0].z;
+SLT R0.w, R0.x, c[0].y;
+ADD R0.z, -R0.y, -R0.y;
+MAD R0.y, R0.z, R0.w, R0;
+MUL R0.w, vertex.texcoord[1].x, c[0].x;
+ARL A0.x, R0.x;
+DP4 R0.x, R1, c[A0.x + 5];
+ARL A0.x, R0.y;
+DP4 R0.y, R1, c[A0.x + 6];
+DP4 R0.z, R1, c[A0.x + 7];
+MUL R2.xyz, vertex.texcoord[2].y, R0;
+ABS R2.w, R0;
+FLR R0.x, R2.w;
+SLT R0.z, R0.w, c[0].y;
+ARL A0.x, R0.w;
+MUL R0.w, vertex.texcoord[1].z, c[0].x;
+ADD R0.y, -R0.x, -R0.x;
+MAD R0.y, R0, R0.z, R0.x;
+DP4 R0.x, R1, c[A0.x + 5];
+ARL A0.x, R0.y;
+DP4 R0.y, R1, c[A0.x + 6];
+DP4 R0.z, R1, c[A0.x + 7];
+MAD R2.xyz, vertex.texcoord[2].x, R0, R2;
+ABS R2.w, R0;
+FLR R0.x, R2.w;
+SLT R0.z, R0.w, c[0].y;
+ARL A0.x, R0.w;
+MUL R0.w, vertex.texcoord[1], c[0].x;
+ADD R0.y, -R0.x, -R0.x;
+MAD R0.y, R0, R0.z, R0.x;
+DP4 R0.x, R1, c[A0.x + 5];
+ARL A0.x, R0.y;
+DP4 R0.y, R1, c[A0.x + 6];
+DP4 R0.z, R1, c[A0.x + 7];
+MAD R0.xyz, vertex.texcoord[2].z, R0, R2;
+ABS R2.w, R0;
+FLR R2.x, R2.w;
+SLT R2.z, R0.w, c[0].y;
+ARL A0.x, R0.w;
+ADD R2.y, -R2.x, -R2.x;
+MAD R2.y, R2, R2.z, R2.x;
+DP4 R2.x, R1, c[A0.x + 5];
+ARL A0.x, R2.y;
+DP4 R2.y, R1, c[A0.x + 6];
+DP4 R2.z, R1, c[A0.x + 7];
+MOV R0.w, c[0].z;
+MAD R0.xyz, R2, vertex.texcoord[2].w, R0;
+DP4 R1.x, R0, c[4];
+DP4 R1.y, R0, c[3];
+RCP R1.z, R1.x;
+MUL result.texcoord[1].x, R1.y, R1.z;
+MOV result.position.w, R1.x;
+MOV result.position.z, R1.y;
+DP4 result.position.y, R0, c[2];
+DP4 result.position.x, R0, c[1];
+MOV result.texcoord[0].xy, vertex.texcoord[0];
+END
+# 60 instructions, 3 R-regs

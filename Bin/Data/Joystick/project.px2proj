@@ -1,0 +1,10 @@
+<project>
+	<general name="RobotControl" screenorientation="landscape" width="1136" height="640"/>
+	<scene filename=""/>
+	<render_setting/>
+	<language/>
+	<publish ispublish="false"/>
+	<edit_setting uicamerapercent="1.000000"/>
+	<plugins/>
+</project>
+

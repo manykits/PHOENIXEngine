@@ -1,0 +1,48 @@
+// PX2Math.pkg
+
+	class Mathf
+	{	
+	public:
+		static float ACos (float value);
+		static float ASin (float value);
+		static float ATan (float value);
+		static float ATan2 (float y, float x);
+		static float Ceil (float value);
+		static float Cos (float value);
+		static float Exp (float value);
+		static float FAbs (float value);
+		static float Floor (float value);
+		static float FMod (float x, float y);
+		static float InvSqrt (float value);
+		static float Log (float value);
+		static float Log2 (float value);
+		static float Log10 (float value);
+		static float Pow (float base, float exponent);
+		static float Sin (float value);
+		static float Sqr (float value);
+		static float Sqrt (float value);
+		static float Tan (float value);
+		static float Max (float a, float b);
+		static float Min (float a, float b);
+
+		//  如果输入是负值，返回-1；输入的是0，返回0；如果输入的为正值，返回+1。
+		static float Sign (float value);
+
+		// 产生一个在区间[0,1]的随机数。（输入的种子不要小于0）
+		static float UnitRandom (unsigned int seed = 0);
+
+		// 生成一个在区间[-1,1]的随机数。（输入的种子不要小于0）
+		static float SymmetricRandom (unsigned int seed = 0);
+
+		// 生成一个在区间[min,max]的随机数。（输入的种子不要小于0）
+		static float IntervalRandom (float min, float max, unsigned int seed = 0);
+
+		// 生成一个在区间[min, max)的随机数。
+		static int IntRandom (int min, int max, unsigned int seed = 0);
+
+		// 将输入的值夹取到[min,max].
+		static float Clamp (float value, float minValue, float maxValue);
+
+		// 将输入夹取到区间[0,1].
+		static float Saturate (float value);
+	};

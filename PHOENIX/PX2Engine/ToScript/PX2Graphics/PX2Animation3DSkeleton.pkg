@@ -1,0 +1,19 @@
+// PX2AnimationFrames.pkg
+
+	class Animation3DSkeleton : public Animation
+	{
+	public:
+		Animation3DSkeleton();
+		virtual ~Animation3DSkeleton();
+		
+		static Animation3DSkeleton *New();
+		static Animation3DSkeleton *New(const std::string &name);
+
+		virtual void SetFilename(const std::string &filename);
+
+		virtual void SetFrequency(float frequency);
+
+		virtual void SetPlayOnce(bool once);
+		
+		void SetMovingScale(const APoint &movingScale);
+	};

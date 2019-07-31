@@ -1,0 +1,19 @@
+// PX2Float2.pkg
+
+	class Float2
+	{
+		// VALUE
+		
+	public:
+		Float2 ();
+		~Float2 ();  // hides ~Tuple<2,float>
+		Float2 (float f0, float f1);
+		Float2 (const Float2& tuple);
+		
+		float X() const;
+		float Y() const;
+		
+		static const Float2 ZERO;   //< (0,0)
+		static const Float2 UNIT;	//< (1,1)
+		static const Float2 HALFUNIT; //< (0.5,0.5)
+	};

@@ -1,0 +1,14 @@
+// PX2Rtti.pkg
+
+	class Rtti
+	{
+	public:
+		virtual ~Rtti();
+		
+	public:
+		inline const char* GetName () const;
+		inline unsigned short GetVersion () const;
+		
+		inline bool IsExactly (const Rtti& type) const;
+		bool IsDerived (const Rtti& type) const;
+	};

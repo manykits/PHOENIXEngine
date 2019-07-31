@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:1c959c99d8c049128a10ba9020058475$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="common.png" width="64" height="128">
+    <sprite n="but_dis" x="2" y="2" w="32" h="32"/>
+    <sprite n="but_down" x="2" y="2" w="32" h="32"/>
+    <sprite n="but_normal" x="2" y="36" w="32" h="32"/>
+    <sprite n="but_over" x="2" y="70" w="32" h="32"/>
+    <sprite n="check_dis" x="36" y="14" w="14" h="14"/>
+    <sprite n="check_ed" x="36" y="30" w="14" h="14"/>
+    <sprite n="check_null" x="36" y="46" w="14" h="14"/>
+    <sprite n="editbox_back" x="50" y="62" w="12" h="12"/>
+    <sprite n="progress_back" x="50" y="62" w="12" h="12"/>
+    <sprite n="progress_fill" x="36" y="62" w="12" h="12"/>
+    <sprite n="progress_marquee" x="36" y="2" w="20" h="10"/>
+</TextureAtlas>

@@ -1,0 +1,72 @@
+// PX2RenderStep
+
+	class RenderStep : public Object
+	{
+	public:
+		RenderStep();
+		virtual ~RenderStep();
+
+	public:
+		virtual void Update(double appSeconds, double elapsedSeconds);
+
+	public:
+		void Show(bool show);
+		bool IsShow() const;
+
+		// Size
+		// 在编辑器中需要随着窗口，动态调整相机等，所以Size会频繁改变
+		// 在AppPlayer中，加载工程时候，设置一次和工程大小一致，不会频繁改变
+	public:
+		virtual void SetSize(const Sizef &size);
+		const Sizef &GetSize() const;
+
+		void SetSizeChangeReAdjustCamera(bool doReAdjust);
+
+		// ScreenSize
+		// 当屏幕改变，rendertarget可能需要重建，所以设计此接口，进行处理
+	public:
+		virtual void SetScreenSize(const Sizef &size);
+		const Sizef &GetScreenSize() const;
+
+		// ViewPort
+	public:
+		void SetViewPort(const Rectf &viewPort);
+		void SetViewPort(float left, float bottom, float width, float height);
+		const Rectf &GetViewPort() const;
+
+		// Renderer Camera Culler
+	public:
+		virtual void SetRenderer(Renderer *renderer);
+		Renderer *GetRenderer();
+
+		virtual void SetCamera(Camera *camera);
+		Camera *GetCamera();
+
+		Culler &GetCuller();
+
+		bool GetPickRay(float x, float y, APoint& origin, AVector& direction);
+		Vector2f PointWorldToViewPort(const APoint &worldPos, bool *isInBack=0);
+
+		// Node
+	public:
+		virtual void SetNode(Node *node);
+		Node *GetNode();
+
+		// Draw
+	public:
+		void SetPriority(int priority); // 越大月在前
+		int GetPriority() const;
+
+		void SetBeforeDrawClear(bool color, bool depth, bool stencil);
+		void GetBeforeDrawClear(bool &color, bool &depth, bool &stencil);
+
+		virtual void ComputeVisibleSetAndEnv();
+		virtual void Draw();
+
+		void SetAfterDrawClear(bool color, bool depth, bool stencil);
+		void GetAfterDrawClear(bool &color, bool &depth, bool &stencil);
+
+		// Help
+	public:
+		std::pair<float, float> CalPixelToWorld();
+	};

@@ -1,0 +1,59 @@
+// PX2SoundSystem.pkg
+
+	class SoundSystem : public Singleton<SoundSystem>
+	{
+	public:
+		enum SystemType
+		{
+			ST_NULL,
+			ST_FMOD,
+			ST_MAX_TYPE
+		};
+		SystemType GetSystemType() const;
+
+		static SoundSystem *Create(SystemType type,
+			const SoundSystemInitInfo &initInfo);
+
+		virtual void Clear();
+
+		virtual void Update(double appSeconds, double elapsedSeconds);
+
+		// listen
+		/* 不关心参数可设置为0*/
+		virtual void SetListener(const APoint *position,
+			const AVector *velocity, const AVector *forward,
+			const AVector *up);
+		const APoint &GetListenerPos() const;
+
+		/// 在指定通道播放音乐
+		/**
+		* channel : 播放音乐的通道（0-3）
+		* filename : 音乐文件名，为0表示停止当前音乐
+		* isLoop : 是否循环播放
+		* fadeSeconds : 淡入淡出时间，为0.0f表示立即最大音量播放
+		*/
+		virtual void PlayMusic(int channel, const char *filename,
+			bool isLoop, float fadeSeconds, float volume = 1.0f) = 0;
+		virtual void SetMusicVolume(int channel, float volume) = 0;
+		virtual void EnableMusic(bool enable);
+		bool IsMusicEnable() const;
+
+		// sound 
+		virtual bool PlaySound2DControl(const char *filename,
+			float volume, bool isLoop, Sound *&sound);
+		virtual bool PlaySound3DControl(const char *filename,
+			const SoundCreateInfo3D &createInfo, Sound *&sound);			
+		virtual bool PlayASound(const char *filename, float volume = 1.0f,
+			float life = 10.0f);			
+		virtual void LoadSound(const char *filename);
+		virtual void UnloadSound(const char *filename);
+		virtual void EnableSounds(bool enable);
+		bool IsSoundEnable() const;
+		virtual void ClearAllSounds();
+
+		// same time
+		void SetMaxNumPlaySameTime(const char *filename, int num);
+		int GetMaxNumPlaySameTime(const char *filename) const;
+		void SetPlaySameTimeRange(const char *filename, float time);
+		float GetPlaySameTimeRange(const char *filename) const;
+	};

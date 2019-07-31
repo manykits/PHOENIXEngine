@@ -1,0 +1,38 @@
+vs_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile vs_3_0
+// source file: sky_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile vs_3_0
+//program v_sky
+//semantic v_sky.PVWMatrix
+//semantic v_sky.VMatrix
+//semantic v_sky.CameraWorldPosition
+//semantic SampleDay
+//semantic SampleSunset
+//semantic SampleNight
+//var float3 modelPosition : $vin.POSITION0 : ATTR0 : 0 : 1
+//var float4 clipPosition : $vout.POSITION : ATTR0 : 1 : 1
+//var float3 vertexTCoord0 : $vout.TEXCOORD0 : ATTR1 : 2 : 1
+//var float4x4 PVWMatrix :  : c[0], 4 : 3 : 1
+//var float4x4 VMatrix :  : c[4], 4 : 4 : 1
+//var float4 CameraWorldPosition :  : c[8] : 5 : 1
+//var sampler2D SampleDay :  :  : -1 : 0
+//var sampler2D SampleSunset :  :  : -1 : 0
+//var sampler2D SampleNight :  :  : -1 : 0
+//const c[9] = 1
+dcl_position o0
+dcl_texcoord0 o1
+def c9, 1.00000000, 0, 0, 0
+dcl_position0 v0
+mov r1.w, c9.x
+mov r1.xyz, v0
+dp4 r0.z, r1, c6
+dp4 r0.x, r1, c4
+dp4 r0.y, r1, c5
+add o1.xyz, r0, -c8
+dp4 o0.w, r1, c3
+dp4 o0.z, r1, c2
+dp4 o0.y, r1, c1
+dp4 o0.x, r1, c0

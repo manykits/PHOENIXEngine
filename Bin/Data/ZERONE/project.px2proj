@@ -1,0 +1,12 @@
+<project id="0">
+	<general name="ZERONE" screenorientation="landscape" width="1136" height="640"/>
+	<scene filename=""/>
+	<render_setting/>
+	<language/>
+	<publish ispublish="false"/>
+	<edit_setting uicamerapercent="1.000000"/>
+	<plugins>
+		<var name="SlamGMapping"/>
+	</plugins>
+</project>
+

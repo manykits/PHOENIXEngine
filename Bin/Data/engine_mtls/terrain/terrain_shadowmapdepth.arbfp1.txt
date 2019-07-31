@@ -1,0 +1,16 @@
+!!ARBfp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbfp1
+# source file: terrain_shadowmapdepth_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbfp1
+#program p_terrain_shadowmapdepth
+#var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+#var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+#const c[0] = 1
+PARAM c[1] = { { 1 } };
+MOV result.color.xyz, fragment.texcoord[0].x;
+MOV result.color.w, c[0].x;
+END
+# 2 instructions, 0 R-regs

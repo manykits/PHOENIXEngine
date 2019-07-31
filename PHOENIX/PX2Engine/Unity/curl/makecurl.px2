@@ -1,0 +1,393 @@
+#makecurl
+
+CFG ?= Debug
+
+CC := /usr/bin/gcc
+
+CFLAGS := -c -D__LINUX__
+
+ifeq (ARM,$(findstring ARM,$(CFG)))
+CFLAGS += -DPX2_USE_OPENGLES
+else
+CFLAGS += -DPX2_USE_OPENGL
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+LIBPATH := ../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := \
+	-I	../ \
+	-I ./ \
+	-I ./config/ \
+	-I ./config/android/ \
+	-I ./src/ \
+	-I ../ZLib/
+	
+INCDIR := ../../../PX2SDK/Include/
+	
+FTINC := $(wildcard *.h)
+FTINC := $(notdir $(INC))
+INC := $(FTINC)
+
+SRC := $(wildcard src/*.c)
+SRC := $(notdir $(SRC))
+
+OBJDIR := ../../$(CFG)
+
+OBJ := $(OBJDIR)/file.o \
+$(OBJDIR)/timeval.o \
+$(OBJDIR)/base64.o \
+$(OBJDIR)/hostip.o \
+$(OBJDIR)/progress.o \
+$(OBJDIR)/formdata.o \
+$(OBJDIR)/cookie.o \
+$(OBJDIR)/http.o \
+$(OBJDIR)/sendf.o \
+$(OBJDIR)/ftp.o \
+$(OBJDIR)/url.o \
+$(OBJDIR)/dict.o \
+$(OBJDIR)/speedcheck.o \
+$(OBJDIR)/ssluse.o \
+$(OBJDIR)/version.o \
+$(OBJDIR)/getenv.o \
+$(OBJDIR)/escape.o \
+$(OBJDIR)/mprintf.o \
+$(OBJDIR)/telnet.o \
+$(OBJDIR)/netrc.o \
+$(OBJDIR)/getinfo.o \
+$(OBJDIR)/transfer.o \
+$(OBJDIR)/strequal.o \
+$(OBJDIR)/easy.o \
+$(OBJDIR)/security.o \
+$(OBJDIR)/curl_fnmatch.o \
+$(OBJDIR)/fileinfo.o \
+$(OBJDIR)/ftplistparser.o \
+$(OBJDIR)/wildcard.o \
+$(OBJDIR)/krb5.o \
+$(OBJDIR)/memdebug.o \
+$(OBJDIR)/http_chunks.o \
+$(OBJDIR)/strtok.o \
+$(OBJDIR)/connect.o \
+$(OBJDIR)/llist.o \
+$(OBJDIR)/hash.o \
+$(OBJDIR)/multi.o \
+$(OBJDIR)/content_encoding.o \
+$(OBJDIR)/share.o \
+$(OBJDIR)/http_digest.o \
+$(OBJDIR)/md4.o \
+$(OBJDIR)/md5.o \
+$(OBJDIR)/http_negotiate.o \
+$(OBJDIR)/inet_pton.o \
+$(OBJDIR)/strtoofft.o \
+$(OBJDIR)/strerror.o \
+$(OBJDIR)/amigaos.o \
+$(OBJDIR)/hostasyn.o \
+$(OBJDIR)/hostip4.o \
+$(OBJDIR)/hostip6.o \
+$(OBJDIR)/hostsyn.o \
+$(OBJDIR)/inet_ntop.o \
+$(OBJDIR)/parsedate.o \
+$(OBJDIR)/select.o \
+$(OBJDIR)/gtls.o \
+$(OBJDIR)/sslgen.o \
+$(OBJDIR)/tftp.o \
+$(OBJDIR)/splay.o \
+$(OBJDIR)/strdup.o \
+$(OBJDIR)/socks.o \
+$(OBJDIR)/ssh.o \
+$(OBJDIR)/nss.o \
+$(OBJDIR)/qssl.o \
+$(OBJDIR)/rawstr.o \
+$(OBJDIR)/curl_addrinfo.o \
+$(OBJDIR)/socks_gssapi.o \
+$(OBJDIR)/socks_sspi.o \
+$(OBJDIR)/curl_sspi.o \
+$(OBJDIR)/slist.o \
+$(OBJDIR)/nonblock.o \
+$(OBJDIR)/curl_memrchr.o \
+$(OBJDIR)/imap.o \
+$(OBJDIR)/pop3.o \
+$(OBJDIR)/smtp.o \
+$(OBJDIR)/pingpong.o \
+$(OBJDIR)/rtsp.o \
+$(OBJDIR)/curl_threads.o \
+$(OBJDIR)/warnless.o \
+$(OBJDIR)/hmac.o \
+$(OBJDIR)/polarssl.o \
+$(OBJDIR)/polarssl_threadlock.o \
+$(OBJDIR)/curl_rtmp.o \
+$(OBJDIR)/curl_gethostname.o \
+$(OBJDIR)/gopher.o \
+$(OBJDIR)/axtls.o \
+$(OBJDIR)/idn_win32.o \
+$(OBJDIR)/http_negotiate_sspi.o \
+$(OBJDIR)/cyassl.o \
+$(OBJDIR)/http_proxy.o \
+$(OBJDIR)/non-ascii.o \
+$(OBJDIR)/asyn-ares.o \
+$(OBJDIR)/asyn-thread.o \
+$(OBJDIR)/curl_gssapi.o \
+$(OBJDIR)/curl_ntlm.o \
+$(OBJDIR)/curl_ntlm_wb.o \
+$(OBJDIR)/curl_ntlm_core.o \
+$(OBJDIR)/curl_ntlm_msgs.o \
+$(OBJDIR)/curl_sasl.o \
+$(OBJDIR)/curl_schannel.o \
+$(OBJDIR)/curl_multibyte.o \
+$(OBJDIR)/curl_darwinssl.o \
+$(OBJDIR)/hostcheck.o \
+$(OBJDIR)/bundles.o \
+$(OBJDIR)/conncache.o \
+$(OBJDIR)/pipeline.o \
+$(OBJDIR)/dotdot.o \
+$(OBJDIR)/x509asn1.o \
+$(OBJDIR)/gskit.o \
+$(OBJDIR)/http2.o \
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+$(OBJDIR)/file.o : src/file.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/timeval.o : src/timeval.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/base64.o : src/base64.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/hostip.o : src/hostip.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/progress.o : src/progress.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/formdata.o : src/formdata.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/cookie.o : src/cookie.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/http.o : src/http.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/sendf.o : src/sendf.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/ftp.o : src/ftp.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/url.o : src/url.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/dict.o : src/dict.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/speedcheck.o : src/speedcheck.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/ssluse.o : src/ssluse.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/version.o : src/version.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/getenv.o : src/getenv.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/escape.o : src/escape.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/mprintf.o : src/mprintf.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/telnet.o : src/telnet.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/netrc.o : src/netrc.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/getinfo.o : src/getinfo.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/transfer.o : src/transfer.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/strequal.o : src/strequal.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/easy.o : src/easy.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/security.o : src/security.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/curl_fnmatch.o : src/curl_fnmatch.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/fileinfo.o : src/fileinfo.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/ftplistparser.o : src/ftplistparser.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/wildcard.o : src/wildcard.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/krb5.o : src/krb5.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/memdebug.o : src/memdebug.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/http_chunks.o : src/http_chunks.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/strtok.o : src/strtok.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/connect.o : src/connect.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/llist.o : src/llist.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/hash.o : src/hash.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/multi.o : src/multi.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/content_encoding.o : src/content_encoding.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/share.o : src/share.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/http_digest.o : src/http_digest.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/md4.o : src/md4.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/md5.o : src/md5.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+$(OBJDIR)/http_negotiate.o : src/http_negotiate.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/inet_pton.o : src/inet_pton.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/strtoofft.o : src/strtoofft.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/strerror.o : src/strerror.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/amigaos.o : src/amigaos.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/hostasyn.o : src/hostasyn.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/hostip4.o : src/hostip4.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/hostip6.o : src/hostip6.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/hostsyn.o : src/hostsyn.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/inet_ntop.o : src/inet_ntop.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@		
+$(OBJDIR)/parsedate.o : src/parsedate.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/select.o : src/select.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/gtls.o : src/gtls.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/sslgen.o : src/sslgen.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/tftp.o : src/tftp.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/splay.o : src/splay.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/strdup.o : src/strdup.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/socks.o : src/socks.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/ssh.o : src/ssh.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/nss.o : src/nss.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/qssl.o : src/qssl.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/rawstr.o : src/rawstr.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_addrinfo.o : src/curl_addrinfo.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/socks_gssapi.o : src/socks_gssapi.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/socks_sspi.o : src/socks_sspi.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_sspi.o : src/curl_sspi.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/slist.o : src/slist.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/nonblock.o : src/nonblock.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_memrchr.o : src/curl_memrchr.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/imap.o : src/imap.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/pop3.o : src/pop3.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/smtp.o : src/smtp.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/pingpong.o : src/pingpong.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/rtsp.o : src/rtsp.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_threads.o : src/curl_threads.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/warnless.o : src/warnless.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/hmac.o : src/hmac.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/polarssl.o : src/polarssl.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/polarssl_threadlock.o : src/polarssl_threadlock.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_rtmp.o : src/curl_rtmp.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_gethostname.o : src/curl_gethostname.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/gopher.o : src/gopher.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/axtls.o : src/axtls.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/idn_win32.o : src/idn_win32.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/http_negotiate_sspi.o : src/http_negotiate_sspi.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/cyassl.o : src/cyassl.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@		
+$(OBJDIR)/http_proxy.o : src/http_proxy.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/non-ascii.o : src/non-ascii.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/asyn-ares.o : src/asyn-ares.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/asyn-thread.o : src/asyn-thread.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_gssapi.o : src/curl_gssapi.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_ntlm.o : src/curl_ntlm.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_ntlm_wb.o : src/curl_ntlm_wb.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_ntlm_core.o : src/curl_ntlm_core.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_ntlm_msgs.o : src/curl_ntlm_msgs.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_sasl.o : src/curl_sasl.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_schannel.o : src/curl_schannel.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_multibyte.o : src/curl_multibyte.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/curl_darwinssl.o : src/curl_darwinssl.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/hostcheck.o : src/hostcheck.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/bundles.o : src/bundles.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/conncache.o : src/conncache.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/pipeline.o : src/pipeline.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/dotdot.o : src/dotdot.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/x509asn1.o : src/x509asn1.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/gskit.o : src/gskit.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+$(OBJDIR)/http2.o : src/http2.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+	
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

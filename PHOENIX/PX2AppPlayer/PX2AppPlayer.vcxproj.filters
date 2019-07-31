@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="AppPlayerApp.cpp" />
+    <ClCompile Include="PX2App.cpp">
+      <Filter>AppFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="PX2AppBase.cpp">
+      <Filter>AppFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="PX2Command.cpp">
+      <Filter>AppFrame</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppPlayerApp.hpp" />
+    <ClInclude Include="PX2App.hpp">
+      <Filter>AppFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="PX2AppBase.hpp">
+      <Filter>AppFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="PX2AppFramePre.hpp">
+      <Filter>AppFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="PX2Command.hpp">
+      <Filter>AppFrame</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="AppFrame">
+      <UniqueIdentifier>{0961e856-3b73-47a5-884a-138cefa8748e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

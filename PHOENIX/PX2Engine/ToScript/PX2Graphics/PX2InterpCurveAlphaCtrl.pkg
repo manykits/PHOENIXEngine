@@ -1,0 +1,10 @@
+// PX2InterpCurveAlphaCtrl.pkg
+	
+	class InterpCurveAlphaController : public InterpCurveFloatController
+	{
+		InterpCurveAlphaController ();
+		virtual ~InterpCurveAlphaController ();
+		
+		static InterpCurveAlphaController *New();
+		static InterpCurveAlphaController *New(const std::string &name);
+	};

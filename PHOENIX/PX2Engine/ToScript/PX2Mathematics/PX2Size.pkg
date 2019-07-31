@@ -1,0 +1,20 @@
+// PX2Size.pkg
+
+	class Sizef
+	{
+		// VALUE
+		
+		float Width;
+		float Height;		
+		
+		Sizef ();
+		Sizef (const float &width, const float &height);
+		Sizef (const Sizef &size);
+		~Sizef ();		
+
+		void Clear();
+		void Set(const float &width, const float &height);
+		void Swap(Sizef &val);
+		bool IsEmpty() const;
+
+	};

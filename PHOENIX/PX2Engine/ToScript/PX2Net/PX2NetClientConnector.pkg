@@ -1,0 +1,16 @@
+// PX2Server.pkg
+
+	class ClientConnector : public Object
+	{
+	public:
+		ClientConnector(int num_msghandlers);
+		virtual ~ClientConnector();
+
+		int ConnectB(const std::string &ip, int port);
+		int ConnectB(const SocketAddress &addr);
+		int ConnectNB(const std::string &ip, int port);
+		int ConnectNB(const SocketAddress &addr);
+		void Disconnect();
+		int GetConnectState ();
+		void SetConnectState(int state);
+	};

@@ -1,0 +1,14 @@
+// PX2APoint.pkg
+
+$pfile "PX2Mathematics/PX2Mathf.pkg"
+$pfile "PX2Mathematics/PX2HPoint.pkg"
+$pfile "PX2Mathematics/PX2APoint.pkg"
+$pfile "PX2Mathematics/PX2AVector.pkg"
+$pfile "PX2Mathematics/PX2HPlane.pkg"
+$pfile "PX2Mathematics/PX2InterpCurve.pkg"
+$pfile "PX2Mathematics/PX2Float2.pkg"
+$pfile "PX2Mathematics/PX2Float3.pkg"
+$pfile "PX2Mathematics/PX2Float4.pkg"
+$pfile "PX2Mathematics/PX2HMatrix.pkg"
+$pfile "PX2Mathematics/PX2Size.pkg"
+$pfile "PX2Mathematics/PX2Rect.pkg"

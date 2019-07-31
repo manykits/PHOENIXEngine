@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>MJPG-streamer</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!--[if IE 6]>
+    <link rel="stylesheet" href="fix.css" type="text/css" />
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="sidebar">
+      <h1>MJPG-Streamer 示例</h1>
+      <h2>一个运行流畅的流程序</h2>
+
+      <div id="menu">
+        <a class="active" href="index.html">主页</a>
+        <a href="static.html">快照</a>
+        <a href="stream.html">流</a>
+        <a href="java.html">Java</a>
+        <a href="javascript.html">Javascript</a>
+        <a href="videolan.html">VideoLAN</a>
+        <a target="_blank" onClick="window.open(this.href, '_blank'); return false;" href="control.htm">控制</a>
+      </div>
+
+      <h3>Version info:</h3>
+      <p>v0.1 (Okt 22, 2007)</p>
+    </div>
+
+    <div id="content">
+      <h1>关于</h1>
+      <h2>M-JPEG流的细节</h2>
+
+      <h3>祝贺</h3>
+      <p>您成功地安装了此流媒体网络服务器。如果您能看到这个页面，您同样也可以访问来自您的网络摄像头的JPG-流。 此安装包含这些示例页面，您可以自定义外观和内容</p>
+
+      <img src="example.jpg" width="512" height="160" alt="just an image" />
+      <p>开发这个软件的原因是因为需要一个简单并且资源友好的用于Linux-UVC兼容的网络摄像头的流媒体应用程序。 前身<i>uvc-streamer</i>运行良好，但我想实现一些更多的想法。
+例如，可以使用插件来处理图像。
+一个输入插件将图像复制到全局变量，多个输出插件可以访问这些图像。</p>
+
+      <a href="static.html"><img src="./?action=snapshot" width="170" height="128" alt="static image example" /></a>
+      <p>这里展示的就是被输入插件抓取的图像。HTTP请求包含GET参数<i>action=snapshot</i>。它请求来自图片输入的一张快照。只要点击图片就可以展示另一张快照。</p>
+
+      <h3>关于示例</h3>
+      <p>你可以查看<i>javascript</i> 或者 <i>java</i> 页面来查看如何在任意浏览器上观看视频流。火狐可以直接展示视频流。</p>
+
+      <h3>关于服务器</h3>
+      <p>服务器是一个运行MJPG-流项目的软件。MJPG-流开发者不对这个软件的安装负责。</p>
+
+      <p>&copy; <a href="http://mjpg-streamer.sf.net">MJPG-streamer 开发团队</a> | 设计者 <a href="http://andreasviklund.com">Andreas Viklund</a></p>
+    </div>
+  </body>
+</html>

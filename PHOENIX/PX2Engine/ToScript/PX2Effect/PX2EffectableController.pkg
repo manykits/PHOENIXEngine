@@ -1,0 +1,19 @@
+// PX2EffectableController.pkg
+
+	class EffectableController : public Controller
+	{
+		EffectableController ();
+		virtual ~EffectableController ();
+
+		virtual void Reset ();
+		
+		void AddModule (EffectModule *module);
+		void RemoveModule (EffectModule *module);
+		EffectModule *GetModule (int i);
+		EffectModule *GetModuleByRttiName (
+			const std::string &moduleRttiName) const;
+		EffectModule *GetModuleByTypeName (const std::string &typeName) const;
+		int GetNumModules ();
+		bool IsHasModule (const std::string &moduleRttiName) const;
+		bool IsHasModuleByTypeName (const std::string &typeName) const;
+	};

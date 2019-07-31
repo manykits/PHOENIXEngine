@@ -1,0 +1,48 @@
+// PX2UISplitterFrame.pkg
+
+	class UISplitterFrame : public UIFrame
+	{
+	public:
+		UISplitterFrame(bool hor=true);
+		virtual ~UISplitterFrame();
+		
+		static UISplitterFrame *New();
+		static UISplitterFrame *New(const std::string &name);
+		
+		void SetHor(bool isHor);
+		bool IsHor() const;
+
+		enum DragType
+		{
+			DT_VALUE,
+			DT_PERCENT,
+			DT_MAX_TYPE
+		};
+		void SetDragType(DragType dt);
+		DragType GetDragType() const;
+
+		void SetDragRange(const Float2 &range);
+		const Float2 &GetDragRange() const;
+
+	public:
+		enum PosType
+		{
+			PT_NONE,
+			PT_LEFT,
+			PT_RIGHT,
+			PT_BOTTOM,
+			PT_TOP,
+			PT_MAX_TYPE
+		};
+		void SetPosType(PosType pt);
+		PosType GetPosType() const;
+
+	public:
+		void SetDragable(bool isDragable);
+		bool IsDragable() const;
+
+		void SetDraging(bool isDraged);
+		bool IsDraging() const;
+
+		void OnDraging();
+	};

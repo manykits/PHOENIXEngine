@@ -1,0 +1,16 @@
+CFG ?= Debug
+PROJ ?= Project
+
+build :
+	@mkdir -p $(CFG)
+	make -f makeprj.px2 CFG=$(CFG)
+	
+ifeq (ARM,$(findstring ARM,$(CFG)))
+	@cp -fp ./$(CFG)/libARMSample.so ../../../../Bin/Data/$(PROJ)/
+else
+	@cp -fp ./$(CFG)/libSample.so ../../../../Bin/Data/$(PROJ)/
+endif
+
+clean :
+	make clean -f makeprj.px2 CFG=$(CFG)
+	@rm -rf $(CFG)

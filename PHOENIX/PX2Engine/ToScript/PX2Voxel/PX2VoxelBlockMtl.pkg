@@ -1,0 +1,18 @@
+// PX2VoxelBlockMtl.pkg
+
+	class VoxelBlockMtl
+	{
+	public:
+		VoxelBlockMtl();
+		~VoxelBlockMtl();
+
+		int Type;
+		std::string Name;
+
+		std::string Left;
+		std::string Right;
+		std::string Front;
+		std::string Back;
+		std::string Bottom;
+		std::string Top;
+	};

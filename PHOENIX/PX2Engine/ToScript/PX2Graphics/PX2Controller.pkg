@@ -1,0 +1,52 @@
+// PX2Controller.pkg
+	
+	class Controller : public Object
+	{
+		virtual ~Controller ();
+
+		// 优先级越高，越在前更新
+		void SetPriority (int priority);
+		int GetPriority () const;
+
+		// 播放系统
+		virtual void ResetPlay ();
+		virtual void Play ();
+		virtual bool IsPlaying () const;
+		virtual void Pause ();
+		virtual void Reset ();
+
+		// 播放时间
+		void SetMaxPlayTime (float time); // -1.0f forever
+		float GetMaxPlayTime () const;
+		void SetDelayPlayTime (float time);
+		float GetDelayPlayTime () const;
+		float GetPlayedTime () const;
+		float GetPlayedTimeMinusDelay () const; // GetPlayedTime()-GetDelayPlayTime()
+
+		// 播放控制
+		void SetPlayedDoDetach(bool doDetach);
+		bool IsPlayedDoDetach () const;
+
+		// 成员访问
+		Controlledable* GetControlledable () const;
+
+		// 动画更新，applicationTime是以毫秒作计算单位的
+		virtual bool Update (double applicationTime, double elapsedTime);
+
+		/// 动画更新类型
+		enum RepeatType
+		{
+			RT_NONE,
+			RT_CLAMP,
+			RT_WRAP,
+			RT_CYCLE
+		};
+		
+		// 成员访问
+		RepeatType Repeat;  //< default = RT_NONE
+		double MinTime;     //< default = 0
+		double MaxTime;     //< default = 0
+		double Phase;       //< default = 0
+		double Frequency;   //< default = 1
+		bool Active;        //< default = true
+	};

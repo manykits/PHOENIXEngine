@@ -1,0 +1,15 @@
+// PX2AIs.pkg
+
+$pfile "PX2AI/PX2AILiDar.pkg"
+$pfile "PX2AI/PX2UISkill.pkg"
+$pfile "PX2AI/PX2UISkillBuf.pkg"
+$pfile "PX2AI/PX2UISkills.pkg"
+$pfile "PX2AI/PX2SkillChara.pkg"
+$pfile "PX2AI/PX2Skill.pkg"
+$pfile "PX2AI/PX2SkillBuf.pkg"
+$pfile "PX2AI/PX2SkillChara.pkg"
+$pfile "PX2AI/PX2Robot.pkg"
+$pfile "PX2AI/PX2AISteeringPath.pkg"
+$pfile "PX2AI/PX2AIAgentBase.pkg"
+$pfile "PX2AI/PX2AIAgent.pkg"
+$pfile "PX2AI/PX2AIAgentObject.pkg"

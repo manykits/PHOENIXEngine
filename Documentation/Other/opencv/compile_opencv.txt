@@ -1,0 +1,28 @@
+// 更像系统
+sudo apt-get upgrade
+sudo apt-get update
+
+sudo apt-get update
+sudo apt-get update
+sudo apt-get install build-essential
+sudo apt-get install cmake cmake-qt-gui
+sudo apt-get install libgtk2.0-dev
+sudo apt-get install pkg-config
+sudo apt-get install python-dev python-numpy
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev
+
+
+// 安装必要的预先依赖库
+[compiler] sudo apt-get install build-essential
+[required] sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+[optional] sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+
+// cmake 构建
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D CMAKE_INSTALL_PREFIX=/usr/local \ ..
+
+// make 构建
+make -j4
+
+// 安装
+sudo make install

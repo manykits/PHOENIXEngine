@@ -1,0 +1,44 @@
+// PX2VoxelSection.pkg
+	
+	class VoxelSection : public Node
+	{
+	public:
+		static VoxelSection *New();
+		static VoxelSection *New(const std::string &name);
+	
+		VoxelSection();
+		VoxelSection(int distXY, int distZ);
+		virtual ~VoxelSection();
+
+		void SetMinSize(int minSizeX, int minSizeY, int minSizeZ);
+		void GetMinSize(int &minSizeX, int &minSizeY, int &minSizeZ) const;		
+		void SetMaxSize(int maxSizeX, int maxSizeY, int maxSizeZ);
+		void GetMaxSize(int &maxSizeX, int &maxSizeY, int &maxSizeZ) const;
+		void GenTitles(int maxZ, int mtlType);
+
+		void SetDistXY(int val);
+		void SetDistZ(int val);
+		void SetInitMtlType(int mtlType);
+
+		int GetTitleRangeXY() const;
+		int GetTitleRangeZ() const;
+
+		void SetAllBlocks(int mtlType);
+		bool SetBlock(const APoint &worldPos, int type, SetBlockGet *get=0);
+		bool SetBlock(int titleIndexX, int titleIndexY, int titleIndexZ,
+			int blockIndexX, int blockIndexY, int blockIndexZ, int mtlType, SetBlockGet *get = 0);
+
+		void GenMesh();
+
+		VoxelTitle *GetTitleFromMap(const Vector3f &key);
+		std::map<Vector3f, VoxelTitlePtr> mTitleMap;
+
+		VoxelTitle *GetContainTitle(const APoint &worldPos);
+
+	public:
+		void SetActorCenterPos(const APoint &pos);
+		const APoint &GetActorCenterPos() const;
+		const AVector &GetCenterIndexXYZ() const;
+
+		virtual void UpdateWorldData(double applicationTime, double elapsedTime);
+	};

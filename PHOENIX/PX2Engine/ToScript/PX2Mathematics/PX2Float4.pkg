@@ -1,0 +1,28 @@
+// PX2Float4.pkg
+
+	class Float4
+	{
+		// VALUE
+		
+		Float4 ();
+		~Float4 ();
+		Float4 (float f0, float f1, float f2, float f3);
+		Float4 (const Float4& tuple);
+		
+		float X() const;
+		float Y() const;
+		float Z() const;
+		float W() const;
+
+		static Float4 MakeColor (unsigned int r, unsigned int g, 
+			unsigned int b, unsigned int a);
+
+		static const Float4 ZERO;   //< (0,0,0,0)
+		static const Float4 UNIT;	//< (1,1,1,1)
+		static const Float4 BLACK;	//< (0,0,0,1)
+		static const Float4 WHITE;	//< (1,1,1,1)
+		static const Float4 RED;	//< (1,0,0,1)
+		static const Float4 GREEN;  //< (0,1,0,1)
+		static const Float4 BLUE;	//< (0,0,1,1)
+		static const Float4 YELLOW; //< (1,1,0,1)
+	};

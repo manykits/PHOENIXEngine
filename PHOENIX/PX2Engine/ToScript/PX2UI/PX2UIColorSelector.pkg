@@ -1,0 +1,14 @@
+// PX2UIColorSelector.pkg
+
+	class UIColorSelector : public UIFrame
+	{
+		UIColorSelector();
+		virtual ~UIColorSelector();
+		
+		static UIColorSelector *New();
+		static UIColorSelector *New(const std::string &name);
+
+		void SetInitColor(const Float3 &color);
+		void SetSelectColor(const Float3 &color);
+		const Float3 &GetSelectColor() const;
+	};

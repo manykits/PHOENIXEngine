@@ -1,0 +1,122 @@
+// PX2Robot.pkg
+
+	class Robot
+	{
+	public:
+		Robot();
+		virtual ~Robot();
+		
+		static Robot *New();
+		static void Delete(Robot* robot);
+
+		virtual void Update(float appseconds, float elpasedSeconds);
+
+		// config
+		void SetMaxSpeed(float maxSpeed);
+		float GetMaxSpeed() const;
+		void SetMinSpeed(float minSpeed);
+		float GetMinSpeed() const;
+
+		void SetMaxAccelerate(float accele);
+		float GetMaxAccelerate() const;
+
+		void SetPredictTime(float predictTime);
+		float GetPredictTime() const;
+
+		void SetRadius(float radius);
+		float GetRadius() const;
+
+		void SetLidarOffset(float offsetDist);
+		float GetLidarOffset() const;
+
+		void SetMotoRate(int rate);
+		int GetMotoRate() const;
+
+		void SetWheelRadius(float radius);
+		float GetWheelRadius() const;
+		// end config
+
+		// direction
+	public:		
+		const APoint &GetPosition() const;
+		const AVector &GetDirection() const;
+		const AVector &GetUp() const;
+		const AVector &GetRight() const;
+		const HMatrix &GetMatrix() const;
+
+		// slam2d
+	public:
+		static void InitlizeSlam2D();
+		static void TernimateSlam2D();
+
+		enum RoleType
+		{
+			RT_MASTER,
+			RT_CONNECTOR,
+			RT_MASTER_ONLY_SENDLIDAR,
+			RT_CONNECTOR_CALCULATE,
+			RT_MAX_TYPE
+		};
+		void SetRoleType(RoleType rtType);
+		RoleType GetRoleType() const;
+
+		void SetVoxelSection(VoxelSection *vs);
+		VoxelSection *GetVoxelSection();
+
+		// lidar
+		void CreateLidar();
+		bool LidarOpen(const std::string &portIP, int baudratePort);
+		LiDar *GetLidar();
+
+		// arduino
+		void SetArduino(Arduino *arduino);
+		Arduino *GetArduino();
+		bool IsArduinoConnected() const;
+		
+		void LeftRunSpeed(float speed);
+		void RightRunSpeed(float speed);
+
+		// adjust
+		float GetYawCrossValue() const;
+
+		// slam
+		int GetMapSize() const;
+		float GetResolution() const;
+
+		void SetSlam2DPosition(const APoint &pos, float angle);
+		
+		float GetSlam2DDegree() const;
+
+		void SetSlamMapUpdate(bool update);
+		bool IsSlamMapUpdate() const;
+
+		Texture2D *GetTextureMap();
+		UIFPicBox *GetUIFPicBoxMap();
+
+		// map load save
+		bool SaveMap(const std::string &filename);
+		bool LoadMap(const std::string &filename, const APoint &initPos = APoint::ORIGIN, float curAngle=0.0f);
+		RobotMapData &GetInitMapData();
+		void ClearInitMapData();
+		RobotMapData *GetCurMapData();
+
+		// map change
+		// 100 robotpos
+		// 10 none
+		// 200 space can go
+		void SetObstMapValueAtPos(const APoint &pos, float range = 0.1f, int val=1.0f);
+		void SetPathFinderLineValueAtPos(const APoint &pos, float range = 0.1f, int val = 1.0f);
+		
+		// path
+	public:
+		PathingGraph *GetPathingGraph();
+
+		enum PathType
+		{
+			PT_A,
+			PT_RRT,
+			PT_MAX_TYPE
+		};
+		void GoTarget(const APoint &targetPos, PathType type= PT_A);
+		void AdjustToDirection(const AVector &dir);
+	};

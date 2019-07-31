@@ -1,0 +1,33 @@
+// PX2Serial.pkg
+	
+	class Serial
+	{
+	public:
+		Serial();
+		~Serial();
+		
+		static Serial *New();
+		static void Delete(Serial *serial);
+		
+		static Serial *GetDefaultSerial();
+		
+		void UpdatePortList();
+		std::vector<std::string> GetPortList();
+		std::vector<std::string> GetPortDescList();
+		std::vector<std::string> GetPortHardIDs();
+		
+		int GetNumPorts() const;
+		std::string GetPort(int i) const;
+		std::string GetPortDesc(int i) const;
+		std::string GetPortHardID(int i) const;
+		
+		void ClearScirptHandlers();
+		bool IsHasScriptHandler(const std::string &scriptHandler);
+		void AddScriptHandler(const std::string &scriptHandler);
+		void RemoveScriptHandler(const std::string &scriptHandler);
+
+		void ClearScriptHandlersHex();
+		bool IsHasScriptHandlerHex(const std::string &scriptHandler);
+		void AddScriptHandlerHex(const std::string &scriptHandler);
+		void RemoveScriptHandlerHex(const std::string &scriptHandler);
+	};

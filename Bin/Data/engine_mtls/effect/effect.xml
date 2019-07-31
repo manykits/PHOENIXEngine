@@ -1,0 +1,65 @@
+<material name="effect">
+	<technique name="default">
+		<pass name="P0">
+			<shader type="vs" name="effect" ni="3" no="3" nc="1" ns="0">
+				<i>
+					<var index="0" name="modelPosition" vt="float3" vs="POSITION"/>
+					<var index="1" name="modelColor" vt="float4" vs="COLOR0"/>
+					<var index="2" name="modelTCoord0" vt="float2" vs="TEXCOORD0"/>
+				</i>
+				<o>
+					<var index="0" name="clipPosition" vt="float4" vs="POSITION"/>
+					<var index="1" name="vertexColor" vt="float4" vs="COLOR0"/>
+					<var index="2" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+				</o>
+				<c>
+					<var index="0" name="PVWMatrix" nr="4"/>
+				</c>
+				<p>
+					<var type="cg" file="effect_cg.fx"/>
+					<var type="gles2" file="effect_gles2_vs.fx"/>
+				</p>
+			</shader>
+			<shader type="ps" name="effect" ni="2" no="1" nc="0" ns="1">
+				<i>
+					<var index="0" name="vertexColor" vt="float4" vs="COLOR0"/>
+					<var index="1" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+				</i>
+				<o>
+					<var index="0" name="pixelColor" vt="float4" vs="COLOR0"/>
+				</o>
+				<c>
+				</c>
+				<s>
+					<var index="0" name="SampleBase" st="sampler2D" sf="LINEAR" sc_0="CLAMP" sc_1="CLAMP"/>
+				</s>
+				<p>
+					<var type="cg" file="effect_cg.fx"/>
+					<var type="gles2" file="effect_gles2_ps.fx"/>
+				</p>
+			</shader>
+			<renderproperty>
+				<Alpha>
+					<p param="BlendEnabled" value="true"/>
+					<p param="SrcBlend" value="SBM_SRC_ALPHA"/>
+					<p param="DstBlend" value="DBM_ONE_MINUS_SRC_ALPHA"/>
+					<p param="CompareEnabled" value="false"/>
+					<p param="Compare" value="CM_GEQUAL"/>
+					<p param="Reference" value="0"/>
+				</Alpha>
+				<Depth>
+					<p param="Enabled" value="true"/>
+					<p param="Writable" value="false"/>
+					<p param="Compare" value="CM_LEQUAL"/>
+				</Depth>
+				<Cull>
+					<p param="Enabled" value="true"/>
+					<p param="CCWOrder" value="true"/>
+				</Cull>
+				<Wire>
+					<p param="Enabled" value="false"/>
+				</Wire>
+			</renderproperty>
+		</pass>
+	</technique>
+</material>

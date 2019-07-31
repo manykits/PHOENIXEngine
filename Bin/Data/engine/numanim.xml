@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:e1dfb240bd4da410292d9f4ed270175e$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="numanim.png" width="128" height="128">
+    <sprite n="0" x="70" y="2" w="32" h="32"/>
+    <sprite n="1" x="36" y="2" w="32" h="32"/>
+    <sprite n="2" x="2" y="70" w="32" h="32"/>
+    <sprite n="3" x="2" y="36" w="32" h="32"/>
+    <sprite n="4" x="2" y="2" w="32" h="32"/>
+    <sprite n="5" x="36" y="36" w="32" h="32"/>
+</TextureAtlas>

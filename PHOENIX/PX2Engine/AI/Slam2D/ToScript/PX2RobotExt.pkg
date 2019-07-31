@@ -1,0 +1,12 @@
+// PX2RobotExt.pkg
+
+	class RobotExt : public Robot
+	{
+		RobotExt();
+		virtual ~RobotExt();
+		
+		virtual void Update(float appseconds, float elpasedSeconds);
+
+		static RobotExt *New();
+		static void Delete(RobotExt* robot);
+	};

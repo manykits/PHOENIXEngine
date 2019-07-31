@@ -1,0 +1,23 @@
+// PX2Material.pkg
+
+	class Material : public Object
+	{
+	public:
+		Material();
+		virtual ~Material ();
+
+		inline int GetNumTechniques () const;
+		MaterialTechnique* GetTechnique (int techniqueIndex) const;
+		MaterialTechnique* GetTechnique(const std::string &techniqueName, int &index) const;
+
+		int GetNumPasses (int techniqueIndex) const;
+		MaterialPass* GetPass (int techniqueIndex, int passIndex) const;
+		VertexShader* GetVertexShader (int techniqueIndex, int passIndex) const;
+		PixelShader* GetPixelShader (int techniqueIndex, int passIndex) const;
+		AlphaProperty* GetAlphaProperty (int techniqueIndex, int passIndex) const;
+		CullProperty* GetCullProperty (int techniqueIndex, int passIndex) const;
+		DepthProperty* GetDepthProperty (int techniqueIndex, int passIndex) const;
+		OffsetProperty* GetOffsetProperty (int techniqueIndex, int passIndex) const;
+		StencilProperty* GetStencilProperty (int techniqueIndex, int passIndex) const;
+		WireProperty* GetWireProperty (int techniqueIndex, int passIndex) const;
+	};

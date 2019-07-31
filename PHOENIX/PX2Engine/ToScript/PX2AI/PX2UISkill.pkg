@@ -1,0 +1,17 @@
+// PX2UISkill.pkg
+
+	class UISkill : public UIFrame
+	{
+	public:
+		UISkill();
+		virtual ~UISkill();
+		
+		static UISkill *New();
+		static UISkill *New(const std::string &name);
+
+		UIRound *GetRoundBut();
+		UIFText *GetText();
+
+		void SetSkill(Skill *skill);
+		Skill *GetSkill();
+	};

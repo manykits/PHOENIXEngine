@@ -1,0 +1,20 @@
+ps_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_3_0
+// source file: tex2d_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_3_0
+//program p_tex2d
+//semantic SampleBase
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : ATTR0 : 0 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+//var sampler2D SampleBase :  : texunit 0 : -1 : 1
+//const c[0] = 1
+dcl_2d s0
+def c0, 1.00000000, 0, 0, 0
+dcl_texcoord0 v0.xy
+mov r0.x, v0
+add r0.y, -v0, c0.x
+texld r0, r0, s0
+mov oC0, r0

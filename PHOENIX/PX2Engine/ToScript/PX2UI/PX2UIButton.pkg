@@ -1,0 +1,24 @@
+// PX2UIButton.pkg
+
+	class UIButton : public UIButtonBase
+	{
+		UIButton(ButType butType = UIButtonBase::BT_COLOR);
+		virtual ~UIButton();
+		
+		static UIButton *New();
+		static UIButton *New(const std::string &name);
+
+		virtual void Enable(bool enable);
+
+		enum AfterReleasedType
+		{
+			ART_NORMAL,
+			ART_DISABLE,
+			ART_DISABLE_RECOVER,
+			ART_MAX_TYPE
+		};
+		void SetAfterReleasedType(AfterReleasedType type);
+		AfterReleasedType GetAfterReleasedType() const;
+		void SetAfterReleasedRecoverTime(float time);
+		float GetAfterReleasedRecoverTime() const;
+	};

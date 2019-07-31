@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:"
+      name = "Player">
+      <FileRef
+         location = "group:PX2AppPlayer/Proj.IOS/AppPlay.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Engine">
+      <FileRef
+         location = "group:PX2Engine/PX2Engine.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Clients">
+      <FileRef
+         location = "group:PX2Engine/PX2Engine.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:PX2Engine/PX2Engine.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

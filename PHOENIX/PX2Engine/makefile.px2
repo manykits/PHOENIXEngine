@@ -1,0 +1,57 @@
+#PX2Engine
+
+CFG ?= Debug
+
+build :
+	@mkdir -p ../PX2SDK/Include
+	@mkdir -p ../PX2SDK/Library/$(CFG)
+	@mkdir -p $(CFG)
+	
+	cd Core							  		&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd Mathematics                    		&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd Graphics                    	  		&& make -f ../makeprj.px2 CFG=$(CFG)
+ifeq (ARM,$(findstring ARM,$(CFG)))
+	cd Graphics/Renderers/OpenGLESRenderer 	;  make -f makerend.px2 CFG=$(CFG)
+else
+	cd Graphics/Renderers/OpenGLRenderer 	;  make -f makerend.px2 CFG=$(CFG)
+endif
+	cd Unity/ZLib							;  make -f makezip.px2 CFG=$(CFG)
+	cd Unity/FreeType						;  make -f makefreetype.px2 CFG=$(CFG)
+	cd Unity/ImageLibs/PNG					;  make -f makepng.px2 CFG=$(CFG)
+	cd Unity/Lua							;  make -f makelua.px2 CFG=$(CFG)
+	cd Unity/ToLua							;  make -f maketolua.px2 CFG=$(CFG)
+	cd Unity/LuaPlus						;  make -f makeluaplus.px2 CFG=$(CFG)
+	cd Unity/SQLite							;  make -f makesqlite.px2 CFG=$(CFG)
+	cd Unity/curl							;  make -f makecurl.px2 CFG=$(CFG)
+	cd Unity/google/protobuf				;  make -f makegooglepb.px2 CFG=$(CFG)
+	cd Unity/serial							;  make -f makeserial.px2 CFG=$(CFG)
+	cd Unity							 	&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd Net							 		&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd Effect							 	&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd Terrains							 	&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd UI							 		&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd Physics/Bullet						; make -f makebullet.px2 CFG=$(CFG)
+	cd Physics							 	&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd Voxel							 	&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd AI/iiiroboticslidar2				; make -f makelidar.px2 CFG=$(CFG)
+	cd AI/rplidar						; make -f makerplidar.px2 CFG=$(CFG)
+	cd AI/SkillSystem					; make -f makeskillsystem.px2 CFG=$(CFG)
+	cd AI/recast						; make -f makerecast.px2 CFG=$(CFG)
+	cd AI/detour						; make -f makedetour.px2 CFG=$(CFG)
+	cd AI							 		&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd Logic							 	&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd Application							&& make -f ../makeprj.px2 CFG=$(CFG)
+	cd ToScript								&& make -f maketoscript.px2 CFG=$(CFG)
+	
+ifeq (ARM,$(findstring ARM,$(CFG)))
+	ln -sf -T libPX2EngineARM.so.2.5 ../PX2SDK/Library/$(CFG)/libPX2EngineARM.so
+else
+	ln -sf -T libPX2Engine.so.2.5 ../PX2SDK/Library/$(CFG)/libPX2Engine.so
+endif
+
+clean :
+	make clean -f ../makeprj.px2 CFG=$(CFG)
+	@rm -f ../PX2SDK/Include/*.*
+	@rm -f ../PX2SDK/Library/$(CFG)/*.*
+	@rm -rf ../PX2SDK/Library/$(CFG)
+

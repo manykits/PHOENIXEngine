@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="PkgParser.hpp" />
+    <ClInclude Include="PkgInfoManager.hpp">
+      <Filter>Info</Filter>
+    </ClInclude>
+    <ClInclude Include="PkgFunctionInfo.hpp">
+      <Filter>Info</Filter>
+    </ClInclude>
+    <ClInclude Include="PkgClassInfo.hpp">
+      <Filter>Info</Filter>
+    </ClInclude>
+    <ClInclude Include="PkgParsePre.hpp" />
+    <ClInclude Include="PkgAscii.hpp">
+      <Filter>Tokener</Filter>
+    </ClInclude>
+    <ClInclude Include="PkgTokenizer.hpp">
+      <Filter>Tokener</Filter>
+    </ClInclude>
+    <ClInclude Include="PkgToken.hpp">
+      <Filter>Token</Filter>
+    </ClInclude>
+    <ClInclude Include="PkgXMLData.hpp">
+      <Filter>XML</Filter>
+    </ClInclude>
+    <ClInclude Include="PkgXMLNode.hpp">
+      <Filter>XML</Filter>
+    </ClInclude>
+    <ClInclude Include="RapidXML\rapidxml.hpp">
+      <Filter>XML\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="RapidXML\rapidxml_iterators.hpp">
+      <Filter>XML\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="RapidXML\rapidxml_print.hpp">
+      <Filter>XML\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="RapidXML\rapidxml_utils.hpp">
+      <Filter>XML\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="PkgEnumInfo.hpp">
+      <Filter>Info</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PkgParser.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PkgFunctionInfo.cpp">
+      <Filter>Info</Filter>
+    </ClCompile>
+    <ClCompile Include="PkgClassInfo.cpp">
+      <Filter>Info</Filter>
+    </ClCompile>
+    <ClCompile Include="PkgInfoManager.cpp">
+      <Filter>Info</Filter>
+    </ClCompile>
+    <ClCompile Include="PkgAscii.cpp">
+      <Filter>Tokener</Filter>
+    </ClCompile>
+    <ClCompile Include="PkgTokenizer.cpp">
+      <Filter>Tokener</Filter>
+    </ClCompile>
+    <ClCompile Include="PkgToken.cpp">
+      <Filter>Token</Filter>
+    </ClCompile>
+    <ClCompile Include="PkgXMLData.cpp">
+      <Filter>XML</Filter>
+    </ClCompile>
+    <ClCompile Include="PkgXMLNode.cpp">
+      <Filter>XML</Filter>
+    </ClCompile>
+    <ClCompile Include="PkgEnumInfo.cpp">
+      <Filter>Info</Filter>
+    </ClCompile>
+    <ClCompile Include="PkgInfoManagerLoad.cpp">
+      <Filter>Info</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Info">
+      <UniqueIdentifier>{4d815dee-5867-4a92-b6cd-6da05a785f2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tokener">
+      <UniqueIdentifier>{0718ecb7-c283-4040-b2c0-727840e468af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Token">
+      <UniqueIdentifier>{9ba1d223-e3c6-4f16-b633-8b0d71c3da05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XML">
+      <UniqueIdentifier>{c9106f90-b999-4254-bee2-82fda30d60f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XML\RapidXML">
+      <UniqueIdentifier>{608d2b36-0ddf-48e4-adc3-ede65284a13c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

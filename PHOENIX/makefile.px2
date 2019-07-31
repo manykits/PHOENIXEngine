@@ -1,0 +1,30 @@
+#PHOENIXEngine
+
+CFG ?= Debug
+
+USESO := PX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+USESO := PX2EngineARM
+endif
+
+build :
+	@mkdir -p PX2SDK/Include
+	@mkdir -p PX2SDK/Library/$(CFG)
+	cd PX2Engine                        && make -f makefile.px2 CFG=$(CFG)
+	cd PX2AppPlayer						&& make -f makefile.px2 CFG=$(CFG)
+	@cp -fp ./PX2AppPlayer/AppPlayer.$(CFG) ../Bin/
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+	#@cp -fp ./PX2SDK/Library/$(CFG)/lib$(USESO).so ../Bin/
+endif
+
+clean :
+	cd PX2Engine                        && make clean -f makefile.px2 CFG=$(CFG)
+	cd PX2AppPlayer                    	&& make clean -f makefile.px2 CFG=$(CFG)
+	@rm -f PX2SDK/Include/*.*
+	@rm -f PX2SDK/Library/$(CFG)/*.*
+	@rm -rf PX2SDK/Library/$(CFG)
+	
+install:
+	@cp -fp ./PX2SDK/Library/$(CFG)/lib$(USESO).so /usr/local/lib
+

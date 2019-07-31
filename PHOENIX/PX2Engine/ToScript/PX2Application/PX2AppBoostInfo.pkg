@@ -1,0 +1,23 @@
+// PX2AppBoostInfo.pkg
+
+	class AppBoostInfo
+	{
+	public:
+		AppBoostInfo();
+		~AppBoostInfo();
+
+		enum PlayLogicMode
+		{
+			PLM_SIMPLE,
+			PLM_LOGIC,
+			PLM_MAX_MODE
+		};
+
+		// general
+		std::string ProjectName;
+
+		// app
+		Sizef BoostSize;
+		PlayLogicMode ThePlayLogicMode;
+		bool IsShowInfo;
+	};

@@ -1,0 +1,36 @@
+!!ARBfp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbfp1
+# source file: ar_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbfp1
+#program p_ar
+#semantic p_ar.ARParam
+#semantic SamplerColor
+#semantic SamplerDepth
+#semantic SamplerColorScene
+#semantic SamplerDepthScene
+#var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+#var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+#var float4 ARParam :  :  : 2 : 0
+#var sampler2D SamplerColor :  : texunit 0 : -1 : 1
+#var sampler2D SamplerDepth :  : texunit 1 : -1 : 1
+#var sampler2D SamplerColorScene :  : texunit 2 : -1 : 1
+#var sampler2D SamplerDepthScene :  : texunit 3 : -1 : 1
+#const c[0] = 1
+PARAM c[1] = { { 1 } };
+TEMP R0;
+TEMP R1;
+TEMP R2;
+TEMP R3;
+ADD R0.w, -fragment.texcoord[0].y, c[0].x;
+MOV R0.z, fragment.texcoord[0].x;
+TEX R2, R0.zwzw, texture[2], 2D;
+TEX R3, R0.zwzw, texture[0], 2D;
+TEX R0.x, R0.zwzw, texture[1], 2D;
+TEX R1.x, R0.zwzw, texture[3], 2D;
+ADD R0.x, R1, -R0;
+CMP result.color, R0.x, R2, R3;
+END
+# 8 instructions, 4 R-regs

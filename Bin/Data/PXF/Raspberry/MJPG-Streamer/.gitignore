@@ -1,0 +1,22 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Python
+__pycache__
+*.pyc
+
+/mjpg-streamer-experimental/mjpg_streamer
+/mjpg-streamer-experimental/_build
+*.deb
+_pkg/
+doc/

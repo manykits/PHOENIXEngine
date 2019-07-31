@@ -1,0 +1,87 @@
+!!ARBvp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbvp1
+# source file: std_lightnormal_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbvp1
+#program v_std_lightnormal
+#semantic v_std_lightnormal.PVWMatrix
+#semantic v_std_lightnormal.WMatrix
+#semantic v_std_lightnormal.CameraWorldPosition
+#semantic v_std_lightnormal.FogParam
+#semantic SampleBase
+#semantic SampleNormal
+#var float3 modelPosition : $vin.POSITION : POSITION : 0 : 1
+#var float3 modelNormal : $vin.NORMAL : NORMAL : 1 : 1
+#var float2 modelTCoord0 : $vin.TEXCOORD0 : TEXCOORD0 : 2 : 1
+#var float3 modelTCoord1 : $vin.TEXCOORD1 : TEXCOORD1 : 3 : 1
+#var float3 modelTCoord2 : $vin.TEXCOORD2 : TEXCOORD2 : 4 : 1
+#var float4 clipPosition : $vout.POSITION : HPOS : 5 : 1
+#var float2 vertexTCoord0 : $vout.TEXCOORD0 : TEX0 : 6 : 1
+#var float2 vertexTCoord1 : $vout.TEXCOORD1 : TEX1 : 7 : 1
+#var float3 vertexTCoord2 : $vout.TEXCOORD2 : TEX2 : 8 : 1
+#var float3 vertexTCoord3 : $vout.TEXCOORD3 : TEX3 : 9 : 1
+#var float3 vertexTCoord4 : $vout.TEXCOORD4 : TEX4 : 10 : 1
+#var float4 vertexTCoord5 : $vout.TEXCOORD5 : TEX5 : 11 : 1
+#var float4x4 PVWMatrix :  : c[1], 4 : 12 : 1
+#var float4x4 WMatrix :  : c[5], 4 : 13 : 1
+#var float4 CameraWorldPosition :  : c[9] : 14 : 1
+#var float4 FogParam :  : c[10] : 15 : 1
+#var sampler2D SampleBase :  :  : -1 : 0
+#var sampler2D SampleNormal :  :  : -1 : 0
+#const c[0] = 1 0
+PARAM c[11] = { { 1, 0 },
+		program.local[1..10] };
+TEMP R0;
+TEMP R1;
+TEMP R2;
+MOV R1.xyz, vertex.position;
+MOV R1.w, c[0].x;
+DP4 R2.w, R1, c[7];
+DP4 R0.x, R1, c[5];
+DP4 R0.y, R1, c[6];
+MOV R0.z, R2.w;
+ADD R2.xyz, R0, -c[9];
+DP3 R0.w, R2, R2;
+RSQ R0.w, R0.w;
+ADD R2.x, c[10].w, -c[10].z;
+RCP R0.w, R0.w;
+DP4 result.position.w, R1, c[4];
+DP4 result.position.z, R1, c[3];
+DP4 result.position.y, R1, c[2];
+DP4 result.position.x, R1, c[1];
+ADD R0.w, -R0, c[10];
+RCP R2.x, R2.x;
+MUL R2.x, R0.w, R2;
+DP4 R0.w, R1, c[8];
+MOV result.texcoord[5], R0;
+MIN R2.x, R2, c[0];
+DP3 R0.z, vertex.texcoord[1], c[7];
+DP3 R0.x, vertex.texcoord[1], c[5];
+DP3 R0.y, vertex.texcoord[1], c[6];
+DP3 R1.w, R0, R0;
+RSQ R1.w, R1.w;
+MUL result.texcoord[2].xyz, R1.w, R0;
+DP3 R1.x, vertex.texcoord[2], c[5];
+DP3 R1.y, vertex.texcoord[2], c[6];
+DP3 R1.z, vertex.texcoord[2], c[7];
+DP3 R0.w, R1, R1;
+RSQ R0.w, R0.w;
+MUL result.texcoord[3].xyz, R0.w, R1;
+ADD R0.x, c[10].y, -c[10];
+RCP R1.y, R0.x;
+ADD R1.x, R2.w, -c[10];
+MUL R1.x, R1, R1.y;
+MIN R1.x, R1, c[0];
+DP3 R0.z, vertex.normal, c[7];
+DP3 R0.x, vertex.normal, c[5];
+DP3 R0.y, vertex.normal, c[6];
+DP3 R0.w, R0, R0;
+RSQ R0.w, R0.w;
+MAX result.texcoord[1].y, R2.x, c[0];
+MUL result.texcoord[4].xyz, R0.w, R0;
+MAX result.texcoord[1].x, R1, c[0].y;
+MOV result.texcoord[0].xy, vertex.texcoord[0];
+END
+# 47 instructions, 3 R-regs

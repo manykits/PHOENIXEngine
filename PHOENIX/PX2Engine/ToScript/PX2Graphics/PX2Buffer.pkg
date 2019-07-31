@@ -1,0 +1,37 @@
+// PX2Buffer.pkg
+
+	class Buffer : public Object
+	{
+	public:
+		enum Usage
+		{
+			BU_STATIC,
+			BU_DYNAMIC,
+			BU_RENDERTARGET,
+			BU_DEPTHSTENCIL,
+			BU_TEXTURE,
+			BU_QUANTITY
+		};
+
+		enum Locking
+		{
+			BL_READ_ONLY,
+			BL_WRITE_ONLY,
+			BL_READ_WRITE,
+			BL_QUANTITY
+		};
+
+		virtual ~Buffer ();
+
+		// 成员访问
+		inline int GetNumElements () const;
+		inline int GetElementSize () const;
+		inline Usage GetUsage () const;
+
+		inline void SetNumElements (int numElements);
+
+		inline int GetNumBytes () const;
+		//inline const char* GetData () const;
+
+		void ClearData ();
+	};

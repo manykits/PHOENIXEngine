@@ -1,0 +1,23 @@
+ps_2_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_2_0
+// source file: materialcolor_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_2_0
+//program p_materialcolor
+//semantic p_materialcolor.FogColorHeight
+//semantic p_materialcolor.FogColorDist
+//var float4 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+//var float2 vertexTCoord1 : $vin.TEXCOORD1 : TEX1 : 1 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 2 : 1
+//var float4 FogColorHeight :  : c[0] : 3 : 1
+//var float4 FogColorDist :  : c[1] : 4 : 1
+dcl t0
+dcl t1.xy
+add r0.xyz, t0, -c0
+mad r0.xyz, t1.x, r0, c0
+add r0.xyz, r0, -c1
+mov r0.w, t0
+mad r0.xyz, t1.y, r0, c1
+mov oC0, r0

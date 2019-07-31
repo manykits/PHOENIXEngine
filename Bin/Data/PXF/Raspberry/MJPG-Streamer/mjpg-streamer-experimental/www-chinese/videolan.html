@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>MJPG-streamer</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!--[if IE 6]>
+    <link rel="stylesheet" href="fix.css" type="text/css" />
+    <![endif]-->
+  </head>
+
+  <script type="text/javascript">
+    var href = window.location.href;
+    var root = href.substr(0, href.lastIndexOf('/'));
+
+    function playlist(link, hint) {
+      var res = true;
+
+      if (hint)
+        res = confirm("Please open the following playlist directly with the VideoLAN Player");
+
+      if ( !res ) {
+        link.href = "#";
+        return false;
+      }
+
+      var m3u = "data:playlist/mjpgstreamer,#EXTM3U%0A%0A#EXTINF:-1,Webcam%20MJPG-Stream%0A" + root + "/?action=stream";
+      link.href = m3u;
+      return true;
+    }
+    
+    function run() {
+      document.getElementById("stream").firstChild.nodeValue = root + "/?action=stream";
+    }
+  </script>
+
+  <body onload="run();">
+    <div id="sidebar">
+      <h1>MJPG-Streamer 示例</h1>
+      <h2>一个运行流畅的流程序</h2>
+
+      <div id="menu">
+        <a href="index.html">主页</a>
+        <a href="static.html">快照</a>
+        <a href="stream.html">流</a>
+        <a href="java.html">Java</a>
+        <a href="javascript.html">Javascript</a>
+        <a class="active" href="videolan.html">VideoLAN</a>
+        <a target="_blank" onClick="window.open(this.href, '_blank','width=400,height=400'); return false;" href="control.htm">控制</a>
+      </div>
+
+      <h3>Version info:</h3>
+      <p>v0.1 (Okt 22, 2007)</p>
+    </div>
+
+    <div id="content">
+      <h1>VideoLAN</h1>
+      <h2>在 VideoLAN 播放器中展示流</h2>
+
+      <h3>Javascript 生成的 M3U-Playlist</h3>
+      <p>点击<a onclick="return playlist(this, true);" href="#">这个链接</a> 将会在JavaScript中创建一个M3U-Playlist。 但是，这个示例需要JavaScript并且它只在Firefox3.0上做了测试。它应该可以在Opera、Chrome和IE8上工作。</p>
+      
+      <h3>手动的进入流</h3>
+      <p>你可以打开VLC进入网络流。<br /><pre id="stream">http://&lt;IP&gt;:&lt;port&gt;/?action=stream</pre></p>
+
+      <p>&nbsp;</p>
+
+      <p>&copy; <a href="http://mjpg-streamer.sf.net">MJPG-streamer 团队</a> | 设计者 <a href="http://andreasviklund.com">Andreas Viklund</a></p>
+    </div>
+  </body>
+</html>

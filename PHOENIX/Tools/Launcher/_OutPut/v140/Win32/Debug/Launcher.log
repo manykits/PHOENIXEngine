@@ -1,0 +1,10 @@
+﻿  PX2L_App.cpp
+f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(12): note: 参见“PX2::Exception”的声明
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  PX2L_RenderView.cpp
+  PX2L_Frame.cpp
+  Launcher.vcxproj -> F:\GitHub\PHOENIXEngine\PHOENIX\..\Bin\LauncherD.exe
+  Launcher.vcxproj -> F:\GitHub\PHOENIXEngine\PHOENIX\..\Bin\LauncherD.pdb (Full PDB)

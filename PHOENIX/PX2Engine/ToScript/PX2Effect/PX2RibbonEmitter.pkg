@@ -1,0 +1,13 @@
+// PX2RibbonEmitter.pkg
+
+	class RibbonEmitter : public Effectable
+	{
+		RibbonEmitter();
+		virtual ~RibbonEmitter();
+
+		void SetLength (float length);
+		float GetLength () const;
+
+		void SetSegLength (float length);
+		float GetSegLength () const;
+	};

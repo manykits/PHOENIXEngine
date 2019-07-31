@@ -1,0 +1,22 @@
+// PX2XMLData.pkg
+
+	class XMLData : public RefObject
+	{
+	public:
+		XMLData ();
+		~XMLData ();
+
+		bool LoadFile (const std::string &fileName);
+		bool LoadBuffer (const char *buffer, int size);
+		bool SaveFile (const std::string &fileName);
+		void Create ();
+
+		XMLNode GetRootNode ();
+		XMLNode NewChild (const std::string &name);
+
+		// path="Config.RenderSystem.FXSetting",如果中间任何一个节点不存在,返回
+		// 空节点
+		XMLNode GetNodeByPath (const std::string &path);
+
+		void LinkEndChild (XMLNode node);
+	};

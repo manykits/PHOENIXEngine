@@ -1,0 +1,47 @@
+// PX2AVector.pkg
+
+	class AVector : public HPoint
+	{
+		// VALUE
+	
+	public:
+		AVector ();  //< default (0,0,0,0)
+		AVector (const AVector& vec);
+		AVector (float x, float y, float z);
+		AVector (const Float3& tuple);
+		~AVector ();
+		
+		void SetX(float x);
+		void SetY(float y);
+		void SetZ(float z);
+		void SetW(float w);
+		void Set(float x, float y, float z, float w = 1.0f);
+
+		float Length () const;
+		float SquaredLength () const;
+		float Dot (const AVector& vec) const;
+		AVector Dot(float length) const;
+		AVector Over(float val) const;
+		AVector Add(const AVector &vec) const;
+		float Normalize (float epsilon = Mathf::ZERO_TOLERANCE);
+		AVector Cross (const AVector& vec) const;
+		AVector UnitCross (const AVector& vec) const;
+
+		static void Orthonormalize (AVector& vec0, AVector& vec1, AVector& vec2);
+		static void Orthonormalize (AVector* vec);
+
+		static void GenerateOrthonormalBasis (AVector& vec0, AVector& vec1,
+			AVector& vec2);
+
+		static void GenerateComplementBasis (AVector& vec0, AVector& vec1,
+			const AVector& vec2);
+
+		// ³£ÓÃÖµ
+		static const AVector ZERO;    //< (0,0,0,0)
+		static const AVector UNIT_X;  //< (1,0,0,0)
+		static const AVector UNIT_Y;  //< (0,1,0,0)
+		static const AVector UNIT_Z;  //< (0,0,1,0)
+		static const AVector UNIT;  //< (1,1,1,0)
+		
+		static AVector AnglesToDirection(float angle0, float angle1);
+	};

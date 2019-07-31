@@ -1,0 +1,16 @@
+// PX2GeneralServer.pkg
+
+	class GeneralServer : public Server
+	{
+	public:
+		void SendString(int clientid, const std::string &str);
+
+		void AddOnConnectCallback(const std::string &callback);
+		void RemoveOnConnectCallback(const std::string &callback);
+
+		void AddOnDisconnectCallback(const std::string &callback);
+		void RemoveOnDisconnectCallback(const std::string &callback);
+
+		void AddOnRecvCallback(const std::string &callback);
+		void RemoveOnRecvCallback(const std::string &callback);
+	};

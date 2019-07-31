@@ -1,0 +1,39 @@
+// PX2Picker.pkg
+
+	class Picker
+	{
+	public:
+		Picker (bool isDoMovPickCall=false, int pickInfo=-1);
+		~Picker ();
+
+		/// 执行检测，将记录保存到Records中。
+		/**
+		* 调用此函数自动清空纪录数组。如果先前记录集里就有信息，你必须先保存。
+		*/
+		void Execute (Movable* scene, const APoint& origin,
+			const AVector& direction, float tmin, float tmax);
+
+		// 下面的3个函数，返回挑选的场景节点，当且仅当Records.size() > 0时，才
+		// 可被调用。
+
+		/// 返回绝对值T最接近0的三角形记录
+		/**
+		* 如果Records为空，返回无效值。
+		*/
+		const PickRecord& GetClosestToZero () const;
+
+		/// 返回非负的T最接近0的三角形记录
+		/** 
+		* 如果Records为空，返回无效值。
+		*/
+		const PickRecord& GetClosestNonnegative () const;
+
+		/// 返回非正的T最接近0的三角形记录
+		/** 
+		* 如果Records为空，返回无效值。
+		*/
+		const PickRecord& GetClosestNonpositive () const;
+
+		/// 挑选的记录集
+		std::vector<PickRecord> Records;
+	};

@@ -1,0 +1,67 @@
+ps_2_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_2_0
+// source file: std_lightshadow_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_2_0
+//program p_std_lightshadow
+//semantic p_std_lightshadow.UVOffset
+//semantic p_std_lightshadow.FogColorHeight
+//semantic p_std_lightshadow.FogColorDist
+//semantic SampleBase
+//semantic SampleShadowDepth
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+//var float2 vertexTCoord1 : $vin.TEXCOORD1 : TEX1 : 1 : 1
+//var float4 vertexTCoord2 : $vin.TEXCOORD2 : TEX2 : 2 : 1
+//var float4 vertexTCoord3 : $vin.TEXCOORD3 : TEX3 : 3 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 4 : 1
+//var float4 UVOffset :  : c[0] : 5 : 1
+//var float4 FogColorHeight :  : c[1] : 6 : 1
+//var float4 FogColorDist :  : c[2] : 7 : 1
+//var sampler2D SampleBase :  : texunit 0 : -1 : 1
+//var sampler2D SampleShadowDepth :  : texunit 1 : -1 : 1
+//var <none>4 $kill_0000 : $vout.$kill : $kill : -1 : 0
+//const c[3] = 1 0.001 0 0.33329999
+//const c[4] = 0.5 -0.25
+dcl_2d s0
+dcl_2d s1
+def c3, 1.00000000, 0.00100000, 0.00000000, 0.33329999
+def c4, 0.50000000, -0.25000000, 0, 0
+dcl t0.xy
+dcl t2
+dcl t3
+dcl t1.xy
+mov r0.x, t0
+add r0.y, -t0, c3.x
+add r2.xy, r0, c0
+mov r2.zw, c3.z
+mov r0.y, c0.w
+mov r0.x, c0.z
+mul r0.xy, r2, r0
+mul r2.xy, -t2.w, c3.y
+add r4, t2, r2
+mov r2.yzw, c3.z
+add r2, t2, r2
+texldp r2, r2, s1
+texld r3, r0, s0
+texldp r4, r4, s1
+add r0.x, r3.w, c4.y
+cmp r0.x, r0, c3.z, c3
+mov_pp r5, -r0.x
+mov r2.w, r3
+abs_pp r0.x, r0
+texkill r5.xyzw
+texldp r5, t2, s1
+add r4.x, r5, r4
+add r2.x, r4, r2
+mul r2.x, r2, c3.w
+max_sat r2.x, r2, c4
+mul r2.xyz, r3, r2.x
+mul r2, r2, t3
+add r2.xyz, r2, -c1
+mad r2.xyz, t1.x, r2, c1
+add r2.xyz, r2, -c2
+mad r2.xyz, t1.y, r2, c2
+cmp r0, -r0.x, r2, r1
+mov oC0, r0

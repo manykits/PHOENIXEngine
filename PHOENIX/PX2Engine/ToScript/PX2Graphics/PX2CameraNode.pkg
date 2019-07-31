@@ -1,0 +1,18 @@
+// PX2CameraNode.pkg
+
+	class CameraNode : public Node
+	{
+	public:
+		CameraNode (Camera* camera = 0);
+		virtual ~CameraNode ();
+
+		void SetCamera (Camera* camera, bool initFromCamera=true);
+		
+		Camera *GetCamera ();
+
+		void EnableUpdate (bool enable);
+		bool IsEnableUpdate ();
+		
+		void LookAt(const APoint &pos, const AVector &up=AVector::UNIT_Z);
+		void LookAt(const Movable *mov, const AVector &up = AVector::UNIT_Z);
+	};

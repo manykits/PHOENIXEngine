@@ -1,0 +1,30 @@
+// PX2Bound.hpp
+
+	class Bound
+	{
+		// VALUE
+		
+	public:
+		Bound ();
+		~Bound ();
+
+		Bound& operator= (const Bound& bound);
+
+		inline void SetCenter (const APoint& center);
+		inline void SetRadius (float radius);
+		inline const APoint& GetCenter () const;
+		inline float GetRadius () const;
+
+		int WhichSide (const HPlane& plane) const;
+		void GrowToContain (const Bound& bound);
+		void TransformBy (const Transform& transform, Bound& bound);
+		void ComputeFromData (int numElements, int stride, const char* data);
+
+		bool TestIntersection (const APoint& origin, const AVector& direction,
+			float tmin, float tmax) const;
+
+		bool TestIntersection (const Bound& bound) const;
+
+		bool TestIntersection (const Bound& bound, float tmax,
+			const AVector& velocity0, const AVector& velocity1) const;
+	};

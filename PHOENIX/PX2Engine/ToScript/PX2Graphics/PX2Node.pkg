@@ -1,0 +1,43 @@
+// PX2Node.pkg
+
+	class Node : public Movable
+	{
+		Node ();
+		virtual ~Node ();
+		
+		static Node *New();
+		static Node *New(const std::string &name);
+
+		virtual void Play ();
+		virtual bool IsPlaying () const;
+		virtual void Pause ();
+		virtual void Reset ();
+
+		int GetNumChildren () const;
+		int GetNumValidChildren () const;
+
+		virtual int AttachChild (Movable* child);
+		void InsertChild (Movable *before, Movable *child);
+		virtual int DetachChild (Movable* child);
+		virtual bool DetachChildByName (const std::string &name);
+		virtual void DetachAllChildren ();
+		virtual Movable *GetChild (int i);
+		virtual Movable *GetChildByName (const std::string &name);
+		
+		void ShowOnlyChild(const std::string &childName);
+
+		virtual void Enable(bool enable);
+
+		virtual void SetCastShadow(bool castShadow);
+		virtual void SetReceiveShadow(bool reciveShadow);
+		
+		void SetDoPickPriority (bool doPickPriority); // 一般用来为Node设置
+		bool IsDoPickPriority () const;
+		virtual void OnNotPicked (int pickInfo);
+
+		void SetNeedCalUpdateChild (bool needCal);
+		bool IsNeedCalUpdateChild () const;
+
+		void SetAnchorID (int anchorID);
+		int GetAnchorID () const;
+	};

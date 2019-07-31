@@ -1,0 +1,8 @@
+// PX2EngineUICanvas.pkg
+
+	class EngineUICanvas : public Canvas
+	{
+	public:
+		EngineUICanvas();
+		virtual ~EngineUICanvas();
+	};

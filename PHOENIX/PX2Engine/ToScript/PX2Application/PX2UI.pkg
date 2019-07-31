@@ -1,0 +1,14 @@
+// PX2UI.pkg
+
+	class UI : public UIFrame
+	{
+	public:
+		UI();
+		virtual ~UI();
+		
+		static UI *New();
+		static UI *New(const std::string &name);	
+		
+		std::vector<CameraPtr> &GetCameras();
+		Camera *GetFirstCamera();
+	};

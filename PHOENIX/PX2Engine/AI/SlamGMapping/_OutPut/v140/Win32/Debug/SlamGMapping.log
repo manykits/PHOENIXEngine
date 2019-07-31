@@ -1,0 +1,87 @@
+﻿  gridslamprocessor.cpp
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\gridslamprocessor.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\gridslamprocessor.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(85): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(85): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(86): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(86): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(87): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(87): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(88): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(88): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(89): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(89): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(90): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(90): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(91): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(91): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(92): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(92): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(93): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(93): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(94): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(94): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(95): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(95): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(310): warning C4018: “<”: 有符号/无符号不匹配
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(312): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(313): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(314): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(315): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\thirdpartieslibs\opencv3.0\opencv\build\include\opencv2\core\mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\thirdpartieslibs\opencv3.0\opencv\build\include\opencv2\core\persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\thirdpartieslibs\opencv3.0\opencv\build\include\opencv2\core\utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\gridslamprocessor.h(254): warning C4800: “double”: 将值强制为布尔值“true”或“false”(性能警告)
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\gridslamprocessor.h(346): warning C4018: “<”: 有符号/无符号不匹配
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\gridslamprocessor.cpp(373): warning C4018: “<”: 有符号/无符号不匹配
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\gridslamprocessor.cpp(395): warning C4018: “<”: 有符号/无符号不匹配
+  PX2SlamGMappingManager.cpp
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\gridslamprocessor.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(85): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(85): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(86): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(86): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(87): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(87): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(88): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(88): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(89): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(89): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(90): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(90): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(91): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(91): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(92): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(92): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(93): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(93): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(94): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(94): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(95): warning C4838: 从“double”转换到“const float”需要收缩转换
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\sse_mathfun.h(95): warning C4305: “初始化”: 从“double”到“const float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(310): warning C4018: “<”: 有符号/无符号不匹配
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(312): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(313): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(314): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\scanmatcher.h(315): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\thirdpartieslibs\opencv3.0\opencv\build\include\opencv2\core\mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\thirdpartieslibs\opencv3.0\opencv\build\include\opencv2\core\persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\thirdpartieslibs\opencv3.0\opencv\build\include\opencv2\core\utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\gridslamprocessor.h(254): warning C4800: “double”: 将值强制为布尔值“true”或“false”(性能警告)
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\gridslamprocessor.h(346): warning C4018: “<”: 有符号/无符号不匹配
+f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(12): note: 参见“PX2::Exception”的声明
+f:\github\phoenixengine\phoenix\px2engine\ai\slamgmapping\px2slamgmappingmanager.cpp(96): warning C4244: “参数”: 从“time_t”转换到“unsigned long”，可能丢失数据
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  SlamGMappingPlugin.cpp
+  SlamGMapping.vcxproj -> F:\GitHub\PHOENIXEngine\PHOENIX\PX2Engine\AI\SlamGMapping\_OutPut\v140\Win32\Debug\SlamGMappingD.dll
+  SlamGMapping.vcxproj -> _OutPut\v140\Win32\Debug\SlamGMappingD.pdb (Full PDB)
+  F:\GitHub\PHOENIXEngine\PHOENIX\PX2Engine\AI\SlamGMapping\_OutPut\v140\Win32\Debug\SlamGMappingD.dll
+  复制了 1 个文件
+  复制了 0 个文件
+  F:\GitHub\PHOENIXEngine\PHOENIX\PX2Engine\AI\SlamGMapping\_OutPut\v140\Win32\Debug\SlamGMappingD.dll
+  复制了 1 个文件

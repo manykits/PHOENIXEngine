@@ -1,0 +1,27 @@
+ps_2_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_2_0
+// source file: bloom_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_2_0
+//program p_bloom
+//semantic p_bloom.BloomParam
+//semantic SamplerBase
+//semantic SamplerBloom
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+//var float4 BloomParam :  : c[0] : 2 : 1
+//var sampler2D SamplerBase :  : texunit 0 : -1 : 1
+//var sampler2D SamplerBloom :  : texunit 1 : -1 : 1
+//const c[1] = 1
+dcl_2d s0
+dcl_2d s1
+def c1, 1.00000000, 0, 0, 0
+dcl t0.xy
+add r0.y, -t0, c1.x
+mov r0.x, t0
+texld r1, r0, s0
+texld r0, r0, s1
+mad r0, r0, c0.x, r1
+mov oC0, r0

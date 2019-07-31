@@ -1,0 +1,193 @@
+// PX2Application.pkg
+
+	class Application
+	{
+		// SINGLETON Application
+	public:
+	
+		enum PlatformType
+		{
+			PLT_WINDOWS,
+			PLT_LINUX,
+			PLT_ANDROID,
+			PLT_IOS,
+			PLT_MAX_TYPE
+		};
+		PlatformType GetPlatformType() const;
+		
+		void SetInEditor(bool isInEditor);
+		bool IsInEditor() const;
+
+		void SetQuit(bool quit);
+		bool IsQuit() const;	
+	
+	public:
+		const std::string &GetHostName() const;
+		
+		const std::string &GetHostName() const;
+		int GetLocalAddressSize();
+		IPAddress GetLocalAddress(int i);
+		std::string GetLocalAddressStr(int i);
+	
+		EngineServer *GetEngineServer();
+		EngineClientConnector *GetEngineClientConnector();
+
+		UDPServer *CreateEngineUDPServer();
+		UDPServer *GetEngineUDPServer();
+
+		UDPServer *CreateEngineUDPServerEditor();
+		UDPServer *GetEngineUDPServerEditor();
+	
+		GeneralServer *CreateGeneralServer(int port,
+			int numMaxConnects, int numMaxMsgHandlers);
+		bool ShutdownGeneralServer(GeneralServer *generalServer);
+		GeneralClientConnector *CreateGetGeneralClientConnector(const std::string &name);
+		GeneralClientConnector *GetGeneralClientConnector(const std::string &name);
+		bool ShutdownGeneralClientConnector(const std::string &name);
+
+		// Update
+	public:
+		float GetElapsedTime();
+
+		// screen adjust
+	public:
+		void SetScreenSize(const Sizef &screenSize);
+		const Sizef &GetScreenSize() const;
+
+		// boost
+	public:
+		bool LoadBoost(const std::string &filename);
+		const Sizef &GetBoostSize() const;
+		const std::string &GetBoostProjectName() const;
+		AppBoostInfo::PlayLogicMode GetPlayLogicMode() const;
+		std::string GetPlayLogicModeStr() const;
+		bool IsShowInfo() const;
+
+		void SetBoostProjectName(const std::string &boostProjectName);
+		void SetBoostSize(const Sizef &size);
+		void SetBoostSize(float width, float height);
+		void SetPlayLogicMode(AppBoostInfo::PlayLogicMode mode);
+		void SetShowInfo(bool show);
+
+		bool WriteBoost();
+		
+		// project
+	public:
+		void NewProject(const std::string &pathname,
+			const std::string &projName, int so, int width, int height);
+		bool LoadProject(const std::string &name, bool doUpdate=false);
+		bool SaveProject();
+		bool SaveProjectAs(const std::string &pathname);
+		void CloseProject();
+		const std::string &GetProjectFilePath() const;
+		
+		std::string GetProjectVersionByPath(const std::string &projectName);
+
+		void NewScene();
+		bool LoadScene(const std::string &pathname);
+		bool SaveScene(const std::string &pathname);
+		bool SaveSceneAs(const std::string &pathname);
+		void CloseScene();
+
+		bool LoadUI(const std::string &pathname);
+		void CloseUI();
+
+		// play
+	public:
+		enum PlayType
+		{
+			PT_NONE,
+			PT_PLAY,
+			PT_MAX_TYPE
+		};
+		void Play(PlayType type);
+		PlayType GetPlayType() const;
+		
+		void RunFile(const std::string &pathname);
+		
+		// project tree menus
+	public:
+		void Menu_Clear();
+		void Menu_AddSubItemCatalogue(
+			const std::string &parentAllName,
+			const std::string &name,
+			const std::string &title);
+		void Menu_AddItem(
+			const std::string &parentAllName,
+			const std::string &name,
+			const std::string &title,
+			const std::string &script);
+
+		class MenuItem
+		{
+		public:
+			MenuItem();
+			~MenuItem();
+
+			void Clear();
+
+			enum Type
+			{
+				T_SUB,
+				T_ITEM,
+				T_MAX_TYPE
+			};
+			Type TheType;
+
+			std::string AllName;
+
+			std::string Name;
+			std::string Title;
+			std::string Script;
+
+			MenuItem *GetMenuItem(const std::string &parentAllName);
+			std::vector<Pointer0<MenuItem> > Items;
+		};
+
+		MenuItem *GetMenuItem();
+		
+		// general editmenus
+	public:
+		void Menu_Main_AddMainItem(const std::string &name, const std::string &title);
+		void Menu_Main_AddSubItem(const std::string &parentName, const std::string &name,
+			const std::string &title);
+		void Menu_Main_AddItem(const std::string &parentName, const std::string &name,
+			const std::string &title, const std::string &script, const std::string &scriptParam="",
+			const std::string &tag = "");
+		void Menu_Main_AddItemSeparater(const std::string &parentName);
+
+		void Menu_Edit_Begin(const std::string &whe, const std::string &name);
+		void Menu_Edit_AddSubItem(const std::string &whe,
+			const std::string &parentName, const std::string &name,
+			const std::string &title);
+		void Menu_Edit_AddItem(const std::string &whe,
+			const std::string &parentName, const std::string &name,
+			const std::string &title,
+			const std::string &script,
+			const std::string &scriptParam="",
+			const std::string &tag="");
+		void Menu_Edit_AddItemSeparater(const std::string &whe,
+			const std::string &parentName);
+		void Menu_Edit_EndPopUp(const std::string &whe,
+			const APoint &pos); // x z
+			
+	public:
+		RenderWindow *CreateUIWindow(RenderWindow *parent, const std::string &name,
+			const std::string &title, const APoint &pos, const Sizef &size, bool isFloat);
+		
+		// NetInfo
+	public:
+		UDPNetInfo *GetUDPNetInfo(const std::string &ip);
+		bool AddUDPNetInfo(const std::string &ip, const std::string &name,
+			UDPNetInfo::Type type = UDPNetInfo::T_DEVICE);
+		int GetNumUDPNetInfo() const;
+		UDPNetInfo *GetUDPNetInfo(int i);
+		void ClearUDPNetInfo();
+		
+	public:
+		void SetConfigName(const std::string &cfgName);
+		const std::string &GetConfigName();
+
+		void SetConfig(const std::string &name, const std::string &cfgStr);
+		std::string GetConfig(const std::string &name);
+	};

@@ -1,0 +1,52 @@
+// PX2AIAgent.pkg
+
+	class AIAgent : public AIAgentBase
+	{
+	public:
+		AIAgent();
+		AIAgent(Node *node);
+		virtual ~AIAgent();
+
+		void RemovePath();
+		void SetForward(const AVector& forward);
+		void SetForwarding(const AVector& forwarding);
+		void SetRotate(const HMatrix& mat);
+		void SetHeight(float  height);
+		void SetMaxForce(float force);
+		void SetMaxSpeed(float speed);
+		void SetPath(const AISteeringPath& path);
+		bool IsPathOver() const;
+				
+		void SetSpeed(float speed);
+		void SetTarget(const APoint& target);
+		void SetTargetRadius(float radius);
+		void SetTeam(const std::string& team);
+		void SetVelocity(const AVector& velocity);
+
+		AVector GetRight() const;
+		AVector GetUp() const;
+		AVector GetForward() const;
+
+		void SetHealth(float health);
+		float GetHealth() const;
+		
+		void SetPhysicsRadius(float radius);
+		float GetPhysicsRadius() const;
+
+		float GetHeight() const;
+
+		float GetMaxForce() const;
+		float GetMaxSpeed() const;
+
+		float GetSpeed() const;
+
+		APoint GetTarget() const;
+		float GetTargetRadius() const;
+
+		AVector GetVelocity() const;
+		
+		// Robot
+	public:
+		void SetRobot(Robot *robot);
+		Robot *GetRobot();
+	};

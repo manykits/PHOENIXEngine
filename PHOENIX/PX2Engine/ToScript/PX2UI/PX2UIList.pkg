@@ -1,0 +1,59 @@
+// PX2UIList.pkg
+
+	class UIList : public UIFrame
+	{
+	public:
+		UIList();
+		virtual ~UIList();
+		
+		static UIList *New();
+		static UIList *New(const std::string &name);
+
+		void SetSliderSize(float size);
+		float GetSliderSize() const;
+		
+		UISlider *GetSlider();
+	
+		void SetItemBackPicBox(const std::string &backPicBox);
+
+		void SetItemHeight(float height);
+		float GetItemHeight() const;
+
+		UIItem *AddItem(const std::string &text);
+		UIItem *GetItem(const std::string &text);
+		UIItem *GetItemByIndex(int index);
+		void RemoveItem(UIItem *item);
+		UIItem *GetItemByUserDataString(const std::string &userDataName,
+			const std::string &userDataString);
+
+		int GetNumItems() const;
+		int GetItemIndex(const std::string &text) const;
+		void RemoveAllItems();
+		float GetContentHeight() const;
+
+		void SetNumMaxItems(int numMax);
+		int GetNumMaxItems() const;
+		
+		void SetReleasedDoSelect(bool releasedDoSelect);
+		bool IsReleasedDoSelect() const;
+
+		void SelectItem(int index);
+		void AddSelectItem(UIItem *item);
+		void ClearAllSelectItems();
+		UIItem *GetSelectedItem();
+		std::string GetSelectedItemText();
+
+		virtual void OnSelected(UIItem *item);
+		int GetSelectIndex() const;
+		
+		void SetFontSize(int size);
+		int GetFontSize() const;
+
+		void SetTextColor(const Float3 &textColor);
+		const Float3 &GetTextColor() const;
+
+		void SetItemBackColor(const Float3 &backColor);
+		const Float3 &GetItemBackColor() const;
+
+		virtual void OnSizeChanged();
+	};

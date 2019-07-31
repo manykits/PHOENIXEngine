@@ -1,0 +1,67 @@
+!!ARBfp1.0
+OPTION ARB_fragment_program_shadow;
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbfp1
+# source file: std_lightshadow_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbfp1
+#program p_std_lightshadow
+#semantic p_std_lightshadow.UVOffset
+#semantic p_std_lightshadow.FogColorHeight
+#semantic p_std_lightshadow.FogColorDist
+#semantic SampleBase
+#semantic SampleShadowDepth
+#var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+#var float2 vertexTCoord1 : $vin.TEXCOORD1 : TEX1 : 1 : 1
+#var float4 vertexTCoord2 : $vin.TEXCOORD2 : TEX2 : 2 : 1
+#var float4 vertexTCoord3 : $vin.TEXCOORD3 : TEX3 : 3 : 1
+#var float4 pixelColor : $vout.COLOR : COL : 4 : 1
+#var float4 UVOffset :  : c[0] : 5 : 1
+#var float4 FogColorHeight :  : c[1] : 6 : 1
+#var float4 FogColorDist :  : c[2] : 7 : 1
+#var sampler2D SampleBase :  : texunit 0 : -1 : 1
+#var sampler2D SampleShadowDepth :  : texunit 1 : -1 : 1
+#var <none>4 $kill_0000 : $vout.$kill : $kill : -1 : 0
+#const c[3] = 0.001 0 0.5 1
+#const c[4] = 0.33329999 0.25
+PARAM c[5] = { program.local[0..2],
+		{ 0.001, 0, 0.5, 1 },
+		{ 0.33329999, 0.25 } };
+TEMP R0;
+TEMP R1;
+TEMP R2;
+TEMP R3;
+MUL R1.x, -fragment.texcoord[2].w, c[3];
+MOV R1.yzw, c[3].y;
+ADD R3, fragment.texcoord[2], R1;
+MOV R0.xy, R1.x;
+MOV R0.zw, c[3].y;
+ADD R0, fragment.texcoord[2], R0;
+TXP R1.x, R0, texture[1], SHADOW2D;
+TXP R0.x, fragment.texcoord[2], texture[1], SHADOW2D;
+ADD R0.y, R0.x, R1.x;
+TXP R0.x, R3, texture[1], SHADOW2D;
+ADD R1.x, R0.y, R0;
+MUL R1.x, R1, c[4];
+MOV R0.z, fragment.texcoord[0].x;
+ADD R0.w, -fragment.texcoord[0].y, c[3];
+ADD R0.zw, R0, c[0].xyxy;
+MUL R0.xy, R0.zwzw, c[0].zwzw;
+TEX R0, R0, texture[0], 2D;
+MAX_SAT R1.x, R1, c[3].z;
+MOV R1.w, R0;
+MUL R1.xyz, R0, R1.x;
+MUL R1, R1, fragment.texcoord[3];
+ADD R0.xyz, R1, -c[1];
+SLT R1.x, R0.w, c[4].y;
+MAD R0.xyz, fragment.texcoord[1].x, R0, c[1];
+ADD R0.xyz, R0, -c[2];
+ABS R1.y, R1.x;
+MAD R0.xyz, fragment.texcoord[1].y, R0, c[2];
+MOV R0.w, R1;
+CMP R1.y, -R1, c[3], c[3].w;
+CMP result.color, -R1.y, R0, R2;
+KIL -R1.x;
+END
+# 31 instructions, 4 R-regs

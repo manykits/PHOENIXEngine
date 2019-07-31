@@ -1,0 +1,54 @@
+// PX2PlatformSDK.pkg
+	
+	class PlatformSDK
+	{
+	public:
+		void SetPlatformSDK(const std::string &thirdname);
+		const std::string &GetPlatformSDK() const;
+		bool IsThirdPlatform() const;
+
+		void PlatformSDKLogin();
+		void PlatformSDKLogout();
+
+		void OnLoginSuc(int apiID, std::string loginUin, std::string sessionID, std::string nickname);
+		void OnLoginCancel();
+		void OnLoginFailed();
+		void OnGuestOfficialSuc();
+
+		void SynPay(const std::string &productID, const std::string &productName,
+			float productPrice, float productOriginPrice, int count,
+			const std::string &payDescription);
+		void ASynPay(const std::string &productID, const std::string &productName,
+			float productPrice, float productOriginPrice, int count,
+			const std::string &payDescription);
+
+		void OnPaySuc(const std::string &serial, bool isSyn);
+		void OnPayCancel(const std::string &serial, bool isSyn);
+		void OnPayFailed(const std::string &serial, bool isSyn);
+		void OnPaySMSSent(const std::string &serial, bool isSyn);
+		void OnPayRequestSubmitted(const std::string &serial, bool isSyn);
+		void OnPayError(const std::string &serial, int error, bool isSyn);
+
+	public:
+		void TVShowCursor(bool show);
+			
+		void RinGun_Open();
+		void RinGun_Close();
+		
+		void RinGun_OnReceive(const std::string &strCMD);
+		std::string RinGUN_GetCMD() const;
+		int RinGun_GetPosX() const;
+		int RinGun_GetPosY() const;
+		int RinGun_IsFiring() const;
+		
+	public:
+		void StartAccelerator();
+
+		void RegistAccelerator();
+		void UnRegistAccelerator();
+	
+		void SetAccelerator(float x, float y, float z);
+		float GetAcceleratorX() const;
+		float GetAcceleratorY() const;
+		float GetAcceleratorZ() const;
+	};

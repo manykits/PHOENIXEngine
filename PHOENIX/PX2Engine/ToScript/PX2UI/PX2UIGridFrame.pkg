@@ -1,0 +1,18 @@
+// PX2UIGridFrame.pkg
+
+	class UIGridFrame : public UIFrame
+	{
+	public:
+		UIGridFrame();
+		virtual ~UIGridFrame();
+		
+		static UIGridFrame *New();
+		static UIGridFrame *New(const std::string &name);
+
+		void AddItem(UIFrame *item);
+		void RemoveAllItems();
+
+		void SetSliderPercent(float percent);
+		
+		UIFrame *GetContentFrame();
+	};

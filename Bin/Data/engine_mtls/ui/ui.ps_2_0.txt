@@ -1,0 +1,29 @@
+ps_2_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_2_0
+// source file: ui_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_2_0
+//program p_ui
+//semantic p_ui.UVParam
+//semantic p_ui.ShineEmissive
+//semantic SampleBase
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+//var float4 vertexTCoord1 : $vin.TEXCOORD1 : TEX1 : 1 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 2 : 1
+//var float4 UVParam :  : c[0] : 3 : 1
+//var float4 ShineEmissive :  : c[1] : 4 : 1
+//var sampler2D SampleBase :  : texunit 0 : -1 : 1
+//const c[2] = 1
+dcl_2d s0
+def c2, 1.00000000, 0, 0, 0
+dcl t0.xy
+dcl t1
+mov r0.x, t0
+add r0.y, -t0, c2.x
+mul r0.xy, r0, c0
+texld r0, r0, s0
+mul r0, r0, t1
+mul r0, r0, c1
+mov oC0, r0

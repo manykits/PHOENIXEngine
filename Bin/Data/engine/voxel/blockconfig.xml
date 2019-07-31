@@ -1,0 +1,58 @@
+<root name="blocks">
+	<block type="1" name="white">
+		<side tex="white"/>
+		<side tex="white"/>
+		<side tex="white"/>
+		<side tex="white"/>
+		<side tex="white"/>
+		<side tex="white"/>
+	</block>
+	<block type="2" name="grass">
+		<side tex="grass_side"/>
+		<side tex="grass_side"/>
+		<side tex="grass_side"/>
+		<side tex="grass_side"/>
+		<side tex="dirt"/>
+		<side tex="hardened_clay_stained_green"/>
+	</block>
+	<block type="3" name="gravel">
+		<side tex="gravel"/>
+		<side tex="gravel"/>
+		<side tex="gravel"/>
+		<side tex="gravel"/>
+		<side tex="gravel"/>
+		<side tex="gravel"/>
+	</block>
+	<block type="4" name="gold_ore">
+		<side tex="gold_ore"/>
+		<side tex="gold_ore"/>
+		<side tex="gold_ore"/>
+		<side tex="gold_ore"/>
+		<side tex="gold_ore"/>
+		<side tex="gold_ore"/>
+	</block>
+	<block type="5" name="lapis_ore">
+		<side tex="lapis_ore"/>
+		<side tex="lapis_ore"/>
+		<side tex="lapis_ore"/>
+		<side tex="lapis_ore"/>
+		<side tex="lapis_ore"/>
+		<side tex="lapis_ore"/>
+	</block>
+	<block type="6" name="nether_brick">
+		<side tex="nether_brick"/>
+		<side tex="nether_brick"/>
+		<side tex="nether_brick"/>
+		<side tex="nether_brick"/>
+		<side tex="nether_brick"/>
+		<side tex="nether_brick"/>
+	</block>
+	<block type="7" name="emerald_block">
+		<side tex="emerald_block"/>
+		<side tex="emerald_block"/>
+		<side tex="emerald_block"/>
+		<side tex="emerald_block"/>
+		<side tex="emerald_block"/>
+		<side tex="emerald_block"/>
+	</block>
+</root>

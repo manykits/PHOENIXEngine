@@ -1,0 +1,4 @@
+// PX2Input.pkg
+
+$pfile "PX2Input/PX2Keyboard.pkg"
+$pfile "PX2Input/PX2Mouse.pkg"

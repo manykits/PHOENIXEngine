@@ -1,0 +1,30 @@
+// PX2AILiDar.pkg
+
+	class LiDar : public Object
+	{
+	public:
+		LiDar();
+		virtual ~LiDar();
+
+		static LiDar *New();
+		
+		enum LiDarType
+		{
+			LT_III,
+			LT_RP,
+			LT_WR,
+			LT_SICK,
+			LT_MAX_TYPE
+		};
+		void SetLiDarType(LiDarType type);
+		LiDarType GetLiDarType() const;
+		
+		bool Open(const std::string &port, int baud);
+		bool IsOpened();
+		void Close();
+
+		Texture2D *GetTextureLidar();
+		UIFPicBox *GetUIFPicBoxLidar();
+
+		void Update(float appSeconds, float elapsedSeconds);
+	};

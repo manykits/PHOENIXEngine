@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="toluapp" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="withLua50_Release Win32">
+				<Option output="toluapp" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add directory="../../include" />
+				</Compiler>
+				<Linker>
+					<Add library="lua50.lib" />
+					<Add directory="../../lib" />
+				</Linker>
+			</Target>
+			<Target title="withLua51_Debug Win32">
+				<Option output="toluapp" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add directory="../../include" />
+					<Add directory="../../../../PX2Engine/Unity/Lua" />
+				</Compiler>
+			</Target>
+			<Target title="withLua50_Debug Win32">
+				<Option output="toluapp" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add directory="../../include" />
+				</Compiler>
+				<Linker>
+					<Add library="lua50.lib" />
+					<Add directory="../../lib" />
+				</Linker>
+			</Target>
+			<Target title="withLua51_Release Win32">
+				<Option output="toluapp" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add directory="../../include" />
+					<Add directory="../../../../PX2Engine/Unity/Lua" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lapi.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lauxlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lauxlib.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lbaselib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lcode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lcode.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ldblib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ldebug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ldebug.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ldo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ldo.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ldump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lfunc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lfunc.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lgc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lgc.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/linit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/liolib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/llex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/llex.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/llimits.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lmathlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lmem.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/loadlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lobject.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lobject.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lopcodes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lopcodes.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/loslib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lparser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lparser.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lstate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lstate.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lstring.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lstring.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lstrlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ltable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ltable.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ltablib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ltm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/ltm.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lua.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/luaconf.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lualib.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lundump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lundump.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lvm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lvm.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lzio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../../PX2Engine/Unity/Lua/lzio.h" />
+		<Unit filename="../../../../PX2Engine/Unity/Lua/print.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lapi.h" />
+		<Unit filename="../../Lua/lauxlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lauxlib.h" />
+		<Unit filename="../../Lua/lbaselib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lcode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lcode.h" />
+		<Unit filename="../../Lua/ldblib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/ldebug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/ldebug.h" />
+		<Unit filename="../../Lua/ldo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/ldo.h" />
+		<Unit filename="../../Lua/ldump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lfunc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lfunc.h" />
+		<Unit filename="../../Lua/lgc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lgc.h" />
+		<Unit filename="../../Lua/linit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/liolib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/llex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/llex.h" />
+		<Unit filename="../../Lua/llimits.h" />
+		<Unit filename="../../Lua/lmathlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lmem.h" />
+		<Unit filename="../../Lua/loadlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lobject.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lobject.h" />
+		<Unit filename="../../Lua/lopcodes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lopcodes.h" />
+		<Unit filename="../../Lua/loslib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lparser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lparser.h" />
+		<Unit filename="../../Lua/lstate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lstate.h" />
+		<Unit filename="../../Lua/lstring.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lstring.h" />
+		<Unit filename="../../Lua/lstrlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/ltable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/ltable.h" />
+		<Unit filename="../../Lua/ltablib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/ltm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/ltm.h" />
+		<Unit filename="../../Lua/lua.h" />
+		<Unit filename="../../Lua/luaconf.h" />
+		<Unit filename="../../Lua/lualib.h" />
+		<Unit filename="../../Lua/lundump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lundump.h" />
+		<Unit filename="../../Lua/lvm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lvm.h" />
+		<Unit filename="../../Lua/lzio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../Lua/lzio.h" />
+		<Unit filename="../../Lua/print.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/bin/tolua.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/bin/toluabind.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/lib/tolua_event.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/lib/tolua_event.h" />
+		<Unit filename="../../src/lib/tolua_is.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/lib/tolua_map.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/lib/tolua_push.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/lib/tolua_to.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

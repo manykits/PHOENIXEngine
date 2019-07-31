@@ -1,0 +1,15 @@
+// PX2FBXImporter.pkg
+
+	class FBXImporter
+	{
+	public:
+		FBXImporter();
+		~FBXImporter();		
+		
+		static FBXImporter* New();
+		static void Delete(FBXImporter *importer);
+
+		bool Import(const std::string &filename);
+		void Clear();
+		Node *GetPX2Node();
+	};

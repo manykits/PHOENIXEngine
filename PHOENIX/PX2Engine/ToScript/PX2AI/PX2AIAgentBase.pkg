@@ -1,0 +1,41 @@
+// PX2AIAgentBase.pkg
+
+	class AIAgentBase : public Controller
+	{
+	public:
+		enum AgentType
+		{
+			AT_AGENT,
+			AT_OBJCT,
+			AT_MAX_TYPE
+		};
+		
+		AIAgentBase(Node *node = 0, AgentType at = AT_AGENT);
+		virtual ~AIAgentBase();
+
+		// set get
+		virtual void SetMass(float mass);
+		float GetMass() const;
+		void SetMassZeroAvoid(bool avoid);
+		bool IsMassZeroAvoid() const;
+
+		virtual void SetOrientation(const HQuaternion& quaternion);
+		HQuaternion GetOrientation() const;
+
+		virtual void SetPosition(const APoint& position);
+		APoint GetPosition() const;
+
+		void SetRadius(float radius);
+		virtual float GetRadius() const;
+		
+		// world
+		AIAgentWorld* GetAIAgentWorld();
+		const AIAgentWorld* GetAIAgentWorld() const;
+
+		Node *GetNode();
+		const Node *GetNode() const;
+
+		btRigidBody* GetRigidBody();
+		const btRigidBody* GetRigidBody() const;
+	};
+

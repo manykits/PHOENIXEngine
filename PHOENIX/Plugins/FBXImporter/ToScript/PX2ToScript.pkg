@@ -1,0 +1,4 @@
+// PX2ToLuaBP.pkg
+
+$#include "FBXImporterToLua.hpp"
+$pfile "PX2FBXImporter.pkg"

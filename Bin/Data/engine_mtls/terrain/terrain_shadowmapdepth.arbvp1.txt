@@ -1,0 +1,30 @@
+!!ARBvp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbvp1
+# source file: terrain_shadowmapdepth_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbvp1
+#program v_terrain_shadowmapdepth
+#semantic v_terrain_shadowmapdepth.PVWMatrix
+#var float3 modelPosition : $vin.POSITION : POSITION : 0 : 1
+#var float4 clipPosition : $vout.POSITION : HPOS : 1 : 1
+#var float2 vertexTCoord0 : $vout.TEXCOORD0 : TEX0 : 2 : 1
+#var float4x4 PVWMatrix :  : c[1], 4 : 3 : 1
+#const c[0] = 1
+PARAM c[5] = { { 1 },
+		program.local[1..4] };
+TEMP R0;
+TEMP R1;
+MOV R0.w, c[0].x;
+MOV R0.xyz, vertex.position;
+DP4 R1.x, R0, c[4];
+DP4 R1.y, R0, c[3];
+RCP R1.z, R1.x;
+MUL result.texcoord[0].x, R1.y, R1.z;
+MOV result.position.w, R1.x;
+MOV result.position.z, R1.y;
+DP4 result.position.y, R0, c[2];
+DP4 result.position.x, R0, c[1];
+END
+# 10 instructions, 2 R-regs

@@ -1,0 +1,32 @@
+// PX2LogicManager.pkg
+
+	class LogicManager
+	{
+	public:				
+		void SetSelectLogicObject(Object *object);
+		Object *GetSelectLogicObject();
+		
+		void SetCurLogicObject(Object *obj);
+		Object *GetCurLogicObject() const;
+	
+		void BeginAddFunObj(const std::string &funName);
+		void BeginAddClassFunObj(const std::string &className, const std::string &funName,
+			bool isStatic=false, const std::string &singltonName="", const std::string &tag="");
+		void BeginAddParam(const std::string &paramName, FunObject::ParamType pt);
+		void BeginAddEvent(const std::string &className, const std::string &entName);
+
+		void AddInput(const std::string &name, FunParamType funParamType);
+		void AddInputChar(const std::string &name, char val);
+		void AddInputInt(const std::string &name, int val);
+		void AddInputFloat(const std::string &name, float val);
+		void AddInputBool(const std::string &name, bool val);
+		void AddInputString(const std::string &name, const std::string &val, bool isEnumItem=false);
+		void AddInputObj(const std::string &name);
+		void AddOutput(const std::string &name, FunParamType funParamType);
+
+		void EndAddFun_Ctrl(const std::string &catalogue);
+		void EndAddFun_Param(const std::string &catalogue);
+		void EndAddFun_Operator(const std::string &catalogue);
+		void EndAddFun_General(const std::string &catalogue);
+		void EndAddFun_Event(const std::string &catalogue);
+	};

@@ -1,0 +1,43 @@
+// PX2TexPackData.pkg
+
+	class TexPackElement
+	{
+		// VALUE
+	
+	public:
+		TexPackElement ();
+		~TexPackElement ();
+
+		bool IsValid () const;
+
+		int X;
+		int Y;
+		int W;
+		int H;
+		int OX;
+		int OY;
+		int OW;
+		int OH;
+		bool Rolated;
+		int TexWidth;
+		int TexHeight;
+		std::string ElementName;
+		std::string ImagePathFull;
+	};
+
+	class TexPack
+	{
+		// VALUE
+		
+	public:
+		TexPack ();
+		~TexPack ();
+
+		bool IsValid () const;
+
+		std::string ImageFullPath;
+		std::string ImagePath;
+		int Width;
+		int Height;
+		bool IsHasUpdate;
+	};

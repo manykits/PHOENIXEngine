@@ -1,0 +1,17 @@
+// PX2InterpCurveAnchorParamCtrl.pkg
+	
+	class InterpCurveAnchorParamCtrl : public InterpCurveFloat3Controller
+	{
+	public:
+		InterpCurveAnchorParamCtrl(bool isHor = true);
+		virtual ~InterpCurveAnchorParamCtrl();
+		
+		static InterpCurveAnchorParamCtrl *New();
+		static InterpCurveAnchorParamCtrl *New(const std::string &name);
+
+		void SetHor(bool isHor);
+		bool IsHor() const;
+		
+		void AddPoint(float inVal, float anchorParam0, float anchorParam1, 
+			InterpCurveMode mode = ICM_LINEAR);
+	};

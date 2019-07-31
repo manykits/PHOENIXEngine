@@ -1,0 +1,5 @@
+// PX2Terrains.pkg
+
+$pfile "PX2Terrain/PX2Terrain.pkg"
+$pfile "PX2Terrain/PX2RawTerrain.pkg"
+$pfile "PX2Terrain/PX2RawTerrainPage.pkg"

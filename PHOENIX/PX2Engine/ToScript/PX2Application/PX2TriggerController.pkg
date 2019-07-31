@@ -1,0 +1,37 @@
+// PX2TriggerController.pkg
+
+	class TriggerController : public Controller
+	{
+		TriggerController();
+		virtual ~TriggerController();
+
+		enum AreaType
+		{
+			AT_SPHERE,
+			AT_BOX,
+			AT_MAX_TYPE
+		};
+
+		void SetAreaType(AreaType type);
+		AreaType GetAreaType() const;
+
+		void SetAreaParam(const AVector &vec);
+		const AVector &GetAreaParam() const;
+
+		bool IsPointIn(const PX2::APoint &point) const;
+		
+		// Triger
+	public:
+		enum TrigerType
+		{
+			TT_ENTER_ONCE,
+			TT_ENTER_EVERYENTER,
+			TT_MAX_TYPE
+		};
+		void SetTrigerType(TrigerType type);
+		TrigerType GetTrigerType() const;
+
+		virtual void Triger();
+		void ResetTriger();
+		bool IsTrigered() const;
+	};

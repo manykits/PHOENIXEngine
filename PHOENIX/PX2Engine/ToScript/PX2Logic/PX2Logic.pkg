@@ -1,0 +1,5 @@
+// PX2Logic.pkg
+
+$pfile "PX2Logic/PX2LogicManager.pkg"
+$pfile "PX2Logic/PX2LBlock.pkg"
+$pfile "PX2Logic/PX2LParam.pkg"

@@ -1,0 +1,74 @@
+#tolua
+
+CFG ?= Debug
+
+CC := /usr/bin/gcc
+
+CFLAGS := -c -D__LINUX__
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+LIBPATH := ../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := \
+	-I ../Lua/ \
+    -I . \
+	
+INCDIR := ../../../PX2SDK/Include
+	
+FTINC := $(wildcard *.h)
+FTINC := $(notdir $(INC))
+INC := $(FTINC)
+
+SRC := $(wildcard *.c)
+SRC := $(notdir $(SRC))
+
+OBJDIR := ../../$(CFG)
+
+FTOBJ := $(SRC:%.c=$(OBJDIR)/%.o)
+
+OBJ := $(FTOBJ)
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+	
+$(OBJDIR)/tolua_event.o : tolua_event.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/tolua_is.o : tolua_is.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/tolua_map.o : tolua_map.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/tolua_push.o : tolua_push.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/tolua_to.o : tolua_to.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

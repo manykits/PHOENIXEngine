@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="PX2L_Pre.hpp" />
+    <ClInclude Include="PX2L_App.hpp">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="PX2L_Frame.hpp">
+      <Filter>FrameView</Filter>
+    </ClInclude>
+    <ClInclude Include="PX2L_RenderView.hpp">
+      <Filter>FrameView</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="App">
+      <UniqueIdentifier>{04f029e0-91cb-47e2-ab36-369f735a07e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameView">
+      <UniqueIdentifier>{b0900cef-0bb1-4f43-9932-46e93fc2666a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PX2L_App.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="PX2L_Frame.cpp">
+      <Filter>FrameView</Filter>
+    </ClCompile>
+    <ClCompile Include="PX2L_RenderView.cpp">
+      <Filter>FrameView</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Launcher.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="launcher.ico" />
+  </ItemGroup>
+</Project>

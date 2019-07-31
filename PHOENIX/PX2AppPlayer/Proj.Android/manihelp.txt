@@ -1,0 +1,9 @@
+landscape
+portrait
+
+        <!-- 请填写真实的APP_ID API_KEY SECRET_KEY -->
+        <!-- only for baidusdk, note it if does use tuling sdk -->>
+        <!--meta-data android:name="com.baidu.speech.APP_ID" android:value="999999"-->
+        <!--meta-data android:name="com.baidu.speech.API_KEY" android:value="8MAxI5o7VjKSZOKeBzS4XtxO"-->
+        <!--meta-data android:name="com.baidu.speech.SECRET_KEY" android:value="Ge5GXVdGQpaxOmLzc8fOM8309ATCz9Ha"-->
+        <!--service android:name="com.baidu.speech.VoiceRecognitionService" android:exported="false" -->

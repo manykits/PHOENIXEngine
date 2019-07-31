@@ -1,0 +1,29 @@
+ps_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_3_0
+// source file: std_lineardepth_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_3_0
+//program p_std_lineardepth
+//semantic SampleBase
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : ATTR0 : 0 : 1
+//var float2 vertexTCoord1 : $vin.TEXCOORD1 : ATTR1 : 1 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 2 : 1
+//var sampler2D SampleBase :  : texunit 0 : -1 : 1
+//var <none>4 $kill_0000 : $vout.$kill : $kill : -1 : 0
+//const c[0] = 1 -0.25 0
+dcl_2d s0
+def c0, 1.00000000, -0.25000000, 0.00000000, 0
+dcl_texcoord0 v0.xy
+dcl_texcoord1 v1.x
+mov r1.x, v0
+add r1.y, -v0, c0.x
+texld r1.w, r1, s0
+add r1.x, r1.w, c0.y
+cmp r1.x, r1, c0.z, c0
+abs_pp r2.x, r1
+mov_pp r1, -r1.x
+cmp oC0.xyz, -r2.x, v1.x, r0
+texkill r1.xyzw
+cmp oC0.w, -r2.x, c0.x, r0

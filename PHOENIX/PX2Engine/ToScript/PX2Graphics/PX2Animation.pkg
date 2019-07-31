@@ -1,0 +1,40 @@
+// PX2Animation.pkg
+
+	class Animation : public Object
+	{
+		enum AnimType
+		{
+			AT_2DFRAMES,
+			AT_2DSKELETON,
+			AT_3DSKELETON,
+			AT_MAX_TYPE
+		};
+		AnimType GetAnimType() const;
+
+		void SetFilename(const std::string &filename);
+		const std::string &GetFilename() const;
+
+		void SetNormalTime(float time);
+		float GetNormalTime() const;
+
+		void SetTime(float time);
+		float GetTime() const;
+
+		void SetFrequency(float frequence);
+		float GetFrequency() const;
+
+		void SetPlayOnce(bool once);
+		bool IsPlayOnce() const;
+		void SetPlayedKeepPlaying(bool isPlayedKeepPlaying);
+		bool IsPlayedKeepPlaying() const;
+
+		// 是否使用动画融合
+		void SetUseBlend(bool useBlend);
+		bool IsUseBlend() const;
+
+		void LetCharacterPlay();
+		virtual bool IsPlaying() const;
+		virtual void Pause();
+
+		ModelController *GetCharacter();
+	};

@@ -1,0 +1,19 @@
+// PX2UIInputText.pkg
+
+	class UIInputText : public UIText, public IMEDelegate
+	{
+	public:
+		UIInputText();
+		virtual ~UIInputText();
+		
+		void SetRealText(const std::string &realText);
+		const std::string &GetRealText() const;
+
+		void SetPassword(bool isPassword);
+		bool IsPassword() const;
+
+		void SetFixedWidth(float fixedWidth);
+		float GetFixedWidth() const;
+
+		float GetTextWidth() const;
+	};

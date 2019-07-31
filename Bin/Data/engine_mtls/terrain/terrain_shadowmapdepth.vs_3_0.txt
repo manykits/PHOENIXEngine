@@ -1,0 +1,28 @@
+vs_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile vs_3_0
+// source file: terrain_shadowmapdepth_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile vs_3_0
+//program v_terrain_shadowmapdepth
+//semantic v_terrain_shadowmapdepth.PVWMatrix
+//var float3 modelPosition : $vin.POSITION0 : ATTR0 : 0 : 1
+//var float4 clipPosition : $vout.POSITION : ATTR0 : 1 : 1
+//var float2 vertexTCoord0 : $vout.TEXCOORD0 : ATTR1 : 2 : 1
+//var float4x4 PVWMatrix :  : c[0], 4 : 3 : 1
+//const c[4] = 1
+dcl_position o0
+dcl_texcoord0 o1
+def c4, 1.00000000, 0, 0, 0
+dcl_position0 v0
+mov r0.w, c4.x
+mov r0.xyz, v0
+dp4 r1.x, r0, c3
+dp4 r1.y, r0, c2
+rcp r1.z, r1.x
+mul o1.x, r1.y, r1.z
+mov o0.w, r1.x
+mov o0.z, r1.y
+dp4 o0.y, r0, c1
+dp4 o0.x, r0, c0

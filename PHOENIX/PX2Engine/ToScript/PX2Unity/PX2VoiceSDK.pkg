@@ -1,0 +1,37 @@
+// PX2VoiceSDK.pkg
+	
+	class VoiceSDK
+	{
+	public:
+		void SetSDK_AutoSpeech(const std::string &name);
+		const std::string &GetSDK_AutoSpeech() const;
+
+		void SetSDK_TTS(const std::string &name);
+		const std::string &GetSDK_TTS() const;
+
+		void StartVoiceListening();
+		void EndVoiceListening();
+		void IngoreThisTimeAutoSpeech();
+
+		void OnSpeakStart();
+		void OnSpeakPause();
+		void OnSpeakCancel();
+		void OnSpeakFinish();
+
+		void OnVoiceRecordStart();
+		void OnVoiceRecordEnd();
+		void OnVoiceRecognizeResults(const std::string &strRet, 
+			const std::string &strJSON);
+
+		// 是否允许自由对话
+		void EnableAutoSpeak(bool isAutoSpeakEnable);
+		bool IsAutoSpeakEnabled() const;
+		
+		void EnableAutoSpeakTTS(bool isAutoSpeakTTSEnable);
+		bool IsAutoSpeakTTSEnabled() const;
+
+		void Speak(const std::string &text);
+		
+		void PlayHotMusic();
+		void PlayMusic(const std::string &musicName);
+	};

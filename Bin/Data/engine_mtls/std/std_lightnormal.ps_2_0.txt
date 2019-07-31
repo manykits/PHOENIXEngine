@@ -1,0 +1,117 @@
+ps_2_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_2_0
+// source file: std_lightnormal_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_2_0
+//program p_std_lightnormal
+//semantic p_std_lightnormal.UVOffset
+//semantic p_std_lightnormal.FogColorHeight
+//semantic p_std_lightnormal.FogColorDist
+//semantic p_std_lightnormal.CameraWorldPosition
+//semantic p_std_lightnormal.LightWorldDVector_Dir
+//semantic p_std_lightnormal.ShineEmissive
+//semantic p_std_lightnormal.ShineAmbient
+//semantic p_std_lightnormal.ShineDiffuse
+//semantic p_std_lightnormal.ShineSpecular
+//semantic p_std_lightnormal.LightAmbient_Dir
+//semantic p_std_lightnormal.LightDiffuse_Dir
+//semantic p_std_lightnormal.LightSpecular_Dir
+//semantic SampleBase
+//semantic SampleNormal
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+//var float2 vertexTCoord1 : $vin.TEXCOORD1 : TEX1 : 1 : 1
+//var float3 vertexTCoord2 : $vin.TEXCOORD2 : TEX2 : 2 : 1
+//var float3 vertexTCoord3 : $vin.TEXCOORD3 : TEX3 : 3 : 1
+//var float3 vertexTCoord4 : $vin.TEXCOORD4 : TEX4 : 4 : 1
+//var float4 vertexTCoord5 : $vin.TEXCOORD5 : TEX5 : 5 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 6 : 1
+//var float4 UVOffset :  : c[0] : 7 : 1
+//var float4 FogColorHeight :  : c[1] : 8 : 1
+//var float4 FogColorDist :  : c[2] : 9 : 1
+//var float4 CameraWorldPosition :  : c[3] : 10 : 1
+//var float4 LightWorldDVector_Dir :  : c[4] : 11 : 1
+//var float4 ShineEmissive :  : c[5] : 12 : 1
+//var float4 ShineAmbient :  : c[6] : 13 : 1
+//var float4 ShineDiffuse :  : c[7] : 14 : 1
+//var float4 ShineSpecular :  : c[8] : 15 : 1
+//var float4 LightAmbient_Dir :  : c[9] : 16 : 1
+//var float4 LightDiffuse_Dir :  : c[10] : 17 : 1
+//var float4 LightSpecular_Dir :  : c[11] : 18 : 1
+//var sampler2D SampleBase :  : texunit 0 : -1 : 1
+//var sampler2D SampleNormal :  : texunit 1 : -1 : 1
+//var <none>4 $kill_0000 : $vout.$kill : $kill : -1 : 0
+//const c[12] = 1 -0.25 0 0.5
+//const c[13] = 2 -1
+dcl_2d s0
+dcl_2d s1
+def c12, 1.00000000, -0.25000000, 0.00000000, 0.50000000
+def c13, 2.00000000, -1.00000000, 0, 0
+dcl t0.xy
+dcl t2.xyz
+dcl t3.xyz
+dcl t4.xyz
+dcl t5.xyz
+dcl t1.xy
+add r6.xyz, -t5, c3
+mov r0.x, t0
+add r0.y, -t0, c12.x
+add r2.xy, r0, c0
+mov r0.w, c8
+mov r0.y, c0.w
+mov r0.x, c0.z
+mul r0.xy, r2, r0
+texld r4, r0, s0
+texld r2, r2, s1
+add r0.x, r4.w, c12.y
+cmp r0.x, r0, c12.z, c12
+mov_pp r1, -r0.x
+mad r7.xyz, r2, c13.x, c13.y
+abs_pp r0.x, r0
+texkill r1.xyzw
+dp3 r1.x, c4, c4
+rsq r5.x, r1.x
+dp3 r1.x, r6, r6
+mul r5.xyz, r5.x, c4
+rsq r1.x, r1.x
+mad r1.xyz, r1.x, r6, -r5
+mul r6.xyz, r1, c12.w
+dp3 r1.x, r6, r6
+rsq r1.x, r1.x
+mul r6.xyz, r1.x, r6
+dp3 r1.x, t3, t3
+rsq r1.x, r1.x
+mul r2.xyz, r1.x, t3
+mul r8.xyz, r7.y, r2
+dp3 r1.x, t2, t2
+rsq r2.x, r1.x
+dp3 r1.x, t4, t4
+mul r2.xyz, r2.x, t2
+rsq r1.x, r1.x
+mad r2.xyz, r7.x, r2, r8
+mul r1.xyz, r1.x, t4
+mad r7.xyz, r7.z, r1, r2
+mul r1.x, c11.w, r0.w
+dp3_sat r2.x, r7, r6
+pow r6, r2.x, r1.x
+mov r1.x, r6
+dp3_sat r2.x, r7, -r5
+mov r6.xyz, c7
+mul r5.xyz, c10, r6
+mul r6.xyz, r5, r2.x
+mov r2.xyz, c8
+mov r5.xyz, c6
+mad r5.xyz, c9, r5, r6
+mul r2.xyz, c11, r2
+mad r1.xyz, r2, r1.x, r5
+mul r1.xyz, r1, c9.w
+add r1.xyz, r1, c5
+mov r1.w, c5
+mul r1, r4, r1
+add r1.xyz, r1, -c1
+mad r1.xyz, t1.x, r1, c1
+add r1.xyz, r1, -c2
+mad r1.xyz, t1.y, r1, c2
+cmp r0, -r0.x, r1, r3
+mov oC0, r0

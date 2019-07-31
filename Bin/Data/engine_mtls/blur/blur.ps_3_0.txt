@@ -1,0 +1,86 @@
+ps_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_3_0
+// source file: blur_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_3_0
+//program p_blur
+//semantic p_blur.UVParam
+//semantic p_blur.ShineEmissive
+//semantic p_blur.UVOffsets
+//semantic SampleBase
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : ATTR0 : 0 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+//var float4 UVParam :  : c[0] : 2 : 1
+//var float4 ShineEmissive :  : c[1] : 3 : 1
+//var float4 UVOffsets[0] :  : c[2] : 4 : 1
+//var float4 UVOffsets[1] :  : c[3] : 4 : 1
+//var float4 UVOffsets[2] :  : c[4] : 4 : 1
+//var float4 UVOffsets[3] :  : c[5] : 4 : 1
+//var float4 UVOffsets[4] :  : c[6] : 4 : 1
+//var float4 UVOffsets[5] :  : c[7] : 4 : 1
+//var float4 UVOffsets[6] :  : c[8] : 4 : 1
+//var float4 UVOffsets[7] :  : c[9] : 4 : 1
+//var float4 UVOffsets[8] :  : c[10] : 4 : 1
+//var float4 UVOffsets[9] :  : c[11] : 4 : 1
+//var float4 UVOffsets[10] :  : c[12] : 4 : 1
+//var float4 UVOffsets[11] :  : c[13] : 4 : 1
+//var float4 UVOffsets[12] :  : c[14] : 4 : 1
+//var float4 UVOffsets[13] :  : c[15] : 4 : 1
+//var float4 UVOffsets[14] :  : c[16] : 4 : 1
+//var float4 UVOffsets[15] :  :  : 4 : 0
+//var sampler2D SampleBase :  : texunit 0 : -1 : 1
+//const c[17] = 1
+dcl_2d s0
+def c17, 1.00000000, 0, 0, 0
+dcl_texcoord0 v0.xy
+add r0.y, -v0, c17.x
+mov r0.x, v0
+mul r2.zw, r0.xyxy, c0.xyxy
+add r1.xy, r2.zwzw, c3
+add r0.xy, r2.zwzw, c2
+texld r1, r1, s0
+mul r1, r1, c3.z
+texld r0, r0, s0
+mad r0, r0, c2.z, r1
+add r2.xy, r2.zwzw, c4
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c5
+mad r0, r1, c4.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c6
+mad r0, r1, c5.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c7
+mad r0, r1, c6.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c8
+mad r0, r1, c7.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c9
+mad r0, r1, c8.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c10
+mad r0, r1, c9.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c11
+mad r0, r1, c10.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c12
+mad r0, r1, c11.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c13
+mad r0, r1, c12.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c14
+mad r0, r1, c13.z, r0
+texld r1, r2, s0
+add r2.xy, r2.zwzw, c15
+mad r0, r1, c14.z, r0
+texld r1, r2, s0
+mad r0, r1, c15.z, r0
+add r2.xy, r2.zwzw, c16
+texld r1, r2, s0
+mad r0, r1, c16.z, r0
+mul oC0, r0, c1

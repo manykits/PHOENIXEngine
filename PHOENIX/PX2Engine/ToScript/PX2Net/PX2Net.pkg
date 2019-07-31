@@ -1,0 +1,6 @@
+// PX2Net.pkg
+
+$pfile "PX2Net/PX2Server.pkg"
+$pfile "PX2Net/PX2NetClientConnector.pkg"
+$pfile "PX2Net/PX2UDPServer.pkg"
+$pfile "PX2Net/PX2DatagramSocket.pkg"

@@ -1,0 +1,9 @@
+<anims res="model.px2obj">
+	<anim n="show0" v="0,100" loop="false"/>
+	<anim n="idle" v="104,136" loop="true"/>
+	<anim n="show1" v="140,240" loop="false"/>
+	<anim n="walk" v="246,265" loop="true"/>
+	<anim n="die" v="266,320" loop="false"/>
+	<anim n="attack0" v="330,360" loop="false" key0="340" act="348"/>
+	<anim n="attack1" v="360,400" loop="false" key0="378" act="380"/>
+</anims>

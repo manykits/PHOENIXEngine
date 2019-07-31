@@ -1,0 +1,25 @@
+// PX2APoint.pkg
+
+	class APoint : public HPoint
+	{ 
+		// VALUE
+		
+	public:
+		APoint ();  //< default (0,0,0,1)
+		APoint (const APoint& pnt);
+		APoint (float x, float y, float z);
+		~APoint ();
+		
+		void SetX(float x);
+		void SetY(float y);
+		void SetZ(float z);
+		void SetW(float w);
+		void Set(float x, float y, float z, float w = 1.0f);
+
+		/// 点和向量相乘
+		float Dot (const AVector& vec) const;
+
+		// 特定值
+		static const APoint ORIGIN;  // (0,0,0,1)
+		static const APoint UNIT;
+	};

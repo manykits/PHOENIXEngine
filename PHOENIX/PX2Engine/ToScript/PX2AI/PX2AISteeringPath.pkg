@@ -1,0 +1,26 @@
+// PX2AIAgentPath.pkg
+
+	class AISteeringPath
+	{
+	public:
+		AISteeringPath();
+		~AISteeringPath();
+
+		Vector3f CurrentWaypoint() const;
+		bool Finished();
+		inline void SetNextWaypoint();
+
+		void LoopOn() { m_bLooped = true; }
+		void LoopOff() { m_bLooped = false; }
+
+		void AddWayPoint(const APoint &new_point);
+
+		void Set(std::list<Vector3f> new_path) { mWayPoints = new_path; curWaypoint = mWayPoints.begin(); }
+		void Set(const AISteeringPath& path) { mWayPoints = path.GetPath(); curWaypoint = mWayPoints.begin(); }
+
+		void Clear() { mWayPoints.clear(); }
+
+		std::list<Vector3f> GetPath()const { return mWayPoints; }
+
+		void Update();
+	};

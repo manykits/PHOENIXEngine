@@ -1,0 +1,13 @@
+// PX2Effect.pkg
+
+$pfile "PX2Effect/PX2Effectable.pkg"
+$pfile "PX2Effect/PX2BeamEmitter.pkg"
+$pfile "PX2Effect/PX2Billboard.pkg"
+$pfile "PX2Effect/PX2CameraShake.pkg"
+$pfile "PX2Effect/PX2EffectModel.pkg"
+$pfile "PX2Effect/PX2EffectNode.pkg"
+$pfile "PX2Effect/PX2ParticleEmitter.pkg"
+$pfile "PX2Effect/PX2RibbonEmitter.pkg"
+$pfile "PX2Effect/PX2Soundable.pkg"
+$pfile "PX2Effect/PX2EffectableController.pkg"
+$pfile "PX2Effect/PX2EffectModule.pkg"

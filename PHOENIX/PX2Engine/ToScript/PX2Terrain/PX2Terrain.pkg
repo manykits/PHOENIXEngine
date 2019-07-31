@@ -1,0 +1,15 @@
+// PX2Terrain.pkg
+
+	class Terrain : public Node
+	{
+	public:
+		virtual ~Terrain ();
+
+		inline int GetRowQuantity () const;
+		inline int GetColQuantity () const;
+		inline int GetNumVertexPage () const;
+		inline float GetSpacing () const;
+		float GetHeight (float x, float y);
+
+		Shine *GetTerrainShine ();
+	};

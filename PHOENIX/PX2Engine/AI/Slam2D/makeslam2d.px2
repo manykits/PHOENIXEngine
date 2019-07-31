@@ -1,0 +1,99 @@
+#makeslam2d.px2
+
+CFG ?= Debug
+
+CC := /usr/bin/gcc
+
+CFLAGS := -c -D__LINUX__ -DFT2_BUILD_LIBRARY
+
+ifeq (ARM,$(findstring ARM,$(CFG)))
+CFLAGS += -DPX2_USE_OPENGLES
+else
+CFLAGS += -DPX2_USE_OPENGL
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+LIBPATH := ../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := ./ \
+	-I ./eigen/ \
+	-I ./eigen/src/ \
+	-I ./eigen/src/Cholesky/ \
+	-I ./eigen/src/CholmodSupport/ \
+	-I ./eigen/src/Core/ \
+	-I ./eigen/src/functors/ \
+	-I ./eigen/src/util/ \
+	-I ./eigen/src/Eigenvalues/ \
+	-I ./eigen/src/Geometry/ \
+	-I ./eigen/src/Householder/ \
+	-I ./eigen/src/IterativeLinearSolvers/ \
+	-I ./eigen/src/Jacobi/ \
+	-I ./eigen/src/LU/ \
+	-I ./eigen/src/MetisSupport/ \
+	-I ./eigen/src/misc/ \
+	-I ./eigen/src/OrderingMethods/ \
+	-I ./eigen/src/PardisoSupport/ \
+	-I ./eigen/src/PaStiXSupport/ \
+	-I ./eigen/src/plugins/ \
+	-I ./eigen/src/QR/ \
+	-I ./eigen/src/SparseCholesky/ \
+	-I ./eigen/src/SparseCore/ \
+	-I ./eigen/src/SparseLU/ \
+	-I ./eigen/src/SparseQR/ \
+	-I ./eigen/src/SPQRSupport/ \
+	-I ./eigen/src/StlSupport/ \
+	-I ./eigen/src/SuperLUSupport/ \
+	-I ./eigen/src/SVD/ \
+	-I ./eigen/src/UmfPackSupport/ \
+	-I ../../../PX2Engine/Unity/ \
+	-I ../../../PX2Engine/AI/ \
+	-I ../../../PX2Engine/Application/ \
+	-I ../../../PX2Engine/Logic/ \
+	-I ../../../PX2Engine/Core/ \
+	-I ../../../PX2Engine/Mathematics/ \
+	-I ../../../PX2Engine/Graphics/ \
+    -I ../../../PX2SDK/Include
+	
+INCDIR := ../../../PX2SDK/Include/
+INCDIR += INCPATH
+INC := $(wildcard *.hpp) $(wildcard *.inl)
+INC := $(notdir $(INC))
+SRC := $(wildcard *.cpp)
+SRC := $(notdir $(SRC))
+
+OBJDIR := ../../$(CFG)
+OBJ := $(SRC:%.cpp=$(OBJDIR)/%.o)
+
+build : $(OBJ)
+	$(CC) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+
+$(OBJDIR)/%.o : %.cpp
+	@mkdir -p $(CFG)
+	$(CC) $(INCPATH) $(CFLAGS) $(CXXFLAGS) $< -o $@
+
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

@@ -1,0 +1,107 @@
+// PX2FunObject.pkg
+
+	enum FunParamType
+	{
+		FPT_NONE,
+		FPT_CHAR,
+		FPT_INT,
+		FPT_FLOAT,
+		FPT_FLOAT3,
+		FPT_APOINT,
+		FPT_AVECTOR,
+		FPT_BOOL,
+		FPT_STRING,
+		FPT_POINTER,
+		FPT_POINTER_THIS,
+		FPT_POINTER_THIS_STATIC,
+		FPT_LINK,
+		FPT_MAX_TYPE
+	};
+
+	struct FunParam
+	{
+		FunParam();
+		~FunParam();
+
+		std::string Name;
+		FunParamType Type;
+		Any Value;
+	};
+
+	class FunObject
+	{
+	public:
+		FunObject();
+		~FunObject();
+
+		std::string CateName;
+
+		bool IsClassCatalogue;
+		std::string ParentClassName;
+
+		bool IsStatic;
+		std::string ClassName;
+		std::string Name;
+		std::string SigletonName;
+		std::string Tag;
+		
+		void AddInput(const std::string &paramName, FunParamType type, const std::string &tName,
+			const Any &paramValue, bool isEnumItem = false, bool isEnum = false);
+		void RemoveInput(const std::string &paramName);
+		void AddOutput(const std::string &paramName, FunParamType type, const std::string &tName,
+			const Any &paramValue, bool isEnum = false);
+
+		const std::vector<FunParam> &GetInParams() const;
+		int GetNumInParams() const;
+		const FunParam &GetInParam(int i) const;
+		void ClearInParams();
+
+		const std::vector<FunParam> &GetOutParams() const;
+		int GetNumOutParams() const;
+		const FunParam &GetOutParam(int i) const;
+		void ClearOutParams();
+		
+		enum ParamType
+		{
+			PT_NONE,
+			PT_CONST,
+			PT_VARIABLE,
+			PT_VALUE,
+			PT_ENUM,
+			PT_ENUMSTRING,
+			PT_VALUESELECT,
+			PT_VARIABLESELECT,
+			PT_MAXTYPE
+		};
+		void SetParamType(ParamType pt);
+		ParamType GetParamType() const;
+
+	public:
+		FunObject *GetClass (const std::string &className);
+		FunObject *AddClass(const std::string &className);
+		FunObject *GetFunObject(const std::string &className,
+			const std::string &funName);
+
+		void AddFunObject(FunObject *funObj);
+		bool IsHasFunObject(FunObject *funObj);
+
+	public:
+		std::vector<Pointer0<FunObject> > mChildFunObjectVec_Class;
+		std::vector<Pointer0<FunObject> > mChildFunObjectVec;
+	};
+
+	class FunObjectManager
+	{
+	public:
+		FunObjectManager();
+		virtual ~FunObjectManager();
+
+		bool Initlize();
+		bool Terminate();
+
+		void SetObjectFunObject(FunObject *funObject);
+		FunObject *GetObjectFunObject();
+
+		std::map<std::string, FunObjectPtr> GetFunMap();
+		FunObject *GetAddFunMap(const std::string &name);
+	};

@@ -1,0 +1,73 @@
+// PX2Skill.hpp
+
+	class Skill : public Object
+	{
+		Skill();
+		virtual ~Skill();
+
+		void Clear();
+		void Update(int elapsedMicroSeconds);
+
+		virtual void OnAdded();
+		virtual void OnRemove();
+
+		bool IsEquipped() const;
+
+		SkillChara *GetSkillChara();
+		
+	public:
+		virtual void SetTypeID(int typeID);
+		int GetTypeID() const;
+
+		DefSkill *GetDefSkill();
+
+	public:
+		bool Prepare(bool pre, bool actSkill);
+		bool IsPrepareing() const;
+		void SetPrepareTime(int microSeconds);
+		int GetPrepareTime() const;
+		void SetPrepareTimeing(int microSeconds);
+		int GetPrepareTimeing() const;
+
+	public:
+		void SetCD(int cd);
+		int GetCD() const;
+		void SetCDing(int cding);
+		int GetCDing() const;
+		float GetCDPercent() const;
+		void PauseCDing(bool pause);
+		bool IsPauseCDing() const;
+
+		void SetDoCDing(bool cding);
+		bool IsDoCDing() const;
+
+		enum AffectGroupType
+		{
+			AGT_NONE,
+			AGT_ENEMY,
+			AGT_I,
+			AGT_IGROUP,
+			AGT_MAX_TYPE
+		};
+		void SetAffectGroupType(AffectGroupType agt);
+		AffectGroupType GetAffectGroupType() const;
+
+		SkillRange *GetSkillRange();
+
+		static bool IsCanAddTarget(Skill *skill, SkillChara *sc);
+
+	public:
+		bool IsActing() const;// 是否正在发动过程中
+
+		virtual void Activate_SkillBut_ClickDown();
+		virtual void Activate_SkillBut_ClickUp();
+		virtual void Activate_SkillBut_Up();
+		virtual void Activate_SkillBut_Drag();
+
+		void MainActivateSkillInstance(bool reDoCDing);
+
+		int GetNumSkillInsts() const;
+
+		void SetDirectPutPos(const APoint &putPos);
+		const APoint &GetDirectPutPos() const;
+	};

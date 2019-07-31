@@ -1,0 +1,45 @@
+// PX2ShaderKeys.hpp
+
+#ifndef PX2SHADERKEYS_HPP
+#define PX2SHADERKEYS_HPP
+
+#include "PX2GraphicsPre.hpp"
+
+namespace PX2
+{
+
+	enum ShaderKeyType
+	{
+		SKT_NONE,
+		SKT_EFFECT,
+		SKT_UI,
+		SKT_UIDARK,
+		SKT_UIUV3,
+		SKT_VERTEXCOLOR4,
+
+		SKT_TEXTURE2D_ALPHATEST,
+		SKT_TEXTURE2D,
+
+		SKT_STD_ALPHATEST,
+		SKT_STD,
+
+		SKT_STDVC4,
+
+		SKT_LIGHTTEX_ALPHATEST,
+		SKT_LIGHTTEX,
+
+		SKT_LIGHTTEX2_ALPHATEST,
+		SKT_LIGHTTEX2,
+
+		SKT_SKIN_ALPHATEST,
+		SKT_SKIN,
+
+		SKT_TERRAIN,
+
+		SKT_SKY,
+		SKT_MAX_TYPE
+	};
+
+}
+
+#endif

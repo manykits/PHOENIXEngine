@@ -1,0 +1,22 @@
+!!ARBfp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbfp1
+# source file: effect_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbfp1
+#program p_effect
+#semantic SampleBase
+#var float4 vertexColor : $vin.COLOR : COL0 : 0 : 1
+#var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 1 : 1
+#var float4 pixelColor : $vout.COLOR : COL : 2 : 1
+#var sampler2D SampleBase :  : texunit 0 : -1 : 1
+#const c[0] = 1
+PARAM c[1] = { { 1 } };
+TEMP R0;
+ADD R0.y, -fragment.texcoord[0], c[0].x;
+MOV R0.x, fragment.texcoord[0];
+TEX R0, R0, texture[0], 2D;
+MUL result.color, R0, fragment.color.primary;
+END
+# 4 instructions, 1 R-regs

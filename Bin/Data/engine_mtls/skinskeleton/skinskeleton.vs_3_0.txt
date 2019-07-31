@@ -1,0 +1,290 @@
+vs_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile vs_3_0
+// source file: skinskeleton_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile vs_3_0
+//program v_skinskeleton
+//semantic v_skinskeleton.PVWMatrix
+//semantic v_skinskeleton.CameraWorldPosition
+//semantic v_skinskeleton.LightWorldDVector_Dir
+//semantic v_skinskeleton.ShineEmissive
+//semantic v_skinskeleton.ShineAmbient
+//semantic v_skinskeleton.ShineDiffuse
+//semantic v_skinskeleton.ShineSpecular
+//semantic v_skinskeleton.LightAmbient_Dir
+//semantic v_skinskeleton.LightDiffuse_Dir
+//semantic v_skinskeleton.LightSpecular_Dir
+//semantic v_skinskeleton.FogParam
+//semantic v_skinskeleton.BoneTM
+//semantic SampleBase
+//var float3 modelPosition : $vin.POSITION0 : ATTR0 : 0 : 1
+//var float3 modelNormal : $vin.NORMAL0 : ATTR1 : 1 : 1
+//var float2 modelTCoord0 : $vin.TEXCOORD0 : ATTR2 : 2 : 1
+//var float4 modelTCoord1 : $vin.TEXCOORD1 : ATTR3 : 3 : 1
+//var float4 modelTCoord2 : $vin.TEXCOORD2 : ATTR4 : 4 : 1
+//var float4 clipPosition : $vout.POSITION : ATTR0 : 5 : 1
+//var float2 vertexTCoord0 : $vout.TEXCOORD0 : ATTR1 : 6 : 1
+//var float2 vertexTCoord1 : $vout.TEXCOORD1 : ATTR2 : 7 : 1
+//var float4 vertexTCoord2 : $vout.TEXCOORD2 : ATTR3 : 8 : 1
+//var float4x4 PVWMatrix :  : c[0], 4 : 9 : 1
+//var float4 CameraWorldPosition :  : c[4] : 10 : 1
+//var float4 LightWorldDVector_Dir :  : c[5] : 11 : 1
+//var float4 ShineEmissive :  : c[6] : 12 : 1
+//var float4 ShineAmbient :  : c[7] : 13 : 1
+//var float4 ShineDiffuse :  : c[8] : 14 : 1
+//var float4 ShineSpecular :  : c[9] : 15 : 1
+//var float4 LightAmbient_Dir :  : c[10] : 16 : 1
+//var float4 LightDiffuse_Dir :  : c[11] : 17 : 1
+//var float4 LightSpecular_Dir :  : c[12] : 18 : 1
+//var float4 FogParam :  : c[13] : 19 : 1
+//var float4 BoneTM[0] :  : c[14] : 20 : 1
+//var float4 BoneTM[1] :  : c[15] : 20 : 1
+//var float4 BoneTM[2] :  : c[16] : 20 : 1
+//var float4 BoneTM[3] :  : c[17] : 20 : 1
+//var float4 BoneTM[4] :  : c[18] : 20 : 1
+//var float4 BoneTM[5] :  : c[19] : 20 : 1
+//var float4 BoneTM[6] :  : c[20] : 20 : 1
+//var float4 BoneTM[7] :  : c[21] : 20 : 1
+//var float4 BoneTM[8] :  : c[22] : 20 : 1
+//var float4 BoneTM[9] :  : c[23] : 20 : 1
+//var float4 BoneTM[10] :  : c[24] : 20 : 1
+//var float4 BoneTM[11] :  : c[25] : 20 : 1
+//var float4 BoneTM[12] :  : c[26] : 20 : 1
+//var float4 BoneTM[13] :  : c[27] : 20 : 1
+//var float4 BoneTM[14] :  : c[28] : 20 : 1
+//var float4 BoneTM[15] :  : c[29] : 20 : 1
+//var float4 BoneTM[16] :  : c[30] : 20 : 1
+//var float4 BoneTM[17] :  : c[31] : 20 : 1
+//var float4 BoneTM[18] :  : c[32] : 20 : 1
+//var float4 BoneTM[19] :  : c[33] : 20 : 1
+//var float4 BoneTM[20] :  : c[34] : 20 : 1
+//var float4 BoneTM[21] :  : c[35] : 20 : 1
+//var float4 BoneTM[22] :  : c[36] : 20 : 1
+//var float4 BoneTM[23] :  : c[37] : 20 : 1
+//var float4 BoneTM[24] :  : c[38] : 20 : 1
+//var float4 BoneTM[25] :  : c[39] : 20 : 1
+//var float4 BoneTM[26] :  : c[40] : 20 : 1
+//var float4 BoneTM[27] :  : c[41] : 20 : 1
+//var float4 BoneTM[28] :  : c[42] : 20 : 1
+//var float4 BoneTM[29] :  : c[43] : 20 : 1
+//var float4 BoneTM[30] :  : c[44] : 20 : 1
+//var float4 BoneTM[31] :  : c[45] : 20 : 1
+//var float4 BoneTM[32] :  : c[46] : 20 : 1
+//var float4 BoneTM[33] :  : c[47] : 20 : 1
+//var float4 BoneTM[34] :  : c[48] : 20 : 1
+//var float4 BoneTM[35] :  : c[49] : 20 : 1
+//var float4 BoneTM[36] :  : c[50] : 20 : 1
+//var float4 BoneTM[37] :  : c[51] : 20 : 1
+//var float4 BoneTM[38] :  : c[52] : 20 : 1
+//var float4 BoneTM[39] :  : c[53] : 20 : 1
+//var float4 BoneTM[40] :  : c[54] : 20 : 1
+//var float4 BoneTM[41] :  : c[55] : 20 : 1
+//var float4 BoneTM[42] :  : c[56] : 20 : 1
+//var float4 BoneTM[43] :  : c[57] : 20 : 1
+//var float4 BoneTM[44] :  : c[58] : 20 : 1
+//var float4 BoneTM[45] :  : c[59] : 20 : 1
+//var float4 BoneTM[46] :  : c[60] : 20 : 1
+//var float4 BoneTM[47] :  : c[61] : 20 : 1
+//var float4 BoneTM[48] :  : c[62] : 20 : 1
+//var float4 BoneTM[49] :  : c[63] : 20 : 1
+//var float4 BoneTM[50] :  : c[64] : 20 : 1
+//var float4 BoneTM[51] :  : c[65] : 20 : 1
+//var float4 BoneTM[52] :  : c[66] : 20 : 1
+//var float4 BoneTM[53] :  : c[67] : 20 : 1
+//var float4 BoneTM[54] :  : c[68] : 20 : 1
+//var float4 BoneTM[55] :  : c[69] : 20 : 1
+//var float4 BoneTM[56] :  : c[70] : 20 : 1
+//var float4 BoneTM[57] :  : c[71] : 20 : 1
+//var float4 BoneTM[58] :  : c[72] : 20 : 1
+//var float4 BoneTM[59] :  : c[73] : 20 : 1
+//var float4 BoneTM[60] :  : c[74] : 20 : 1
+//var float4 BoneTM[61] :  : c[75] : 20 : 1
+//var float4 BoneTM[62] :  : c[76] : 20 : 1
+//var float4 BoneTM[63] :  : c[77] : 20 : 1
+//var float4 BoneTM[64] :  : c[78] : 20 : 1
+//var float4 BoneTM[65] :  : c[79] : 20 : 1
+//var float4 BoneTM[66] :  : c[80] : 20 : 1
+//var float4 BoneTM[67] :  : c[81] : 20 : 1
+//var float4 BoneTM[68] :  : c[82] : 20 : 1
+//var float4 BoneTM[69] :  : c[83] : 20 : 1
+//var float4 BoneTM[70] :  : c[84] : 20 : 1
+//var float4 BoneTM[71] :  : c[85] : 20 : 1
+//var float4 BoneTM[72] :  : c[86] : 20 : 1
+//var float4 BoneTM[73] :  : c[87] : 20 : 1
+//var float4 BoneTM[74] :  : c[88] : 20 : 1
+//var float4 BoneTM[75] :  : c[89] : 20 : 1
+//var float4 BoneTM[76] :  : c[90] : 20 : 1
+//var float4 BoneTM[77] :  : c[91] : 20 : 1
+//var float4 BoneTM[78] :  : c[92] : 20 : 1
+//var float4 BoneTM[79] :  : c[93] : 20 : 1
+//var float4 BoneTM[80] :  : c[94] : 20 : 1
+//var float4 BoneTM[81] :  : c[95] : 20 : 1
+//var float4 BoneTM[82] :  : c[96] : 20 : 1
+//var float4 BoneTM[83] :  : c[97] : 20 : 1
+//var float4 BoneTM[84] :  : c[98] : 20 : 1
+//var float4 BoneTM[85] :  : c[99] : 20 : 1
+//var float4 BoneTM[86] :  : c[100] : 20 : 1
+//var float4 BoneTM[87] :  : c[101] : 20 : 1
+//var float4 BoneTM[88] :  : c[102] : 20 : 1
+//var float4 BoneTM[89] :  : c[103] : 20 : 1
+//var float4 BoneTM[90] :  : c[104] : 20 : 1
+//var float4 BoneTM[91] :  : c[105] : 20 : 1
+//var float4 BoneTM[92] :  : c[106] : 20 : 1
+//var float4 BoneTM[93] :  : c[107] : 20 : 1
+//var float4 BoneTM[94] :  : c[108] : 20 : 1
+//var float4 BoneTM[95] :  : c[109] : 20 : 1
+//var float4 BoneTM[96] :  : c[110] : 20 : 1
+//var float4 BoneTM[97] :  : c[111] : 20 : 1
+//var float4 BoneTM[98] :  : c[112] : 20 : 1
+//var float4 BoneTM[99] :  : c[113] : 20 : 1
+//var float4 BoneTM[100] :  : c[114] : 20 : 1
+//var float4 BoneTM[101] :  : c[115] : 20 : 1
+//var float4 BoneTM[102] :  : c[116] : 20 : 1
+//var float4 BoneTM[103] :  : c[117] : 20 : 1
+//var float4 BoneTM[104] :  : c[118] : 20 : 1
+//var sampler2D SampleBase :  :  : -1 : 0
+//const c[119] = 1 3 0 0.5
+dcl_position o0
+dcl_texcoord0 o1
+dcl_texcoord2 o3
+dcl_texcoord1 o2
+def c119, 1.00000000, 3.00000000, 0.00000000, 0.50000000
+dcl_texcoord1 v3
+dcl_position0 v0
+dcl_texcoord2 v4
+dcl_normal0 v1
+dcl_texcoord0 v2
+mul r4.y, v3, c119
+mul r4.x, v3, c119.y
+abs r2.x, r4
+abs r0.y, r4
+frc r0.z, r0.y
+frc r2.y, r2.x
+slt r0.x, r4.y, c119.z
+max r0.x, -r0, r0
+slt r0.x, c119.z, r0
+slt r1.w, r4.x, c119.z
+max r1.w, -r1, r1
+slt r1.w, c119.z, r1
+add r0.y, r0, -r0.z
+add r0.w, -r0.x, c119.x
+mul r0.z, r0.y, r0.w
+mad r1.y, r0.x, -r0, r0.z
+mov r0.xyz, v0
+mov r0.w, c119.x
+mova a0.x, r4.y
+dp4 r1.x, r0, c[a0.x + 14]
+mova a0.x, r1.y
+dp4 r1.y, r0, c[a0.x + 15]
+dp4 r1.z, r0, c[a0.x + 16]
+add r2.w, r2.x, -r2.y
+add r2.z, -r1.w, c119.x
+mul r3.x, r2.w, r2.z
+mul r2.xyz, v4.y, r1
+mad r1.x, r1.w, -r2.w, r3
+mova a0.y, r1.x
+mul r3.w, v3.z, c119.y
+mova a0.z, r4.x
+dp4 r1.x, r0, c[a0.z + 14]
+dp4 r1.y, r0, c[a0.y + 15]
+dp4 r1.z, r0, c[a0.y + 16]
+mad r2.xyz, v4.x, r1, r2
+slt r1.w, r3, c119.z
+max r1.x, -r1.w, r1.w
+slt r1.x, c119.z, r1
+abs r1.y, r3.w
+frc r1.z, r1.y
+add r1.y, r1, -r1.z
+add r1.w, -r1.x, c119.x
+mul r1.z, r1.y, r1.w
+mul r1.w, v3, c119.y
+abs r3.y, r1.w
+slt r3.x, r1.w, c119.z
+max r3.x, -r3, r3
+slt r3.x, c119.z, r3
+frc r4.z, r3.y
+mad r2.w, r1.x, -r1.y, r1.z
+mova a0.z, r3.w
+dp4 r1.x, r0, c[a0.z + 14]
+mova a0.z, r2.w
+dp4 r1.y, r0, c[a0.z + 15]
+dp4 r1.z, r0, c[a0.z + 16]
+mad r1.xyz, v4.z, r1, r2
+add r3.y, r3, -r4.z
+add r3.z, -r3.x, c119.x
+mul r3.z, r3.y, r3
+mad r2.x, r3, -r3.y, r3.z
+mova a0.z, r2.x
+mova a0.w, r1
+dp4 r2.x, r0, c[a0.w + 14]
+dp4 r2.y, r0, c[a0.z + 15]
+dp4 r2.z, r0, c[a0.z + 16]
+mad r1.xyz, r2, v4.w, r1
+add r0.xyz, -r1, c4
+dp3 r0.w, r0, r0
+rsq r0.w, r0.w
+mad r0.xyz, r0.w, r0, -c5
+mul r3.xyz, r0, c119.w
+mova a0.w, r4.y
+dp3 r0.z, c[a0.x + 16], v1
+dp3 r0.y, c[a0.x + 15], v1
+dp3 r0.x, c[a0.w + 14], v1
+mul r2.xyz, v4.y, r0
+mova a0.x, r4
+dp3 r0.x, c[a0.x + 14], v1
+dp3 r0.y, c[a0.y + 15], v1
+dp3 r0.z, c[a0.y + 16], v1
+mad r2.xyz, v4.x, r0, r2
+mova a0.x, r3.w
+dp3 r0.x, c[a0.x + 14], v1
+mova a0.x, r2.w
+dp3 r0.y, c[a0.x + 15], v1
+dp3 r0.z, c[a0.x + 16], v1
+mad r2.xyz, v4.z, r0, r2
+mova a0.x, r1.w
+dp3 r0.x, c[a0.x + 14], v1
+dp3 r0.y, c[a0.z + 15], v1
+dp3 r0.z, c[a0.z + 16], v1
+mad r0.xyz, v4.w, r0, r2
+dp3 r2.x, r3, r3
+dp3 r1.w, r0, r0
+rsq r1.w, r1.w
+mul r0.xyz, r1.w, r0
+rsq r2.x, r2.x
+mul r2.xyz, r2.x, r3
+mov r1.w, c9
+dp3 r2.x, r0, r2
+mul r3.x, c12.w, r1.w
+max r1.w, r2.x, c119.z
+pow r2, r1.w, r3.x
+mov r1.w, r2.x
+dp3 r2.x, r0, -c5
+mov r0.xyz, c8
+max r2.x, r2, c119.z
+mul r0.xyz, c11, r0
+mul r3.xyz, r0, r2.x
+mov r0.xyz, c9
+mov r2.xyz, c7
+mad r2.xyz, c10, r2, r3
+mul r0.xyz, c12, r0
+mad r0.xyz, r0, r1.w, r2
+mov r1.w, c119.x
+mul r0.xyz, r0, c10.w
+add o3.xyz, r0, c6
+rcp r0.x, r0.w
+add r0.y, c13.w, -c13.z
+add r0.x, -r0, c13.w
+rcp r0.y, r0.y
+mul_sat o2.y, r0.x, r0
+add r0.z, c13.y, -c13.x
+rcp r0.y, r0.z
+add r0.x, r1.z, -c13
+dp4 o0.w, r1, c3
+dp4 o0.z, r1, c2
+dp4 o0.y, r1, c1
+dp4 o0.x, r1, c0
+mul_sat o2.x, r0, r0.y
+mov o1.xy, v2
+mov o3.w, c6

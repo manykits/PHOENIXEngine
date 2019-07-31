@@ -1,0 +1,29 @@
+// PX2UITree.pkg
+
+	class UITree : public UIFrame
+	{
+		UITree();
+		virtual ~UITree();
+		
+		static UITree *New();
+		static UITree *New(const std::string &name);
+
+		void SetItemHeight(float height);
+		float GetItemHeight() const;
+
+		void SetIconArrowSpace(float space);
+		float GetIconArrowSpace() const;
+
+		UIItem *GetRootItem();
+		virtual UIItem *AddItem(UIItem *parentItem, const std::string &label, 
+			const std::string &name="", Object *obj=0);
+		UIItem *GetItemByObject(Object *obj);
+		bool RemoveItem(UIItem *item);
+		void RemoveAllItemsExceptRoot();
+		void ShowRootItem(bool show);
+		bool IsShowRootItem() const;
+
+		void AddSelectItem(UIItem *item, bool isDoubleSelect, bool callOnSelected);
+		void ClearAllSelectItems(bool callOnSelected);
+		UIItem *GetSelectedItem();
+	};

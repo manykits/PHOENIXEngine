@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>MJPG-streamer</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!--[if IE 6]>
+    <link rel="stylesheet" href="fix.css" type="text/css" />
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="sidebar">
+      <h1>MJPG-Streamer 示例</h1>
+      <h2>一个运行流畅的流程序</h2>
+
+      <div id="menu">
+        <a href="index.html">主页</a>
+        <a href="static.html">快照</a> 
+        <a href="stream.html">流</a> 
+        <a class="active" href="java.html">Java</a>
+        <a href="javascript.html">Javascript</a>
+        <a href="videolan.html">VideoLAN</a>
+        <a target="_blank" onClick="window.open(this.href, '_blank','width=400,height=400'); return false;" href="control.htm">控制</a>
+      </div>
+
+      <h3>Version info:</h3>
+      <p>v0.1 (Okt 22, 2007)</p>
+    </div>
+
+    <div id="content">
+      <h1>Java</h1>
+      <h2>Java示例展示</h2>
+
+      <h3>提示</h3>
+      <p>这个示例展示了如何用Java applet来显示流。它可以在支持Java的浏览器上工作。你可以点击<a href="java_simple.html">这里</a>来查看一个简单的示例。. <a href="java_control.html">另一个示例</a>展示了如何在java-applet周围安放控制。</p>
+
+      <h3>源代码片段</h3>
+      <p><pre>&lt;applet code="com.charliemouse.cambozola.Viewer" archive="cambozola.jar" width="512" height="384"&gt;
+&lt;param name="url" value="./?action=stream"/&gt;
+&lt;/applet&gt;</pre></p>
+
+      <applet code="com.charliemouse.cambozola.Viewer" archive="cambozola.jar" width="512" height="384">
+        <param name="url" value="./?action=stream"/>
+        <param name="watermarks" value="favicon.png|left,top"/>
+      </applet>
+
+      <h3>关于 Java applet</h3>
+      <p> 使用的Java applet叫做<a href="http://www.charliemouse.com/code/cambozola/"><i>cambozola</i></a>.
+      这是它的许可证：<br />
+      <iframe src="LICENSE.txt" name="LICENSE" width="512" height="200" scrolling="yes">
+        <p><a href="LICENSE.txt">授权</a></p>
+      </iframe>
+      </p>
+
+      <p>&copy; <a href="http://mjpg-streamer.sf.net">MJPG-streamer 团队</a> | 设计者 <a href="http://andreasviklund.com">Andreas Viklund</a></p>
+    </div>
+  </body>
+</html>
+

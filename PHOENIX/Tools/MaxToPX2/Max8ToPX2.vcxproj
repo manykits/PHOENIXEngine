@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{61B8431D-65A2-42EE-B50E-2AA3B1C8BEE2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Max8ToPX2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>_OutPut\Max8\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>E:\Program Files\Autodesk\3dsMax8\plugins\</OutDir>
+    <TargetName>Max8ToPX2</TargetName>
+    <TargetExt>.dle</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>_OutPut\Max8\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>..\..\..\Bin\Plugins</OutDir>
+    <TargetName>Max8ToPX264D</TargetName>
+    <TargetExt>.dle</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\..\Bin\Plugins\</OutDir>
+    <IntDir>_OutPut\Max8\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>Max8ToPX2</TargetName>
+    <TargetExt>.dle</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MAX8TOPX2_VC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\Max8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>MaxToPX2.def</ModuleDefinitionFile>
+      <BaseAddress>0x02F60000</BaseAddress>
+      <ImportLibrary>$(OutDir)Max8ToPX2.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>..\..\ThirdPartiesLibs\Max8\lib;..\..\ThirdPartiesLibs\Microsoft DirectX SDK (June 2010)\Lib\x86;..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;comctl32.lib;core.lib;geom.lib;gfx.lib;mesh.lib;maxutil.lib;maxscrpt.lib;paramblk2.lib;msxml2.lib;bmm.lib;igame.lib;d3d9.lib;d3dx9.lib;dxerr.lib;PX2CoreD.lib;PX2MathematicsD.lib;PX2GraphicsDx9D.lib;PX2UnityD.lib;PX2InputD.lib;PX2EventSystemD.lib;xinput.lib;dinput8.lib;dxguid.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MAX8TOPX2_VC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\Max8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>MaxToPX2.def</ModuleDefinitionFile>
+      <BaseAddress>0x02F60000</BaseAddress>
+      <ImportLibrary>$(OutDir)Max8ToPX2.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>..\..\ThirdPartiesLibs\Max8\lib;..\..\ThirdPartiesLibs\Microsoft DirectX SDK (June 2010)\Lib\x86;..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;comctl32.lib;core.lib;geom.lib;gfx.lib;mesh.lib;maxutil.lib;maxscrpt.lib;paramblk2.lib;msxml2.lib;bmm.lib;igame.lib;d3d9.lib;d3dx9.lib;dxerr.lib;PX2CoreD.lib;PX2MathematicsD.lib;PX2GraphicsDx9D.lib;PX2UnityD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;WIN32_LEAN_AND_MEAN;MAX8TOPX2_VC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\Max8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\ThirdPartiesLibs\Max8\lib;..\..\ThirdPartiesLibs\Microsoft DirectX SDK (June 2010)\Lib\x86;..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;comctl32.lib;core.lib;geom.lib;gfx.lib;mesh.lib;maxutil.lib;maxscrpt.lib;paramblk2.lib;msxml2.lib;bmm.lib;igame.lib;d3d9.lib;d3dx9.lib;dxerr.lib;xinput.lib;dinput8.lib;dxguid.lib;PX2Core.lib;PX2Mathematics.lib;PX2GraphicsDx9.lib;PX2Input.lib;PX2EventSystem.lib;PX2Unity.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>MaxToPX2.def</ModuleDefinitionFile>
+      <BaseAddress>0x02F60000</BaseAddress>
+      <ImportLibrary>$(OutDir)Max8ToPX2.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MAX8TOPX2_VC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MaxToPX2.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PX2ExportSettings.hpp" />
+    <ClInclude Include="PX2MaxClassDesc.hpp" />
+    <ClInclude Include="PX2MaxToPX2PluginPre.hpp" />
+    <ClInclude Include="PX2Mtls.hpp" />
+    <ClInclude Include="PX2MtlTree.hpp" />
+    <ClInclude Include="PX2SceneBuilder.hpp" />
+    <ClInclude Include="PX2SceneExport.hpp" />
+    <ClInclude Include="PX2UniMaterialMesh.hpp" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MaxToPX2.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PX2DLLMain.cpp" />
+    <ClCompile Include="PX2ExportSettings.cpp" />
+    <ClCompile Include="PX2MaxClassDesc.cpp" />
+    <ClCompile Include="PX2Mtls.cpp" />
+    <ClCompile Include="PX2MtlTree.cpp" />
+    <ClCompile Include="PX2SceneBuilder.cpp" />
+    <ClCompile Include="PX2SceneBuilderAnimation.cpp" />
+    <ClCompile Include="PX2SceneBuilderLight.cpp" />
+    <ClCompile Include="PX2SceneBuilderMesh.cpp" />
+    <ClCompile Include="PX2SceneBuilderModifier.cpp" />
+    <ClCompile Include="PX2SceneBuilderModifierPhy.cpp" />
+    <ClCompile Include="PX2SceneBuilderModifierSkin.cpp" />
+    <ClCompile Include="PX2SceneBuilderMtl.cpp" />
+    <ClCompile Include="PX2SceneExport.cpp" />
+    <ClCompile Include="PX2UniMaterialMesh.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

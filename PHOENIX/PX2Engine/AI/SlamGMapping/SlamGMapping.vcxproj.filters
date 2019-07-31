@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="SlamGMappingPlugin.hpp" />
+    <ClInclude Include="SlamGMappingPlugin_Pre.hpp" />
+    <ClInclude Include="PX2SlamGMappingManager.hpp" />
+    <ClInclude Include="accessstate.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="array2d.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="carmenconfiguration.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="configfile.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="configuration.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="gridlinetraversal.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="gridslamprocessor.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="gridslamprocessor.hxx">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="gvalues.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="harray2d.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="icp.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="macro_params.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="motionmodel.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="movement.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="odometryreading.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="odometrysensor.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="particlefilter.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="point.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="rangereading.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="rangesensor.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="scanmatcher.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="sensor.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="sensoreading.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="sensorlog.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="sensorreading.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="sensorstream.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="smmap.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="sse_mathfun.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+    <ClInclude Include="stat.h">
+      <Filter>GMapping</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SlamGMappingPlugin.cpp" />
+    <ClCompile Include="PX2SlamGMappingManager.cpp" />
+    <ClCompile Include="carmenconfiguration.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="configfile.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="configuration.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="gridslamprocessor.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="gridslamprocessor_tree.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="motionmodel.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="movement.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="odometryreading.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="odometrysensor.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="rangereading.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="rangesensor.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="scanmatcher.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="sensor.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="sensorlog.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="sensorreading.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="sensorstream.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="smmap.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="sse_math.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="stat.cpp">
+      <Filter>GMapping</Filter>
+    </ClCompile>
+    <ClCompile Include="SlamGMappingPluginDll.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="GMapping">
+      <UniqueIdentifier>{d1e78a4e-ede7-480f-aba6-bc3ae030a8ff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

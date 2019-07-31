@@ -1,0 +1,10 @@
+// PX2ScriptManager.pkg
+
+	class SelectionManager
+	{
+		void Clear();
+
+		Selection *CreateAddSelection(const std::string &name);
+		void DestorySelecton(const std::string &name);
+		Selection *GetSelecton(const std::string &name);
+	};

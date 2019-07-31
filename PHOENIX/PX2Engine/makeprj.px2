@@ -1,0 +1,103 @@
+#PX2Engine
+
+CFG ?= Debug
+
+CC := /usr/bin/g++
+
+CFLAGS += -c -std=c++11 -D__LINUX__ -DFT2_BUILD_LIBRARY -DLUAPLUS_EXCEPTIONS -DPX2_USE_FMOD
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+CFLAGS += -DPX2_USE_OPENGLES
+else
+CFLAGS += -DPX2_USE_OPENGL
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := ../../PX2SDK/Library/$(CFG)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := ../../PX2SDK/Library/$(CFG)/$(DSTSO).a
+endif
+
+INCPATH := \
+	-I ../Core/ \
+	-I ../Core/RapidJSON/ \
+	-I ../Core/RapidXML/ \
+	-I ../Mathematics/ \
+	-I ../Graphics/ \
+	-I ../Graphics/Renderers/OpenGLESRenderer/ \
+	-I ../Unity/ \
+	-I ../Unity/AppPlay/ \
+	-I ../Unity/Lua/ \
+	-I ../Unity/ToLua/ \
+	-I ../Unity/LuaPlus/ \
+	-I ../Unity/PlatformSDK/ \
+	-I ../Unity/ZLib/ \
+	-I ../Unity/ZLib/minzip/ \
+	-I ../Unity/ImageLibs/PNG/ \
+	-I ../Unity/SQLite/ \
+	-I ../Unity/FreeType/ \
+	-I ../Unity/FreeType/include/ \
+	-I ../Unity/FreeType/include/freetype/ \
+	-I ../Unity/FreeType/include/config/ \
+	-I ../Unity/FreeType/include/internal/ \
+	-I ../Unity/serial/ \
+	-I ../Net/ \
+	-I ../Effect/ \
+	-I ../Terrains/ \
+	-I ../UI/ \
+	-I ../Physics/ \
+	-I ../Physics/Bullet/ \
+	-I ../Physics/Bullet/LinearMath/ \
+	-I ../Physics/Bullet/BulletCollision/ \
+	-I ../Physics/Bullet/BulletDynamics/ \
+	-I ../Voxel/ \
+	-I ../AI/breezyslam/ \
+	-I ../AI/iiiroboticslidar2/ \
+	-I ../AI/recast/include/ \
+	-I ../AI/detour/include/ \
+	-I ../AI/rplidar/include/ \
+	-I ../AI/rplidar/src/ \
+	-I ../AI/SkillSystem/ \
+	-I ../AI/ \
+	-I ../Logic/ \
+	-I ../Application/ \
+	-I ../ToScript/ \
+	-I ../../ThirdPartiesLibs/FMOD/linux/inc/
+	
+INCDIR := ../../PX2SDK/Include
+INC := $(wildcard PX2*.hpp) $(wildcard PX2*.inl)
+INC := $(notdir $(INC))
+SRC := $(wildcard PX2*.cpp)
+SRC := $(notdir $(SRC))
+OBJDIR := ../$(CFG)
+OBJ := $(SRC:%.cpp=$(OBJDIR)/%.o)
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+	cp -fp $(INC) $(INCDIR)
+
+$(OBJDIR)/%.o : %.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

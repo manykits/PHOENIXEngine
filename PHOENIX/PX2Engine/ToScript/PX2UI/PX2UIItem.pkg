@@ -1,0 +1,59 @@
+// PX2UIItem.pkg
+
+	class UIItem : public UIFrame
+	{
+	public:
+		UIItem();
+		virtual ~UIItem();
+
+		void SetRootItem(bool root);
+		bool IsRootItem() const;
+
+		void ShowItem(bool show);
+		bool IsShowItem() const;
+
+		UIItem *AddItem(const std::string &label, 
+			const std::string &name, Object *obj);
+		virtual void OnChildAttached(Movable *child);
+		bool RemoveItem(UIItem *item);
+		virtual void RemoveAllChildItems();
+		virtual void OnChildDetach(Movable *child);
+		int GetNumChildItem() const;
+		
+		void SetItemObject(Object* obj);
+		Object *GetItemObject();
+		UIItem *GetItemByObject(Object *obj);
+
+		UICheckButton *CreateButArrow();
+		UICheckButton *GetButArrow();
+		void DestoryArrowBut();
+
+		void Expand(bool expand);
+		bool IsExpand() const;
+		int GetNumAllChildsExpand() const;
+
+		void SetLabel(const std::string &label);
+		const std::string &GetLabel() const;
+
+		enum IconArrowState
+		{
+			IAS_NONE,
+			IAS_ARROW0,
+			IAS_ARROW1,
+			IAS_MAX_STATE
+		};
+		void SetIconArrowState(IconArrowState state);
+		IconArrowState GetIconArrowState() const;
+
+		UIButton *GetButBack();
+		UIFPicBox *GetIcon();
+		UIFText *GetFText();
+
+		void Select(bool select);
+		bool IsSelected() const;
+
+		virtual void OnSizeChanged();
+
+		void SetLevelAdjust(float adjust);
+		float GetLevelAdjust() const;
+	};

@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9e736880-965c-5a46-950f-dda035f1c9d8++505",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "9e736880-965c-5a46-950f-dda035f1c9d8++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9e736880-965c-5a46-950f-dda035f1c9d8++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B5835FD1-7F3B-4BDB-9F00-8B85B7B32420",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9e736880-965c-5a46-950f-dda035f1c9d8++505" : "Phoenix\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Phoenix",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Phoenix\/Phoenix.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/182.254.213.85\/svn\/Phoenix",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9e736880-965c-5a46-950f-dda035f1c9d8++505"
+    }
+  ]
+}

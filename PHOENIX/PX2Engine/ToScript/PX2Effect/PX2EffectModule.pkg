@@ -1,0 +1,18 @@
+// PX2EffectModule.pkg
+
+	class EffectModule : public Object
+	{
+	public:
+		enum ModuleType
+		{
+			MT_FLOAT,
+			MT_FLOAT2,
+			MT_FLOAT3,
+			MT_FLOAT3COLOR,
+			MT_MAX_TYPE
+		};
+		EffectModule (ModuleType type, bool isForEffectable, 
+			float initVal=0.0f, const Float3 &initVal1=Float3::ZERO);
+			
+		virtual ~EffectModule ();
+	};

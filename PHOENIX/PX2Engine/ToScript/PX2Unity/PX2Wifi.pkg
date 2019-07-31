@@ -1,0 +1,27 @@
+// PX2Wifi.pkg
+
+	class Wifi
+	{
+	public:
+		Wifi();
+		~Wifi();
+
+		void Clear();
+		void Update(float elapsedSeconds);
+		
+		void DisConnect();
+		void Connect(const std::string &addr, const std::string &password);
+		void ReConnect();
+		const std::string &GetLastConnectedDeviceStr() const;
+		bool IsConnected() const;
+
+		void DoDiscovery();
+		void CancelDiscovery();
+		void OnDisocveryNewDevice(const std::string &deviceStr);
+		void OnDiscoveryFinished();
+
+		void ClearScirptHandlers();
+		bool IsHasScriptHandler(const std::string &scriptHandler);
+		void AddScriptHandler(const std::string &scriptHandler);
+		void RemoveScriptHandler(const std::string &scriptHandler);
+	};

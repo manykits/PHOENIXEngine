@@ -1,0 +1,3 @@
+<servers>
+	<server name="server_a" ip="127.0.0.1" wwwaddr="" port="18180" nummaxconnect="2000"/>
+</servers>

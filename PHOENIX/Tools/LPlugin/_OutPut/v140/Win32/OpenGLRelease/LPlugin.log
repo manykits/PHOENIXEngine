@@ -1,0 +1,44 @@
+﻿  PX2LP_Dll.cpp
+  PX2LP_HandlerFactory.cpp
+f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(12): note: 参见“PX2::Exception”的声明
+PX2LP_HandlerFactory.cpp(17): warning C4100: “request”: 未引用的形参
+  PX2LP_Manager.cpp
+F:\GitHub\PHOENIXEngine\PHOENIX\PX2SDK\Include\PX2NetEventBuffer.hpp(104): warning C4127: 条件表达式是常量
+F:\GitHub\PHOENIXEngine\PHOENIX\PX2SDK\Include\PX2NetEventBuffer.hpp(108): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(12): note: 参见“PX2::Exception”的声明
+F:\GitHub\PHOENIXEngine\PHOENIX\PX2SDK\Include\PX2Dir.hpp(26): warning C4100: “dirname”: 未引用的形参
+PX2LP_Manager.cpp(64): warning C4456: “name”的声明隐藏了上一个本地声明
+  PX2LP_Manager.cpp(44): note: 参见“name”的声明
+PX2LP_Manager.cpp(108): warning C4189: “i”: 局部变量已初始化但不引用
+PX2LP_Manager.cpp(118): warning C4189: “i”: 局部变量已初始化但不引用
+PX2LP_Manager.cpp(418): warning C4456: “ret”的声明隐藏了上一个本地声明
+  PX2LP_Manager.cpp(412): note: 参见“ret”的声明
+PX2LP_Manager.cpp(477): warning C4456: “ret”的声明隐藏了上一个本地声明
+  PX2LP_Manager.cpp(472): note: 参见“ret”的声明
+PX2LP_Manager.cpp(520): warning C4456: “name”的声明隐藏了上一个本地声明
+  PX2LP_Manager.cpp(508): note: 参见“name”的声明
+PX2LP_Manager.cpp(1063): warning C4189: “textEditor”: 局部变量已初始化但不引用
+PX2LP_Manager.cpp(1371): warning C4189: “projItem”: 局部变量已初始化但不引用
+PX2LP_Manager.cpp(1725): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+PX2LP_Manager.cpp(1851): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+PX2LP_Manager.cpp(1865): warning C4456: “picBox”的声明隐藏了上一个本地声明
+  PX2LP_Manager.cpp(1833): note: 参见“picBox”的声明
+  PX2LP_Plugin.cpp
+F:\GitHub\PHOENIXEngine\PHOENIX\PX2SDK\Include\PX2NetEventBuffer.hpp(104): warning C4127: 条件表达式是常量
+F:\GitHub\PHOENIXEngine\PHOENIX\PX2SDK\Include\PX2NetEventBuffer.hpp(108): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\PX2Exception.hpp(12): note: 参见“PX2::Exception”的声明
+  PX2LP_ProjectItem.cpp
+    正在创建库 _OutPut\v140\Win32\OpenGLRelease\LPluginOpenGL.lib 和对象 _OutPut\v140\Win32\OpenGLRelease\LPluginOpenGL.exp
+  正在生成代码
+  All 873 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  LPlugin.vcxproj -> F:\GitHub\PHOENIXEngine\PHOENIX\Tools\LPlugin\_OutPut\v140\Win32\OpenGLRelease\LPluginOpenGL.dll
+  LPlugin.vcxproj -> _OutPut\v140\Win32\OpenGLRelease\LPluginOpenGL.pdb (Full PDB)
+  F:\GitHub\PHOENIXEngine\PHOENIX\Tools\LPlugin\_OutPut\v140\Win32\OpenGLRelease\LPluginOpenGL.dll
+  复制了 1 个文件

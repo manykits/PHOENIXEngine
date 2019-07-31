@@ -1,0 +1,8 @@
+// PX2EngineServer.pkg
+
+	class EngineServer
+	{
+	public:
+		EngineServer(PX2::Server::ServerType serverType, int port);
+		virtual ~EngineServer();
+	};

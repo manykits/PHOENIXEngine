@@ -1,0 +1,77 @@
+// PX2LBlock.pkg
+
+	class LBlock : public Object
+	{
+	public:
+		// Logic
+		enum BlockType
+		{
+			MT_EVENT,
+			MT_OBJECT,
+			MT_FUNCTION_START,
+			MT_FUNCTION_GENERAL,
+			MT_FUNCTION_OUTPUT,
+			MT_FUNCTION_OPERATOR,
+			MT_PARAM,
+			MT_CONTROL,
+			MT_MAX_TYPE
+		};
+		LBlock(BlockType type = MT_EVENT);
+		virtual ~LBlock();
+
+		BlockType GetBlockType() const;
+
+		void SetFunOutputConvertToGeneral(bool convert);
+		bool IsFunOutputConvertToGeneral() const;
+
+		void SetUseThisPointer(bool useThisPointer);
+		bool IsUseThisPointer() const;
+
+		void SetClassName(const std::string &className);
+		const std::string &GetClsName() const;
+
+		// regist
+		void RegistFunObj(const FunObject &funObj);
+		const FunObject &GetFunObj() const;
+		enum CtrlType
+		{
+			CT_NONE,
+			CT_IF,
+			CT_IFELSE,
+			CT_WHILE,
+			CT_COROUTINE,
+			CT_PROGRAM,
+			CT_PROGRAMSTART,
+			CT_PROGRAMFIXUPDATE,
+			CT_MAX_TYPE
+		};
+		void SetCtrlType(CtrlType ct);
+		CtrlType GetCtrlType() const;
+
+		enum ParamType
+		{
+			PT_NONE,
+			PT_VARIABLE,
+			PT_CONST,
+			PT_VALUE,
+			PT_ENUM,
+			PT_ENUMSTRING,
+			PT_VALUESELECT,
+			PT_VARIABLESELECT,
+			PT_MAX_TYPE
+		};
+		void SetParamType(ParamType pt);
+		ParamType GetParamType() const;
+
+		LParam *GetLParamByName(const std::string &name);
+
+		// Input Output
+		const std::map<std::string, LParam *> &GetInputParams() const;
+		LParam *GetInputParam(int i);
+		int GetNumInputs() const;
+		const LParam *GetOwnerObjectParam() const;
+
+		const std::map<std::string, LParam *> &GetOutputParams() const;
+		LParam *GetOutputParam(int i);
+		int GetNumOutputs() const;
+	};

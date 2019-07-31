@@ -1,0 +1,14 @@
+// PX2UISkillBuf.hpp
+
+	class UISkillBuf : public UIFrame
+	{
+	public:
+		UISkillBuf();
+		virtual ~UISkillBuf();
+		
+		static UISkillBuf *New();
+		static UISkillBuf *New(const std::string &name);
+
+		void SetSkillBuf(SkillBuf *skillBuf);
+		SkillBuf *GetSkillBuf();
+	};

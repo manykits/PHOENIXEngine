@@ -1,0 +1,14 @@
+// PX2LODTerrain.pkg
+
+	class LODTerrain : public Terrain
+	{
+	public:
+		LODTerrain ();
+		virtual ~LODTerrain ();
+
+		void SetPixelTolerance (float tolerance);
+		float GetPixelTolerance ();
+
+		void SetCloseAssumption (bool ca);
+		bool IsCloseAssumption ();
+	};

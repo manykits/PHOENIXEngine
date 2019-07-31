@@ -1,0 +1,14 @@
+// PX2LuaScriptController.pkg
+
+	class LuaScriptController : public ScriptController
+	{	
+		LuaScriptController();
+		virtual ~LuaScriptController();
+		
+int SelfP() const;
+		
+		void SetVal(const std::string &key, int val);
+		void SetVal(const std::string &key, bool val);
+		void SetVal(const std::string &key, float val);
+		void SetVal(const std::string &key, const std::string &val);
+	};

@@ -1,0 +1,91 @@
+ps_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_3_0
+// source file: sky_sunmoon_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_3_0
+//program p_sky_sunmoon
+//semantic p_sky_sunmoon.LightWorldDVector_Dir
+//semantic p_sky_sunmoon.CameraWorldDVector
+//semantic p_sky_sunmoon.SkyParam
+//semantic p_sky_sunmoon.SunMoonParam
+//semantic p_sky_sunmoon.SunMoonColourIn
+//semantic p_sky_sunmoon.SunMoonColourOut
+//semantic SamplerDay
+//semantic SamplerSunset
+//semantic SamplerNight
+//var float3 vertexTCoord0 : $vin.TEXCOORD0 : ATTR0 : 0 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+//var float4 LightWorldDVector_Dir :  : c[0] : 2 : 1
+//var float4 CameraWorldDVector :  : c[1] : 3 : 1
+//var float4 SkyParam :  : c[2] : 4 : 1
+//var float4 SunMoonParam :  : c[3] : 5 : 1
+//var float4 SunMoonColourIn :  : c[4] : 6 : 1
+//var float4 SunMoonColourOut :  : c[5] : 7 : 1
+//var sampler2D SamplerDay :  : texunit 0 : -1 : 1
+//var sampler2D SamplerSunset :  : texunit 1 : -1 : 1
+//var sampler2D SamplerNight :  : texunit 2 : -1 : 1
+//const c[6] = 0 1 4 0.5
+//const c[7] = 9.9999997e-005 0.25
+dcl_2d s0
+dcl_2d s1
+dcl_2d s2
+def c6, 0.00000000, 1.00000000, 4.00000000, 0.50000000
+def c7, 0.00010000, 0.25000000, 0, 0
+dcl_texcoord0 v0.xyz
+mov r1.z, c6.x
+mov r1.xy, -c0
+dp3 r0.x, r1, r1
+rsq r0.w, r0.x
+mul r1.xyz, r0.w, r1
+mov r0.w, c0.z
+mov r0.z, c6.x
+mov r0.xy, c1
+dp3 r1.w, r0, r0
+rsq r1.w, r1.w
+mul r0.xyz, r1.w, r0
+dp3 r1.x, r1, r0
+max r0.w, c7.x, -r0
+rcp r0.y, r0.w
+dp3 r0.x, v0, v0
+rsq r0.x, r0.x
+mul r4.xyz, r0.x, v0
+mul r0.y, r0, c2.x
+min r0.y, r0, c6
+add r1.z, r0.y, c7.y
+max r1.y, r4.z, c6.x
+pow r0, r1.y, r1.z
+add r0.y, r1.x, c6
+mad r5.x, -r0.y, c6.w, c6.y
+mov r0.y, r0.x
+add r5.y, -r0, c6
+mov r0.x, c0.z
+add r2.x, c6.y, r0
+pow r0, r2.x, c2.y
+mov r4.w, r0.x
+texld r1, r5, s1
+texld r2, r5, s0
+texld r0, r5, s2
+add r3, r1, -r2
+min r4.w, r4, c6.y
+mad r2, r4.w, r3, r2
+dp3 r3.y, r4, -c0
+mov r3.x, c0.z
+mul r3.x, c6.z, r3
+add r0, r0, -r1
+min r3.x, r3, c6.y
+max r4.x, r3.y, c6
+mad r1, r3.x, r0, r1
+pow r0, r4.x, c3.z
+pow r3, r4.x, c3.x
+mov r0.y, r3.x
+mov_pp r3.x, c0.z
+cmp r3.x, r3, c6, c6.y
+abs_pp r3.x, r3
+mul r3.y, r0, c3
+mul r0.x, r0, c3.w
+mul r0, r0.x, c5
+mad r0, r3.y, c4, r0
+cmp r1, -r3.x, r1, r2
+add oC0, r1, r0

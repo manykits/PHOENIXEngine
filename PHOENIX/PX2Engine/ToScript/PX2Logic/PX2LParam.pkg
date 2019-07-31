@@ -1,0 +1,47 @@
+// PX2LParam.pkg
+
+	class LParam : public Object
+	{
+		enum LParamType
+		{
+			IPT_IN,
+			IPT_OUT,
+			IPT_IN_EXE,
+			IPT_OUT_EXE,
+			IPT_MAX_TYPE
+		};
+
+		LParam(LParamType lpt = IPT_IN);
+		virtual ~LParam();
+
+		LParamType GetLParamType() const;
+
+		void SetDataType(FunParamType type);
+		FunParamType GetDataType() const;
+		bool IsOwnObjectParam() const;
+		
+		void SetEnum(bool isEnum);
+		bool IsEnum() const;
+
+		void SetValue(const Any &any);
+		void SetValueFromString(const std::string &valueStr);
+		const Any &GetValue() const;
+		bool GetValueB() const;
+		char GetValueChar() const;
+		int GetValueI() const;
+		float GetValueF() const;
+		Float3 GetValueF3() const;
+		APoint GetValueAPoint() const;
+		AVector GetValueAVector() const;
+		std::string GetValueStr() const;
+		Object *GetValuePointer() const;
+
+		std::string GetTypeScirptStr();
+		std::string GetValueScriptStr(bool coverString);
+		const std::string &GetOutputScriptVarString() const;
+
+		LBlock *GetModule();
+		const LBlock *GetModule() const;
+
+		LBlock *GetLinkBlock();
+	};

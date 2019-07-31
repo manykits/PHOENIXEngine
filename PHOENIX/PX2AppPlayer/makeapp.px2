@@ -1,0 +1,59 @@
+# PX2AppPlayer
+
+CFG ?= Debug
+
+CC := /usr/bin/g++
+CFLAGS := -c -D__LINUX__
+
+FMOD_LIB_PATH := ../ThirdPartiesLibs/FMOD/linux/lib
+
+ifeq (ARM,$(findstring ARM,$(CFG)))
+CFLAGS += -DPX2_USE_OPENGLES
+FMOD_LIB_PATH := ../ThirdPartiesLibs/FMOD/linux/lib/armhf
+else
+CFLAGS += -DPX2_USE_OPENGL
+
+ifeq ($(ARCH),$(BIT64))
+FMOD_LIB_PATH := ../ThirdPartiesLibs/FMOD/linux/lib/x86_64
+else
+FMOD_LIB_PATH := ../ThirdPartiesLibs/FMOD/linux/lib/x86
+endif
+
+endif
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+INCPATH := -I ../PX2SDK/Include \
+	-I ./
+	
+SRC := $(notdir $(wildcard *.cpp))
+OBJ := $(SRC:%.cpp=$(CFG)/%.o)
+LIBPATH := -L ../PX2SDK/Library/$(CFG)
+XLIBS := -lX11 -lXext
+
+ifeq (ARM,$(findstring ARM,$(CFG)))
+WLIBS := -lPX2EngineARM
+GLIBS := -lGLESv2 -lEGL
+else
+WLIBS := -lPX2Engine
+GLIBS := -lGL -lGLU
+endif
+
+LIBS := $(WLIBS) $(XLIBS) $(GLIBS) -lpthread -lm -ldl -L$(FMOD_LIB_PATH) -lfmod
+
+OBJDIR := ./$(CFG)
+
+build : $(OBJ)
+	$(CC) $(LIBPATH) $(OBJ) -o $(APP).$(CFG) $(LIBS)
+
+$(CFG)/%.o : %.cpp
+	@mkdir -p $(CFG)
+	$(CC) $(CFLAGS) $(INCPATH) $< -o $@
+
+clean :
+	rm -rf $(CFG)
+	rm -f $(APP).$(CFG)

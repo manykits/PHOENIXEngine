@@ -1,0 +1,6 @@
+// PX2Triangles.pkg
+
+	class Triangles : public Renderable
+	{
+		virtual ~Triangles();
+	};

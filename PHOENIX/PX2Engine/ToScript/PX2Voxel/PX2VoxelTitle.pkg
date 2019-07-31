@@ -1,0 +1,42 @@
+// PX2VoxelTitle.pkg
+	
+	class VoxelTitle : public Node
+	{
+	public:
+		VoxelTitle(int x, int y, int z, int initMtlType);
+		virtual ~VoxelTitle();
+
+		void GetBlockIndex(const APoint &localPos, int &indexX, int &indexY, int &indexZ);
+		bool SetBlock(const APoint &localPos, int type, SetBlockGet *vbg);
+		bool SetBlock(int blockIndexX, int blockIndexY, int blockIndexZ, int mtlType, SetBlockGet *vbg);
+
+		bool IsContainPoint(const APoint &pos) const;
+
+	public:
+		int WorldIndexX;
+		int WorldIndexY;
+		int WorldIndexZ;
+
+		VoxelTitle *Left;
+		VoxelTitle *Right;
+		VoxelTitle *Front;
+		VoxelTitle *Back;
+		VoxelTitle *Bottom;
+		VoxelTitle *Top;
+	
+	public:
+		static void SetGenTitleSideBlock(bool sideBlock);
+		static bool IsGenTitleSideBlock();
+		static std::string GetTitlePath(int mapID, int indexX, int indexY, int indexZ);
+
+		void UpdateTitleSideBlock();
+
+		void SetNeedReGenMesh(bool need);
+		bool IsNeedReGenMesh() const;
+
+		// Models
+	public:
+		void AddMovable(Movable *mov, const APoint &worldPos);
+
+		std::vector<MovablePtr> mActorModels;
+	};

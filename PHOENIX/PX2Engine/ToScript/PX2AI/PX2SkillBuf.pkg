@@ -1,0 +1,25 @@
+// PX2SkillBuf.pkg
+
+	class SkillBuf : public Object
+	{
+		static SkillBuf *New();
+		static SkillBuf *New(const std::string &name);
+
+		SkillBuf();
+		virtual ~SkillBuf();
+
+		void SetTypeID(int typeID);
+		int GetTypeID() const;
+
+		DefBuf *GetDefBuf();
+		const std::string &GetTag() const;
+
+		void SetChara(SkillChara *chara);
+		SkillChara *GetChara();
+
+		void OnAdded();
+		void OnRemove();
+
+		float GetPercent() const;
+		bool IsOver() const;
+	};

@@ -1,0 +1,43 @@
+!!ARBfp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbfp1
+# source file: skinskeleton_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbfp1
+#program p_skinskeleton
+#semantic p_skinskeleton.UVOffset
+#semantic p_skinskeleton.FogColorHeight
+#semantic p_skinskeleton.FogColorDist
+#semantic SampleBase
+#var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+#var float2 vertexTCoord1 : $vin.TEXCOORD1 : TEX1 : 1 : 1
+#var float4 vertexTCoord2 : $vin.TEXCOORD2 : TEX2 : 2 : 1
+#var float4 pixelColor : $vout.COLOR : COL : 3 : 1
+#var float4 UVOffset :  : c[0] : 4 : 1
+#var float4 FogColorHeight :  : c[1] : 5 : 1
+#var float4 FogColorDist :  : c[2] : 6 : 1
+#var sampler2D SampleBase :  : texunit 0 : -1 : 1
+#var <none>4 $kill_0000 : $vout.$kill : $kill : -1 : 0
+#const c[3] = 1 0 0.25
+PARAM c[4] = { program.local[0..2],
+		{ 1, 0, 0.25 } };
+TEMP R0;
+TEMP R1;
+TEMP R2;
+MOV R1.x, fragment.texcoord[0];
+ADD R1.y, -fragment.texcoord[0], c[3].x;
+ADD R1.xy, R1, c[0];
+TEX R2, R1, texture[0], 2D;
+MUL R1, R2, fragment.texcoord[2];
+SLT R2.x, R2.w, c[3].z;
+ADD R1.xyz, R1, -c[1];
+ABS R2.y, R2.x;
+MAD R1.xyz, fragment.texcoord[1].x, R1, c[1];
+ADD R1.xyz, R1, -c[2];
+CMP R2.y, -R2, c[3], c[3].x;
+MAD R1.xyz, fragment.texcoord[1].y, R1, c[2];
+CMP result.color, -R2.y, R1, R0;
+KIL -R2.x;
+END
+# 14 instructions, 3 R-regs

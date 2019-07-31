@@ -1,0 +1,17 @@
+// PX2ScriptContext.pkg
+	
+	class ScriptContext : public RefObject
+	{
+	public:
+		enum ContextType
+		{
+			CT_NONE,
+			CT_LUA,
+			CT_MAX_TYPE
+		};
+	
+		virtual ~ScriptContext();
+		
+		virtual bool CallString(const std::string &str);
+		virtual bool CallFile(const std::string &filename);
+	};

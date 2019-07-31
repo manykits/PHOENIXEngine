@@ -1,0 +1,11 @@
+// PX2Time.pkg
+
+	class Time
+	{
+		static double GetTimeInMicroseconds();
+		static double GetTimeInSeconds();
+		static void ResetTime();
+
+		static double FrameElapsedSeconds;
+		static double FrameRunnedSeconds;
+	};

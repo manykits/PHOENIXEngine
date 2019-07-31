@@ -1,0 +1,150 @@
+<material name="skinskeleton">
+	<technique name="skinskeleton">
+		<pass name="P0">
+			<shader type="vs" name="skinskeleton" ni="5" no="4" nc="12" ns="0">
+				<i>
+					<var index="0" name="modelPosition" vt="float3" vs="POSITION"/>
+					<var index="1" name="modelNormal" vt="float3" vs="NORMAL"/>
+					<var index="2" name="modelTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="3" name="modelTCoord1" vt="float4" vs="TEXCOORD1"/>
+					<var index="4" name="modelTCoord2" vt="float4" vs="TEXCOORD2"/>
+				</i>
+				<o>
+					<var index="0" name="clipPosition" vt="float4" vs="POSITION"/>
+					<var index="1" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="2" name="vertexTCoord1" vt="float2" vs="TEXCOORD1"/>
+					<var index="3" name="vertexTCoord2" vt="float4" vs="TEXCOORD2"/>
+				</o>
+				<c>
+					<var index="0" name="PVWMatrix" nr="4"/>
+					<var index="1" name="CameraWorldPosition" nr="1"/>
+					<var index="2" name="LightWorldDVector_Dir" nr="1"/>
+					<var index="3" name="ShineEmissive" nr="1"/>
+					<var index="4" name="ShineAmbient" nr="1"/>
+					<var index="5" name="ShineDiffuse" nr="1"/>
+					<var index="6" name="ShineSpecular" nr="1"/>
+					<var index="7" name="LightAmbient_Dir" nr="1"/>
+					<var index="8" name="LightDiffuse_Dir" nr="1"/>
+					<var index="9" name="LightSpecular_Dir" nr="1"/>
+					<var index="10" name="FogParam" nr="1"/>
+					<var index="11" name="BoneTM" nr="105"/>
+				</c>
+				<p>
+					<var type="cg" file="skinskeleton_cg.fx"/>
+					<var type="gles2" file="skinskeleton_gles2_vs.fx"/>
+				</p>
+			</shader>
+			<shader type="ps" name="skinskeleton" ni="3" no="1" nc="3" ns="1">
+				<i>
+					<var index="0" name="vertexColor" vt="float4" vs="COLOR0"/>
+					<var index="1" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="2" name="vertexTCoord1" vt="float2" vs="TEXCOORD1"/>
+				</i>
+				<o>
+					<var index="0" name="pixelColor" vt="float4" vs="COLOR0"/>
+				</o>
+				<c>
+					<var index="0" name="UVOffset" nr="1"/>
+					<var index="1" name="FogColorHeight" nr="1"/>
+					<var index="2" name="FogColorDist" nr="1"/>
+				</c>
+				<s>
+					<var index="0" name="SampleBase" st="sampler2D" sf="LINEAR" sc_0="CLAMP" sc_1="CLAMP"/>
+				</s>
+				<p>
+					<var type="cg" file="skinskeleton_cg.fx"/>
+					<var type="gles2" file="skinskeleton_gles2_ps.fx"/>
+				</p>
+			</shader>
+			<renderproperty>
+				<Alpha>
+					<p param="BlendEnabled" value="false"/>
+					<p param="SrcBlend" value="SBM_SRC_ALPHA"/>
+					<p param="DstBlend" value="DBM_ONE_MINUS_SRC_ALPHA"/>
+					<p param="CompareEnabled" value="false"/>
+					<p param="Compare" value="CM_GEQUAL"/>
+					<p param="Reference" value="0"/>
+				</Alpha>
+				<Depth>
+					<p param="Enabled" value="true"/>
+					<p param="Writable" value="true"/>
+					<p param="Compare" value="CM_LEQUAL"/>
+				</Depth>
+				<Cull>
+					<p param="Enabled" value="true"/>
+					<p param="CCWOrder" value="true"/>
+				</Cull>
+				<Wire>
+					<p param="Enabled" value="false"/>
+				</Wire>
+			</renderproperty>
+		</pass>
+	</technique>
+	<technique name="skinskeleton_shadowmapdepth">
+		<pass name="P0">
+			<shader type="vs" name="skinskeleton_shadowmapdepth" ni="5" no="3" nc="2" ns="0">
+				<i>
+					<var index="0" name="modelPosition" vt="float3" vs="POSITION"/>
+					<var index="1" name="modelNormal" vt="float3" vs="NORMAL"/>
+					<var index="2" name="modelTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="3" name="modelTCoord1" vt="float4" vs="TEXCOORD1"/>
+					<var index="4" name="modelTCoord2" vt="float4" vs="TEXCOORD2"/>
+				</i>
+				<o>
+					<var index="0" name="clipPosition" vt="float4" vs="POSITION"/>
+					<var index="1" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="2" name="vertexTCoord1" vt="float2" vs="TEXCOORD1"/>
+				</o>
+				<c>
+					<var index="0" name="PVWMatrix" nr="4"/>
+					<var index="1" name="BoneTM" nr="108"/>
+				</c>
+				<p>
+					<var type="cg" file="skinskeleton_shadowmapdepth_cg.fx"/>
+					<var type="gles2" file="skinskeleton_shadowmapdepth_gles2_vs.fx"/>
+				</p>
+			</shader>
+			<shader type="ps" name="skinskeleton_shadowmapdepth" ni="2" no="1" nc="1" ns="1">
+				<i>				
+					<var index="0" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="1" name="vertexTCoord1" vt="float2" vs="TEXCOORD1"/>
+				</i>
+				<o>
+					<var index="0" name="pixelColor" vt="float4" vs="COLOR0"/>
+				</o>
+				<c>
+					<var index="0" name="UVOffset" nr="1"/>
+				</c>
+				<s>
+					<var index="0" name="SampleBase" st="sampler2D" sf="LINEAR" sc_0="CLAMP" sc_1="CLAMP"/>
+				</s>
+				<p>
+					<var type="cg" file="skinskeleton_shadowmapdepth_cg.fx"/>
+					<var type="gles2" file="skinskeleton_shadowmapdepth_gles2_ps.fx"/>
+				</p>
+			</shader>
+			<renderproperty>
+				<Alpha>
+					<p param="BlendEnabled" value="false"/>
+					<p param="SrcBlend" value="SBM_SRC_ALPHA"/>
+					<p param="DstBlend" value="DBM_ONE_MINUS_SRC_ALPHA"/>
+					<p param="CompareEnabled" value="false"/>
+					<p param="Compare" value="CM_GEQUAL"/>
+					<p param="Reference" value="0"/>
+				</Alpha>
+				<Depth>
+					<p param="Enabled" value="true"/>
+					<p param="Writable" value="true"/>
+					<p param="Compare" value="CM_LEQUAL"/>
+				</Depth>
+				<Cull>
+					<p param="Enabled" value="true"/>
+					<p param="CCWOrder" value="true"/>
+				</Cull>
+				<Wire>
+					<p param="Enabled" value="false"/>
+				</Wire>
+			</renderproperty>
+		</pass>
+	</technique>
+</material>

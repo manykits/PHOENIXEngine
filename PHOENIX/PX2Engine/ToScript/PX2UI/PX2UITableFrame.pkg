@@ -1,0 +1,63 @@
+// PX2UITableFrame.pkg
+
+	class UITabFrame : public UIFrame
+	{
+		UITabFrame();
+		virtual ~UITabFrame();
+
+		static UITabFrame *New();
+		static UITabFrame *New(const std::string &name);
+
+		enum LayoutPosType
+		{
+			LPT_TOP,
+			LPT_BOTTOM,
+			LPT_LEFT,
+			LPT_RIGHT,
+			LPT_MAX_TYPE
+		};
+		void SetLayoutPos(LayoutPosType posType);
+		LayoutPosType GetLayoutPos() const;
+
+		void SetTabBarHeight(float height);
+		float GetTabBarHeight() const;
+
+		void SetTabWidth(float width);
+		float GetTabWidth() const;
+
+		void SetTabHeight(float height);
+		float GetTabHeight() const;
+		
+		// font
+		void SetFontSize(int size);
+		int GetFontSize() const;
+
+		void SetFontScale(float scale);
+		float GetFontScale() const;
+
+		void SetFontColor(const Float3 &fontColor);
+		const Float3 &GetFontColor() const;		
+
+		enum TabLayoutType
+		{
+			TLT_FIX,
+			TLT_SCALE,
+			TLT_MAX_TYPE
+		};
+		void SetTabLayoutType(TabLayoutType tlt);
+		TabLayoutType GetTabLayoutType() const;
+
+		virtual void OnSizeChanged();
+
+		void AddTab(const std::string &name, const std::string &title,
+			UIFrame *tabContentFrame);
+		bool IsHasTab(const std::string &name);
+		UIFrame *GetTab(const std::string &name);
+		void RemoveTab(const std::string &name);
+		void RemoveAllTabs();
+		int GetNumTabs() const;
+		void SetActiveTab(const std::string &name);
+		std::string GetActiveTab() const;
+		UIButton *GetTabButton(const std::string &name);
+		UIFrame *GetTitleBarFrame();
+	};

@@ -1,0 +1,8 @@
+// PX2Voxel.pkg
+
+$pfile "PX2Voxel/PX2VoxelBlockMtl.pkg"
+$pfile "PX2Voxel/PX2VoxelBlock.pkg"
+$pfile "PX2Voxel/PX2VoxelTitle.pkg"
+$pfile "PX2Voxel/PX2VoxelSection.pkg"
+$pfile "PX2Voxel/PX2VoxelManager.pkg"
+$pfile "PX2Voxel/PX2VoxelSetBlockGet.pkg"

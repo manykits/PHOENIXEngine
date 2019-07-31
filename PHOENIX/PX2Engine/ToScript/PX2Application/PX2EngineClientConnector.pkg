@@ -1,0 +1,38 @@
+// PX2EngineClientConnector.pkg
+
+	class EngineClientConnector : public ClientConnector
+	{
+	public:
+		EngineClientConnector();
+		virtual ~EngineClientConnector();
+
+		virtual int Update(float elapsedSeconds);
+		
+		void SetAutoConnect(bool autoCnt);
+		bool IsAutoConnect() const;
+		void SetAutoConnectTime(float seconds);
+		float GetAutoConnectTime() const;
+
+		void SetAutoConnectIP(const std::string &ipStr);
+		void SetAutoConnectPort(int port);
+		const std::string &GetAutoConnectIP() const;
+		int GetAutoConnectPort() const;
+
+		bool IsConnected() const;
+		void OnConnectedToServer();
+		void OnDisConnectedToServer();
+
+		void SendString(const std::string &str);
+
+		bool IsHasOnConnectCallback(const std::string &callback) const;
+		void AddOnConnectCallback(const std::string &callback);
+		void RemoveOnConnectCallback(const std::string &callback);
+
+		bool IsHasOnDisConnectCallback(const std::string &callback) const;
+		void AddOnDisconnectCallback(const std::string &callback);
+		void RemoveOnDisconnectCallback(const std::string &callback);
+
+		bool IsHasOnRecvCallback(const std::string &callback) const;
+		void AddOnRecvCallback(const std::string &callback);
+		void RemoveOnRecvCallback(const std::string &callback);
+	};

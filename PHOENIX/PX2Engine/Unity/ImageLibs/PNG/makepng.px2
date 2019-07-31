@@ -1,0 +1,107 @@
+#PNG
+
+CFG ?= Debug
+
+CC := /usr/bin/gcc
+
+CFLAGS := -c -D__LINUX__
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+LIBPATH := ../../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := \
+	-I ../../ZLib/. \
+    -I . \
+	
+INCDIR := ../../../../PX2SDK/Include
+	
+FTINC := $(wildcard *.h)
+FTINC := $(notdir $(INC))
+INC := $(FTINC)
+
+SRC := $(wildcard *.c)
+SRC := $(notdir $(SRC))
+
+OBJDIR := ../../../$(CFG)
+
+FTOBJ := $(SRC:%.c=$(OBJDIR)/%.o)
+
+OBJ := $(FTOBJ)
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+	
+$(OBJDIR)/example.o : example.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/png.o : png.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngerror.o : pngerror.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngget.o : pngget.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngmem.o : pngmem.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngpread.o : pngpread.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngread.o : pngread.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngrio.o : pngrio.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngrtran.o : pngrtran.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngrutil.o : pngrutil.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngset.o : pngset.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngtrans.o : pngtrans.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngwio.o : pngwio.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngwrite.o : pngwrite.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngwtran.o : pngwtran.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/pngwutil.o : pngwutil.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

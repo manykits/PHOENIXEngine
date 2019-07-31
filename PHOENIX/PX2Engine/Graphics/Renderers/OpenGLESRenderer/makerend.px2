@@ -1,0 +1,118 @@
+#OpenGLESRenderer
+
+CFG ?= Debug
+
+CC := /usr/bin/g++
+
+CFLAGS := -c -std=c++11 -D__LINUX__
+
+ifeq (ARM,$(findstring ARM,$(CFG)))
+CFLAGS += -DPX2_USE_OPENGLES
+else
+CFLAGS += -DPX2_USE_OPENGL
+endif
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+LIBPATH := ../../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,libPX2Engine.so -o
+LIB := $(LIBPATH)/libPX2Engine.so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/libPX2Engine.a
+endif
+
+INCPATH := \
+    -I /usr/X11R6/include \
+    -I /usr/include \
+    -I . \
+    -I ../../. \
+    -I ../../../../PX2SDK/Include
+	
+INCDIR := ../../../../PX2SDK/Include
+
+RENINC := ../../PX2Renderer.hpp ../../PX2Renderer.inl ../../PX2Renderers.hpp
+OGLINC := $(wildcard PX2*.hpp)
+OGLINC := $(notdir $(OGLINC))
+OGLINC := $(OGLINC:%.hpp = %.hpp)
+INC := $(RENINC) $(OGLINC)
+
+RENSRC := ../../PX2Renderer.cpp
+OGLSRC := $(wildcard *.cpp)
+OGLSRC := $(notdir $(OGLSRC))
+
+OBJDIR := ../../../$(CFG)
+RENOBJ := $(OBJDIR)/PX2Renderer.o
+OGLOBJ := $(OGLSRC:%.cpp=$(OBJDIR)/%.o)
+
+OBJ := $(RENOBJ) $(OGLOBJ)
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+	cp -fp $(INC) $(INCDIR)
+	
+$(OBJDIR)/PX2OpenGLESRendererData.o : PX2OpenGLESRendererData.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/PX2Renderer.o : ../../PX2Renderer.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/PX2OpenGLESRendererInput.o : PX2OpenGLESRendererInput.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/PX2OpenGLESMapping.o : PX2OpenGLESMapping.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESIndexBuffer.o : PX2OpenGLESIndexBuffer.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/PX2OpenGLESMaterialPass.o : PX2OpenGLESMaterialPass.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESPixelShader.o : PX2OpenGLESPixelShader.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESRenderer.o : PX2OpenGLESRenderer.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESRenderTarget.o : PX2OpenGLESRenderTarget.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESShader.o : PX2OpenGLESShader.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESTexture1D.o : PX2OpenGLESTexture1D.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESTexture2D.o : PX2OpenGLESTexture2D.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESTexture3D.o : PX2OpenGLESTexture3D.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESTextureCube.o : PX2OpenGLESTextureCube.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESVertexBuffer.o : PX2OpenGLESVertexBuffer.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESVertexFormat.o : PX2OpenGLESVertexFormat.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+$(OBJDIR)/PX2OpenGLESVertexShader.o : PX2OpenGLESVertexShader.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

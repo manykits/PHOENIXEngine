@@ -1,0 +1,14 @@
+// PX2Log.pkg
+
+	class Logger
+	{
+		void SetBlock (bool isBlock);
+		bool IsBlock ();
+
+		void SetLogFileInfo(bool logFileInfo);
+		bool IsLogFileInfo() const;	
+	
+		void LogInfo (const std::string &tag, const std::string &info);
+		void LogError (const std::string &tag, const std::string &info);
+		void LogUser (const std::string &tag, const std::string &info);
+	};

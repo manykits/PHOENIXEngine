@@ -1,0 +1,12 @@
+// PX2RedoUndo.pkg
+
+	class URDoManager
+	{
+	public:
+		void Clear();
+		bool IsHasUnDo() const;
+		bool IsHasReDo() const;
+
+		void UnDo();
+		void ReDo();
+	};

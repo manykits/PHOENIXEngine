@@ -1,0 +1,20 @@
+!!ARBfp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbfp1
+# source file: tex2d_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbfp1
+#program p_tex2d
+#semantic SampleBase
+#var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+#var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+#var sampler2D SampleBase :  : texunit 0 : -1 : 1
+#const c[0] = 1
+PARAM c[1] = { { 1 } };
+TEMP R0;
+MOV R0.x, fragment.texcoord[0];
+ADD R0.y, -fragment.texcoord[0], c[0].x;
+TEX result.color, R0, texture[0], 2D;
+END
+# 3 instructions, 1 R-regs

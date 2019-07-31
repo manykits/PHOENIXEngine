@@ -1,0 +1,18 @@
+// PX2UDPServer.pkg
+
+	class UDPServer : public Object
+	{
+	public:
+		static UDPServer *New();
+		static UDPServer *New(const std::string &name);
+		
+		void Bind(int port);
+		void Start();
+		void Stop();
+
+		void Update(float elapsedSeconds);
+	
+		bool IsHasOnRecvCallback(const std::string &callback) const;
+		bool AddOnRecvCallback(const std::string &callback);
+		bool RemoveOnRecvCallback(const std::string &callback);
+	};

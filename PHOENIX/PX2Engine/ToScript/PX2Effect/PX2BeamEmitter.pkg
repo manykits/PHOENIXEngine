@@ -1,0 +1,55 @@
+// PX2BeamEmitter.pkg
+
+	class BeamEmitter : public Effectable
+	{
+		BeamEmitter();
+		~BeamEmitter();
+
+		void SetNumMaxBeams (int num); 
+		int GetNumMaxBeams () const;
+
+		void SetEmitRate (float rate);
+		float GetEmitRate () const;
+
+		void SetEmitStartPos (const APoint &startPos);
+		const APoint &GetEmitStartPos () const;
+		void SetEmitEndPos (const APoint &endPos);
+		const APoint &GetEmitEndPos () const;
+
+		// 在发射器IsLocal是false时，用此可发出点是本地的
+		void SetStartPosUseLocal (bool startUseLocal);
+		bool IsStartPosUseLocal () const;
+
+		void SetSimpleLineWave (bool simpleLineWave);
+		bool IsSimpleLineWave () const;
+		void SetSimpleLineDoAlphaDisAfterStopSpeed (float speed);
+		float GetSimpleLineDoAlphaDisAfterStopSpeed () const;
+
+		enum WaveType
+		{
+			WT_RANDOM,
+			WT_SIN,
+			WT_LINE,
+			WT_MAX_TYPE
+		};
+
+		void SetWaveTypeUp (WaveType type);
+		WaveType GetWaveTypeUp () const;
+		void SetWaveTypeExtend (WaveType type);
+		WaveType GetWaveTypeExtend () const;
+
+		void SetNumLowFrequency (int numLow);
+		int GetNumLowFrequency () const;
+		void SetNumHighFrequency (int numHigh);
+		int GetNumHighFrequency () const;
+
+		void SetLowFrequencyRangeUp (const Float2 &range);
+		void SetLowFrequencyRangeExtend (const Float2 &range);
+		const Float2 &GetLowFrequencyRangeUp () const;
+		const Float2 &GetLowFrequencyRangeExtend () const;
+
+		void SetHighFrequencyRangeUp (const Float2 &range);
+		void SetHighFrequencyRangeExtend (const Float2 &range);
+		const Float2 &GetHighFrequencyRangeUp () const;
+		const Float2 &GetHighFrequencyRangeExtend () const;
+	};

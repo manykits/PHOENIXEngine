@@ -1,0 +1,28 @@
+// PX2UIComboBox.pkg
+
+	class UIComboBox : public UIFrame
+	{
+	public:
+		UIComboBox();
+		virtual ~UIComboBox();
+		
+		static UIComboBox *New();
+		static UIComboBox *New(const std::string &name);
+
+		UIItem *AddChooseStr(const std::string &choose);
+		void RemoveAllChooseStr();
+		int GetNumChooseStr() const;
+		std::string GetChooseStrByIndex(int i) const;
+
+		void SetChooseListHeightSameWithChooses();
+
+		void Choose(int i, bool isDoCallback=true);
+		void ChooseStr(const std::string &str, bool isDoCallback = true);
+		int GetChoose() const;
+		std::string GetChooseStr() const;
+
+		UIButton *GetSelectButton();
+		UIList *GetChooseList();
+
+		void SetTextColor(const Float3 &textColor);
+	};

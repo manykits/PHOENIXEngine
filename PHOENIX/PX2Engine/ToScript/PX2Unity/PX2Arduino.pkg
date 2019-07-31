@@ -1,0 +1,200 @@
+// PX2Arduino.pkg
+	
+	enum ArduinoRecvType
+	{
+		ART_RECV_DIST,
+		ART_RECV_IR,
+		ART_RECV_RC,
+		ART_MAXZ_TYPE
+	};
+	
+	class Arduino : public Object
+	{
+		Arduino();
+		virtual ~Arduino();
+		
+		static Arduino *New();
+		static Arduino *New(const std::string &name);
+
+		enum Mode
+		{
+			M_SERIAL,
+			M_BLUETOOTH,
+			M_SOCKETUDP_Broadcast,
+			M_ESP_SOCKETTCP_Connector, // ESP8266
+			M_SOCKETTCP_Connector, // SocketTCP_MsgID
+			M_EMPTY,
+			M_MAX_TYPE
+		};
+
+		void Reset();
+		bool Initlize(Mode mode, const std::string &port="", int baudrate = 9600);
+		bool InitlizeSocketUDP_Broadcast(int targetRobotID, int udpPort);
+		bool InitlizeESPSocketTCP_Connector(const std::string &ip = "192.168.4.1", int port = 8888);
+		bool InitlizeSocketTCP_Connector(ClientConnector *clientConnector);
+		bool InitlizeEmpty();
+		bool IsInitlized();
+		void Terminate();
+
+		void Update(float elapsedSeconds);
+		
+		void SendToGetNetID();
+		void SetNetID(int id);
+		int GetNetID() const;
+
+		Mode GetMode() const;
+		Serial &GetSerial();
+		
+		bool AddScriptHandler(const std::string &handler);
+
+		// arduino used -------------------------
+	public:
+		enum Pin
+		{
+			P_0 = 0,
+			P_1,
+			P_2,
+			P_3,
+			P_4,
+			P_5,
+			P_6,
+			P_7,
+			P_8,
+			P_9,
+			P_10,
+			P_11,
+			P_12,
+			P_13,
+			P_A0,
+			P_A1,
+			P_A2,
+			P_A3,
+			P_A4,
+			P_A5,
+			P_MAX_TYPE
+		};
+
+		enum PMode
+		{
+			PM_INPUT,
+			PM_OUTPUT,
+			PM_MAX_TYPE
+		};
+
+		void PinMode(Pin pin, PMode mode);
+		void DigitalWrite(Pin pin, bool isHigh = true);
+		void AnalogWrite(Pin pin, int val);
+		int DigitalRead(Pin pin);
+		int AnalogRead(Pin pin);
+
+		// servo
+		void ServoInit(int i, Pin pin);
+		void ServoWrite(int i, int val);
+
+		// dist
+		void DistInit(Pin pinTrig, Pin pinEcho);
+		void DistTest();
+		float GetDist() const;
+
+		// vehicle
+		void VehicleInitMotoBoard();
+		void VehicleInitMotoBoard4567();
+		void VehicleInitMotoBoard298N(Pin pinLA, Pin pinLB, Pin pinLS, Pin pinRA, Pin pinRB, Pin pinRS);
+		void VehicleSpeedInit(Pin pinLA, Pin pinLB, Pin pinRA, Pin pinRB);
+			
+		enum DirectionType
+		{
+			DT_NONE,
+			DT_FORWARD,
+			DT_BACKWARD,
+			DT_MAX_TYPE
+		};
+
+		enum SimpleDirectionType
+		{
+			SDT_NONE,
+			SDT_FORWARD,
+			SDT_BACKWARD,
+			SDT_LEFT,
+			SDT_RIGHT,
+			SDT_MAX_TYPE
+		};
+
+		void Run(int motoIndex, DirectionType type, int speed);
+		void RunSpeed(int motoIndex, int speed);
+		void RunSpeed(int motoIndex, float speedReal, float radius, int reduction);
+		void Run(SimpleDirectionType dt, int speed);
+		int GetSpeed(int motoIndex) const;
+		int GetSpeedDir(int motoIndex) const;
+		void Stop();
+		
+		enum MP3PlayType
+		{
+			MPT_PLAY = 0,
+			MPT_PAUSE,
+			MPT_STOP,
+			MPT_NEXT,
+			MPT_BEFORE,
+			MPT_RANDOM,
+			MPT_LOOP_SINGLE,
+			MPT_LOOP_SINGLE_CLOSE,
+			MPT_LOOP_ALL,
+			MPT_LOOP_ALL_CLOSE,
+			MPT_VOLUME_INCREASE,
+			MPT_VOLUME_DECREASE,
+			MPT_MAX_TYPE
+		};
+		void MP3Init(Pin pinR, Pin pinT);
+		void MP3DO(MP3PlayType mpt);
+		void MP3Play(int folder, int index);
+		void MP3SetVolume(int volume);
+		
+		void IRInit(Pin pinReceive);
+		void IRSend(int val);
+		int GetIRReceive() const;
+		
+		void WeightInit(int i, Pin pinOut, Pin pinClk);
+		void WeightTest(int i);
+		float GetWeight(int i);
+		
+		void DistMatInit(int i, Pin pinTrig, Pin pinEcho);
+		float GetMatDist(int i) const;
+
+		void DHTInit(Pin pin);
+		float GetTemperature() const;
+		float GetHumidity() const;
+
+		void RGBLEDInit(Pin pin, int num);
+		void RGBLEDSetColor(int index, int r, int g, int b);
+		
+		void SegmentInit(Pin clickPin, Pin dataPin);
+		void SegmentSetBrightness(int brightness);
+		void SegmentClear();
+		void SegmentDisplayInt(int val);
+		void SegmentDisplayFloat(float val);
+
+		void LEDMatrixInit(Pin pinClk, Pin pinData);
+		void LEDMatrixSetBrightness(int brightness);
+		void LEDMatrixClearScreen();
+		void LEDMatrixLightAt(int x, int y, int width, bool onOff);
+
+		void StepMotoInit(int index, Pin pinVCC, Pin pincPLS, Pin pinDir, Pin pinEnable);
+		void StepMotoEnable(int index, bool enable);
+		void StepMotoDir(int index, bool forward);
+		void StepMotoStep(int index, int delay);
+
+		void AxisInit();
+		float AxisGetYAxis() const;
+		float AxisGetXAxis() const;
+		float AxisGetZAxis() const;
+		float AxisGetPitch() const;
+		float AxisGetRoll() const;
+		float AxisGetYaw() const;
+
+		void RCInit(Pin pin);
+		void RCSend(long val);
+		int GetRCReceive() const;
+		
+		const std::string &GetLastSendContentString() const;
+		const std::string &GetLastSendString() const;
+	};

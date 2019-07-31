@@ -1,0 +1,9 @@
+# PX2AppPlayer
+
+CFG ?= Debug
+
+build :
+	make CFG=$(CFG) -f makeapp.px2 APP=AppPlayer
+
+clean :
+	clean CFG=$(CFG) -f makeapp.px2 APP=AppPlayer

@@ -1,0 +1,189 @@
+!!ARBvp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbvp1
+# source file: terrain_lightshadow_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbvp1
+#program v_terrain_lightshadow
+#semantic v_terrain_lightshadow.PVWMatrix
+#semantic v_terrain_lightshadow.WMatrix
+#semantic v_terrain_lightshadow.ProjectPVBSMatrix_Dir
+#semantic v_terrain_lightshadow.CameraWorldPosition
+#semantic v_terrain_lightshadow.LightWorldDVector_Dir
+#semantic v_terrain_lightshadow.ShineEmissive
+#semantic v_terrain_lightshadow.ShineAmbient
+#semantic v_terrain_lightshadow.ShineDiffuse
+#semantic v_terrain_lightshadow.ShineSpecular
+#semantic v_terrain_lightshadow.LightAmbient_Dir
+#semantic v_terrain_lightshadow.LightDiffuse_Dir
+#semantic v_terrain_lightshadow.LightSpecular_Dir
+#semantic v_terrain_lightshadow.LightGroup
+#semantic v_terrain_lightshadow.FogParam
+#semantic SamplerAlpha
+#semantic Sampler0
+#semantic Sampler1
+#semantic Sampler2
+#semantic Sampler3
+#semantic Sampler4
+#semantic SampleShadowDepth
+#var float3 modelPosition : $vin.POSITION : POSITION : 0 : 1
+#var float3 modelNormal : $vin.NORMAL : NORMAL : 1 : 1
+#var float2 modelTCoord0 : $vin.TEXCOORD0 : TEXCOORD0 : 2 : 1
+#var float4 clipPosition : $vout.POSITION : HPOS : 3 : 1
+#var float4 vertexColor : $vout.COLOR : COL0 : 4 : 1
+#var float2 vertexTCoord0 : $vout.TEXCOORD0 : TEX0 : 5 : 1
+#var float2 vertexTCoord1 : $vout.TEXCOORD1 : TEX1 : 6 : 1
+#var float4 vertexTCoord2 : $vout.TEXCOORD2 : TEX2 : 7 : 1
+#var float4x4 PVWMatrix :  : c[1], 4 : 8 : 1
+#var float4x4 WMatrix :  : c[5], 4 : 9 : 1
+#var float4x4 ProjectPVBSMatrix_Dir :  : c[9], 4 : 10 : 1
+#var float4 CameraWorldPosition :  : c[13] : 11 : 1
+#var float4 LightWorldDVector_Dir :  : c[14] : 12 : 1
+#var float4 ShineEmissive :  : c[15] : 13 : 1
+#var float4 ShineAmbient :  : c[16] : 14 : 1
+#var float4 ShineDiffuse :  : c[17] : 15 : 1
+#var float4 ShineSpecular :  : c[18] : 16 : 1
+#var float4 LightAmbient_Dir :  : c[19] : 17 : 1
+#var float4 LightDiffuse_Dir :  : c[20] : 18 : 1
+#var float4 LightSpecular_Dir :  : c[21] : 19 : 1
+#var float4 LightGroup[0] :  : c[22] : 20 : 1
+#var float4 LightGroup[1] :  : c[23] : 20 : 1
+#var float4 LightGroup[2] :  : c[24] : 20 : 1
+#var float4 LightGroup[3] :  : c[25] : 20 : 1
+#var float4 LightGroup[4] :  : c[26] : 20 : 1
+#var float4 LightGroup[5] :  : c[27] : 20 : 1
+#var float4 LightGroup[6] :  : c[28] : 20 : 1
+#var float4 LightGroup[7] :  : c[29] : 20 : 1
+#var float4 FogParam :  : c[30] : 21 : 1
+#var sampler2D SamplerAlpha :  :  : -1 : 0
+#var sampler2D Sampler0 :  :  : -1 : 0
+#var sampler2D Sampler1 :  :  : -1 : 0
+#var sampler2D Sampler2 :  :  : -1 : 0
+#var sampler2D Sampler3 :  :  : -1 : 0
+#var sampler2D Sampler4 :  :  : -1 : 0
+#var sampler2D SampleShadowDepth :  :  : -1 : 0
+#const c[0] = 0.5 1 0
+PARAM c[31] = { { 0.5, 1, 0 },
+		program.local[1..30] };
+TEMP R0;
+TEMP R1;
+TEMP R2;
+TEMP R3;
+TEMP R4;
+TEMP R5;
+TEMP R6;
+MOV R0.w, c[0].y;
+MOV R0.xyz, vertex.position;
+DP4 R1.w, R0, c[7];
+MOV R1.z, R1.w;
+DP4 R1.x, R0, c[5];
+DP4 R1.y, R0, c[6];
+ADD R2.xyz, -R1, c[13];
+DP3 R2.w, R2, R2;
+RSQ R2.w, R2.w;
+MAD R2.xyz, R2, R2.w, -c[14];
+MUL R3.xyz, R2, c[0].x;
+DP3 R2.x, R3, R3;
+RSQ R4.x, R2.x;
+RCP R2.w, R2.w;
+MUL R4.xyz, R4.x, R3;
+DP3 R2.z, vertex.normal, c[7];
+DP3 R2.x, vertex.normal, c[5];
+DP3 R2.y, vertex.normal, c[6];
+DP3 R3.w, R2, R2;
+RSQ R4.w, R3.w;
+MUL R2.xyz, R4.w, R2;
+DP3 R4.w, R2, -c[14];
+MOV R3, c[21];
+DP3 R4.x, R2, R4;
+MUL R4.y, R3.w, c[18].w;
+MAX R3.w, R4.x, c[0].z;
+POW R3.w, R3.w, R4.y;
+MOV R4.xyz, c[20];
+MAX R4.w, R4, c[0].z;
+MUL R4.xyz, R4, c[17];
+MUL R5.xyz, R4, R4.w;
+MOV R4.xyz, c[19];
+MAD R4.xyz, R4, c[16], R5;
+MUL R3.xyz, R3, c[18];
+MAD R3.xyz, R3, R3.w, R4;
+ADD R4.xyz, -R1, c[24];
+DP3 R3.w, R4, R4;
+MUL R3.xyz, R3, c[19].w;
+ADD R6.xyz, R3, c[15];
+ADD R3.xyz, -R1, c[22];
+DP3 R4.w, R3, R3;
+RSQ R5.x, R4.w;
+MUL R3.xyz, R5.x, R3;
+DP3 R3.x, R2, R3;
+MAX R5.w, R3.x, c[0].z;
+RSQ R5.y, R3.w;
+MUL R5.xyz, R5.y, R4;
+RCP R4.x, c[22].w;
+MUL R4.y, R4.w, R4.x;
+MAD R4.w, -R4.y, R4.x, c[0].y;
+MOV R3.xyz, c[17];
+MUL R4.xyz, R3, c[23];
+DP3 R5.x, R2, R5;
+MUL R4.xyz, R4, R5.w;
+MAX R5.w, R5.x, c[0].z;
+MAX R4.w, R4, c[0].z;
+MAD R4.xyz, R4, R4.w, R6;
+MUL R5.xyz, R3, c[25];
+MUL R6.xyz, R5, R5.w;
+RCP R4.w, c[24].w;
+MUL R3.w, R3, R4;
+MAD R3.w, -R3, R4, c[0].y;
+ADD R5.xyz, -R1, c[28];
+MAX R3.w, R3, c[0].z;
+MAD R4.xyz, R6, R3.w, R4;
+DP3 R3.w, R5, R5;
+ADD R1.xyz, -R1, c[26];
+DP3 R5.w, R1, R1;
+RSQ R4.w, R3.w;
+MUL R5.xyz, R4.w, R5;
+DP3 R4.w, R2, R5;
+RSQ R6.x, R5.w;
+MUL R1.xyz, R6.x, R1;
+DP3 R1.x, R2, R1;
+RCP R5.x, c[26].w;
+MUL R1.y, R5.w, R5.x;
+MAX R2.x, R1, c[0].z;
+MAD R2.y, -R1, R5.x, c[0];
+MUL R1.xyz, R3, c[27];
+MUL R1.xyz, R1, R2.x;
+MAX R2.x, R2.y, c[0].z;
+MAD R1.xyz, R1, R2.x, R4;
+MUL R2.xyz, R3, c[29];
+RCP R3.x, c[28].w;
+MAX R4.x, R4.w, c[0].z;
+ADD R3.z, c[30].w, -c[30];
+MUL R3.y, R3.w, R3.x;
+ADD R2.w, -R2, c[30];
+RCP R3.z, R3.z;
+MUL R3.z, R2.w, R3;
+MAD R2.w, -R3.y, R3.x, c[0].y;
+MIN R3.x, R3.z, c[0].y;
+MUL R2.xyz, R2, R4.x;
+MAX R2.w, R2, c[0].z;
+MAD result.color.xyz, R2, R2.w, R1;
+ADD R1.x, c[30].y, -c[30];
+RCP R1.y, R1.x;
+ADD R1.x, R1.w, -c[30];
+MUL R1.x, R1, R1.y;
+MIN R1.x, R1, c[0].y;
+MAX result.texcoord[1].x, R3, c[0].z;
+DP4 result.position.w, R0, c[4];
+DP4 result.position.z, R0, c[3];
+DP4 result.position.y, R0, c[2];
+DP4 result.position.x, R0, c[1];
+MAX result.texcoord[1].y, R1.x, c[0].z;
+DP4 result.texcoord[2].w, R0, c[12];
+DP4 result.texcoord[2].z, R0, c[11];
+DP4 result.texcoord[2].y, R0, c[10];
+DP4 result.texcoord[2].x, R0, c[9];
+MOV result.texcoord[0].xy, vertex.texcoord[0];
+MOV result.color.w, c[17];
+END
+# 112 instructions, 7 R-regs

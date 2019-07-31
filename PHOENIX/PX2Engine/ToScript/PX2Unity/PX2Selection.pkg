@@ -1,0 +1,25 @@
+// PX2Selection.pkg
+
+	class Selection
+	{
+	public:
+		Selection();
+		virtual ~Selection();
+
+		void AddObject(Object *obj);
+		void RemoveObject(Object *obj);
+		Object *GetObjectAt(int i);
+		int GetNumObjects();
+		bool IsObjectIn(Object *obj);
+		void Clear();
+
+		Object *GetFirstObject() const;
+
+		void Translate(AVector vec);
+		void TranslateTo(APoint pos);
+		void AddRolate(AVector vec);
+		void AddScale(AVector vec);
+
+		const APoint &GetCenter() const;
+		float GetRadius() const;
+	};

@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="withLua50_Debug|Win32">
+      <Configuration>withLua50_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="withLua50_Release|Win32">
+      <Configuration>withLua50_Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="withLua51_Debug|Win32">
+      <Configuration>withLua51_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="withLua51_Release|Win32">
+      <Configuration>withLua51_Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{71891C1A-E328-4258-AC3F-6F9698C6D8B4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='withLua51_Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='withLua51_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='withLua50_Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='withLua50_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='withLua51_Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='withLua51_Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='withLua50_Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='withLua50_Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='withLua50_Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='withLua50_Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='withLua51_Debug|Win32'">
+    <OutDir>..\..\..\..\..\Bin</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>tolua++</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='withLua51_Release|Win32'">
+    <OutDir>..\..\..\..\..\Bin</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>tolua++</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='withLua50_Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>lua50.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\tolua++_d.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)tolua++.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='withLua50_Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>lua50.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\tolua++.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='withLua51_Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\..\..\PX2Engine\Unity\Lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)tolua++.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='withLua51_Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\include;..\..\..\..\PX2Engine\Unity\Lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lapi.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lauxlib.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lbaselib.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lcode.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\ldblib.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\ldebug.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\ldo.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\ldump.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lfunc.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lgc.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\linit.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\liolib.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\llex.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lmathlib.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lmem.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\loadlib.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lobject.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lopcodes.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\loslib.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lparser.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lstate.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lstring.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lstrlib.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\ltable.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\ltablib.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\ltm.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lundump.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lvm.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\lzio.c" />
+    <ClCompile Include="..\..\..\..\PX2Engine\Unity\Lua\print.c" />
+    <ClCompile Include="..\..\Lua\lapi.c" />
+    <ClCompile Include="..\..\Lua\lauxlib.c" />
+    <ClCompile Include="..\..\Lua\lbaselib.c" />
+    <ClCompile Include="..\..\Lua\lcode.c" />
+    <ClCompile Include="..\..\Lua\ldblib.c" />
+    <ClCompile Include="..\..\Lua\ldebug.c" />
+    <ClCompile Include="..\..\Lua\ldo.c" />
+    <ClCompile Include="..\..\Lua\ldump.c" />
+    <ClCompile Include="..\..\Lua\lfunc.c" />
+    <ClCompile Include="..\..\Lua\lgc.c" />
+    <ClCompile Include="..\..\Lua\linit.c" />
+    <ClCompile Include="..\..\Lua\liolib.c" />
+    <ClCompile Include="..\..\Lua\llex.c" />
+    <ClCompile Include="..\..\Lua\lmathlib.c" />
+    <ClCompile Include="..\..\Lua\lmem.c" />
+    <ClCompile Include="..\..\Lua\loadlib.c" />
+    <ClCompile Include="..\..\Lua\lobject.c" />
+    <ClCompile Include="..\..\Lua\lopcodes.c" />
+    <ClCompile Include="..\..\Lua\loslib.c" />
+    <ClCompile Include="..\..\Lua\lparser.c" />
+    <ClCompile Include="..\..\Lua\lstate.c" />
+    <ClCompile Include="..\..\Lua\lstring.c" />
+    <ClCompile Include="..\..\Lua\lstrlib.c" />
+    <ClCompile Include="..\..\Lua\ltable.c" />
+    <ClCompile Include="..\..\Lua\ltablib.c" />
+    <ClCompile Include="..\..\Lua\ltm.c" />
+    <ClCompile Include="..\..\Lua\lundump.c" />
+    <ClCompile Include="..\..\Lua\lvm.c" />
+    <ClCompile Include="..\..\Lua\lzio.c" />
+    <ClCompile Include="..\..\Lua\print.c" />
+    <ClCompile Include="..\..\src\bin\tolua.c" />
+    <ClCompile Include="..\..\src\lib\tolua_event.c" />
+    <ClCompile Include="..\..\src\lib\tolua_is.c" />
+    <ClCompile Include="..\..\src\lib\tolua_map.c" />
+    <ClCompile Include="..\..\src\lib\tolua_push.c" />
+    <ClCompile Include="..\..\src\lib\tolua_to.c" />
+    <ClCompile Include="..\..\src\bin\toluabind.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lapi.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lauxlib.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lcode.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\ldebug.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\ldo.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lfunc.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lgc.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\llex.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\llimits.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lmem.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lobject.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lopcodes.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lparser.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lstate.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lstring.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\ltable.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\ltm.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lua.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\luaconf.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lualib.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lundump.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lvm.h" />
+    <ClInclude Include="..\..\..\..\PX2Engine\Unity\Lua\lzio.h" />
+    <ClInclude Include="..\..\Lua\lapi.h" />
+    <ClInclude Include="..\..\Lua\lauxlib.h" />
+    <ClInclude Include="..\..\Lua\lcode.h" />
+    <ClInclude Include="..\..\Lua\ldebug.h" />
+    <ClInclude Include="..\..\Lua\ldo.h" />
+    <ClInclude Include="..\..\Lua\lfunc.h" />
+    <ClInclude Include="..\..\Lua\lgc.h" />
+    <ClInclude Include="..\..\Lua\llex.h" />
+    <ClInclude Include="..\..\Lua\llimits.h" />
+    <ClInclude Include="..\..\Lua\lmem.h" />
+    <ClInclude Include="..\..\Lua\lobject.h" />
+    <ClInclude Include="..\..\Lua\lopcodes.h" />
+    <ClInclude Include="..\..\Lua\lparser.h" />
+    <ClInclude Include="..\..\Lua\lstate.h" />
+    <ClInclude Include="..\..\Lua\lstring.h" />
+    <ClInclude Include="..\..\Lua\ltable.h" />
+    <ClInclude Include="..\..\Lua\ltm.h" />
+    <ClInclude Include="..\..\Lua\lua.h" />
+    <ClInclude Include="..\..\Lua\luaconf.h" />
+    <ClInclude Include="..\..\Lua\lualib.h" />
+    <ClInclude Include="..\..\Lua\lundump.h" />
+    <ClInclude Include="..\..\Lua\lvm.h" />
+    <ClInclude Include="..\..\Lua\lzio.h" />
+    <ClInclude Include="..\..\src\lib\tolua_event.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

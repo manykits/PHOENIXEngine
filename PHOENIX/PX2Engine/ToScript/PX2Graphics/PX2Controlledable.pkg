@@ -1,0 +1,27 @@
+// PX2Controlledable.pkg
+	
+	class Controlledable : public Object
+	{
+		virtual ~Controlledable ();
+
+		void ResetPlay ();
+		virtual void Play ();
+		virtual bool IsPlaying () const;
+		virtual void Pause ();
+		virtual void Reset ();
+		void SetSelfCtrled (bool selfCtrled);
+		bool IsSelfCtrled () const;
+		void SetAutoPlay(bool autoPlay);
+		bool IsAutoPlay() const;
+
+		// 访问控制对象的控制器
+		int GetNumControllers () const;
+		Controller* GetController (int i) const;
+		Controller *GetControllerByName (const std::string &name) const;
+		bool HasController (Controller* controller);
+		void AttachController (Controller* controller);
+		void DetachController (Controller* controller);
+		void DetachAllControllers ();
+		void SortControls (); // 按照优先级从大到小排序
+		bool UpdateControllers (double applicationTime, double elapsedTime);
+	};

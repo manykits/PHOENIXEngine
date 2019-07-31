@@ -1,0 +1,17 @@
+// PX2ObjCast.pkg
+
+	class Cast
+	{
+	public:
+		static Controller *ToController(Object *obj);
+		static Controlledable *ToControlledable(Object *obj);
+		static Movable *ToMovable(Object *obj);
+		static Node *ToNode(Object *obj);
+		static SizeNode *ToSizeNode(Object *obj);
+		static EffectableController *ToEffectController(Object *obj);
+		static Actor *ToActor(Object *obj);
+		static Object *ToO(void *obj);
+		static ScriptController *ToSC(void *obj);
+		static GeneralServer *ToGS(void *obj);
+		static GeneralClientConnector *ToGCC(void *obj);
+	};

@@ -1,0 +1,27 @@
+// PX2HPlane.pkg
+
+	class HPlane
+	{
+		// VALUE
+	
+	public:
+		HPlane ();
+		HPlane (const HPlane& plane);
+		~HPlane ();
+		
+		HPlane (float normal0, float normal1, float normal2, float constant);
+		HPlane (const AVector& normal, float constant);
+		HPlane (const AVector& normal, const APoint& p);
+		HPlane (const APoint& p0, const APoint& p1, const APoint& p2);
+		HPlane (const HPoint& tuple);
+
+		inline void SetNormal (const AVector& normal);
+		inline void SetConstant (float constant);
+		inline AVector GetNormal () const;
+		inline float GetConstant () const;
+
+		float Normalize (float epsilon = Mathf::ZERO_TOLERANCE);
+
+		float DistanceTo (const APoint& p) const;
+		int WhichSide (const APoint& p) const;
+	};

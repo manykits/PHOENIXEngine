@@ -1,0 +1,22 @@
+ps_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_3_0
+// source file: vertexcolor_light_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_3_0
+//program p_vertexcolor_light
+//semantic p_vertexcolor_light.FogColorHeight
+//semantic p_vertexcolor_light.FogColorDist
+//var float4 vertexTCoord0 : $vin.TEXCOORD0 : ATTR0 : 0 : 1
+//var float2 vertexTCoord1 : $vin.TEXCOORD1 : ATTR1 : 1 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 2 : 1
+//var float4 FogColorHeight :  : c[0] : 3 : 1
+//var float4 FogColorDist :  : c[1] : 4 : 1
+dcl_texcoord0 v0
+dcl_texcoord1 v1.xy
+add r0.xyz, v0, -c0
+mad r0.xyz, v1.x, r0, c0
+add r0.xyz, r0, -c1
+mad oC0.xyz, v1.y, r0, c1
+mov oC0.w, v0

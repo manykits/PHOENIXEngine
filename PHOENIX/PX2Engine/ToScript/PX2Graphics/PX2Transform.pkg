@@ -1,0 +1,65 @@
+// PX2Transform.pkg
+
+	class Transform
+	{
+		// VALUE
+	
+		Transform ();
+		~Transform ();
+
+		void MakeIdentity ();
+
+		void MakeUnitScale ();
+
+		bool IsIdentity () const;      // I
+		bool IsRSMatrix () const;      // R*S
+		bool IsUniformScale () const;  // R*S, S = c*I
+
+		void SetRotate (const HMatrix& rotate);
+		void SetRotate(float x, float y, float z);
+		void SetRotate(const APoint &rot);
+		void SetRotateDegree(float xDegree, float yDegree, float zDegree);
+		void SetRotateDegree(float xDegree, float yDegree, float zDegree);
+		void SetRotateDegreeX(float degree);
+		void SetRotateDegreeY(float degree);
+		void SetRotateDegreeZ(float degree);
+		void SetRotate(const AVector &r, const AVector &d, const AVector &u);
+		void SetMatrix (const HMatrix& matrix);
+		void SetTranslate (const APoint& translate);
+		void SetTranslate (float x, float y, float z);
+		void SetTranslateX (float x);
+		void SetTranslateY (float y);
+		void SetTranslateZ (float z);
+		void SetTranslateXY(float x, float z);
+		void SetTranslateXZ(float x, float z);
+		void SetScale (const APoint& scale);
+		void SetUniformScale (float scale);
+		inline const HMatrix& GetRotate () const;
+		void GetRotate(float &x, float &y, float &z) const;
+		APoint GetRotateXYZ() const;
+		float GetRotateX() const;
+		float GetRotateY() const;
+		float GetRotateZ() const;
+		APoint GetRotateDegreeXYZ() const;
+		float GetRotateDegreeX() const;
+		float GetRotateDegreeY() const;
+		float GetRotateDegreeZ() const;
+		inline const HMatrix& GetMatrix () const;
+		inline const APoint& GetTranslate () const;
+		inline const APoint& GetScale () const;
+		inline float GetUniformScale () const;
+
+		float GetNorm () const;
+
+		APoint operator* (const APoint& pnt) const;
+
+		AVector operator* (const AVector& vec) const;
+
+		Transform operator* (const Transform& transform) const;
+
+		Transform InverseTransform () const;
+
+		static const Transform IDENTITY;
+
+		static int GetStreamingSize ();
+	};

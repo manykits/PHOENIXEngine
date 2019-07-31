@@ -1,0 +1,51 @@
+// PX2ResourceManager.pkg
+
+	class ResourceManager
+	// SINGLETON ResourceManager
+	{
+		enum LoadState
+		{
+			LS_UNLOADED,
+			LS_LOADQUE,
+			LS_LOADING,
+			LS_LOADED,
+			LS_MAX_STATE
+		};
+
+		void Clear ();
+		void ClearRes (const std::string &resPath);
+		Object *BlockLoad (const std::string &filename);
+		Object *BlockLoadCopy (const std::string &filename);
+		Object *BlockLoadShareCopy (const std::string &filename, bool vb, bool ib, bool mi);
+		
+		bool LoadBuffer(const std::string &filename, std::string &buf);
+		std::string LoadBuffer(const std::string &filename, bool fromPathRaw);
+		
+		Object *ShareCopyVB_IB (Object *objFrom);
+		Object *ShareCopyVB_IB_MI (Object *objFrom);
+		Object *ShareCopyMI (Object *objFrom);
+		Object *ShareCopy (Object *objFrom, bool vb, bool ib, bool mi);
+		
+		void Dump (const std::string &filename);
+		void BeginDumpDiff ();
+		void EndDumpDiff (const std::string &filename);
+		
+		void SetUseGarbageCollect (bool use);
+		bool IsUseGarbageCollect () const;
+		void SetGarbageCollectTime (float seconds);
+		float GetGarbageCollectTime () const;
+		
+		bool CreateFloder (const std::string &parentPath, const std::string &path);
+		bool IsFileFloderExist (const std::string &path);
+		
+		bool ReWriteFileToWriteablePath(const std::string &filename, const std::string &destPath);
+		
+		bool IsTexPack (const std::string &texPackPath);
+		bool AddTexPack (const std::string &texPackPath);
+		const TexPack &GetTexPack (const std::string &texPackPath);
+		const TexPackElement &GetTexPackElement (
+		const std::string &texPackPath, const std::string &eleName);
+		
+		static std::string GetWriteablePath ();
+		static std::string GetResourcePath ();
+	};

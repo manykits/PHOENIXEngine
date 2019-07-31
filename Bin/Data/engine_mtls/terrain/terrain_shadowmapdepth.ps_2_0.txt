@@ -1,0 +1,16 @@
+ps_2_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_2_0
+// source file: terrain_shadowmapdepth_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_2_0
+//program p_terrain_shadowmapdepth
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+//const c[0] = 1
+def c0, 1.00000000, 0, 0, 0
+dcl t0.x
+mov r0.xyz, t0.x
+mov r0.w, c0.x
+mov oC0, r0

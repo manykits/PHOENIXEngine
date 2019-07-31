@@ -1,0 +1,5 @@
+xcopy /DY ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)\PX2EngineD.dll "$(ADSK_3DSMAX_x64_2012)"
+xcopy /DY ..\..\..\Bin\PluginsTool\Max2012\$(Platform)\$(Configuration)\Max2012ToPX2D.dle "$(ADSK_3DSMAX_x64_2012)\plugins"
+
+xcopy /DY ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)\PX2EngineD.dll "E:\Autodesk\3ds Max 9"
+xcopy /DY ..\..\..\Bin\PluginsTool\Max9\$(Platform)\$(Configuration)\Max9ToPX2D.dle "E:\Autodesk\3ds Max 9\plugins"

@@ -1,0 +1,1275 @@
+﻿  PX2RobotExt.cpp
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(104): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(108): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(74): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(186): warning C4189: “signal”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(204): warning C4189: “resolution”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(217): warning C4189: “halfSize”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(502): warning C4244: “+=”: 从“float”转换到“int”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(507): warning C4244: “+=”: 从“float”转换到“int”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(512): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(517): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(521): warning C4189: “centerY”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2robotext.cpp(520): warning C4189: “centerX”: 局部变量已初始化但不引用
+  正在生成代码...
+  正在编译...
+  Slam2DPlugin.cpp
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(11): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(18): warning C4305: “-=”: 从“double”到“float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(57): warning C4305: “-=”: 从“double”到“float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(60): warning C4305: “+=”: 从“double”到“float”截断
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(104): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(108): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(12): note: 参见“PX2::Exception”的声明
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\slam2dplugin.cpp(51): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(277): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(273): note: 编译类 模板 成员函数“Eigen::Matrix<float,3,1,0,3,1>::Matrix(Eigen::Matrix<float,3,1,0,3,1> &&) noexcept”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\maprepmultimap.h(103): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,3,1,0,3,1>::Matrix(Eigen::Matrix<float,3,1,0,3,1> &&) noexcept”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(161): note: 参见对正在编译的类 模板 实例化“Eigen::Matrix<float,3,1,0,3,1>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(303): note: 参见对正在编译的类 模板 实例化“hectorslam::GridMapBase<ConcreteCellType>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmapbase.h(162): warning C4100: “max_length”: 未引用的形参
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmapbase.h(162): note: 编译类 模板 成员函数“void hectorslam::OccGridMapBase<LogOddsCell,GridMapLogOddsFunctions>::updateLineBresenhami(const Eigen::Vector2i &,const Eigen::Vector2i &,unsigned int)”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmapbase.h(151): note: 参见对正在编译的函数 模板 实例化“void hectorslam::OccGridMapBase<LogOddsCell,GridMapLogOddsFunctions>::updateLineBresenhami(const Eigen::Vector2i &,const Eigen::Vector2i &,unsigned int)”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapproccontainer.h(30): note: 参见对正在编译的类 模板 实例化“hectorslam::OccGridMapBase<LogOddsCell,GridMapLogOddsFunctions>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputil.h(67): warning C4458: “size”的声明隐藏了类成员
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputil.h(390): note: 参见“hectorslam::OccGridMapUtil<ConcreteOccGridMap,GridMapCacheMethod>::size”的声明
+          with
+          [
+              ConcreteOccGridMap=hectorslam::GridMap
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputil.h(66): note: 编译类 模板 成员函数“void hectorslam::OccGridMapUtil<ConcreteOccGridMap,GridMapCacheMethod>::getCompleteHessianDerivs(const Eigen::Vector3f &,const hectorslam::DataContainer &,Eigen::Matrix3f &,Eigen::Vector3f &)”时
+          with
+          [
+              ConcreteOccGridMap=hectorslam::GridMap
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\scanmatcher.h(57): note: 参见对正在编译的函数 模板 实例化“void hectorslam::OccGridMapUtil<ConcreteOccGridMap,GridMapCacheMethod>::getCompleteHessianDerivs(const Eigen::Vector3f &,const hectorslam::DataContainer &,Eigen::Matrix3f &,Eigen::Vector3f &)”的引用
+          with
+          [
+              ConcreteOccGridMap=hectorslam::GridMap
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputilconfig.h(48): note: 参见对正在编译的类 模板 实例化“hectorslam::OccGridMapUtil<ConcreteOccGridMap,GridMapCacheMethod>”的引用
+          with
+          [
+              ConcreteOccGridMap=hectorslam::GridMap
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapproccontainer.h(31): note: 参见对正在编译的类 模板 实例化“hectorslam::OccGridMapUtilConfig<hectorslam::GridMap>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(72): warning C4458: “sizeX”的声明隐藏了类成员
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(299): note: 参见“hectorslam::GridMapBase<ConcreteCellType>::sizeX”的声明
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(71): note: 编译类 模板 成员函数“void hectorslam::GridMapBase<ConcreteCellType>::allocateArray(const Eigen::Vector2i &)”时
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(115): note: 参见对正在编译的函数 模板 实例化“void hectorslam::GridMapBase<ConcreteCellType>::allocateArray(const Eigen::Vector2i &)”的引用
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmapbase.h(16): note: 参见对正在编译的类 模板 实例化“hectorslam::GridMapBase<ConcreteCellType>”的引用
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(212): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(211): note: 编译类 模板 成员函数“float &Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>>::coeffRef(Eigen::Index,Eigen::Index)”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(344): note: 参见对正在编译的函数 模板 实例化“float &Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>>::coeffRef(Eigen::Index,Eigen::Index)”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(268): note: 参见对正在编译的类 模板 实例化“Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(344): note: 参见对正在编译的类 模板 实例化“Eigen::internal::evaluator<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(341): note: 编译类 模板 成员函数“float &Eigen::DenseCoeffsBase<Derived,1>::coeffRef(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index)”时
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(366): note: 参见对正在编译的函数 模板 实例化“float &Eigen::DenseCoeffsBase<Derived,1>::coeffRef(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(553): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,1>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densebase.h(47): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,3>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(100): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(180): note: 参见对正在编译的类 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(250): note: 参见对正在编译的类 模板 实例化“Eigen::Matrix<float,3,3,0,3,3>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(294): note: 参见对正在编译的类 模板 实例化“Eigen::Transform<float,2,2,0>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(185): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(184): note: 编译类 模板 成员函数“float &Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>::coeffRef(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index)”时
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(1150): note: 参见对正在编译的函数 模板 实例化“float &Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>::coeffRef(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(180): note: 参见对正在编译的类 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(250): note: 参见对正在编译的类 模板 实例化“Eigen::Matrix<float,4,4,0,4,4>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(295): note: 参见对正在编译的类 模板 实例化“Eigen::Transform<float,3,2,0>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\booleanredux.h(87): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\booleanredux.h(80): note: 编译类 模板 成员函数“bool Eigen::DenseBase<Derived>::all(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::equal_to<float>,const Eigen::Matrix<float,2,1,0,2,1>,const Eigen::Matrix<float,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(291): note: 参见对正在编译的函数 模板 实例化“bool Eigen::DenseBase<Derived>::all(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::equal_to<float>,const Eigen::Matrix<float,2,1,0,2,1>,const Eigen::Matrix<float,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::equal_to<float>,const Eigen::Matrix<float,2,1,0,2,1>,const Eigen::Matrix<float,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(150): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::equal_to<float>,const Eigen::Matrix<float,2,1,0,2,1>,const Eigen::Matrix<float,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(82): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOpImpl<BinaryOp,LhsType,RhsType,Eigen::internal::cwise_promote_storage_type<Eigen::internal::traits<Derived>::StorageKind,Eigen::internal::traits<Derived>::StorageKind,BinaryOp>::ret>”的引用
+          with
+          [
+              BinaryOp=std::equal_to<float>,
+              LhsType=Eigen::Matrix<float,2,1,0,2,1>,
+              RhsType=Eigen::Matrix<float,2,1,0,2,1>,
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(291): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOp<std::equal_to<float>,const Derived,const Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapdimensionproperties.h(52): note: 参见对正在编译的函数 模板 实例化“bool Eigen::MatrixBase<Derived>::operator ==<Derived>(const Eigen::MatrixBase<Derived> &) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapdimensionproperties.h(52): note: 参见对正在编译的函数 模板 实例化“bool Eigen::MatrixBase<Derived>::operator ==<Derived>(const Eigen::MatrixBase<Derived> &) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\booleanredux.h(111): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\booleanredux.h(104): note: 编译类 模板 成员函数“bool Eigen::DenseBase<Derived>::any(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(299): note: 参见对正在编译的函数 模板 实例化“bool Eigen::DenseBase<Derived>::any(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(150): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(82): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOpImpl<BinaryOp,LhsType,RhsType,Eigen::internal::cwise_promote_storage_type<Eigen::internal::traits<Derived>::StorageKind,Eigen::internal::traits<Derived>::StorageKind,BinaryOp>::ret>”的引用
+          with
+          [
+              BinaryOp=std::not_equal_to<int>,
+              LhsType=Eigen::Matrix<int,2,1,0,2,1>,
+              RhsType=Eigen::Matrix<int,2,1,0,2,1>,
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(299): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Derived,const Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapcachearray.h(148): note: 参见对正在编译的函数 模板 实例化“bool Eigen::MatrixBase<Derived>::operator !=<Derived>(const Eigen::MatrixBase<Derived> &) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapcachearray.h(148): note: 参见对正在编译的函数 模板 实例化“bool Eigen::MatrixBase<Derived>::operator !=<Derived>(const Eigen::MatrixBase<Derived> &) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(124): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(122): note: 编译类 模板 成员函数“Eigen::EigenBase<Derived>::Index Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>::cols(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\eigenbase.h(62): note: 参见对正在编译的函数 模板 实例化“Eigen::EigenBase<Derived>::Index Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>::cols(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(116): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(114): note: 编译类 模板 成员函数“Eigen::EigenBase<Derived>::Index Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>::rows(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\eigenbase.h(59): note: 参见对正在编译的函数 模板 实例化“Eigen::EigenBase<Derived>::Index Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>::rows(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(197): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(196): note: 编译类 模板 成员函数“const float &Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>>::coeff(Eigen::Index,Eigen::Index) const”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(754): note: 参见对正在编译的函数 模板 实例化“const float &Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>>::coeff(Eigen::Index,Eigen::Index) const”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(268): note: 参见对正在编译的类 模板 实例化“Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(141): note: 参见对正在编译的类 模板 实例化“Eigen::internal::evaluator<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(140): note: 编译类 模板 成员函数“const float &Eigen::DenseCoeffsBase<Derived,0>::coeff(Eigen::EigenBase<Derived>::Index) const”时
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(163): note: 参见对正在编译的函数 模板 实例化“const float &Eigen::DenseCoeffsBase<Derived,0>::coeff(Eigen::EigenBase<Derived>::Index) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(301): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,0>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(553): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,1>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densebase.h(47): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,3>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(100): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(180): note: 参见对正在编译的类 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapdimensionproperties.h(92): note: 参见对正在编译的类 模板 实例化“Eigen::Matrix<float,2,1,0,2,1>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(440): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(439): note: 编译类 模板 成员函数“float Eigen::DenseBase<Derived>::sum(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(98): note: 参见对正在编译的函数 模板 实例化“float Eigen::DenseBase<Derived>::sum(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwiseunaryop.h(96): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwiseunaryop.h(55): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseUnaryOpImpl<UnaryOp,XprType,Eigen::Dense>”的引用
+          with
+          [
+              UnaryOp=Eigen::internal::scalar_abs2_op<float>,
+              XprType=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(98): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(97): note: 编译类 模板 成员函数“float Eigen::MatrixBase<Derived>::squaredNorm(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(110): note: 参见对正在编译的函数 模板 实例化“float Eigen::MatrixBase<Derived>::squaredNorm(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(109): note: 编译类 模板 成员函数“float Eigen::MatrixBase<Derived>::norm(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(48): note: 参见对正在编译的函数 模板 实例化“float Eigen::MatrixBase<Derived>::norm(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(150): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(82): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOpImpl<BinaryOp,LhsType,RhsType,Eigen::internal::cwise_promote_storage_type<Eigen::internal::traits<Derived>::StorageKind,Eigen::internal::traits<Eigen::Matrix<float,2,1,0,2,1>>::StorageKind,BinaryOp>::ret>”的引用
+          with
+          [
+              BinaryOp=Eigen::internal::scalar_difference_op<float,float>,
+              LhsType=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,
+              RhsType=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(48): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Derived,const Derived>”的引用
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(367): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(536): note: 参见对正在编译的函数 模板 实例化“void Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>::resizeLike<Derived>(const Eigen::EigenBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(536): note: 参见对正在编译的函数 模板 实例化“void Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>::resizeLike<Derived>(const Eigen::EigenBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(380): note: 参见对正在编译的函数 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>::PlainObjectBase<Derived>(const Eigen::DenseBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(379): note: 参见对正在编译的函数 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>::PlainObjectBase<Derived>(const Eigen::DenseBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(1391): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,2,1,0,2,1>::Matrix<Derived>(const Eigen::EigenBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(1391): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,2,1,0,2,1>::Matrix<Derived>(const Eigen::EigenBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(1385): note: 编译类 模板 成员函数“Eigen::Matrix<float,2,1,0,2,1> Eigen::internal::transform_right_product_impl<Eigen::Transform<float,2,2,0>,Derived,2,1>::run(const TransformType &,const MatrixType &)”时
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,
+              TransformType=Eigen::Transform<float,2,2,0>,
+              MatrixType=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(442): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,2,1,0,2,1> Eigen::internal::transform_right_product_impl<Eigen::Transform<float,2,2,0>,Derived,2,1>::run(const TransformType &,const MatrixType &)”的引用
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,
+              TransformType=Eigen::Transform<float,2,2,0>,
+              MatrixType=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(168): note: 参见对正在编译的类 模板 实例化“Eigen::internal::transform_right_product_impl<Eigen::Transform<float,2,2,0>,Derived,2,1>”的引用
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(167): note: 编译类 模板 成员函数“Eigen::Vector3f hectorslam::GridMapBase<ConcreteCellType>::getMapCoordsPose(const Eigen::Vector3f &) const”时
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputil.h(61): note: 参见对正在编译的函数 模板 实例化“Eigen::Vector3f hectorslam::GridMapBase<ConcreteCellType>::getMapCoordsPose(const Eigen::Vector3f &) const”的引用
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(372): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(336): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(407): note: 参见对正在编译的函数 模板 实例化“float Eigen::internal::redux_impl<Func,ThisEvaluator,3,2>::run<Derived>(const Evaluator &,const Func &,const XprType &)”的引用
+          with
+          [
+              Func=Eigen::internal::scalar_sum_op<float,float>,
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>,
+              Evaluator=ThisEvaluator,
+              XprType=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(407): note: 参见对正在编译的函数 模板 实例化“float Eigen::internal::redux_impl<Func,ThisEvaluator,3,2>::run<Derived>(const Evaluator &,const Func &,const XprType &)”的引用
+          with
+          [
+              Func=Eigen::internal::scalar_sum_op<float,float>,
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>,
+              Evaluator=ThisEvaluator,
+              XprType=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(442): note: 参见对正在编译的函数 模板 实例化“float Eigen::DenseBase<Derived>::redux<Eigen::internal::scalar_sum_op<float,float>>(const Func &) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>,
+              Func=Eigen::internal::scalar_sum_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(442): note: 参见对正在编译的函数 模板 实例化“float Eigen::DenseBase<Derived>::redux<Eigen::internal::scalar_sum_op<float,float>>(const Func &) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>,
+              Func=Eigen::internal::scalar_sum_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(439): note: 编译类 模板 成员函数“float Eigen::DenseBase<Derived>::sum(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(98): note: 参见对正在编译的函数 模板 实例化“float Eigen::DenseBase<Derived>::sum(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(338): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(228): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“PacketType Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>>::packet<16,PacketType>(Eigen::Index,Eigen::Index) const”的引用
+          with
+          [
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“PacketType Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>>::packet<16,PacketType>(Eigen::Index,Eigen::Index) const”的引用
+          with
+          [
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(666): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Functor,0>::assignPacket<16,16,PacketType>(Eigen::Index,Eigen::Index)”的引用
+          with
+          [
+              Functor=Eigen::internal::assign_op<float,float>,
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(666): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Functor,0>::assignPacket<16,16,PacketType>(Eigen::Index,Eigen::Index)”的引用
+          with
+          [
+              Functor=Eigen::internal::assign_op<float,float>,
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(274): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Functor,0>::assignPacketByOuterInner<16,16,__m128>(Eigen::Index,Eigen::Index)”的引用
+          with
+          [
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(274): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Functor,0>::assignPacketByOuterInner<16,16,__m128>(Eigen::Index,Eigen::Index)”的引用
+          with
+          [
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(273): note: 编译类 模板 成员函数“void Eigen::internal::copy_using_evaluator_innervec_CompleteUnrolling<Kernel,0,16>::run(Kernel &)”时
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(468): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::copy_using_evaluator_innervec_CompleteUnrolling<Kernel,0,16>::run(Kernel &)”的引用
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(468): note: 参见对正在编译的类 模板 实例化“Eigen::internal::copy_using_evaluator_innervec_CompleteUnrolling<Kernel,0,16>”的引用
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(466): note: 编译类 模板 成员函数“void Eigen::internal::dense_assignment_loop<Kernel,2,2>::run(Kernel &)”时
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(741): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::dense_assignment_loop<Kernel,2,2>::run(Kernel &)”的引用
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(741): note: 参见对正在编译的类 模板 实例化“Eigen::internal::dense_assignment_loop<Kernel,2,2>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(879): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::call_dense_assignment_loop<DstXprType,SrcXprType,Functor>(DstXprType &,const SrcXprType &,const Functor &)”的引用
+          with
+          [
+              DstXprType=ActualDstTypeCleaned,
+              SrcXprType=Eigen::Matrix<float,4,4,0,4,4>,
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(874): note: 编译类 模板 成员函数“void Eigen::internal::Assignment<ActualDstTypeCleaned,Src,Func,Eigen::internal::AssignmentKind<Eigen::DenseShape,Eigen::DenseShape>::Kind,void>::run(DstXprType &,const SrcXprType &,const Functor &)”时
+          with
+          [
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>,
+              DstXprType=ActualDstTypeCleaned,
+              SrcXprType=Eigen::Matrix<float,4,4,0,4,4>,
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(836): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::Assignment<ActualDstTypeCleaned,Src,Func,Eigen::internal::AssignmentKind<Eigen::DenseShape,Eigen::DenseShape>::Kind,void>::run(DstXprType &,const SrcXprType &,const Functor &)”的引用
+          with
+          [
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>,
+              DstXprType=ActualDstTypeCleaned,
+              SrcXprType=Eigen::Matrix<float,4,4,0,4,4>,
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(836): note: 参见对正在编译的类 模板 实例化“Eigen::internal::Assignment<ActualDstTypeCleaned,Src,Func,Eigen::internal::AssignmentKind<Eigen::DenseShape,Eigen::DenseShape>::Kind,void>”的引用
+          with
+          [
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(804): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::call_assignment_no_alias<Dst,Src,Func>(Dst &,const Src &,const Func &)”的引用
+          with
+          [
+              Dst=Eigen::Matrix<float,4,4,0,4,4>,
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(782): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::call_assignment<Dst,Src,Eigen::internal::assign_op<float,float>>(Dst &,const Src &,const Func &,void *)”的引用
+          with
+          [
+              Dst=Eigen::Matrix<float,4,4,0,4,4>,
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(714): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::call_assignment<Derived,Derived>(Dst &,const Src &)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>,
+              Dst=Eigen::Matrix<float,4,4,0,4,4>,
+              Src=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(208): note: 参见对正在编译的函数 模板 实例化“Derived &Eigen::PlainObjectBase<Derived>::_set<Derived>(const Eigen::DenseBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(208): note: 参见对正在编译的函数 模板 实例化“Derived &Eigen::PlainObjectBase<Derived>::_set<Derived>(const Eigen::DenseBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(207): note: 编译类 模板 成员函数“Eigen::Matrix<float,4,4,0,4,4> &Eigen::Matrix<float,4,4,0,4,4>::operator =(const Eigen::Matrix<float,4,4,0,4,4> &)”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(286): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,4,4,0,4,4> &Eigen::Matrix<float,4,4,0,4,4>::operator =(const Eigen::Matrix<float,4,4,0,4,4> &)”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\genericpacketmath.h(471): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(229): note: 参见对正在编译的函数 模板 实例化“Packet Eigen::internal::ploadt<PacketType,16>(const Eigen::internal::unpacket_traits<Eigen::internal::Packet4f>::type *)”的引用
+          with
+          [
+              Packet=__m128,
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“PacketType Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>>::packet<16,PacketType>(Eigen::Index,Eigen::Index) const”的引用
+          with
+          [
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“PacketType Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>>::packet<16,PacketType>(Eigen::Index,Eigen::Index) const”的引用
+          with
+          [
+              PacketType=__m128
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\genericpacketmath.h(482): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\functors\assignmentfunctors.h(28): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::pstoret<DstScalar,Packet,16>(Scalar *,const Packet &)”的引用
+          with
+          [
+              DstScalar=float,
+              Packet=__m128,
+              Scalar=float
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::assign_op<float,float>::assignPacket<16,PacketType>(DstScalar *,const Packet &) const”的引用
+          with
+          [
+              PacketType=__m128,
+              DstScalar=float,
+              Packet=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::assign_op<float,float>::assignPacket<16,PacketType>(DstScalar *,const Packet &) const”的引用
+          with
+          [
+              PacketType=__m128,
+              DstScalar=float,
+              Packet=__m128
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(162): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(161): note: 编译类 模板 成员函数“const float &Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>::coeff(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index) const”时
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\lu\inverseimpl.h(134): note: 参见对正在编译的函数 模板 实例化“const float &Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>::coeff(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  SampleToLua.cpp
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(104): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(108): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\sampletolua.hpp(21): warning C4273: “tolua_Sample_open”: dll 链接不一致
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\sampletolua.cpp(14): note: 参见“tolua_Sample_open”的前一个定义
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\sampletolua.cpp(217): warning C4273: “tolua_Sample_open”: dll 链接不一致
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\sampletolua.cpp(14): note: 参见“tolua_Sample_open”的前一个定义
+  PX2Slam2DManager.cpp
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(11): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(18): warning C4305: “-=”: 从“double”到“float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(57): warning C4305: “-=”: 从“double”到“float”截断
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(60): warning C4305: “+=”: 从“double”到“float”截断
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(104): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\px2neteventbuffer.hpp(108): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(13): warning C4275: 非 dll 接口 class“std::exception”用作 dll 接口 class“PX2::Exception”的基
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_exception.h(43): note: 参见“std::exception”的声明
+  f:\github\phoenixengine\phoenix\px2sdk\include\px2exception.hpp(12): note: 参见“PX2::Exception”的声明
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2slam2dmanager.cpp(470): warning C4456: “reso”的声明隐藏了上一个本地声明
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2slam2dmanager.cpp(356): note: 参见“reso”的声明
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2slam2dmanager.cpp(348): warning C4100: “elapsedSeconds”: 未引用的形参
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2slam2dmanager.cpp(348): warning C4100: “appSeconds”: 未引用的形参
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2slam2dmanager.cpp(355): warning C4189: “hectormapsize”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\px2slam2dmanager.cpp(356): warning C4189: “reso”: 局部变量已初始化但不引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(277): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(273): note: 编译类 模板 成员函数“Eigen::Matrix<float,3,1,0,3,1>::Matrix(Eigen::Matrix<float,3,1,0,3,1> &&) noexcept”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\maprepmultimap.h(103): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,3,1,0,3,1>::Matrix(Eigen::Matrix<float,3,1,0,3,1> &&) noexcept”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(161): note: 参见对正在编译的类 模板 实例化“Eigen::Matrix<float,3,1,0,3,1>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(303): note: 参见对正在编译的类 模板 实例化“hectorslam::GridMapBase<ConcreteCellType>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmapbase.h(162): warning C4100: “max_length”: 未引用的形参
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmapbase.h(162): note: 编译类 模板 成员函数“void hectorslam::OccGridMapBase<LogOddsCell,GridMapLogOddsFunctions>::updateLineBresenhami(const Eigen::Vector2i &,const Eigen::Vector2i &,unsigned int)”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmapbase.h(151): note: 参见对正在编译的函数 模板 实例化“void hectorslam::OccGridMapBase<LogOddsCell,GridMapLogOddsFunctions>::updateLineBresenhami(const Eigen::Vector2i &,const Eigen::Vector2i &,unsigned int)”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapproccontainer.h(30): note: 参见对正在编译的类 模板 实例化“hectorslam::OccGridMapBase<LogOddsCell,GridMapLogOddsFunctions>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputil.h(67): warning C4458: “size”的声明隐藏了类成员
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputil.h(390): note: 参见“hectorslam::OccGridMapUtil<ConcreteOccGridMap,GridMapCacheMethod>::size”的声明
+          with
+          [
+              ConcreteOccGridMap=hectorslam::GridMap
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputil.h(66): note: 编译类 模板 成员函数“void hectorslam::OccGridMapUtil<ConcreteOccGridMap,GridMapCacheMethod>::getCompleteHessianDerivs(const Eigen::Vector3f &,const hectorslam::DataContainer &,Eigen::Matrix3f &,Eigen::Vector3f &)”时
+          with
+          [
+              ConcreteOccGridMap=hectorslam::GridMap
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\scanmatcher.h(57): note: 参见对正在编译的函数 模板 实例化“void hectorslam::OccGridMapUtil<ConcreteOccGridMap,GridMapCacheMethod>::getCompleteHessianDerivs(const Eigen::Vector3f &,const hectorslam::DataContainer &,Eigen::Matrix3f &,Eigen::Vector3f &)”的引用
+          with
+          [
+              ConcreteOccGridMap=hectorslam::GridMap
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputilconfig.h(48): note: 参见对正在编译的类 模板 实例化“hectorslam::OccGridMapUtil<ConcreteOccGridMap,GridMapCacheMethod>”的引用
+          with
+          [
+              ConcreteOccGridMap=hectorslam::GridMap
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapproccontainer.h(31): note: 参见对正在编译的类 模板 实例化“hectorslam::OccGridMapUtilConfig<hectorslam::GridMap>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(72): warning C4458: “sizeX”的声明隐藏了类成员
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(299): note: 参见“hectorslam::GridMapBase<ConcreteCellType>::sizeX”的声明
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(71): note: 编译类 模板 成员函数“void hectorslam::GridMapBase<ConcreteCellType>::allocateArray(const Eigen::Vector2i &)”时
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(115): note: 参见对正在编译的函数 模板 实例化“void hectorslam::GridMapBase<ConcreteCellType>::allocateArray(const Eigen::Vector2i &)”的引用
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmapbase.h(16): note: 参见对正在编译的类 模板 实例化“hectorslam::GridMapBase<ConcreteCellType>”的引用
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(212): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(211): note: 编译类 模板 成员函数“float &Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>>::coeffRef(Eigen::Index,Eigen::Index)”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(344): note: 参见对正在编译的函数 模板 实例化“float &Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>>::coeffRef(Eigen::Index,Eigen::Index)”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(268): note: 参见对正在编译的类 模板 实例化“Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(344): note: 参见对正在编译的类 模板 实例化“Eigen::internal::evaluator<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(341): note: 编译类 模板 成员函数“float &Eigen::DenseCoeffsBase<Derived,1>::coeffRef(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index)”时
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(366): note: 参见对正在编译的函数 模板 实例化“float &Eigen::DenseCoeffsBase<Derived,1>::coeffRef(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(553): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,1>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densebase.h(47): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,3>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(100): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(180): note: 参见对正在编译的类 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(250): note: 参见对正在编译的类 模板 实例化“Eigen::Matrix<float,3,3,0,3,3>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(294): note: 参见对正在编译的类 模板 实例化“Eigen::Transform<float,2,2,0>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(185): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(184): note: 编译类 模板 成员函数“float &Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>::coeffRef(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index)”时
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(1150): note: 参见对正在编译的函数 模板 实例化“float &Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>::coeffRef(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(180): note: 参见对正在编译的类 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(250): note: 参见对正在编译的类 模板 实例化“Eigen::Matrix<float,4,4,0,4,4>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(295): note: 参见对正在编译的类 模板 实例化“Eigen::Transform<float,3,2,0>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\booleanredux.h(87): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\booleanredux.h(80): note: 编译类 模板 成员函数“bool Eigen::DenseBase<Derived>::all(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::equal_to<float>,const Eigen::Matrix<float,2,1,0,2,1>,const Eigen::Matrix<float,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(291): note: 参见对正在编译的函数 模板 实例化“bool Eigen::DenseBase<Derived>::all(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::equal_to<float>,const Eigen::Matrix<float,2,1,0,2,1>,const Eigen::Matrix<float,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::equal_to<float>,const Eigen::Matrix<float,2,1,0,2,1>,const Eigen::Matrix<float,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(150): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::equal_to<float>,const Eigen::Matrix<float,2,1,0,2,1>,const Eigen::Matrix<float,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(82): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOpImpl<BinaryOp,LhsType,RhsType,Eigen::internal::cwise_promote_storage_type<Eigen::internal::traits<Derived>::StorageKind,Eigen::internal::traits<Derived>::StorageKind,BinaryOp>::ret>”的引用
+          with
+          [
+              BinaryOp=std::equal_to<float>,
+              LhsType=Eigen::Matrix<float,2,1,0,2,1>,
+              RhsType=Eigen::Matrix<float,2,1,0,2,1>,
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(291): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOp<std::equal_to<float>,const Derived,const Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapdimensionproperties.h(52): note: 参见对正在编译的函数 模板 实例化“bool Eigen::MatrixBase<Derived>::operator ==<Derived>(const Eigen::MatrixBase<Derived> &) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapdimensionproperties.h(52): note: 参见对正在编译的函数 模板 实例化“bool Eigen::MatrixBase<Derived>::operator ==<Derived>(const Eigen::MatrixBase<Derived> &) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\booleanredux.h(111): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\booleanredux.h(104): note: 编译类 模板 成员函数“bool Eigen::DenseBase<Derived>::any(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(299): note: 参见对正在编译的函数 模板 实例化“bool Eigen::DenseBase<Derived>::any(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(150): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(82): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOpImpl<BinaryOp,LhsType,RhsType,Eigen::internal::cwise_promote_storage_type<Eigen::internal::traits<Derived>::StorageKind,Eigen::internal::traits<Derived>::StorageKind,BinaryOp>::ret>”的引用
+          with
+          [
+              BinaryOp=std::not_equal_to<int>,
+              LhsType=Eigen::Matrix<int,2,1,0,2,1>,
+              RhsType=Eigen::Matrix<int,2,1,0,2,1>,
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(299): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Derived,const Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapcachearray.h(148): note: 参见对正在编译的函数 模板 实例化“bool Eigen::MatrixBase<Derived>::operator !=<Derived>(const Eigen::MatrixBase<Derived> &) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapcachearray.h(148): note: 参见对正在编译的函数 模板 实例化“bool Eigen::MatrixBase<Derived>::operator !=<Derived>(const Eigen::MatrixBase<Derived> &) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(124): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(122): note: 编译类 模板 成员函数“Eigen::EigenBase<Derived>::Index Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>::cols(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\eigenbase.h(62): note: 参见对正在编译的函数 模板 实例化“Eigen::EigenBase<Derived>::Index Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>::cols(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(116): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(114): note: 编译类 模板 成员函数“Eigen::EigenBase<Derived>::Index Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>::rows(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\eigenbase.h(59): note: 参见对正在编译的函数 模板 实例化“Eigen::EigenBase<Derived>::Index Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>::rows(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<std::not_equal_to<int>,const Eigen::Matrix<int,2,1,0,2,1>,const Eigen::Matrix<int,2,1,0,2,1>>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(197): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(196): note: 编译类 模板 成员函数“const float &Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>>::coeff(Eigen::Index,Eigen::Index) const”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(754): note: 参见对正在编译的函数 模板 实例化“const float &Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>>::coeff(Eigen::Index,Eigen::Index) const”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(268): note: 参见对正在编译的类 模板 实例化“Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(141): note: 参见对正在编译的类 模板 实例化“Eigen::internal::evaluator<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(140): note: 编译类 模板 成员函数“const float &Eigen::DenseCoeffsBase<Derived,0>::coeff(Eigen::EigenBase<Derived>::Index) const”时
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(163): note: 参见对正在编译的函数 模板 实例化“const float &Eigen::DenseCoeffsBase<Derived,0>::coeff(Eigen::EigenBase<Derived>::Index) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(301): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,0>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densecoeffsbase.h(553): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,1>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\densebase.h(47): note: 参见对正在编译的类 模板 实例化“Eigen::DenseCoeffsBase<Derived,3>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(100): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(180): note: 参见对正在编译的类 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\mapdimensionproperties.h(92): note: 参见对正在编译的类 模板 实例化“Eigen::Matrix<float,2,1,0,2,1>”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(440): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(439): note: 编译类 模板 成员函数“float Eigen::DenseBase<Derived>::sum(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(98): note: 参见对正在编译的函数 模板 实例化“float Eigen::DenseBase<Derived>::sum(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrixbase.h(50): note: 参见对正在编译的类 模板 实例化“Eigen::DenseBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwiseunaryop.h(96): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwiseunaryop.h(55): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseUnaryOpImpl<UnaryOp,XprType,Eigen::Dense>”的引用
+          with
+          [
+              UnaryOp=Eigen::internal::scalar_abs2_op<float>,
+              XprType=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(98): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(97): note: 编译类 模板 成员函数“float Eigen::MatrixBase<Derived>::squaredNorm(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(110): note: 参见对正在编译的函数 模板 实例化“float Eigen::MatrixBase<Derived>::squaredNorm(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(109): note: 编译类 模板 成员函数“float Eigen::MatrixBase<Derived>::norm(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(48): note: 参见对正在编译的函数 模板 实例化“float Eigen::MatrixBase<Derived>::norm(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(150): note: 参见对正在编译的类 模板 实例化“Eigen::MatrixBase<Derived>”的引用
+          with
+          [
+              Derived=Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\cwisebinaryop.h(82): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOpImpl<BinaryOp,LhsType,RhsType,Eigen::internal::cwise_promote_storage_type<Eigen::internal::traits<Derived>::StorageKind,Eigen::internal::traits<Eigen::Matrix<float,2,1,0,2,1>>::StorageKind,BinaryOp>::ret>”的引用
+          with
+          [
+              BinaryOp=Eigen::internal::scalar_difference_op<float,float>,
+              LhsType=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,
+              RhsType=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,
+              Derived=Eigen::Matrix<int,2,1,0,2,1>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\utilfunctions.h(48): note: 参见对正在编译的类 模板 实例化“Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Derived,const Derived>”的引用
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(367): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(536): note: 参见对正在编译的函数 模板 实例化“void Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>::resizeLike<Derived>(const Eigen::EigenBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(536): note: 参见对正在编译的函数 模板 实例化“void Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>::resizeLike<Derived>(const Eigen::EigenBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(380): note: 参见对正在编译的函数 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>::PlainObjectBase<Derived>(const Eigen::DenseBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(379): note: 参见对正在编译的函数 模板 实例化“Eigen::PlainObjectBase<Eigen::Matrix<float,2,1,0,2,1>>::PlainObjectBase<Derived>(const Eigen::DenseBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(1391): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,2,1,0,2,1>::Matrix<Derived>(const Eigen::EigenBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(1391): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,2,1,0,2,1>::Matrix<Derived>(const Eigen::EigenBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Block<Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(1385): note: 编译类 模板 成员函数“Eigen::Matrix<float,2,1,0,2,1> Eigen::internal::transform_right_product_impl<Eigen::Transform<float,2,2,0>,Derived,2,1>::run(const TransformType &,const MatrixType &)”时
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,
+              TransformType=Eigen::Transform<float,2,2,0>,
+              MatrixType=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(442): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,2,1,0,2,1> Eigen::internal::transform_right_product_impl<Eigen::Transform<float,2,2,0>,Derived,2,1>::run(const TransformType &,const MatrixType &)”的引用
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,
+              TransformType=Eigen::Transform<float,2,2,0>,
+              MatrixType=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(168): note: 参见对正在编译的类 模板 实例化“Eigen::internal::transform_right_product_impl<Eigen::Transform<float,2,2,0>,Derived,2,1>”的引用
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\gridmapbase.h(167): note: 编译类 模板 成员函数“Eigen::Vector3f hectorslam::GridMapBase<ConcreteCellType>::getMapCoordsPose(const Eigen::Vector3f &) const”时
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\occgridmaputil.h(61): note: 参见对正在编译的函数 模板 实例化“Eigen::Vector3f hectorslam::GridMapBase<ConcreteCellType>::getMapCoordsPose(const Eigen::Vector3f &) const”的引用
+          with
+          [
+              ConcreteCellType=LogOddsCell
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(372): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(336): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(407): note: 参见对正在编译的函数 模板 实例化“float Eigen::internal::redux_impl<Func,ThisEvaluator,3,2>::run<Derived>(const Evaluator &,const Func &,const XprType &)”的引用
+          with
+          [
+              Func=Eigen::internal::scalar_sum_op<float,float>,
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>,
+              Evaluator=ThisEvaluator,
+              XprType=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(407): note: 参见对正在编译的函数 模板 实例化“float Eigen::internal::redux_impl<Func,ThisEvaluator,3,2>::run<Derived>(const Evaluator &,const Func &,const XprType &)”的引用
+          with
+          [
+              Func=Eigen::internal::scalar_sum_op<float,float>,
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>,
+              Evaluator=ThisEvaluator,
+              XprType=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(442): note: 参见对正在编译的函数 模板 实例化“float Eigen::DenseBase<Derived>::redux<Eigen::internal::scalar_sum_op<float,float>>(const Func &) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>,
+              Func=Eigen::internal::scalar_sum_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(442): note: 参见对正在编译的函数 模板 实例化“float Eigen::DenseBase<Derived>::redux<Eigen::internal::scalar_sum_op<float,float>>(const Func &) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>,
+              Func=Eigen::internal::scalar_sum_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(439): note: 编译类 模板 成员函数“float Eigen::DenseBase<Derived>::sum(void) const”时
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\dot.h(98): note: 参见对正在编译的函数 模板 实例化“float Eigen::DenseBase<Derived>::sum(void) const”的引用
+          with
+          [
+              Derived=Eigen::CwiseUnaryOp<Eigen::internal::scalar_abs2_op<float>,const Eigen::CwiseBinaryOp<Eigen::internal::scalar_difference_op<float,float>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>,const Eigen::Block<const Eigen::Matrix<float,3,1,0,3,1>,2,1,false>>>
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\redux.h(338): warning C4127: 条件表达式是常量
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(228): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“PacketType Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>>::packet<16,PacketType>(Eigen::Index,Eigen::Index) const”的引用
+          with
+          [
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“PacketType Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>>::packet<16,PacketType>(Eigen::Index,Eigen::Index) const”的引用
+          with
+          [
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(666): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Functor,0>::assignPacket<16,16,PacketType>(Eigen::Index,Eigen::Index)”的引用
+          with
+          [
+              Functor=Eigen::internal::assign_op<float,float>,
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(666): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Functor,0>::assignPacket<16,16,PacketType>(Eigen::Index,Eigen::Index)”的引用
+          with
+          [
+              Functor=Eigen::internal::assign_op<float,float>,
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(274): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Functor,0>::assignPacketByOuterInner<16,16,__m128>(Eigen::Index,Eigen::Index)”的引用
+          with
+          [
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(274): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::generic_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Functor,0>::assignPacketByOuterInner<16,16,__m128>(Eigen::Index,Eigen::Index)”的引用
+          with
+          [
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(273): note: 编译类 模板 成员函数“void Eigen::internal::copy_using_evaluator_innervec_CompleteUnrolling<Kernel,0,16>::run(Kernel &)”时
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(468): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::copy_using_evaluator_innervec_CompleteUnrolling<Kernel,0,16>::run(Kernel &)”的引用
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(468): note: 参见对正在编译的类 模板 实例化“Eigen::internal::copy_using_evaluator_innervec_CompleteUnrolling<Kernel,0,16>”的引用
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(466): note: 编译类 模板 成员函数“void Eigen::internal::dense_assignment_loop<Kernel,2,2>::run(Kernel &)”时
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(741): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::dense_assignment_loop<Kernel,2,2>::run(Kernel &)”的引用
+          with
+          [
+              Kernel=Kernel
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(741): note: 参见对正在编译的类 模板 实例化“Eigen::internal::dense_assignment_loop<Kernel,2,2>”的引用
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(879): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::call_dense_assignment_loop<DstXprType,SrcXprType,Functor>(DstXprType &,const SrcXprType &,const Functor &)”的引用
+          with
+          [
+              DstXprType=ActualDstTypeCleaned,
+              SrcXprType=Eigen::Matrix<float,4,4,0,4,4>,
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(874): note: 编译类 模板 成员函数“void Eigen::internal::Assignment<ActualDstTypeCleaned,Src,Func,Eigen::internal::AssignmentKind<Eigen::DenseShape,Eigen::DenseShape>::Kind,void>::run(DstXprType &,const SrcXprType &,const Functor &)”时
+          with
+          [
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>,
+              DstXprType=ActualDstTypeCleaned,
+              SrcXprType=Eigen::Matrix<float,4,4,0,4,4>,
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(836): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::Assignment<ActualDstTypeCleaned,Src,Func,Eigen::internal::AssignmentKind<Eigen::DenseShape,Eigen::DenseShape>::Kind,void>::run(DstXprType &,const SrcXprType &,const Functor &)”的引用
+          with
+          [
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>,
+              DstXprType=ActualDstTypeCleaned,
+              SrcXprType=Eigen::Matrix<float,4,4,0,4,4>,
+              Functor=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(836): note: 参见对正在编译的类 模板 实例化“Eigen::internal::Assignment<ActualDstTypeCleaned,Src,Func,Eigen::internal::AssignmentKind<Eigen::DenseShape,Eigen::DenseShape>::Kind,void>”的引用
+          with
+          [
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(804): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::call_assignment_no_alias<Dst,Src,Func>(Dst &,const Src &,const Func &)”的引用
+          with
+          [
+              Dst=Eigen::Matrix<float,4,4,0,4,4>,
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(782): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::call_assignment<Dst,Src,Eigen::internal::assign_op<float,float>>(Dst &,const Src &,const Func &,void *)”的引用
+          with
+          [
+              Dst=Eigen::Matrix<float,4,4,0,4,4>,
+              Src=Eigen::Matrix<float,4,4,0,4,4>,
+              Func=Eigen::internal::assign_op<float,float>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(714): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::call_assignment<Derived,Derived>(Dst &,const Src &)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>,
+              Dst=Eigen::Matrix<float,4,4,0,4,4>,
+              Src=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(208): note: 参见对正在编译的函数 模板 实例化“Derived &Eigen::PlainObjectBase<Derived>::_set<Derived>(const Eigen::DenseBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(208): note: 参见对正在编译的函数 模板 实例化“Derived &Eigen::PlainObjectBase<Derived>::_set<Derived>(const Eigen::DenseBase<Derived> &)”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,4,4,0,4,4>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\matrix.h(207): note: 编译类 模板 成员函数“Eigen::Matrix<float,4,4,0,4,4> &Eigen::Matrix<float,4,4,0,4,4>::operator =(const Eigen::Matrix<float,4,4,0,4,4> &)”时
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\geometry\transform.h(286): note: 参见对正在编译的函数 模板 实例化“Eigen::Matrix<float,4,4,0,4,4> &Eigen::Matrix<float,4,4,0,4,4>::operator =(const Eigen::Matrix<float,4,4,0,4,4> &)”的引用
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\genericpacketmath.h(471): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\coreevaluators.h(229): note: 参见对正在编译的函数 模板 实例化“Packet Eigen::internal::ploadt<PacketType,16>(const Eigen::internal::unpacket_traits<Eigen::internal::Packet4f>::type *)”的引用
+          with
+          [
+              Packet=__m128,
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“PacketType Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>>::packet<16,PacketType>(Eigen::Index,Eigen::Index) const”的引用
+          with
+          [
+              PacketType=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“PacketType Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>>>::packet<16,PacketType>(Eigen::Index,Eigen::Index) const”的引用
+          with
+          [
+              PacketType=__m128
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\genericpacketmath.h(482): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\functors\assignmentfunctors.h(28): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::pstoret<DstScalar,Packet,16>(Scalar *,const Packet &)”的引用
+          with
+          [
+              DstScalar=float,
+              Packet=__m128,
+              Scalar=float
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::assign_op<float,float>::assignPacket<16,PacketType>(DstScalar *,const Packet &) const”的引用
+          with
+          [
+              PacketType=__m128,
+              DstScalar=float,
+              Packet=__m128
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\assignevaluator.h(652): note: 参见对正在编译的函数 模板 实例化“void Eigen::internal::assign_op<float,float>::assignPacket<16,PacketType>(DstScalar *,const Packet &) const”的引用
+          with
+          [
+              PacketType=__m128,
+              DstScalar=float,
+              Packet=__m128
+          ]
+f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(162): warning C4127: 条件表达式是常量
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\core\plainobjectbase.h(161): note: 编译类 模板 成员函数“const float &Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>::coeff(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index) const”时
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  f:\github\phoenixengine\phoenix\px2engine\ai\slam2d\eigen\src\lu\inverseimpl.h(134): note: 参见对正在编译的函数 模板 实例化“const float &Eigen::PlainObjectBase<Eigen::Matrix<float,3,3,0,3,3>>::coeff(Eigen::EigenBase<Derived>::Index,Eigen::EigenBase<Derived>::Index) const”的引用
+          with
+          [
+              Derived=Eigen::Matrix<float,3,3,0,3,3>
+          ]
+  正在生成代码...
+    正在创建库 _OutPut\v140\Win32\OpenGLDebug\Slam2DOpenGLD.lib 和对象 _OutPut\v140\Win32\OpenGLDebug\Slam2DOpenGLD.exp
+  Slam2D.vcxproj -> F:\GitHub\PHOENIXEngine\PHOENIX\PX2Engine\AI\Slam2D\_OutPut\v140\Win32\OpenGLDebug\Slam2DOpenGLD.dll
+  Slam2D.vcxproj -> _OutPut\v140\Win32\OpenGLDebug\Slam2DOpenGLD.pdb (Full PDB)
+  F:\GitHub\PHOENIXEngine\PHOENIX\PX2Engine\AI\Slam2D\_OutPut\v140\Win32\OpenGLDebug\Slam2DOpenGLD.dll
+  复制了 1 个文件
+  _OutPut\v140\Win32\OpenGLDebug\Slam2DOpenGLD.lib
+  复制了 1 个文件
+  F:\GitHub\PHOENIXEngine\PHOENIX\PX2Engine\AI\Slam2D\_OutPut\v140\Win32\OpenGLDebug\Slam2DOpenGLD.dll
+  复制了 1 个文件

@@ -1,0 +1,14 @@
+// PX2UIFPicBox.pkg
+
+	class UIFPicBox : public UIFrame
+	{
+	public:
+		static UIFPicBox *New();
+		static UIFPicBox *New(const std::string &name);
+	
+		UIFPicBox();
+		virtual ~UIFPicBox();
+		void AutoMakeSizeFixable();
+
+		UIPicBox *GetUIPicBox();
+	};

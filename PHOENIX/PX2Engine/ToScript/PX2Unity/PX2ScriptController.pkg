@@ -1,0 +1,9 @@
+// PX2ScriptController.pkg
+
+	class ScriptController : public Controller
+	{	
+		ScriptController();
+		virtual ~ScriptController();
+		
+		virtual int SelfP() const;
+	};

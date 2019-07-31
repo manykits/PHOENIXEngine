@@ -1,0 +1,21 @@
+// PX2AnimationFrames.pkg
+
+	class AnimationFrames : public Animation
+	{
+	public:
+		AnimationFrames();
+		virtual ~AnimationFrames();
+		
+		static AnimationFrames *New();
+		static AnimationFrames *New(const std::string &name);
+
+		virtual void SetFilename(const std::string &filename);
+
+		virtual void SetPlayOnce(bool once);
+
+		virtual bool IsPlaying() const;
+		virtual void Pause();
+
+		void SetWorldRunDir(const AVector &vec);
+		const AVector &GetWorldRunDir() const;
+	};

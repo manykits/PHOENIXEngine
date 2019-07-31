@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLDebug|Win32">
+      <Configuration>OpenGLDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLDebug|x64">
+      <Configuration>OpenGLDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLESDebug|Win32">
+      <Configuration>OpenGLESDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLESDebug|x64">
+      <Configuration>OpenGLESDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLRelease|Win32">
+      <Configuration>OpenGLRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="OpenGLRelease|x64">
+      <Configuration>OpenGLRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FEE2F6D9-95C2-43BC-8C21-5D83FCEF026E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>FBXImporter</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLESDebug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLESDebug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLESDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLESDebug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporterD</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporter64D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporterOpenGLD</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporterOpenGLD</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLESDebug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporterOpenGLD</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLESDebug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporterOpenGLD</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporter</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporter</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporterOpenGL</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>_OutPut\$(PlatformToolset)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>FBXImporterOpenGL</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\..\PX2Engine\Unity\;..\..\..\PX2Engine\Unity\Lua;..\..\..\PX2Engine\Unity\ToLua;..\..\..\PX2SDK\Include;..\..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineD.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\PX2Engine\Unity\;..\..\PX2Engine\Unity\Lua;..\..\PX2Engine\Unity\ToLua;..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineD.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\..\PX2Engine\Unity\;..\..\..\PX2Engine\Unity\Lua;..\..\..\PX2Engine\Unity\ToLua;..\..\..\PX2SDK\Include;..\..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGLD.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLDebug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\PX2Engine\Unity\;..\..\PX2Engine\Unity\Lua;..\..\PX2Engine\Unity\ToLua;..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGLD.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLESDebug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\PX2Engine\Unity\;..\..\PX2Engine\Unity\Lua;..\..\PX2Engine\Unity\ToLua;..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGLD.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLESDebug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\PX2Engine\Unity\;..\..\PX2Engine\Unity\Lua;..\..\PX2Engine\Unity\ToLua;..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGLD.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\PX2Engine\Unity\;..\..\PX2Engine\Unity\Lua;..\..\PX2Engine\Unity\ToLua;..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2Engine.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\PX2Engine\Unity\;..\..\PX2Engine\Unity\Lua;..\..\PX2Engine\Unity\ToLua;..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2Engine.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\..\PX2Engine\Unity\;..\..\..\PX2Engine\Unity\Lua;..\..\..\PX2Engine\Unity\ToLua;..\..\..\PX2SDK\Include;..\..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGL.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='OpenGLRelease|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FBXIMPORTER_EXPORTS;WIN32_LEAN_AND_MEAN;PX2_ENGINE_DLL_IMPORT;FBXIMPORTER_DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\;.\ToLua;.\ToScript;..\..\PX2Engine\Unity\;..\..\PX2Engine\Unity\Lua;..\..\PX2Engine\Unity\ToLua;..\..\PX2SDK\Include;..\..\ThirdPartiesLibs\FBX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration);..\..\ThirdPartiesLibs\FBX\lib\vs2013\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PX2EngineOpenGL.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /DY "$(TargetPath)" ..\..\..\Bin\PluginsCommon\FBXImporter\
+xcopy /DY "$(OutDir)$(TargetName).lib" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+xcopy /DY "$(TargetPath)" ..\..\PX2SDK\Library\$(PlatformToolset)\$(Platform)\$(Configuration)
+
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="FBXImporterPlugin.hpp" />
+    <ClInclude Include="FBXImporterToLua.hpp" />
+    <ClInclude Include="FBXImporter_Pre.hpp" />
+    <ClInclude Include="PX2FBXImporter.hpp" />
+    <ClInclude Include="PX2FBXMat.hpp" />
+    <ClInclude Include="PX2FBXMesh.hpp" />
+    <ClInclude Include="PX2FBXPre.hpp" />
+    <ClInclude Include="PX2FBXUtilities.hpp" />
+    <ClInclude Include="PX2FBXVertex.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FBXImporterDll.cpp" />
+    <ClCompile Include="FBXImporterPlugin.cpp" />
+    <ClCompile Include="FBXImporterToLua.cpp" />
+    <ClCompile Include="PX2FBXImporter.cpp" />
+    <ClCompile Include="PX2FBXImporterMaterial.cpp" />
+    <ClCompile Include="PX2FBXImporterMesh.cpp" />
+    <ClCompile Include="PX2FBXImporterToPX2.cpp" />
+    <ClCompile Include="PX2FBXUtilities.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

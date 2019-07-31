@@ -1,0 +1,38 @@
+ps_2_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_2_0
+// source file: blur_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_2_0
+//program p_blur
+//semantic p_blur.UVParam
+//semantic p_blur.ShineEmissive
+//semantic p_blur.UVOffsets
+//semantic SamplerBase
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 :  : 0 : 0
+//var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+//var float4 UVParam :  :  : 2 : 0
+//var float4 ShineEmissive :  :  : 3 : 0
+//var float4 UVOffsets[0] :  :  : 4 : 0
+//var float4 UVOffsets[1] :  :  : 4 : 0
+//var float4 UVOffsets[2] :  :  : 4 : 0
+//var float4 UVOffsets[3] :  :  : 4 : 0
+//var float4 UVOffsets[4] :  :  : 4 : 0
+//var float4 UVOffsets[5] :  :  : 4 : 0
+//var float4 UVOffsets[6] :  :  : 4 : 0
+//var float4 UVOffsets[7] :  :  : 4 : 0
+//var float4 UVOffsets[8] :  :  : 4 : 0
+//var float4 UVOffsets[9] :  :  : 4 : 0
+//var float4 UVOffsets[10] :  :  : 4 : 0
+//var float4 UVOffsets[11] :  :  : 4 : 0
+//var float4 UVOffsets[12] :  :  : 4 : 0
+//var float4 UVOffsets[13] :  :  : 4 : 0
+//var float4 UVOffsets[14] :  :  : 4 : 0
+//var float4 UVOffsets[15] :  :  : 4 : 0
+//var sampler2D SamplerBase :  :  : -1 : 0
+//const c[0] = 1 0
+def c0, 1.00000000, 0.00000000, 0, 0
+mov r0.yz, c0.y
+mov r0.xw, c0.x
+mov oC0, r0

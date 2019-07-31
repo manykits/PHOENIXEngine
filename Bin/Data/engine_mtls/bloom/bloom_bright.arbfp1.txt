@@ -1,0 +1,31 @@
+!!ARBfp1.0
+# cgc version 3.1.0010, build date Feb  8 2012
+# command line args: -profile arbfp1
+# source file: bloom_bright_cg.fx
+#vendor NVIDIA Corporation
+#version 3.1.0.10
+#profile arbfp1
+#program p_bloom_bright
+#semantic p_bloom_bright.BrightParam
+#semantic SamplerBase
+#var float2 vertexTCoord0 : $vin.TEXCOORD0 : TEX0 : 0 : 1
+#var float4 pixelColor : $vout.COLOR : COL : 1 : 1
+#var float4 BrightParam :  : c[0] : 2 : 1
+#var sampler2D SamplerBase :  : texunit 0 : -1 : 1
+#const c[1] = 1 0
+PARAM c[2] = { program.local[0],
+		{ 1, 0 } };
+TEMP R0;
+TEMP R1;
+ADD R0.y, -fragment.texcoord[0], c[1].x;
+MOV R0.x, fragment.texcoord[0];
+TEX R0, R0, texture[0], 2D;
+DP3 R1.x, R0, R0;
+RSQ R1.x, R1.x;
+MUL R1.xyz, R1.x, R0;
+MAD R0.xyz, -R1, c[0].x, R0;
+MAX R0, R0, c[1].y;
+MUL result.color.xyz, R0, R0;
+MOV result.color.w, R0;
+END
+# 10 instructions, 2 R-regs

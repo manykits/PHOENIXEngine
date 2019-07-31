@@ -1,0 +1,16 @@
+// PX2UIPicBoxListController.pkg
+
+	class UIPicBoxListController : public Controller
+	{
+	public:
+		static UIPicBoxListController *New();
+		static UIPicBoxListController *New(const std::string &name);
+	
+		UIPicBoxListController();
+		virtual ~UIPicBoxListController();
+
+		void SetInterval(float seconds);
+		float GetInterval() const;
+
+		UIFPicBox *AddPicBox(const std::string &filename);
+	};

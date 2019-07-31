@@ -1,0 +1,71 @@
+// PX2Texture.pkg
+
+	class Texture : public Object
+	{
+	public:
+		enum Format
+		{
+			TF_NONE,
+			TF_R5G6B5,
+			TF_A1R5G5B5,
+			TF_A4R4G4B4,
+			TF_A8,
+			TF_L8,
+			TF_A8L8,
+			TF_R8G8B8,
+			TF_A8R8G8B8,
+			TF_A8B8G8R8,
+			TF_L16,
+			TF_G16R16,
+			TF_A16B16G16R16,
+			TF_R16F,
+			TF_G16R16F,
+			TF_A16B16G16R16F,
+			TF_R32F,
+			TF_G32R32F,
+			TF_A32B32G32R32F,
+			TF_DXT1,
+			TF_DXT3,
+			TF_DXT5,
+			TF_D16,
+			TF_D24S8,
+			TF_RGB_PVRTC_4B,
+			TF_RGB_PVRTC_2B,
+			TF_RGBA_PVRTC_4B,
+			TF_RGBA_PVRTC_2B,
+			TF_RGB_ETC1,
+			TF_QUANTITY
+		};
+
+		enum Type
+		{
+			TT_1D,
+			TT_2D,
+			TT_3D,
+			TT_CUBE,
+			TT_QUANTITY
+		};
+
+		virtual ~Texture ();
+
+		inline Format GetFormat () const;
+		inline Type GetTextureType () const;
+		inline Buffer::Usage GetUsage () const;
+		inline int GetNumLevels () const;
+		inline int GetNumDimensions () const;
+		inline int GetDimension (int i, int level) const;
+		inline int GetNumLevelBytes (int level) const;
+		inline int GetNumTotalBytes () const;
+		inline int GetLevelOffset (int level) const;
+		inline int GetPixelSize () const;
+		//inline static int GetPixelSize (Format tformat);
+		inline bool IsCompressed () const;
+		inline bool IsMipmapable () const;
+
+		// inline const char* GetData () const;
+		bool IsDataNull () const;
+
+		void SetBindDoClearData (bool doClearData);
+		bool IsBindDoClearData () const;
+		void ClearData ();
+	};

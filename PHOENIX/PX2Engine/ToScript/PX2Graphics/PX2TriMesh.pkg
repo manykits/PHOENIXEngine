@@ -1,0 +1,9 @@
+// PX2TriMesh.pkg
+
+	class TriMesh : public Triangles
+	{
+		virtual ~TriMesh();
+		
+		virtual int GetNumTriangles () const;
+		virtual bool GetTriangle (int i, int& v0, int& v1, int& v2) const;
+	};

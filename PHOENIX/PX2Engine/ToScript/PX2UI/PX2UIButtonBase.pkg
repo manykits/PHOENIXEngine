@@ -1,0 +1,48 @@
+// PX2UIButtonBase.pkg
+
+	class UIButtonBase : public UIFrame
+	{
+		virtual ~UIButtonBase();
+
+		enum ButType
+		{
+			BT_COLOR,
+			BT_PICBOXSWAP,
+			BT_MAX_TYPE
+		};
+		void SetButType(ButType butType);
+		ButType GetButType() const;
+
+		enum ButtonState
+		{
+			BS_NORMAL,
+			BS_HOVERED,
+			BS_PRESSED,
+			BS_DISABLED,
+			BS_MAX_STATE
+		};
+		virtual void SetButtonState(ButtonState state);
+		ButtonState GetButtonState() const;
+
+		void SetPicBox(ButtonState state, UIPicBox *pic);
+		UIPicBox *GetPicBoxAtState(ButtonState state);
+		
+		void SetPicBoxSizeSameWithButton(bool same);
+		bool IsPicBoxSizeSameWithButton() const;
+
+		void SetStateColor(ButtonState state, const Float3 &color);
+		const Float3 &GetStateColor(ButtonState state) const;
+		void SetStateAlpha(ButtonState state, float alpha);
+		float GetStateAlpha(ButtonState state) const;
+		void SetStateBrightness(ButtonState state, float brightness);
+		float GetStateBrightness(ButtonState state) const;
+		
+		void SetStateColorDefaultWhite();
+
+		virtual void SetActivate(bool act);
+
+		UIFText *CreateAddText(const std::string &text="", 
+			const Float3& color=Float3::WHITE);
+		UIFText *GetFText();
+		UIText *GetText();
+	};

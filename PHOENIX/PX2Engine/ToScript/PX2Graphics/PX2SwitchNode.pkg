@@ -1,0 +1,13 @@
+// PX2SwitchNode.pkg
+
+	class SwitchNode : public Node
+	{
+		SwitchNode ();
+		virtual ~SwitchNode ();
+		
+		static SwitchNode *Create();
+
+		void SetActiveChild (int activeChild);
+		int GetActiveChild () const;
+		void DisableAllChildren ();
+	};

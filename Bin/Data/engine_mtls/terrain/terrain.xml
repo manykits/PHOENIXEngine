@@ -1,0 +1,240 @@
+<material name="terrain">
+	<technique name="terrain_light">
+		<pass name="P0">
+			<shader type="vs" name="terrain_light" ni="3" no="4" nc="13" ns="0">
+				<i>
+					<var index="0" name="modelPosition" vt="float3" vs="POSITION"/>
+					<var index="1" name="modelNormal" vt="float3" vs="NORMAL"/>
+					<var index="2" name="modelTCoord0" vt="float2" vs="TEXCOORD0"/>
+				</i>
+				<o>
+					<var index="0" name="clipPosition" vt="float4" vs="POSITION"/>
+					<var index="1" name="vertexColor" vt="float4" vs="COLOR0"/>
+					<var index="2" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="3" name="vertexTCoord1" vt="float2" vs="TEXCOORD1"/>
+				</o>
+				<c>
+					<var index="0" name="PVWMatrix" nr="4"/>
+					<var index="1" name="WMatrix" nr="4"/>
+					<var index="2" name="CameraWorldPosition" nr="1"/>
+					<var index="3" name="LightWorldDVector_Dir" nr="1"/>
+					<var index="4" name="ShineEmissive" nr="1"/>
+					<var index="5" name="ShineAmbient" nr="1"/>
+					<var index="6" name="ShineDiffuse" nr="1"/>
+					<var index="7" name="ShineSpecular" nr="1"/>
+					<var index="8" name="LightAmbient_Dir" nr="1"/>
+					<var index="9" name="LightDiffuse_Dir" nr="1"/>
+					<var index="10" name="LightSpecular_Dir" nr="1"/>
+					<var index="11" name="LightGroup" nr="8"/>
+					<var index="12" name="FogParam" nr="1"/>
+					
+				</c>
+				<p>
+					<var type="cg" file="terrain_light_cg.fx"/>
+					<var type="gles2" file="terrain_light_gles2_vs.fx"/>
+				</p>
+			</shader>
+			<shader type="ps" name="terrain_light" ni="3" no="1" nc="5" ns="6">
+				<i>
+					<var index="0" name="vertexColor" vt="float4" vs="COLOR0"/>
+					<var index="1" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="2" name="vertexTCoord1" vt="float2" vs="TEXCOORD1"/>
+				</i>
+				<o>
+					<var index="0" name="pixelColor" vt="float4" vs="COLOR0"/>
+				</o>
+				<c>
+					<var index="0" name="UVScale01" nr="1"/>
+					<var index="1" name="UVScale23" nr="1"/>
+					<var index="2" name="UVScale4" nr="1"/>
+					<var index="3" name="FogColorHeight" nr="1"/>
+					<var index="4" name="FogColorDist" nr="1"/>
+				</c>
+				<s>
+					<var index="0" name="SamplerAlpha" st="sampler2D" sf="LINEAR" sc_0="CLAMP" sc_1="CLAMP"/>
+					<var index="1" name="Sampler0" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+					<var index="2" name="Sampler1" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+					<var index="3" name="Sampler2" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+					<var index="4" name="Sampler3" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+					<var index="5" name="Sampler4" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+				</s>
+				<p>
+					<var type="cg" file="terrain_light_cg.fx"/>
+					<var type="gles2" file="terrain_light_gles2_ps.fx"/>
+				</p>
+			</shader>
+			<renderproperty>
+				<Alpha>
+					<p param="BlendEnabled" value="false"/>
+					<p param="SrcBlend" value="SBM_SRC_ALPHA"/>
+					<p param="DstBlend" value="DBM_ONE_MINUS_SRC_ALPHA"/>
+					<p param="CompareEnabled" value="false"/>
+					<p param="Compare" value="CM_GEQUAL"/>
+					<p param="Reference" value="0"/>
+				</Alpha>
+				<Depth>
+					<p param="Enabled" value="true"/>
+					<p param="Writable" value="true"/>
+					<p param="Compare" value="CM_LEQUAL"/>
+				</Depth>
+				<Cull>
+					<p param="Enabled" value="true"/>
+					<p param="CCWOrder" value="true"/>
+				</Cull>
+				<Wire>
+					<p param="Enabled" value="false"/>
+				</Wire>
+			</renderproperty>
+		</pass>
+	</technique>
+	<technique name="terrain_lightshadow">
+		<pass name="P0">
+			<shader type="vs" name="terrain_lightshadow" ni="3" no="5" nc="14" ns="0">
+				<i>
+					<var index="0" name="modelPosition" vt="float3" vs="POSITION"/>
+					<var index="1" name="modelNormal" vt="float3" vs="NORMAL"/>
+					<var index="2" name="modelTCoord0" vt="float2" vs="TEXCOORD0"/>
+				</i>
+				<o>
+					<var index="0" name="clipPosition" vt="float4" vs="POSITION"/>
+					<var index="1" name="vertexColor" vt="float4" vs="COLOR0"/>
+					<var index="2" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="3" name="vertexTCoord1" vt="float2" vs="TEXCOORD1"/>
+					<var index="4" name="vertexTCoord2" vt="float4" vs="TEXCOORD2"/>
+				</o>
+				<c>
+					<var index="0" name="PVWMatrix" nr="4"/>
+					<var index="1" name="WMatrix" nr="4"/>
+					<var index="2" name="ProjectPVBSMatrix_Dir" nr="4"/>
+					<var index="3" name="CameraWorldPosition" nr="1"/>
+					<var index="4" name="LightWorldDVector_Dir" nr="1"/>
+					<var index="5" name="ShineEmissive" nr="1"/>
+					<var index="6" name="ShineAmbient" nr="1"/>
+					<var index="7" name="ShineDiffuse" nr="1"/>
+					<var index="8" name="ShineSpecular" nr="1"/>
+					<var index="9" name="LightAmbient_Dir" nr="1"/>
+					<var index="10" name="LightDiffuse_Dir" nr="1"/>
+					<var index="11" name="LightSpecular_Dir" nr="1"/>
+					<var index="12" name="LightGroup" nr="8"/>
+					<var index="13" name="FogParam" nr="1"/>
+					
+				</c>
+				<p>
+					<var type="cg" file="terrain_lightshadow_cg.fx"/>
+					<var type="gles2" file="terrain_lightshadow_gles2_vs.fx"/>
+				</p>
+			</shader>
+			<shader type="ps" name="terrain_lightshadow" ni="4" no="1" nc="5" ns="7">
+				<i>
+					<var index="0" name="vertexColor" vt="float4" vs="COLOR0"/>
+					<var index="1" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+					<var index="2" name="vertexTCoord1" vt="float2" vs="TEXCOORD1"/>
+					<var index="3" name="vertexTCoord2" vt="float4" vs="TEXCOORD2"/>
+				</i>
+				<o>
+					<var index="0" name="pixelColor" vt="float4" vs="COLOR0"/>
+				</o>
+				<c>
+					<var index="0" name="UVScale01" nr="1"/>
+					<var index="1" name="UVScale23" nr="1"/>
+					<var index="2" name="UVScale4" nr="1"/>
+					<var index="3" name="FogColorHeight" nr="1"/>
+					<var index="4" name="FogColorDist" nr="1"/>
+				</c>
+				<s>
+					<var index="0" name="SamplerAlpha" st="sampler2D" sf="LINEAR" sc_0="CLAMP" sc_1="CLAMP"/>
+					<var index="1" name="Sampler0" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+					<var index="2" name="Sampler1" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+					<var index="3" name="Sampler2" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+					<var index="4" name="Sampler3" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+					<var index="5" name="Sampler4" st="sampler2D" sf="LINEAR_LINEAR" sc_0="REPEAT" sc_1="REPEAT"/>
+					<var index="6" name="SampleShadowDepth" st="sampler2D" sf="LINEAR" sc_0="CLAMP" sc_1="CLAMP"/>
+				</s>
+				<p>
+					<var type="cg" file="terrain_lightshadow_cg.fx"/>
+					<var type="gles2" file="terrain_lightshadow_gles2_ps.fx"/>
+				</p>
+			</shader>
+			<renderproperty>
+				<Alpha>
+					<p param="BlendEnabled" value="false"/>
+					<p param="SrcBlend" value="SBM_SRC_ALPHA"/>
+					<p param="DstBlend" value="DBM_ONE_MINUS_SRC_ALPHA"/>
+					<p param="CompareEnabled" value="false"/>
+					<p param="Compare" value="CM_GEQUAL"/>
+					<p param="Reference" value="0"/>
+				</Alpha>
+				<Depth>
+					<p param="Enabled" value="true"/>
+					<p param="Writable" value="true"/>
+					<p param="Compare" value="CM_LEQUAL"/>
+				</Depth>
+				<Cull>
+					<p param="Enabled" value="true"/>
+					<p param="CCWOrder" value="true"/>
+				</Cull>
+				<Wire>
+					<p param="Enabled" value="false"/>
+				</Wire>
+			</renderproperty>
+		</pass>
+	</technique>
+	<technique name="terrain_shadowmapdepth">
+		<pass name="P0">
+			<shader type="vs" name="terrain_shadowmapdepth" ni="1" no="2" nc="1" ns="0">
+				<i>
+					<var index="0" name="modelPosition" vt="float3" vs="POSITION"/>
+				</i>
+				<o>
+					<var index="0" name="clipPosition" vt="float4" vs="POSITION"/>
+					<var index="1" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+				</o>
+				<c>
+					<var index="0" name="PVWMatrix" nr="4"/>					
+				</c>
+				<p>
+					<var type="cg" file="terrain_shadowmapdepth_cg.fx"/>
+					<var type="gles2" file="terrain_shadowmapdepth_gles2_vs.fx"/>
+				</p>
+			</shader>
+			<shader type="ps" name="terrain_shadowmapdepth" ni="1" no="1" nc="0" ns="0">
+				<i>
+					<var index="0" name="vertexTCoord0" vt="float2" vs="TEXCOORD0"/>
+				</i>
+				<o>
+					<var index="0" name="pixelColor" vt="float4" vs="COLOR0"/>
+				</o>
+				<c>
+				</c>
+				<s>
+				</s>
+				<p>
+					<var type="cg" file="terrain_shadowmapdepth_cg.fx"/>
+					<var type="gles2" file="terrain_shadowmapdepth_gles2_ps.fx"/>
+				</p>
+			</shader>
+			<renderproperty>
+				<Alpha>
+					<p param="BlendEnabled" value="false"/>
+					<p param="SrcBlend" value="SBM_SRC_ALPHA"/>
+					<p param="DstBlend" value="DBM_ONE_MINUS_SRC_ALPHA"/>
+					<p param="CompareEnabled" value="false"/>
+					<p param="Compare" value="CM_GEQUAL"/>
+					<p param="Reference" value="0"/>
+				</Alpha>
+				<Depth>
+					<p param="Enabled" value="true"/>
+					<p param="Writable" value="true"/>
+					<p param="Compare" value="CM_LEQUAL"/>
+				</Depth>
+				<Cull>
+					<p param="Enabled" value="true"/>
+					<p param="CCWOrder" value="true"/>
+				</Cull>
+				<Wire>
+					<p param="Enabled" value="false"/>
+				</Wire>
+			</renderproperty>
+		</pass>
+	</technique>
+</material>

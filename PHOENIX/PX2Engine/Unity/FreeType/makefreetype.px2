@@ -1,0 +1,172 @@
+#freetype
+
+CFG ?= Debug
+
+CC := /usr/bin/gcc
+
+CFLAGS := -c -D__LINUX__ -DFT2_BUILD_LIBRARY
+
+ifeq (ARM,$(findstring ARM,$(CFG)))
+CFLAGS += -DPX2_USE_OPENGLES
+else
+CFLAGS += -DPX2_USE_OPENGL
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+LIBPATH := ../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := \
+	-I ./include/ \
+	-I ./builds/
+	
+INCDIR := ../../../PX2SDK/Include
+	
+FTINC := $(wildcard *.h)
+FTINC := $(notdir $(INC))
+INC := $(FTINC)
+
+SRC := $(wildcard src/*.c)
+SRC := $(notdir $(SRC))
+
+SRC1 := $(wildcard src/autofit/*.c)
+SRC1 := $(notdir $(SRC1))
+
+SRC2 := $(wildcard src/base/*.c)
+SRC2 := $(notdir $(SRC2))
+
+SRC3 := $(wildcard src/cff/*.c)
+SRC3 := $(notdir $(SRC3))
+
+SRC4 := $(wildcard src/pshinter/*.c)
+SRC4 := $(notdir $(SRC4))
+
+SRC5 := $(wildcard src/psnames/*.c)
+SRC5 := $(notdir $(SRC5))
+
+SRC6 := $(wildcard src/raster/*.c)
+SRC6 := $(notdir $(SRC6))
+
+SRC7 := $(wildcard src/sfnt/*.c)
+SRC7 := $(notdir $(SRC7))
+
+SRC8 := $(wildcard src/smooth/*.c)
+SRC8 := $(notdir $(SRC8))
+
+SRC9 := $(wildcard src/truetype/*.c)
+SRC9 := $(notdir $(SRC9))
+
+OBJDIR := ../../$(CFG)
+
+OBJ := $(OBJDIR)/ftbbox.o \
+	$(OBJDIR)/ftbitmap.o \
+	$(OBJDIR)/ftfstype.o \
+	$(OBJDIR)/ftglyph.o \
+	$(OBJDIR)/ftlcdfil.o \
+	$(OBJDIR)/ftstroke.o \
+	$(OBJDIR)/fttype1.o \
+	$(OBJDIR)/ftxf86.o \
+	$(OBJDIR)/ftbase.o \
+	$(OBJDIR)/ftsystem.o \
+	$(OBJDIR)/ftinit.o \
+	$(OBJDIR)/ftgasp.o \
+	$(OBJDIR)/raster.o \
+	$(OBJDIR)/sfnt.o \
+	$(OBJDIR)/smooth.o \
+	$(OBJDIR)/autofit.o \
+	$(OBJDIR)/truetype.o \
+	$(OBJDIR)/cff.o \
+	$(OBJDIR)/psnames.o \
+	$(OBJDIR)/pshinter.o \
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+	
+$(OBJDIR)/ftbbox.o : src/base/ftbbox.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftbitmap.o : src/base/ftbitmap.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftfstype.o : src/base/ftfstype.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftglyph.o : src/base/ftglyph.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftlcdfil.o : src/base/ftlcdfil.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftstroke.o : src/base/ftstroke.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/fttype1.o : src/base/fttype1.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftxf86.o : src/base/ftxf86.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftbase.o : src/base/ftbase.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftsystem.o : src/base/ftsystem.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftinit.o : src/base/ftinit.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftgasp.o : src/base/ftgasp.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/ftobjs.o : src/base/ftobjs.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@	
+	
+$(OBJDIR)/raster.o : src/raster/raster.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/sfnt.o : src/sfnt/sfnt.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/smooth.o : src/smooth/smooth.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/autofit.o : src/autofit/autofit.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/truetype.o : src/truetype/truetype.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/cff.o : src/cff/cff.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/psnames.o : src/psnames/psnames.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+$(OBJDIR)/pshinter.o : src/pshinter/pshinter.c
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

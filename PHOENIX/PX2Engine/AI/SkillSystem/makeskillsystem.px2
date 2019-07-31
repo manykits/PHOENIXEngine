@@ -1,0 +1,66 @@
+#makeskillsystem
+
+CFG ?= Debug
+
+CC := /usr/bin/gcc
+
+CFLAGS := -c -std=c++11 -D__LINUX__
+
+ifeq (ARM,$(findstring ARM,$(CFG)))
+CFLAGS += -DPX2_USE_OPENGLES
+else
+CFLAGS += -DPX2_USE_OPENGL
+endif
+
+DSTSO := libPX2Engine
+ifeq (ARM,$(findstring ARM,$(CFG)))
+DSTSO := libPX2EngineARM
+endif
+
+ifeq (Debug,$(findstring Debug,$(CFG)))
+CFLAGS += -g -D_DEBUG
+else
+CFLAGS += -O2 -DNDEBUG
+endif
+
+LIBPATH := ../../../PX2SDK/Library/$(CFG)
+
+ifeq (Dynamic,$(findstring Dynamic,$(CFG)))
+SOVER = 2
+RELVER = $(SOVER).5
+CFLAGS += -fPIC
+AR := $(CC)
+ARFLAGS := $(LDFLAGS) -L $(LIBPATH) -shared -fPIC -Wl,-soname,$(DSTSO).so -o
+LIB := $(LIBPATH)/$(DSTSO).so.$(RELVER)
+else
+AR := /usr/bin/ar
+ARFLAGS := rs
+LIB := $(LIBPATH)/$(DSTSO).a
+endif
+
+INCPATH := \
+	-I	../ \
+	-I ./ \
+	-I ../../../PX2SDK/Include/
+	
+INCDIR := ../../../PX2SDK/Include/
+	
+INC := $(wildcard *.hpp) $(wildcard *.inl)
+INC := $(notdir $(INC))
+
+SRC := $(wildcard *.cpp)
+SRC := $(notdir $(SRC))
+
+OBJDIR := ../../$(CFG)
+OBJ := $(SRC:%.cpp=$(OBJDIR)/%.o)
+
+build : $(OBJ)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJDIR)/*.o
+	cp -fp $(INC) $(INCDIR)
+
+$(OBJDIR)/%.o : %.cpp
+	$(CC) $(INCPATH) $(CFLAGS) $< -o $@
+	
+clean :
+	rm -rf $(LIB)
+	rm -rf $(OBJDIR)

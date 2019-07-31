@@ -1,0 +1,45 @@
+// PX2Project.pkg
+
+	class Project
+	{
+		// SINGLETON Application
+		
+	public:
+		void SetVersion(const ResourceVersion &version);
+		const ResourceVersion &GetResourceVersion() const;
+		
+		// ScreenOrientation
+	public:
+		enum ScreenOrientation
+		{
+			SO_LANDSCAPE,
+			SO_PORTRAIT,
+			SO_MAX_TYPE
+		};
+		void SetScreenOrientation(ScreenOrientation so);
+		ScreenOrientation GetScreenOrientation() const;
+		
+		void SetSizeSameWithScreen(bool sizeWithScreen);
+		bool IsSizeSameWithScreen() const;
+	
+		// Scene
+	public:
+		void SetScene(Scene *scene);
+		Scene *GetScene();
+		const std::string &GetSceneFilename() const;
+	
+		void SetUI(UI *ui);
+		UI *GetUI();
+		const std::string &GetUIFilename() const;
+		
+		// ObjectPool
+	public:
+		void PoolClear();
+		void PoolSet(const std::string &name, Object *obj);
+		Object *PoolGet(const std::string &name);
+		
+		// config
+	public:
+		void SetConfig(const std::string &name, const std::string &cfgStr);
+		std::string GetConfig(const std::string &name);
+	};

@@ -1,0 +1,80 @@
+ps_3_0
+// cgc version 3.1.0010, build date Feb  8 2012
+// command line args: -profile ps_3_0
+// source file: terrain_lightshadow_cg.fx
+//vendor NVIDIA Corporation
+//version 3.1.0.10
+//profile ps_3_0
+//program p_terrain_lightshadow
+//semantic p_terrain_lightshadow.UVScale01
+//semantic p_terrain_lightshadow.UVScale23
+//semantic p_terrain_lightshadow.UVScale4
+//semantic p_terrain_lightshadow.FogColorHeight
+//semantic p_terrain_lightshadow.FogColorDist
+//semantic SamplerAlpha
+//semantic Sampler0
+//semantic Sampler1
+//semantic Sampler2
+//semantic Sampler3
+//semantic Sampler4
+//semantic SampleShadowDepth
+//var float4 vertexColor : $vin.COLOR0 : ATTR0 : 0 : 1
+//var float2 vertexTCoord0 : $vin.TEXCOORD0 : ATTR1 : 1 : 1
+//var float2 vertexTCoord1 : $vin.TEXCOORD1 : ATTR2 : 2 : 1
+//var float4 vertexTCoord2 : $vin.TEXCOORD2 : ATTR3 : 3 : 1
+//var float4 pixelColor : $vout.COLOR : COL : 4 : 1
+//var float4 UVScale01 :  : c[0] : 5 : 1
+//var float4 UVScale23 :  : c[1] : 6 : 1
+//var float4 UVScale4 :  : c[2] : 7 : 1
+//var float4 FogColorHeight :  : c[3] : 8 : 1
+//var float4 FogColorDist :  : c[4] : 9 : 1
+//var sampler2D SamplerAlpha :  : texunit 0 : -1 : 1
+//var sampler2D Sampler0 :  : texunit 1 : -1 : 1
+//var sampler2D Sampler1 :  : texunit 2 : -1 : 1
+//var sampler2D Sampler2 :  : texunit 3 : -1 : 1
+//var sampler2D Sampler3 :  : texunit 4 : -1 : 1
+//var sampler2D Sampler4 :  : texunit 5 : -1 : 1
+//var sampler2D SampleShadowDepth :  : texunit 6 : -1 : 1
+//const c[5] = 1
+dcl_2d s0
+dcl_2d s1
+dcl_2d s2
+dcl_2d s3
+dcl_2d s4
+dcl_2d s5
+dcl_2d s6
+def c5, 1.00000000, 0, 0, 0
+dcl_texcoord0 v1.xy
+dcl_texcoord2 v3
+dcl_color0 v0
+dcl_texcoord1 v2.xy
+mov r3.z, v1.x
+add r3.w, -v1.y, c5.x
+mul r0.xy, r3.zwzw, c0
+mul r1.xy, r3.zwzw, c0.zwzw
+texld r0, r0, s1
+texld r1, r1, s2
+add r2, r1, -r0
+texld r1, v1, s0
+mad r0, r1.x, r2, r0
+mul r3.xy, r3.zwzw, c1
+texld r2, r3, s3
+add r2, r2, -r0
+mad r0, r1.y, r2, r0
+mul r3.xy, r3.zwzw, c1.zwzw
+texld r2, r3, s4
+add r2, r2, -r0
+mad r0, r1.z, r2, r0
+mul r1.xy, r3.zwzw, c2
+texld r2, r1, s5
+add r2, r2, -r0
+mad r1, r1.w, r2, r0
+texldp r0.x, v3, s6
+mov r0.w, r1
+mul r0.xyz, r1, r0.x
+mul r0, r0, v0
+add r0.xyz, r0, -c3
+mad r0.xyz, v2.y, r0, c3
+add r0.xyz, r0, -c4
+mad oC0.xyz, v2.x, r0, c4
+mov oC0.w, r0

@@ -1,0 +1,61 @@
+// PX2Creater.pkg
+
+	class Creater
+	{
+		// general
+		Movable *CreateMovable_Box();
+		Movable *CreateMovable_Sphere();
+		Movable *CreateMovable_Rectangle();
+		Node *CreateBlockFrame(int num, float halfExtend, const std::string &image);
+
+		Node *CreateNode();
+		CameraNode *CreateNode_Camera(bool createCamera = true);
+		Node *CreateNode_Model(const std::string &filename);
+		Node *CreateNode_Model(Movable *movable);
+		Movable *CreateMovable_FromRes(const std::string &filename);
+		ScriptController *CreateScriptController_FromRes(const std::string &filename);
+		
+		// actor
+		Actor *CreateActor();
+		Actor *CreateActorBox();
+		Actor *CreateActor_InfinitePlane(float planeViewSizeScale = 100.0f,
+			const AVector &normal=AVector::UNIT_Z, float originOffset=0.0f);
+
+		// sky
+		Movable *CreateSkyBox(const std::string &skyDirPath);
+
+		// Terrain
+		Movable *CreateTerrain();
+
+		// effect
+		ParticleEmitter *CreateParticleEmitter();
+		Billboard *CreateBillboard();
+		BeamEmitter *CreateBeamEmitter();
+		RibbonEmitter *CreateRibbonEmitter();
+		Soundable *CreateSoundable();
+		EffectModule *CreateEffectModule(const std::string &typeName);
+
+		// ui
+		UIFrame *CreateUIFrame();
+		UIFPicBox *CreateUIFPicBox();
+		UIFText *CreateUIFText();
+		UIButton *CreateUIButton();
+		UICheckButton *CreateUICheckButton();
+		UIComboBox *CreateUIComboBox();
+		UIEditBox *CreateUIEditBox();
+		UIProgressBar *CreateUIProgressBar();
+		UIRound *CreateUIRound();
+
+		// controller
+		InterpCurveAlphaController *CreateICC_Alpha();
+		InterpCurveColorController *CreateICC_Color();
+		InterpCurveUniformScaleController *CreateICC_UniformScale();
+		InterpCurveScaleController *CreateICC_Scale();
+		InterpCurveRotateController *CreateICC_Rotate();
+		InterpCurveTranslateController *CreateICC_Translate();
+		TriggerController *CreateTriggerController();
+		CameraPlayController *CreateCameraPlayController();
+		
+		void AddObject(Object *parent, Object *obj, bool command = true);
+		bool RemoveObject(Object *obj, bool command = true);
+	};

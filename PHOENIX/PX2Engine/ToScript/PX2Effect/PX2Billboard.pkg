@@ -1,0 +1,27 @@
+// PX2Billboard.pkg
+
+	class Billboard : public Effectable
+	{
+		Billboard ();
+		virtual ~Billboard ();
+
+		void SetDynamic (bool isDynamic);
+		bool IsDynamic () const;
+
+		void SetPivot (float anchX, float anchZ);
+		void SetPivot (const Float2 &anchor);
+		const Float2 &GetPivot () const;
+
+		void SetUseTexAsSize (bool use);
+		bool IsUseTexAsSize () const;
+
+		void SetUseTrim (bool useTrim);
+		bool IsUseTrim () const;
+
+		void SetDoAlphaDisAfterStop (bool doAlphaDis);
+		bool IsDoAlphaDisAfterStop () const;
+		void SetDoAlphaDisAfterStopSpeed (float speed);
+		float GetDoAlphaDisAfterStopSpeed () const;
+
+		void SetSizeImmediate (float sizeX, float sizeY, float sizeZ);
+	};
